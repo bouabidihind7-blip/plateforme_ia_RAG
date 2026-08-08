@@ -1,0 +1,231 @@
+{
+  "source": {
+    "type": "microsoft_forms_scraping",
+    "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAbGNV-pURFZINEdJQkdMRjJBSUkyWEpWWVFBWVZPSy4u"
+  },
+  "titre": "Form finala de microsoft",
+  "description": null,
+  "date_extraction": "2026-07-15T14:33:48.112227",
+  "statut_extraction": "prete",
+  "questions": [
+    {
+      "question_id": "QuestionId_r3b6b5917a6b541db9ff42351df1e85ae",
+      "ordre": 1,
+      "modalite": "texte_image",
+      "texte": "do u think this is true",
+      "image": "scripts_extraction/images_formulaires/QuestionId_r3b6b5917a6b541db9ff42351df1e85ae.png",
+      "ocr": {
+        "texte_extrait": "1 Desire will come my way",
+        "score_confiance": 0.9843413159769501,
+        "nb_mots": 4,
+        "erreur": null,
+        "image_utilisee": "scripts_extraction/images_test/pretraitements/QuestionId_r3b6b5917a6b541db9ff42351df1e85ae_debruite.png"
+      },
+      "texte_pour_ia": "do u think this is true 1 Desire will come my way",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "QuestionId_r3b6b5917a6b541db9ff42351df1e85ae_opt1",
+          "texte": "Yes"
+        },
+        {
+          "option_id": "QuestionId_r3b6b5917a6b541db9ff42351df1e85ae_opt2",
+          "texte": "No"
+        },
+        {
+          "option_id": "QuestionId_r3b6b5917a6b541db9ff42351df1e85ae_opt3",
+          "texte": "Maybe"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_r4a51a1dac6e14bcf97cc008e0c7f4b52",
+      "ordre": 2,
+      "modalite": "texte",
+      "texte": "choose between these two  heels",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "choose between these two  heels",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "QuestionId_r4a51a1dac6e14bcf97cc008e0c7f4b52_opt1",
+          "texte": "Yve Sain Lauren"
+        },
+        {
+          "option_id": "QuestionId_r4a51a1dac6e14bcf97cc008e0c7f4b52_opt2",
+          "texte": "Louboutin"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_r0b243a372c544d2d897652da86879f2d",
+      "ordre": 3,
+      "modalite": "texte",
+      "texte": "enter ur returning date",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "enter ur returning date",
+      "type_question": "date",
+      "type_reponse_attendu": "date",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2",
+      "ordre": 4,
+      "modalite": "texte",
+      "texte": "How likely are you to recommend us to a friend or colleague?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "How likely are you to recommend us to a friend or colleague?",
+      "type_question": "echelle_lineaire",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt1",
+          "texte": "0"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt2",
+          "texte": "1"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt3",
+          "texte": "2"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt4",
+          "texte": "3"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt5",
+          "texte": "4"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt6",
+          "texte": "5"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt7",
+          "texte": "6"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt8",
+          "texte": "7"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt9",
+          "texte": "8"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt10",
+          "texte": "9"
+        },
+        {
+          "option_id": "QuestionId_r67e4da5760a0497998a43df2a0f75df2_opt11",
+          "texte": "10"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_rc625f9818846446099aeb7abaf6ede69",
+      "ordre": 5,
+      "modalite": "texte",
+      "texte": "what's better Dior or Chanel for u?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "what's better Dior or Chanel for u?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_r1e75bbea40aa439aaa7e9529f3b22e8b",
+      "ordre": 6,
+      "modalite": "texte",
+      "texte": "Rank according to u",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Rank according to u",
+      "type_question": "classement",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "QuestionId_r1e75bbea40aa439aaa7e9529f3b22e8b_opt1",
+          "texte": "Dior"
+        },
+        {
+          "option_id": "QuestionId_r1e75bbea40aa439aaa7e9529f3b22e8b_opt2",
+          "texte": "Chanel"
+        },
+        {
+          "option_id": "QuestionId_r1e75bbea40aa439aaa7e9529f3b22e8b_opt3",
+          "texte": "Hermes"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_rf25e8cb915d942a1ba3715552ab70efd",
+      "ordre": 7,
+      "modalite": "texte",
+      "texte": "Rate black Christian Louboutin",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Rate black Christian Louboutin",
+      "type_question": "notation",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "QuestionId_rf25e8cb915d942a1ba3715552ab70efd_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "QuestionId_rf25e8cb915d942a1ba3715552ab70efd_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "QuestionId_rf25e8cb915d942a1ba3715552ab70efd_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "QuestionId_rf25e8cb915d942a1ba3715552ab70efd_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "QuestionId_rf25e8cb915d942a1ba3715552ab70efd_opt5",
+          "texte": "5"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    }
+  ]
+}

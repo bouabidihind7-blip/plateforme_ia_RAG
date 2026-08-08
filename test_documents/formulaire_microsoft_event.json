@@ -1,0 +1,321 @@
+{
+  "source": {
+    "type": "microsoft_forms_scraping",
+    "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__TGQl2FURUQ3SUhVNVI0Rk9NU08xT0dKNUZFOFVPSS4u"
+  },
+  "titre": "Enquête sur la satisfaction employé",
+  "description": null,
+  "date_extraction": "2026-07-30T12:16:42.153812",
+  "statut_extraction": "prete",
+  "questions": [
+    {
+      "question_id": "QuestionId_rb3f9a4e5a91144f48129fd719580a435",
+      "ordre": 1,
+      "modalite": "texte",
+      "texte": "Quel est votre nom complet ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Quel est votre nom complet ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_rc64d46ed50d94b7b996dc110a9815abd",
+      "ordre": 2,
+      "modalite": "texte",
+      "texte": "Décrivez brièvement votre expérience lors de l'événement.",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Décrivez brièvement votre expérience lors de l'événement.",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_rc75d81afc99c4a288e789a136bb10d10",
+      "ordre": 3,
+      "modalite": "texte",
+      "texte": "Comment avez-vous entendu parler de cet événement ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Comment avez-vous entendu parler de cet événement ?",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "QuestionId_rc75d81afc99c4a288e789a136bb10d10_opt1",
+          "texte": "Réseaux sociaux"
+        },
+        {
+          "option_id": "QuestionId_rc75d81afc99c4a288e789a136bb10d10_opt2",
+          "texte": "Bouche à oreille"
+        },
+        {
+          "option_id": "QuestionId_rc75d81afc99c4a288e789a136bb10d10_opt3",
+          "texte": "Affiche sur le campus"
+        },
+        {
+          "option_id": "QuestionId_rc75d81afc99c4a288e789a136bb10d10_opt4",
+          "texte": "Email"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_rd0eae2f10ab24d069fbde539d27c1207",
+      "ordre": 4,
+      "modalite": "texte",
+      "texte": "Quelles activités avez-vous appréciées ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Quelles activités avez-vous appréciées ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "QuestionId_rd0eae2f10ab24d069fbde539d27c1207_opt1",
+          "texte": "Ateliers"
+        },
+        {
+          "option_id": "QuestionId_rd0eae2f10ab24d069fbde539d27c1207_opt2",
+          "texte": "Conférences"
+        },
+        {
+          "option_id": "QuestionId_rd0eae2f10ab24d069fbde539d27c1207_opt3",
+          "texte": "Networking"
+        },
+        {
+          "option_id": "QuestionId_rd0eae2f10ab24d069fbde539d27c1207_opt4",
+          "texte": "Pause café"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_rfefdb697d19b4cf886d1d7744049c3e1",
+      "ordre": 5,
+      "modalite": "texte",
+      "texte": "Classez ces aspects du plus important au moins important pour vous :",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Classez ces aspects du plus important au moins important pour vous :",
+      "type_question": "classement",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "QuestionId_rfefdb697d19b4cf886d1d7744049c3e1_opt1",
+          "texte": "Organisation"
+        },
+        {
+          "option_id": "QuestionId_rfefdb697d19b4cf886d1d7744049c3e1_opt2",
+          "texte": "Lieu"
+        },
+        {
+          "option_id": "QuestionId_rfefdb697d19b4cf886d1d7744049c3e1_opt3",
+          "texte": "Intervenants"
+        },
+        {
+          "option_id": "QuestionId_rfefdb697d19b4cf886d1d7744049c3e1_opt4",
+          "texte": "Restauration"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_re48b1bbc8d0848d1b81b7ab68fc24e36",
+      "ordre": 6,
+      "modalite": "texte",
+      "texte": "Indiquez votre niveau d'accord avec chaque affirmation (Pas du tout d'accord → Tout à fait d'accord) :",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Indiquez votre niveau d'accord avec chaque affirmation (Pas du tout d'accord → Tout à fait d'accord) : — pour chacun de : L'organisation était efficace, Le lieu était adapté, Les intervenants étaient compétents, choisir parmi : Pas d'accord du tout, Pas d'accord, Ni d'accord ni en désaccord, Je suis d'accord, Complètement d'accord.",
+      "type_question": "grille_choix_unique",
+      "type_reponse_attendu": "grille_option_unique",
+      "obligatoire": false,
+      "options": [],
+      "grille": {
+        "lignes": [
+          {
+            "ordre": 1,
+            "texte": "L'organisation était efficace"
+          },
+          {
+            "ordre": 2,
+            "texte": "Le lieu était adapté"
+          },
+          {
+            "ordre": 3,
+            "texte": "Les intervenants étaient compétents"
+          }
+        ],
+        "colonnes": [
+          {
+            "texte": "Pas d'accord du tout"
+          },
+          {
+            "texte": "Pas d'accord"
+          },
+          {
+            "texte": "Ni d'accord ni en désaccord"
+          },
+          {
+            "texte": "Je suis d'accord"
+          },
+          {
+            "texte": "Complètement d'accord"
+          }
+        ]
+      },
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_ref17613a4f8c4153a5f58b61900b69f2",
+      "ordre": 7,
+      "modalite": "texte",
+      "texte": "À quelle date avez-vous assisté à l'événement ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "À quelle date avez-vous assisté à l'événement ?",
+      "type_question": "date",
+      "type_reponse_attendu": "date",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_rc6faa1d36e544b37a2ffd2899f78aaf0",
+      "ordre": 8,
+      "modalite": "texte",
+      "texte": "Notez l'événement globalement (1 à 5 étoiles)",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Notez l'événement globalement (1 à 5 étoiles)",
+      "type_question": "notation",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "QuestionId_rc6faa1d36e544b37a2ffd2899f78aaf0_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "QuestionId_rc6faa1d36e544b37a2ffd2899f78aaf0_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "QuestionId_rc6faa1d36e544b37a2ffd2899f78aaf0_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "QuestionId_rc6faa1d36e544b37a2ffd2899f78aaf0_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "QuestionId_rc6faa1d36e544b37a2ffd2899f78aaf0_opt5",
+          "texte": "5"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f",
+      "ordre": 9,
+      "modalite": "texte",
+      "texte": "Sur une échelle de 0 à 10, recommanderiez-vous cet événement à un(e) ami(e) ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Sur une échelle de 0 à 10, recommanderiez-vous cet événement à un(e) ami(e) ?",
+      "type_question": "echelle_lineaire",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt1",
+          "texte": "0"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt2",
+          "texte": "1"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt3",
+          "texte": "2"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt4",
+          "texte": "3"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt5",
+          "texte": "4"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt6",
+          "texte": "5"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt7",
+          "texte": "6"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt8",
+          "texte": "7"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt9",
+          "texte": "8"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt10",
+          "texte": "9"
+        },
+        {
+          "option_id": "QuestionId_r03700dbbdfc04e17b454ec9b0c359c2f_opt11",
+          "texte": "10"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "QuestionId_r38f15e25ba94470b8c724b567f8f7676",
+      "ordre": 10,
+      "modalite": "texte",
+      "texte": "Souhaitez-vous faire part d’autres commentaires ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Souhaitez-vous faire part d’autres commentaires ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    }
+  ]
+}

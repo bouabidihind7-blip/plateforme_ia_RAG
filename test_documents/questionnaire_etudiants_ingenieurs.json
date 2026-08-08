@@ -1,0 +1,1483 @@
+{
+  "source": {
+    "type": "google_forms_public",
+    "url": "https://forms.gle/YEwMr9LvsZatLazt6",
+    "fichier": null
+  },
+  "titre": "Questionnaire sur Les pratiques et les représentations des étudiants ingénieurs.",
+  "description": "Dans le cadre de mon Projet de Fin d’Études (PFE) en sociologie, je mène une enquête sur les pratiques et les \nreprésentations des étudiants ingénieurs. \nCe questionnaire est strictement anonyme. Il n'y a ni bonne ni mauvaise réponse ; seule votre opinion sincère compte \npour la rigueur de cette recherche. \nLes données seront traitées de manière statistique et confidentielle. \nJe vous remercie par avance pour les quelques minutes (environ 10 min) que vous consacrerez à ce travail.كجزء من مشروع تخرجي في علم الاجتماع، أقوم بإجراء استطلاع رأي حول ممارسات وتصورات طلاب الهندسة.\nهذا الاستبيان مجهول الهوية تمامًا. لا توجد إجابات صحيحة أو خاطئة؛ فرأيك الصادق هو ما يهم لضمان دقة هذا البحث.\nسيتم تحليل البيانات إحصائيًا وبسرية تامة.\nشكرًا لكم مقدمًا على تخصيصكم بضع دقائق (حوالي ١٠ دقائق) لهذه المهمة.",
+  "date_extraction": null,
+  "statut_extraction": "prete",
+  "questions": [
+    {
+      "question_id": "q1",
+      "ordre": 1,
+      "modalite": "texte",
+      "texte": "1-Quel est votre âge ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "1-Quel est votre âge ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q2",
+      "ordre": 2,
+      "modalite": "texte",
+      "texte": "2-Quel est votre sexe ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "2-Quel est votre sexe ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q2_opt1",
+          "ordre": 1,
+          "texte": "1.Féminin"
+        },
+        {
+          "option_id": "q2_opt2",
+          "ordre": 2,
+          "texte": "2. Masculin"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q3",
+      "ordre": 3,
+      "modalite": "texte",
+      "texte": "2-Quel est votre niveau d’études ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "2-Quel est votre niveau d’études ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q3_opt1",
+          "ordre": 1,
+          "texte": "classe préparatoire 1"
+        },
+        {
+          "option_id": "q3_opt2",
+          "ordre": 2,
+          "texte": "classe préparatoire 2"
+        },
+        {
+          "option_id": "q3_opt3",
+          "ordre": 3,
+          "texte": "cycle d'ingénieur 1"
+        },
+        {
+          "option_id": "q3_opt4",
+          "ordre": 4,
+          "texte": "cycle d'ingénieur 2"
+        },
+        {
+          "option_id": "q3_opt5",
+          "ordre": 5,
+          "texte": "cycle d'ingénieur 3"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q4",
+      "ordre": 4,
+      "modalite": "texte",
+      "texte": "4- Dans quelle spécialité êtes-vous ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "4- Dans quelle spécialité êtes-vous ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q5",
+      "ordre": 5,
+      "modalite": "texte",
+      "texte": "5 -Où vivez-vous ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "5 -Où vivez-vous ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q5_opt1",
+          "ordre": 1,
+          "texte": "Logement seul"
+        },
+        {
+          "option_id": "q5_opt2",
+          "ordre": 2,
+          "texte": "Co location"
+        },
+        {
+          "option_id": "q5_opt3",
+          "ordre": 3,
+          "texte": "Avec vos parents"
+        },
+        {
+          "option_id": "q5_opt4",
+          "ordre": 4,
+          "texte": "Chez un membre de la famille"
+        },
+        {
+          "option_id": "q5_opt5",
+          "ordre": 5,
+          "texte": "Cité universitaire"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q6",
+      "ordre": 6,
+      "modalite": "texte",
+      "texte": "6 -Quel est le Niveau d'instruction de votre père ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "6 -Quel est le Niveau d'instruction de votre père ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q6_opt1",
+          "ordre": 1,
+          "texte": "Primaire"
+        },
+        {
+          "option_id": "q6_opt2",
+          "ordre": 2,
+          "texte": "Collège"
+        },
+        {
+          "option_id": "q6_opt3",
+          "ordre": 3,
+          "texte": "Lycée"
+        },
+        {
+          "option_id": "q6_opt4",
+          "ordre": 4,
+          "texte": "Universitaire"
+        },
+        {
+          "option_id": "q6_opt5",
+          "ordre": 5,
+          "texte": "Ingénieure"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q7",
+      "ordre": 7,
+      "modalite": "texte",
+      "texte": "7-Quelle est la profession de votre père ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "7-Quelle est la profession de votre père ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q7_opt1",
+          "ordre": 1,
+          "texte": "Employé"
+        },
+        {
+          "option_id": "q7_opt2",
+          "ordre": 2,
+          "texte": "Fonctionnaire"
+        },
+        {
+          "option_id": "q7_opt3",
+          "ordre": 3,
+          "texte": "Retraité"
+        },
+        {
+          "option_id": "q7_opt4",
+          "ordre": 4,
+          "texte": "Sans emploi"
+        },
+        {
+          "option_id": "q7_opt5",
+          "ordre": 5,
+          "texte": "Profession libérale"
+        },
+        {
+          "option_id": "q7_opt6",
+          "ordre": 6,
+          "texte": "Autre ………………………………"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q8",
+      "ordre": 8,
+      "modalite": "texte",
+      "texte": "8 - Quelle est la profession de votre mère ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "8 - Quelle est la profession de votre mère ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q8_opt1",
+          "ordre": 1,
+          "texte": "☐ Employée"
+        },
+        {
+          "option_id": "q8_opt2",
+          "ordre": 2,
+          "texte": "☐ Fonctionnaire"
+        },
+        {
+          "option_id": "q8_opt3",
+          "ordre": 3,
+          "texte": "☐ Retraitée"
+        },
+        {
+          "option_id": "q8_opt4",
+          "ordre": 4,
+          "texte": "☐femme de foyer"
+        },
+        {
+          "option_id": "q8_opt5",
+          "ordre": 5,
+          "texte": "☐ Profession libérale"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q9",
+      "ordre": 9,
+      "modalite": "texte",
+      "texte": "9-Est-ce que vous avez des activités parascolaires ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "9-Est-ce que vous avez des activités parascolaires ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q10",
+      "ordre": 10,
+      "modalite": "texte",
+      "texte": "10-Pourquoi avez-vous choisi des études d’ingénieur ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "10-Pourquoi avez-vous choisi des études d’ingénieur ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q11",
+      "ordre": 11,
+      "modalite": "texte",
+      "texte": "11.Après les études, voulez-vous travailler dans le secteur public ou privé ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "11.Après les études, voulez-vous travailler dans le secteur public ou privé ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q11_opt1",
+          "ordre": 1,
+          "texte": "public"
+        },
+        {
+          "option_id": "q11_opt2",
+          "ordre": 2,
+          "texte": "privé"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q12",
+      "ordre": 12,
+      "modalite": "texte",
+      "texte": "12. préférez-vous travailler au Maroc ou à l’étranger ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "12. préférez-vous travailler au Maroc ou à l’étranger ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q12_opt1",
+          "ordre": 1,
+          "texte": "Maroc"
+        },
+        {
+          "option_id": "q12_opt2",
+          "ordre": 2,
+          "texte": "étranger"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q13",
+      "ordre": 13,
+      "modalite": "texte",
+      "texte": "13-Comment décririez-vous l'atmosphère religieuse de votre enfance ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "13-Comment décririez-vous l'atmosphère religieuse de votre enfance ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q13_opt1",
+          "ordre": 1,
+          "texte": "Très pratiquante"
+        },
+        {
+          "option_id": "q13_opt2",
+          "ordre": 2,
+          "texte": "Modérément"
+        },
+        {
+          "option_id": "q13_opt3",
+          "ordre": 3,
+          "texte": "pratiquante"
+        },
+        {
+          "option_id": "q13_opt4",
+          "ordre": 4,
+          "texte": "Peu pratiquante"
+        },
+        {
+          "option_id": "q13_opt5",
+          "ordre": 5,
+          "texte": "Pas pratiquante du tout"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q14",
+      "ordre": 14,
+      "modalite": "texte",
+      "texte": "14 -Considérez-vous les vérités religieuses comme :",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "14 -Considérez-vous les vérités religieuses comme :",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q14_opt1",
+          "ordre": 1,
+          "texte": "Des vérités absolues et indiscutables."
+        },
+        {
+          "option_id": "q14_opt2",
+          "ordre": 2,
+          "texte": "Des vérités symboliques qui nécessitent une interprétation."
+        },
+        {
+          "option_id": "q14_opt3",
+          "ordre": 3,
+          "texte": "Des hypothèses spirituelles parmi d'autres."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q15",
+      "ordre": 15,
+      "modalite": "texte",
+      "texte": "15 -Face à un mystère non résolu par la science (ex : l'origine de la vie), votre première réaction est ;",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "15 -Face à un mystère non résolu par la science (ex : l'origine de la vie), votre première réaction est ;",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q15_opt1",
+          "ordre": 1,
+          "texte": "D'attendre que la science trouve la réponse."
+        },
+        {
+          "option_id": "q15_opt2",
+          "ordre": 2,
+          "texte": "D'accepter l'explication religieuse comme définitive."
+        },
+        {
+          "option_id": "q15_opt3",
+          "ordre": 3,
+          "texte": "De penser que la science et la religion disent la même chose avec des mots différents."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q16",
+      "ordre": 16,
+      "modalite": "texte",
+      "texte": "16 -Pensez-vous que les découvertes scientifiques récentes (Big Bang, génétique, etc.) étaient déjà suggérées dans les \ntextes sacrés ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "16 -Pensez-vous que les découvertes scientifiques récentes (Big Bang, génétique, etc.) étaient déjà suggérées dans les \ntextes sacrés ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q16_opt1",
+          "ordre": 1,
+          "texte": "Tout à fait d'accord"
+        },
+        {
+          "option_id": "q16_opt2",
+          "ordre": 2,
+          "texte": "Plutôt d'accord"
+        },
+        {
+          "option_id": "q16_opt3",
+          "ordre": 3,
+          "texte": "Plutôt pas d'accord"
+        },
+        {
+          "option_id": "q16_opt4",
+          "ordre": 4,
+          "texte": "Pas du tout d'accord"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q17",
+      "ordre": 17,
+      "modalite": "texte",
+      "texte": "17-Selon vous, un bon scientifique peut-il être un croyant pratiquant sans contradiction interne ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "17-Selon vous, un bon scientifique peut-il être un croyant pratiquant sans contradiction interne ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q17_opt1",
+          "ordre": 1,
+          "texte": "☐ Oui, car les deux domaines sont séparés."
+        },
+        {
+          "option_id": "q17_opt2",
+          "ordre": 2,
+          "texte": "☐ Oui, car la science renforce la foi."
+        },
+        {
+          "option_id": "q17_opt3",
+          "ordre": 3,
+          "texte": "☐ Difficilement, car la méthode scientifique exige le doute."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q18",
+      "ordre": 18,
+      "modalite": "texte",
+      "texte": "18-Faites-vous confiance aux savants religieux (Oulémas) pour valider des théories scientifiques ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "18-Faites-vous confiance aux savants religieux (Oulémas) pour valider des théories scientifiques ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q18_opt1",
+          "ordre": 1,
+          "texte": "☐ Oui, leur avis est primordial."
+        },
+        {
+          "option_id": "q18_opt2",
+          "ordre": 2,
+          "texte": "☐ Seulement s'ils ont une formation scientifique."
+        },
+        {
+          "option_id": "q18_opt3",
+          "ordre": 3,
+          "texte": "☐ Non, ce sont deux domaines totalement distincts."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q19",
+      "ordre": 19,
+      "modalite": "texte",
+      "texte": "19-Croyez-vous que le progrès technique et scientifique soit pour améliorer la création de Dieu ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "19-Croyez-vous que le progrès technique et scientifique soit pour améliorer la création de Dieu ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q19_opt1",
+          "ordre": 1,
+          "texte": "☐ Oui, l'ingénieur sert Dieu par son travail."
+        },
+        {
+          "option_id": "q19_opt2",
+          "ordre": 2,
+          "texte": "☐ Non, la technique est neutre et purement humaine."
+        },
+        {
+          "option_id": "q19_opt3",
+          "ordre": 3,
+          "texte": "☐ La technique est un danger qui peut éloigner de la foi."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q20",
+      "ordre": 20,
+      "modalite": "texte",
+      "texte": "20-En cas de contradiction entre une théorie scientifique apprise en cours et une croyance religieuse, que privilégiez\u0002\nvous ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "20-En cas de contradiction entre une théorie scientifique apprise en cours et une croyance religieuse, que privilégiez\u0002\nvous ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q20_opt1",
+          "ordre": 1,
+          "texte": "La théorie scientifique"
+        },
+        {
+          "option_id": "q20_opt2",
+          "ordre": 2,
+          "texte": "☐ La croyance religieuse"
+        },
+        {
+          "option_id": "q20_opt3",
+          "ordre": 3,
+          "texte": "☐ Je tente de trouver une synthèse entre les deux."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q21",
+      "ordre": 21,
+      "modalite": "texte",
+      "texte": "21-Quelle est votre position vis-à-vis du mauvais œil (Ayn) et de la sorcellerie (Sihr)?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "21-Quelle est votre position vis-à-vis du mauvais œil (Ayn) et de la sorcellerie (Sihr)?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q21_opt1",
+          "ordre": 1,
+          "texte": "☐ j’y crois fermement car ils sont mentionnés dans les textes sacrés."
+        },
+        {
+          "option_id": "q21_opt2",
+          "ordre": 2,
+          "texte": "☐ j’y crois, mais je pense que beaucoup de gens exagèrent leur influence."
+        },
+        {
+          "option_id": "q21_opt3",
+          "ordre": 3,
+          "texte": "☐ je considère que ce sont des explications sociales à des phénomènes que la science n’a pas encore expliqués."
+        },
+        {
+          "option_id": "q21_opt4",
+          "ordre": 4,
+          "texte": "☐ je n’y crois pas du tout, ce sont des superstitions."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q22",
+      "ordre": 22,
+      "modalite": "texte",
+      "texte": "22-Pratiquez-vous les cinq prières quotidiennes ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "22-Pratiquez-vous les cinq prières quotidiennes ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q22_opt1",
+          "ordre": 1,
+          "texte": "☐ Toujours"
+        },
+        {
+          "option_id": "q22_opt2",
+          "ordre": 2,
+          "texte": "☐ Souvent"
+        },
+        {
+          "option_id": "q22_opt3",
+          "ordre": 3,
+          "texte": "☐ Parfois"
+        },
+        {
+          "option_id": "q22_opt4",
+          "ordre": 4,
+          "texte": "☐ Rarement"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q23",
+      "ordre": 23,
+      "modalite": "texte",
+      "texte": "23-Depuis quand ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "23-Depuis quand ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q24",
+      "ordre": 24,
+      "modalite": "texte",
+      "texte": "24-Pratiquez-vous les prières complémentaires (nawafeles) ? lesquelles ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "24-Pratiquez-vous les prières complémentaires (nawafeles) ? lesquelles ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q25",
+      "ordre": 25,
+      "modalite": "texte",
+      "texte": "25-Où priez-vous le plus souvent durant la journée ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "25-Où priez-vous le plus souvent durant la journée ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q25_opt1",
+          "ordre": 1,
+          "texte": "☐ À la Musallah de l’école"
+        },
+        {
+          "option_id": "q25_opt2",
+          "ordre": 2,
+          "texte": "Dans votre chambre d’internaton"
+        },
+        {
+          "option_id": "q25_opt3",
+          "ordre": 3,
+          "texte": "À la mosquée du quartier"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q26",
+      "ordre": 26,
+      "modalite": "texte",
+      "texte": "26-La charge de travail (projets, examens) impacte-t-elle la régularité de vos prières ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "26-La charge de travail (projets, examens) impacte-t-elle la régularité de vos prières ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q26_opt1",
+          "ordre": 1,
+          "texte": "Oui, je les regroupe le soir"
+        },
+        {
+          "option_id": "q26_opt2",
+          "ordre": 2,
+          "texte": "☐ Oui, j'en délaisse certaines"
+        },
+        {
+          "option_id": "q26_opt3",
+          "ordre": 3,
+          "texte": "☐ Non, je les fais à l'heure malgré tout"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q27",
+      "ordre": 27,
+      "modalite": "texte",
+      "texte": "27-En dehors du ramadan, pratiquez-vous le jeûne de Sunna (ex lundi/jeudi, jours blancs.) ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "27-En dehors du ramadan, pratiquez-vous le jeûne de Sunna (ex lundi/jeudi, jours blancs.) ?",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q28",
+      "ordre": 28,
+      "modalite": "texte",
+      "texte": "28-Ressentez-vous un besoin accru de prier ou d'invoquer Dieu durant les périodes d'examens ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "28-Ressentez-vous un besoin accru de prier ou d'invoquer Dieu durant les périodes d'examens ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q28_opt1",
+          "ordre": 1,
+          "texte": "Oui, beaucoup plus"
+        },
+        {
+          "option_id": "q28_opt2",
+          "ordre": 2,
+          "texte": "☐ Un peu plus"
+        },
+        {
+          "option_id": "q28_opt3",
+          "ordre": 3,
+          "texte": "☐ Pas de changement"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q29",
+      "ordre": 29,
+      "modalite": "texte",
+      "texte": "29-La religion vous aide-t-elle à gérer le stress lié à la compétition d'excellence dans votre école ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "29-La religion vous aide-t-elle à gérer le stress lié à la compétition d'excellence dans votre école ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q29_opt1",
+          "ordre": 1,
+          "texte": "☐ Tout à fait"
+        },
+        {
+          "option_id": "q29_opt2",
+          "ordre": 2,
+          "texte": "☐ Plutôt oui"
+        },
+        {
+          "option_id": "q29_opt3",
+          "ordre": 3,
+          "texte": "☐ Plutôt non"
+        },
+        {
+          "option_id": "q29_opt4",
+          "ordre": 4,
+          "texte": "☐ Pas du tout"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q30",
+      "ordre": 30,
+      "modalite": "texte",
+      "texte": "30-Le passage de la salle de cours à la Musallah provoque-t-il en vous un changement émotionnel ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "30-Le passage de la salle de cours à la Musallah provoque-t-il en vous un changement émotionnel ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q30_opt1",
+          "ordre": 1,
+          "texte": "☐ souvent"
+        },
+        {
+          "option_id": "q30_opt2",
+          "ordre": 2,
+          "texte": "☐ parfois"
+        },
+        {
+          "option_id": "q30_opt3",
+          "ordre": 3,
+          "texte": "☐normale"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q31",
+      "ordre": 31,
+      "modalite": "texte",
+      "texte": "31-Comment vivez-vous les périodes où votre pratique diminue ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "31-Comment vivez-vous les périodes où votre pratique diminue ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q31_opt1",
+          "ordre": 1,
+          "texte": "☐avec une forte culpabilité intérieure"
+        },
+        {
+          "option_id": "q31_opt2",
+          "ordre": 2,
+          "texte": "☐avec une légère inquiétude"
+        },
+        {
+          "option_id": "q31_opt3",
+          "ordre": 3,
+          "texte": "☐avec indifférence"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q32",
+      "ordre": 32,
+      "modalite": "texte",
+      "texte": "32-Le faite de prier collectivement avec d’autres futurs ingénieurs renforce-t-il votre sentiment de fierté et d’appartenance ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "32-Le faite de prier collectivement avec d’autres futurs ingénieurs renforce-t-il votre sentiment de fierté et d’appartenance ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q32_opt1",
+          "ordre": 1,
+          "texte": "d’appartenance ?"
+        },
+        {
+          "option_id": "q32_opt2",
+          "ordre": 2,
+          "texte": "☐ énormément"
+        },
+        {
+          "option_id": "q32_opt3",
+          "ordre": 3,
+          "texte": "☐un peu"
+        },
+        {
+          "option_id": "q32_opt4",
+          "ordre": 4,
+          "texte": "☐pas du tout"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q33",
+      "ordre": 33,
+      "modalite": "texte",
+      "texte": "33-Quelle personne a eu l’impact le plus déterminant sur votre religiosité ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "33-Quelle personne a eu l’impact le plus déterminant sur votre religiosité ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q33_opt1",
+          "ordre": 1,
+          "texte": "☐ les parents(père/mère)"
+        },
+        {
+          "option_id": "q33_opt2",
+          "ordre": 2,
+          "texte": "☐ un membre de la famille ………………………………."
+        },
+        {
+          "option_id": "q33_opt3",
+          "ordre": 3,
+          "texte": "☐ un ami"
+        },
+        {
+          "option_id": "q33_opt4",
+          "ordre": 4,
+          "texte": "☐ un professeur à l’école d’ingénieur/lycée/collège."
+        },
+        {
+          "option_id": "q33_opt5",
+          "ordre": 5,
+          "texte": "☐ un influenceur religieux via les médias ou internet."
+        },
+        {
+          "option_id": "q33_opt6",
+          "ordre": 6,
+          "texte": "☐aucun, c’est le résultat d’un cheminement personnel."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q34",
+      "ordre": 34,
+      "modalite": "texte",
+      "texte": "34-Quelle est votre source principale d’information sur la religion ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "34-Quelle est votre source principale d’information sur la religion ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q34_opt1",
+          "ordre": 1,
+          "texte": "☐ l’éducation familiale et l’entourage"
+        },
+        {
+          "option_id": "q34_opt2",
+          "ordre": 2,
+          "texte": "☐ les réseaux sociaux et les prédicateurs en ligne"
+        },
+        {
+          "option_id": "q34_opt3",
+          "ordre": 3,
+          "texte": "☐ la lecture personnelle d’ouvrage religieux"
+        },
+        {
+          "option_id": "q34_opt4",
+          "ordre": 4,
+          "texte": "☐ les anciens cours d’éducation islamique du cursus scolaire"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q35",
+      "ordre": 35,
+      "modalite": "texte",
+      "texte": "35-Consacrez-vous du temps chaque semaine à l’étude approfondie des textes religieux (coran, hadiths, tafssir, sira,?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "35-Consacrez-vous du temps chaque semaine à l’étude approfondie des textes religieux (coran, hadiths, tafssir, sira,?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q35_opt1",
+          "ordre": 1,
+          "texte": "asbab al nozoul, fiqh…)"
+        },
+        {
+          "option_id": "q35_opt2",
+          "ordre": 2,
+          "texte": "☐ plus de 5 heures"
+        },
+        {
+          "option_id": "q35_opt3",
+          "ordre": 3,
+          "texte": "☐ entre 1h et 5h"
+        },
+        {
+          "option_id": "q35_opt4",
+          "ordre": 4,
+          "texte": "☐ moins d’une heure"
+        },
+        {
+          "option_id": "q35_opt5",
+          "ordre": 5,
+          "texte": "☐ jamais en dehors de la pratique"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q36",
+      "ordre": 36,
+      "modalite": "texte",
+      "texte": "36-En cas de doute sur une question religieuse, vers qui vous tournez-vous en priorité ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "36-En cas de doute sur une question religieuse, vers qui vous tournez-vous en priorité ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q36_opt1",
+          "ordre": 1,
+          "texte": "☐ un savant religieux (Faqih, Imam)"
+        },
+        {
+          "option_id": "q36_opt2",
+          "ordre": 2,
+          "texte": "☐ un ingénieur qui parle de religion"
+        },
+        {
+          "option_id": "q36_opt3",
+          "ordre": 3,
+          "texte": "☐ vous propres recherches personnelles sur internet"
+        },
+        {
+          "option_id": "q36_opt4",
+          "ordre": 4,
+          "texte": "☐un membre de votre famille"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q37",
+      "ordre": 37,
+      "modalite": "texte",
+      "texte": "37-Vos convictions religieuses influencent-elles votre choix de carrière futur ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "37-Vos convictions religieuses influencent-elles votre choix de carrière futur ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q37_opt1",
+          "ordre": 1,
+          "texte": "☐ Oui, de manière déterminante"
+        },
+        {
+          "option_id": "q37_opt2",
+          "ordre": 2,
+          "texte": "☐ Un peu"
+        },
+        {
+          "option_id": "q37_opt3",
+          "ordre": 3,
+          "texte": "☐ Pas du tout"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q38",
+      "ordre": 38,
+      "modalite": "texte",
+      "texte": "38-Accepteriez-vous un poste à haute responsabilité dans un secteur que vous jugez non conforme à vos valeurs?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "38-Accepteriez-vous un poste à haute responsabilité dans un secteur que vous jugez non conforme à vos valeurs?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q38_opt1",
+          "ordre": 1,
+          "texte": "☐ Oui, c'est le côté professionnel qui compte"
+        },
+        {
+          "option_id": "q38_opt2",
+          "ordre": 2,
+          "texte": "☐ Non, je refuserais"
+        },
+        {
+          "option_id": "q38_opt3",
+          "ordre": 3,
+          "texte": "☐ J'hésiterais"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q39",
+      "ordre": 39,
+      "modalite": "texte",
+      "texte": "39-Si vous constatez qu’un de vos amis proches à l’école adopte un comportement que vous jugez religieusement interdit (ex : consommation d’alcool, relation hors mariage) :",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "39-Si vous constatez qu’un de vos amis proches à l’école adopte un comportement que vous jugez religieusement interdit (ex : consommation d’alcool, relation hors mariage) :",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q39_opt1",
+          "ordre": 1,
+          "texte": "interdit (ex : consommation d’alcool, relation hors mariage) :"
+        },
+        {
+          "option_id": "q39_opt2",
+          "ordre": 2,
+          "texte": "☐ j’essaie de lui donner des conseils (Nasiha)"
+        },
+        {
+          "option_id": "q39_opt3",
+          "ordre": 3,
+          "texte": "☐ je prends mes distances avec lui pour ne pas être influencé."
+        },
+        {
+          "option_id": "q39_opt4",
+          "ordre": 4,
+          "texte": "☐je continue de le fréquenter sans cela n’affecte mon jugement sur lui"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q40",
+      "ordre": 40,
+      "modalite": "texte",
+      "texte": "40-Considérez-vous que la triche aux examens soit :",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "40-Considérez-vous que la triche aux examens soit :",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q40_opt1",
+          "ordre": 1,
+          "texte": "☐ un péché grave devant Dieu (Haram)."
+        },
+        {
+          "option_id": "q40_opt2",
+          "ordre": 2,
+          "texte": "☐une faute morale envers l’école."
+        },
+        {
+          "option_id": "q40_opt3",
+          "ordre": 3,
+          "texte": "☐ un mal nécessaire pour réussir dans un système compétition."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q41",
+      "ordre": 41,
+      "modalite": "texte",
+      "texte": "41-Comment considérez-vous les jeux de hasard (ex : toto foot, loto, loterie, paris sportifs)",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "41-Comment considérez-vous les jeux de hasard (ex : toto foot, loto, loterie, paris sportifs)",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q41_opt1",
+          "ordre": 1,
+          "texte": "☐ un péché majeur (Kabair)"
+        },
+        {
+          "option_id": "q41_opt2",
+          "ordre": 2,
+          "texte": "☐comme une perte de temps et d’argent inutile."
+        },
+        {
+          "option_id": "q41_opt3",
+          "ordre": 3,
+          "texte": "☐ comme une activité de loisir banale si elle reste contrôlée"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q42",
+      "ordre": 42,
+      "modalite": "texte",
+      "texte": "42-Avez-vous déjà participé à des jeux d’argent ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "42-Avez-vous déjà participé à des jeux d’argent ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q42_opt1",
+          "ordre": 1,
+          "texte": "☐ régulièrement"
+        },
+        {
+          "option_id": "q42_opt2",
+          "ordre": 2,
+          "texte": "☐ une ou deux fois pour essayer"
+        },
+        {
+          "option_id": "q42_opt3",
+          "ordre": 3,
+          "texte": "☐ jamais, c’est strictement interdit par l’Islam."
+        },
+        {
+          "option_id": "q42_opt4",
+          "ordre": 4,
+          "texte": "☐ jamais car mathématiquement on est perdant."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q43",
+      "ordre": 43,
+      "modalite": "texte",
+      "texte": "43-Quel est votre avis sur les relations sexuelles hors mariage?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "43-Quel est votre avis sur les relations sexuelles hors mariage?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q43_opt1",
+          "ordre": 1,
+          "texte": "☐ un péché grave (haram)"
+        },
+        {
+          "option_id": "q43_opt2",
+          "ordre": 2,
+          "texte": "☐un choix personnel qui relève de la liberté individuelle."
+        },
+        {
+          "option_id": "q43_opt3",
+          "ordre": 3,
+          "texte": "☐une pratique sociale acceptable tant qu’elle reste discrète."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q44",
+      "ordre": 44,
+      "modalite": "texte",
+      "texte": "44-Face au débat actuel sur la réforme de moudawana concernant l’égalité entre l’homme et la femme, quelle \nest votre position ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "44-Face au débat actuel sur la réforme de moudawana concernant l’égalité entre l’homme et la femme, quelle \nest votre position ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q44_opt1",
+          "ordre": 1,
+          "texte": "☐ je suis pour le maintien des règles actuelles fondées sur les textes sacrés."
+        },
+        {
+          "option_id": "q44_opt2",
+          "ordre": 2,
+          "texte": "☐je suis pour une égalité totale entre l’homme et la femme."
+        },
+        {
+          "option_id": "q44_opt3",
+          "ordre": 3,
+          "texte": "☐je suis pour une réforme qui s’adapte aux changements économiques (femmes chefs de famille)"
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q45",
+      "ordre": 45,
+      "modalite": "texte",
+      "texte": "45-Comment percevez-vous la polygamie aujourd’hui ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "45-Comment percevez-vous la polygamie aujourd’hui ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q45_opt1",
+          "ordre": 1,
+          "texte": "☐ comme un droit religieux légitime, même s’il est difficile à appliquer."
+        },
+        {
+          "option_id": "q45_opt2",
+          "ordre": 2,
+          "texte": "☐comme une pratique dépassée qui ne correspond plus à la modernité."
+        },
+        {
+          "option_id": "q45_opt3",
+          "ordre": 3,
+          "texte": "☐comme une solution sociale dans certains cas exceptionnels."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q46",
+      "ordre": 46,
+      "modalite": "texte",
+      "texte": "46-Pensez-vous que l’apparence vestimentaire d’un étudiant (barbe, tenue courte ou traditionnelle.) influence le jugement des professeurs ou des recruteurs ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "46-Pensez-vous que l’apparence vestimentaire d’un étudiant (barbe, tenue courte ou traditionnelle.) influence le jugement des professeurs ou des recruteurs ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q46_opt1",
+          "ordre": 1,
+          "texte": "☐ oui, cela est être perçu comme un signe de conservatisme excessif."
+        },
+        {
+          "option_id": "q46_opt2",
+          "ordre": 2,
+          "texte": "☐ oui, cela est perçu positivement comme un signe de sérieux et de rigueur morale."
+        },
+        {
+          "option_id": "q46_opt3",
+          "ordre": 3,
+          "texte": "☐non, seule la compétence technique compte."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q47",
+      "ordre": 47,
+      "modalite": "texte",
+      "texte": "47-Comment évolue votre assiduité religieuse durant les périodes de vacances par rapport aux périodes d’études ?",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "47-Comment évolue votre assiduité religieuse durant les périodes de vacances par rapport aux périodes d’études ?",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q47_opt1",
+          "ordre": 1,
+          "texte": "☐ elle augmente."
+        },
+        {
+          "option_id": "q47_opt2",
+          "ordre": 2,
+          "texte": "☐ elle reste stable."
+        },
+        {
+          "option_id": "q47_opt3",
+          "ordre": 3,
+          "texte": "☐ elle diminue, relâchement."
+        },
+        {
+          "option_id": "q47_opt4",
+          "ordre": 4,
+          "texte": "☐ elle est irrégulière."
+        }
+      ],
+      "grille": null,
+      "statut_extraction": "prete"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "formulaire_id": "form_test_001",
+  "fournisseur": "test",
+  "titre": "Questionnaire de connaissances générales",
+  "questions": [
+    {
+      "question_id": "q1",
+      "ordre": 1,
+      "modalite": "texte",
+      "texte": "Combien font 7 multiplié par 8 ?",
+      "image": null,
+      "type_question": "texte_libre",
+      "obligatoire": true,
+      "options": []
+    },
+    {
+      "question_id": "q2",
+      "ordre": 2,
+      "modalite": "texte",
+      "texte": "Quelle est la capitale du Maroc ?",
+      "image": null,
+      "type_question": "choix_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q2_opt1",
+          "texte": "Rabat"
+        },
+        {
+          "option_id": "q2_opt2",
+          "texte": "Casablanca"
+        }
+      ]
+    },
+    {
+      "question_id": "q3",
+      "ordre": 3,
+      "modalite": "texte",
+      "texte": "Sélectionnez les nombres pairs.",
+      "image": null,
+      "type_question": "choix_multiple",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q3_opt1",
+          "texte": "2"
+        },
+        {
+          "option_id": "q3_opt2",
+          "texte": "3"
+        },
+        {
+          "option_id": "q3_opt3",
+          "texte": "4"
+        }
+      ]
+    }
+  ]
+}

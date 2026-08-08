@@ -1,0 +1,90 @@
+{
+  "formulaire_url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAG0dQVNURTVTTFFBQUpFMlFQUDlTNExQWUswNDhSMi4u",
+  "reponses": [
+    {
+      "question_id": "QuestionId_r64aed1bf3a0d46a2b9745c50a4d22d3b",
+      "question": "What specific product are you using?",
+      "reponse": "Salesforce CRM Enterprise Edition"
+    },
+    {
+      "question_id": "QuestionId_r72116d12ee6547c7b13f74f740bc3b79",
+      "question": "Overall, how satisfied are you with this product?",
+      "reponse": "4"
+    },
+    {
+      "question_id": "QuestionId_r1970ad2fbc344b1c8da581fa3697982e",
+      "question": "How much did each of the following factors matter to you when you chose your current product? — pour chacun de : Brand and reputation, Value for the price, Past experience with the product, Recommendation from others, Advertising and sales, Company strategy, choisir parmi : Not at all, Very little, Somewhat, Very much.",
+      "reponse": "Brand and reputation: Very much; Value for the price: Very much; Past experience with the product: Somewhat; Recommendation from others: Somewhat; Advertising and sales: Not at all; Company strategy: Very little"
+    },
+    {
+      "question_id": "QuestionId_rc1781becbc4e4bee9e0c0c81d1fc4707",
+      "question": "How do you currently approach hosting meetings while working remotely?",
+      "reponse": "Virtually only"
+    },
+    {
+      "question_id": "QuestionId_re80e1501c57842c58992262bd43d3147",
+      "question": "How would you rate your experiences with this product? — pour chacun de : Ease of setting up the schedule pre-meeting, Organizing engagement during  the meeting, Delivering clear message to audiences, Reconnecting with people post-meeting, Evaluating overall meeting effectiveness, choisir parmi : Very dissatisfied, Somewhat dissatisfied, Neutral, Somewhat satisfied, Very satisfied.",
+      "reponse": "Ease of setting up the schedule pre-meeting: Very satisfied; Organizing engagement during the meeting: Somewhat satisfied; Delivering clear message to audiences: Very satisfied; Reconnecting with people post-meeting: Neutral; Evaluating overall meeting effectiveness: Somewhat satisfied"
+    },
+    {
+      "question_id": "QuestionId_r5f635119fa6f4a27af9b6de993fec611",
+      "question": "How did you get to know this product?",
+      "reponse": "Social media, Ad on the web"
+    },
+    {
+      "question_id": "QuestionId_r4dc0ebf6df5a4cb9b9d1f29700ba4e7e",
+      "question": "How long have you been using this product?",
+      "reponse": "1 year to 2 years"
+    },
+    {
+      "question_id": "QuestionId_rc2bde1d1c0d84e75b1d3e258bca0c59f",
+      "question": "Would you consider trying new solutions in the future?",
+      "reponse": "Yes"
+    },
+    {
+      "question_id": "QuestionId_r96c0e7da7f8442a08d6dd89a0f9f6f73",
+      "question": "Rank the follow factors that matter most to you when considering new alternatives.",
+      "reponse": "Better value for price, Better personalization features, Richer advanced functionalities, Advanced collaboration modes, Best pre-sales and post-sales support, More post-meeting follow up actions"
+    },
+    {
+      "question_id": "QuestionId_ra10f5c5d21ad4af8af122682bee80cdf",
+      "question": "Can you share any potential alternatives you're considering?",
+      "reponse": "I am looking at a few different tech companies ranging from mid-sized startups to larger established enterprises, focusing primarily on roles in software engineering and cloud infrastructure that offer good opportunities for professional growth and flexibility."
+    },
+    {
+      "question_id": "QuestionId_r17b0263484324fabada0b9d336b99668",
+      "question": "Your gender",
+      "reponse": "Woman"
+    },
+    {
+      "question_id": "QuestionId_r1a328391e2ad4647b0e9072a25ca6eeb",
+      "question": "Your age",
+      "reponse": "26-35"
+    },
+    {
+      "question_id": "QuestionId_r02b210b21dbd496f8f02f1920c0f9ace",
+      "question": "Your industry",
+      "reponse": "IT (Information Technology)"
+    },
+    {
+      "question_id": "QuestionId_r23ce49335a7a4cb8afbe8388502edfb4",
+      "question": "What is your occupation?",
+      "reponse": "Software Engineer"
+    },
+    {
+      "question_id": "QuestionId_r21f418b8b29245f7a5fd05c68e9aa60c",
+      "question": "In which country do you live?",
+      "reponse": "France"
+    },
+    {
+      "question_id": "QuestionId_r7a960f678a554274bb359e0f4029ba21",
+      "question": "How would you describe your computer proficiency?",
+      "reponse": "Above average"
+    },
+    {
+      "question_id": "QuestionId_r7502d8a0797c47eebf2222f92ec4f6cd",
+      "question": "We plan to invite some participants to join our future user research programs. If you're willing to participate, please provide your email address and we may contact you soon.",
+      "reponse": "sophie.martin.ux@gmail.com"
+    }
+  ]
+}

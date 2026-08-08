@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Smart Factory - Validation IA</title>
+    <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand-text">
+            <p>3D Smart Factory</p>
+            <span>Assistant IA de validation</span>
+        </div>
+
+        <nav class="nav">
+            <a class="active" href="#">Accueil</a>
+            <a href="#reponses">Réponses</a>
+            <a href="#controle">Contrôle</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay">
+                <p class="eyebrow">Pipeline actif · Extraction → Génération → Validation</p>
+                <h2>Contrôle humain des réponses générées</h2>
+                <p class="hero-text">
+                    Chaque réponse proposée par l’IA passe par une vérification humaine avant son utilisation.
+                </p>
+
+                <div class="hero-actions">
+                    <span id="message" class="message">En attente de chargement...</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="import-formulaire">
+            <div>
+                <p class="section-label">Source formulaire</p>
+                <h2>Importer un formulaire JSON</h2>
+                <p>Colle un formulaire au format JSON, puis envoie-le au backend pour enregistrer ses questions.</p>
+            </div>
+
+            <div class="import-zone">
+                <textarea id="formulaire-json" placeholder='Colle ici le JSON du formulaire...'></textarea>
+                <button id="bouton-importer" class="secondary-button">Importer le formulaire</button>
+            </div>
+        </section>
+
+        <section class="traitement-ia">
+            <div>
+                <p class="section-label">Traitement IA</p>
+                <h2>Lancer une génération</h2>
+                <p>Choisis le modèle, puis demande au backend de générer les réponses manquantes.</p>
+            </div>
+
+            <div class="traitement-actions">
+                <label for="modele-ia">Modèle</label>
+                <select id="modele-ia">
+                    <option value="gemini">Gemini</option>
+                    <option value="modele_test">Modèle test</option>
+                    <option value="modele_simple">Modèle simple</option>
+                </select>
+                <button id="bouton-traitement" class="primary-button">Lancer le traitement</button>
+            </div>
+        </section>
+
+        <section id="controle" class="intro">
+            <p class="section-label">File d’attente</p>
+            <h2>Réponses proposées à vérifier</h2>
+            <p class="intro-text">Valide, rejette ou commente chaque proposition avant publication.</p>
+        </section>
+
+        <section id="reponses" class="dashboard">
+            <div id="liste-reponses" class="liste-reponses">
+                <!-- Les réponses venant du backend seront ajoutées ici par JavaScript. -->
+            </div>
+        </section>
+    </main>
+</body>
+<script src="script.js?v=9"></script>
+</html>

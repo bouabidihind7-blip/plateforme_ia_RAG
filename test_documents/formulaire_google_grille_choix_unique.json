@@ -1,0 +1,488 @@
+{
+  "source": {
+    "type": "google_forms_public",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdYuolWCqWwz_HF9TcrxCOgCSsnx9RrvHN07Dp0IUghdQ03BQ/viewform?usp=header"
+  },
+  "titre": "Formulaire Final avec Tous Les Types de Questions",
+  "description": null,
+  "date_extraction": "2026-07-27T15:41:02.685197",
+  "statut_extraction": "partiel",
+  "questions": [
+    {
+      "question_id": "q1",
+      "ordre": 1,
+      "modalite": "texte",
+      "texte": null,
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": null,
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q1_opt1",
+          "texte": "Option 1"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "texte_manquant"
+    },
+    {
+      "question_id": "q2",
+      "ordre": 2,
+      "modalite": "texte",
+      "texte": "Votre nom",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Votre nom",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q3",
+      "ordre": 3,
+      "modalite": "texte",
+      "texte": "Describe yr  self",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Describe yr  self",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q4",
+      "ordre": 4,
+      "modalite": "texte",
+      "texte": "ur fav color",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "ur fav color",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q4_opt1",
+          "texte": "green"
+        },
+        {
+          "option_id": "q4_opt2",
+          "texte": "bleu"
+        },
+        {
+          "option_id": "q4_opt3",
+          "texte": "red"
+        },
+        {
+          "option_id": "q4_opt4",
+          "texte": "gray"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q5",
+      "ordre": 5,
+      "modalite": "texte",
+      "texte": "chose a character",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "chose a character",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q5_opt1",
+          "texte": "Eren Yeager"
+        },
+        {
+          "option_id": "q5_opt2",
+          "texte": "Sung Jinwoo"
+        },
+        {
+          "option_id": "q5_opt3",
+          "texte": "Mikassa"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q6",
+      "ordre": 6,
+      "modalite": "texte",
+      "texte": "choose a country",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "choose a country",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q6_opt1",
+          "texte": "Japan"
+        },
+        {
+          "option_id": "q6_opt2",
+          "texte": "Switzerland"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q7",
+      "ordre": 7,
+      "modalite": "texte",
+      "texte": "rate Eren",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "rate Eren",
+      "type_question": "echelle_lineaire",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q7_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "q7_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "q7_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "q7_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "q7_opt5",
+          "texte": "5"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q8",
+      "ordre": 8,
+      "modalite": "texte",
+      "texte": "Rate Levi",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Rate Levi",
+      "type_question": "notation",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q8_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "q8_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "q8_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "q8_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "q8_opt5",
+          "texte": "5"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q9",
+      "ordre": 9,
+      "modalite": "texte",
+      "texte": "Rate me",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Rate me",
+      "type_question": "notation",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q9_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "q9_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "q9_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "q9_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "q9_opt5",
+          "texte": "5"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q10",
+      "ordre": 10,
+      "modalite": "texte",
+      "texte": "Rate us",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Rate us",
+      "type_question": "notation",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q10_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "q10_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "q10_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "q10_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "q10_opt5",
+          "texte": "5"
+        },
+        {
+          "option_id": "q10_opt6",
+          "texte": "6"
+        },
+        {
+          "option_id": "q10_opt7",
+          "texte": "7"
+        },
+        {
+          "option_id": "q10_opt8",
+          "texte": "8"
+        },
+        {
+          "option_id": "q10_opt9",
+          "texte": "9"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q11",
+      "ordre": 11,
+      "modalite": "texte",
+      "texte": "rate me(choix unique liste deroulante)",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "rate me(choix unique liste deroulante) — pour chacun de : Ligne 1, choisir parmi : 8, 9.",
+      "type_question": "grille_choix_unique",
+      "type_reponse_attendu": "grille_option_unique",
+      "obligatoire": false,
+      "options": [],
+      "grille": {
+        "lignes": [
+          {
+            "ordre": 1,
+            "texte": "Ligne 1"
+          }
+        ],
+        "colonnes": [
+          {
+            "texte": "8"
+          },
+          {
+            "texte": "9"
+          }
+        ]
+      },
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q12",
+      "ordre": 12,
+      "modalite": "texte",
+      "texte": "voila un ex d'une grille a choix unique",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "voila un ex d'une grille a choix unique — pour chacun de : morroco, choisir parmi : rabat, casa.",
+      "type_question": "grille_choix_unique",
+      "type_reponse_attendu": "grille_option_unique",
+      "obligatoire": false,
+      "options": [],
+      "grille": {
+        "lignes": [
+          {
+            "ordre": 1,
+            "texte": "morroco"
+          }
+        ],
+        "colonnes": [
+          {
+            "texte": "rabat"
+          },
+          {
+            "texte": "casa"
+          }
+        ]
+      },
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q13",
+      "ordre": 13,
+      "modalite": "texte",
+      "texte": null,
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Grille sans titre — pour chacun de : kdrama, choisir parmi : him, her.",
+      "type_question": "grille_choix_unique",
+      "type_reponse_attendu": "grille_option_unique",
+      "obligatoire": false,
+      "options": [],
+      "grille": {
+        "lignes": [
+          {
+            "ordre": 1,
+            "texte": "kdrama"
+          }
+        ],
+        "colonnes": [
+          {
+            "texte": "him"
+          },
+          {
+            "texte": "her"
+          }
+        ]
+      },
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q14",
+      "ordre": 14,
+      "modalite": "texte",
+      "texte": null,
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Grille sans titre — pour chacun de : cdrama, choisir parmi : Woo Khan, Lee Sung.",
+      "type_question": "grille_choix_multiple",
+      "type_reponse_attendu": "grille_options_multiples",
+      "obligatoire": false,
+      "options": [],
+      "grille": {
+        "lignes": [
+          {
+            "ordre": 1,
+            "texte": "cdrama"
+          }
+        ],
+        "colonnes": [
+          {
+            "texte": "Woo Khan"
+          },
+          {
+            "texte": "Lee Sung"
+          }
+        ]
+      },
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q15",
+      "ordre": 15,
+      "modalite": "texte",
+      "texte": "a Date",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "a Date",
+      "type_question": "date",
+      "type_reponse_attendu": "date",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q16",
+      "ordre": 16,
+      "modalite": "texte",
+      "texte": "a Time",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "a Time",
+      "type_question": "heure",
+      "type_reponse_attendu": "heure",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q17",
+      "ordre": 17,
+      "modalite": "texte",
+      "texte": null,
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": null,
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "texte_manquant"
+    }
+  ]
+}

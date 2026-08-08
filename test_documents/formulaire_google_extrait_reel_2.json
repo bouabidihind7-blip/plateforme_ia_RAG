@@ -1,0 +1,330 @@
+{
+  "source": {
+    "type": "google_forms_public",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdhve8u9rmYpiHi2bmzVAT4KoRcQcAKG0NpfjeFvwI1d9nf_w/viewform?usp=publish-editor"
+  },
+  "titre": "Un form du test ",
+  "description": "Form externe du test de tout",
+  "date_extraction": "2026-07-15T14:33:08.200456",
+  "statut_extraction": "prete",
+  "questions": [
+    {
+      "question_id": "q1",
+      "ordre": 1,
+      "modalite": "texte",
+      "texte": "Your Name",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Your Name",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q2",
+      "ordre": 2,
+      "modalite": "texte",
+      "texte": "Describe ur self",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Describe ur self",
+      "type_question": "texte_libre",
+      "type_reponse_attendu": "texte",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q3",
+      "ordre": 3,
+      "modalite": "texte",
+      "texte": "Chose",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Chose",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q3_opt1",
+          "texte": "Tom haywerd"
+        },
+        {
+          "option_id": "q3_opt2",
+          "texte": "Mr Darcy"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q4",
+      "ordre": 4,
+      "modalite": "texte",
+      "texte": "Chose",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Chose",
+      "type_question": "choix_multiple",
+      "type_reponse_attendu": "options_multiples",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q4_opt1",
+          "texte": "Dae bom"
+        },
+        {
+          "option_id": "q4_opt2",
+          "texte": "Kang cheon"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q5",
+      "ordre": 5,
+      "modalite": "texte",
+      "texte": "Rate France",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Rate France",
+      "type_question": "echelle_lineaire",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q5_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "q5_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "q5_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "q5_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "q5_opt5",
+          "texte": "5"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q6",
+      "ordre": 6,
+      "modalite": "texte",
+      "texte": "Chose",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Chose",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q6_opt1",
+          "texte": "Pizza"
+        },
+        {
+          "option_id": "q6_opt2",
+          "texte": "Pasta"
+        },
+        {
+          "option_id": "q6_opt3",
+          "texte": "Burger"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q7",
+      "ordre": 7,
+      "modalite": "texte",
+      "texte": "Chose the right answer",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Chose the right answer — pour chacun de : The smartest, The dumbest, choisir parmi : Eres yeager, L, Light, Conan.",
+      "type_question": "grille_choix_multiple",
+      "type_reponse_attendu": "grille_options_multiples",
+      "obligatoire": true,
+      "options": [],
+      "grille": {
+        "lignes": [
+          {
+            "ordre": 1,
+            "texte": "The smartest"
+          },
+          {
+            "ordre": 2,
+            "texte": "The dumbest"
+          }
+        ],
+        "colonnes": [
+          {
+            "texte": "Eres yeager"
+          },
+          {
+            "texte": "L"
+          },
+          {
+            "texte": "Light"
+          },
+          {
+            "texte": "Conan"
+          }
+        ]
+      },
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q8",
+      "ordre": 8,
+      "modalite": "texte",
+      "texte": "Chose only one",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Chose only one — pour chacun de : Best 2026 kdrama, choisir parmi : Teach u a lesson, Agent kim reactivated.",
+      "type_question": "grille_choix_multiple",
+      "type_reponse_attendu": "grille_options_multiples",
+      "obligatoire": false,
+      "options": [],
+      "grille": {
+        "lignes": [
+          {
+            "ordre": 1,
+            "texte": "Best 2026 kdrama"
+          }
+        ],
+        "colonnes": [
+          {
+            "texte": "Teach u a lesson"
+          },
+          {
+            "texte": "Agent kim reactivated"
+          }
+        ]
+      },
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q9",
+      "ordre": 9,
+      "modalite": "texte",
+      "texte": "Check a date",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Check a date",
+      "type_question": "date",
+      "type_reponse_attendu": "date",
+      "obligatoire": false,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q10",
+      "ordre": 10,
+      "modalite": "texte",
+      "texte": "Chose ur cortisol leven",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Chose ur cortisol leven",
+      "type_question": "choix_unique",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": false,
+      "options": [
+        {
+          "option_id": "q10_opt1",
+          "texte": "Low"
+        },
+        {
+          "option_id": "q10_opt2",
+          "texte": "Medium"
+        },
+        {
+          "option_id": "q10_opt3",
+          "texte": "High"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q11",
+      "ordre": 11,
+      "modalite": "texte",
+      "texte": "Chose a time",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Chose a time",
+      "type_question": "heure",
+      "type_reponse_attendu": "heure",
+      "obligatoire": true,
+      "options": [],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    },
+    {
+      "question_id": "q12",
+      "ordre": 12,
+      "modalite": "texte",
+      "texte": "Rate Mr Darcy and Elizabeth",
+      "image": null,
+      "ocr": null,
+      "texte_pour_ia": "Rate Mr Darcy and Elizabeth",
+      "type_question": "notation",
+      "type_reponse_attendu": "option_unique",
+      "obligatoire": true,
+      "options": [
+        {
+          "option_id": "q12_opt1",
+          "texte": "1"
+        },
+        {
+          "option_id": "q12_opt2",
+          "texte": "2"
+        },
+        {
+          "option_id": "q12_opt3",
+          "texte": "3"
+        },
+        {
+          "option_id": "q12_opt4",
+          "texte": "4"
+        },
+        {
+          "option_id": "q12_opt5",
+          "texte": "5"
+        }
+      ],
+      "grille": null,
+      "contrainte": null,
+      "statut_extraction": "prete"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.venv/
+backend/.venv/
+__pycache__/
+*.pyc
+
+backend/.env
+scripts_extraction/google_forms_credentials.json
+scripts_extraction/google_forms_token.json
+scripts_extraction/images_formulaires/
+**/images_test/
