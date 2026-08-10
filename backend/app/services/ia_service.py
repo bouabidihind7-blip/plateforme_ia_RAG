@@ -40,7 +40,7 @@ class ReponseAgent(BaseModel):
 
 google_api_key = os.getenv("GEMINI_API_KEY")
 modele = ChatGoogleGenerativeAI(
-   model="gemini-3.5-flash-lite",
+   model="gemini-3.1-flash-lite",
    temperature=0.2,
    google_api_key=google_api_key,
 )

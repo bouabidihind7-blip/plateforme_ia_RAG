@@ -134,7 +134,11 @@ def modifier_statut_reponse(
         return reponse_modifiee
 
 
-# Liste les réponses proposées pour un formulaire précis.
+# Liste les réponses proposées pour un formulaire précis — UNE SEULE par question, la plus
+# récente (DISTINCT ON, propre à PostgreSQL). Une question rejetée puis retraitée a plusieurs
+# lignes en base (l'historique est gardé, voir enregistrer_reponse_proposee qui INSERT
+# toujours, jamais d'UPDATE) — mais on ne veut afficher QUE la dernière ici, pas les anciennes
+# rejetées, sinon la même question apparaîtrait plusieurs fois dans la file d'attente.
 def lister_reponses_par_formulaire(formulaire_id: int) -> list[dict]:
     # Ouvre une session avec PostgreSQL.
     with SessionLocal() as session:
@@ -142,10 +146,56 @@ def lister_reponses_par_formulaire(formulaire_id: int) -> list[dict]:
         # Lit seulement les réponses liées aux questions de ce formulaire.
         resultat = session.execute(
             text("""
+                SELECT * FROM (
+                    SELECT DISTINCT ON (r.question_id)
+                        r.id,
+                        r.question_id,
+                        q.texte AS question,
+                        q.ordre AS question_ordre,
+                        r.type_reponse,
+                        r.valeur,
+                        r.modele_ia,
+                        r.methode_traitement,
+                        r.statut,
+                        r.commentaire_validation,
+                        r.date_generation,
+                        r.date_modification
+                    FROM reponses_proposees r
+                    JOIN questions q ON q.id = r.question_id
+                    WHERE q.formulaire_id = :formulaire_id
+                    ORDER BY r.question_id, r.date_generation DESC
+                ) derniere_reponse
+                ORDER BY question_ordre
+            """),
+            {
+                "formulaire_id": formulaire_id,
+            },
+        )
+
+        # Convertit les lignes SQL en dictionnaires Python.
+        reponses = resultat.mappings().all()
+
+        # Retourne les réponses du formulaire demandé.
+        return reponses
+
+
+# Liste TOUTES les réponses d'un formulaire — contrairement à lister_reponses_par_formulaire,
+# pas de DISTINCT ON ici : on veut justement voir toutes les anciennes tentatives (rejetées ou
+# non), pas seulement la dernière. Utilisé par la page historique.html.
+def lister_historique_formulaire(formulaire_id: int) -> list[dict]:
+    # Ouvre une session avec PostgreSQL.
+    with SessionLocal() as session:
+
+        # Lit toutes les réponses liées aux questions de ce formulaire, la plus récente
+        # tentative de chaque question en premier (date_generation DESC), questions dans
+        # leur ordre naturel dans le formulaire (q.ordre).
+        resultat = session.execute(
+            text("""
                 SELECT
                     r.id,
                     r.question_id,
                     q.texte AS question,
+                    q.ordre AS question_ordre,
                     r.type_reponse,
                     r.valeur,
                     r.modele_ia,
@@ -157,7 +207,7 @@ def lister_reponses_par_formulaire(formulaire_id: int) -> list[dict]:
                 FROM reponses_proposees r
                 JOIN questions q ON q.id = r.question_id
                 WHERE q.formulaire_id = :formulaire_id
-                ORDER BY r.id
+                ORDER BY q.ordre, r.date_generation DESC
             """),
             {
                 "formulaire_id": formulaire_id,
@@ -167,5 +217,5 @@ def lister_reponses_par_formulaire(formulaire_id: int) -> list[dict]:
         # Convertit les lignes SQL en dictionnaires Python.
         reponses = resultat.mappings().all()
 
-        # Retourne les réponses du formulaire demandé.
+        # Retourne l’historique complet du formulaire demandé.
         return reponses

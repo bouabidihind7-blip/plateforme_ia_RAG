@@ -13,15 +13,31 @@ const choixModele = document.getElementById("modele-ia");
 // Récupère le bouton qui lance le traitement IA.
 const boutonTraitement = document.getElementById("bouton-traitement");
 
-// Récupère la zone où l’utilisateur colle le formulaire JSON.
-const champFormulaireJson = document.getElementById("formulaire-json");
+// Récupère le champ où l’utilisateur colle une URL de formulaire.
+const champFormulaireUrl = document.getElementById("formulaire-url");
 
-// Récupère le bouton qui importe le formulaire.
-const boutonImporter = document.getElementById("bouton-importer");
+// Récupère le bouton qui importe le formulaire depuis une URL.
+const boutonImporterUrl = document.getElementById("bouton-importer-url");
+
+// Récupère le bouton flottant "remonter en haut".
+const boutonHaut = document.getElementById("bouton-haut");
 
 // Garde l’id interne du formulaire importé actuellement.
 // Au début, aucun formulaire n’est sélectionné.
 let formulaireActuelId = null;
+
+
+// Affiche un message dans zoneMessage — succes=true ajoute le style jaune du thème (.succes,
+// voir style.css) plutôt qu'un emoji ✅ à la couleur verte fixe, non personnalisable. Toujours
+// retirer la classe d'abord : sans ça, un message de succès resterait stylé même après un
+// message d'erreur suivant qui n'a rien à voir.
+function afficherMessage(texte, succes = false) {
+    zoneMessage.classList.remove("succes");
+    if (succes) {
+        zoneMessage.classList.add("succes");
+    }
+    zoneMessage.textContent = texte;
+}
 
 
 // Transforme une date technique en date lisible.
@@ -36,18 +52,22 @@ function formaterDate(dateIso) {
 }
 
 
-// Charge les réponses depuis le backend.
+// Charge les réponses depuis le backend — SEULEMENT celles du formulaire en cours. Tant
+// qu'aucun formulaire n'a été importé dans cette session (juste après un rechargement de
+// page, par exemple), on n'affiche rien plutôt que la liste globale de tous les formulaires
+// mélangés — évite de mélanger les questions de plusieurs formulaires différents à l'écran.
 async function chargerReponses() {
-    // Affiche un message pendant le chargement.
-    zoneMessage.textContent = "Chargement des réponses...";
-
-    // Prépare l’URL utilisée pour charger les réponses.
-    let urlReponses = `${API_URL}/reponses`;
-
-    // Si un formulaire vient d’être importé, on charge seulement ses réponses.
-    if (formulaireActuelId !== null) {
-        urlReponses = `${API_URL}/formulaires/${formulaireActuelId}/reponses`;
+    if (formulaireActuelId === null) {
+        listeReponses.innerHTML = "";
+        afficherMessage("Importe un formulaire pour voir ses réponses.");
+        return;
     }
+
+    // Affiche un message pendant le chargement.
+    afficherMessage("Chargement des réponses...");
+
+    // Charge seulement les réponses de CE formulaire précis.
+    const urlReponses = `${API_URL}/formulaires/${formulaireActuelId}/reponses`;
 
     // Appelle le backend pour récupérer les réponses.
     const reponseHttp = await fetch(urlReponses);
@@ -68,100 +88,101 @@ async function chargerReponses() {
 }
 
 
-// Importe un formulaire JSON vers le backend.
-async function importerFormulaire() {
-    // Récupère le texte écrit par l’utilisateur.
-    const texteJson = champFormulaireJson.value.trim();
+// Importe un formulaire directement depuis son URL (Google/Microsoft Forms) — le backend
+// scrape et enregistre en une seule requête, pas besoin de coller du JSON à la main.
+async function importerFormulaireDepuisUrl() {
+    const url = champFormulaireUrl.value.trim();
 
-    // Vérifie que le champ n’est pas vide.
-    if (!texteJson) {
-        zoneMessage.textContent = "Colle d’abord un formulaire JSON.";
+    if (!url) {
+        afficherMessage("Colle d’abord une URL de formulaire.");
         return;
     }
 
-    let formulaire;
+    boutonImporterUrl.disabled = true;
+    boutonImporterUrl.textContent = "Import en cours...";
+    afficherMessage("Extraction et import du formulaire...");
 
-    // Transforme le texte JSON en objet JavaScript.
+    // try/catch : si le backend plante (ex. formulaire déjà importé, IntegrityError 500), sa
+    // réponse est du texte brut, pas du JSON — reponseHttp.json() lève alors une exception. Sans
+    // ce filet, le bouton restait bloqué sur "Import en cours..." pour toujours (le code qui le
+    // réactive, plus bas, n'était jamais atteint).
     try {
-        formulaire = JSON.parse(texteJson);
+        // url est un query param côté backend (def recevoir_formulaire_depuis_url(url: str)),
+        // pas un Body — on la met donc directement dans l’URL de la requête, pas en JSON.
+        const reponseHttp = await fetch(
+            `${API_URL}/formulaires/depuis-url?url=${encodeURIComponent(url)}`,
+            { method: "POST" }
+        );
+
+        if (!reponseHttp.ok) {
+            afficherMessage("Import refusé : ce formulaire a peut-être déjà été importé, ou l’URL n’est pas un formulaire Google/Microsoft valide.");
+            return;
+        }
+
+        const donnees = await reponseHttp.json();
+        formulaireActuelId = donnees.id;
+
+        // chargerReponses() modifie zoneMessage elle-même ("Chargement...", puis vide) — on
+        // affiche donc le message de succès APRÈS, pour qu'il ne soit pas écrasé juste après.
+        await chargerReponses();
+        afficherMessage(`✓ Formulaire importé avec succès : ${donnees.nombre_questions} question(s). Tu peux maintenant lancer le traitement.`, true);
     } catch (erreur) {
-        zoneMessage.textContent = "JSON invalide : vérifie les accolades, virgules et guillemets.";
-        return;
+        afficherMessage("Erreur inattendue pendant l’import — réessaie dans un instant.");
+    } finally {
+        boutonImporterUrl.disabled = false;
+        boutonImporterUrl.textContent = "Importer depuis une URL";
     }
-
-    // Désactive le bouton pendant l’envoi.
-    boutonImporter.disabled = true;
-    boutonImporter.textContent = "Import en cours...";
-    zoneMessage.textContent = "Import du formulaire...";
-
-    // Envoie le formulaire au backend.
-    const reponseHttp = await fetch(`${API_URL}/formulaires`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formulaire),
-    });
-
-    // Lit la réponse du backend.
-    const donnees = await reponseHttp.json();
-
-    // Si le backend refuse le formulaire, on affiche une erreur simple.
-    if (!reponseHttp.ok) {
-        zoneMessage.textContent = "Import refusé : vérifie la structure du formulaire.";
-        boutonImporter.disabled = false;
-        boutonImporter.textContent = "Importer le formulaire";
-        return;
-    }
-
-    // Affiche un message de succès.
-    zoneMessage.textContent = `Formulaire importé : ${donnees.nombre_questions} question(s).`;
-
-    // Garde l’id interne PostgreSQL du formulaire importé.
-    formulaireActuelId = donnees.id;
-
-    // Vide le champ après succès.
-    champFormulaireJson.value = "";
-
-    // Recharge les réponses existantes.
-    await chargerReponses();
-
-    // Réactive le bouton.
-    boutonImporter.disabled = false;
-    boutonImporter.textContent = "Importer le formulaire";
 }
 
 
 // Lance le traitement IA depuis le frontend.
 async function lancerTraitementIA() {
+    // Sans formulaire importé, formulaire_id (obligatoire côté backend) n'existe pas encore.
+    if (formulaireActuelId === null) {
+        afficherMessage("Importe d’abord un formulaire avant de lancer le traitement.");
+        return;
+    }
+
     // Récupère le modèle choisi par l’utilisateur.
     const modele = choixModele.value;
 
     // Désactive le bouton pendant l’appel backend.
     boutonTraitement.disabled = true;
     boutonTraitement.textContent = "Traitement en cours...";
-    zoneMessage.textContent = `Traitement lancé avec ${modele}...`;
+    afficherMessage(`Traitement lancé avec ${modele}...`);
 
-    // Appelle la route POST /traitements/questions-textuelles.
-    const reponseHttp = await fetch(
-        `${API_URL}/traitements/questions-textuelles?modele_ia=${modele}`,
-        {
-            method: "POST",
+    // try/catch : même raison que dans importerFormulaireDepuisUrl() — une erreur backend non
+    // gérée renvoie du texte brut, pas du JSON, et reponseHttp.json() planterait sans filet.
+    try {
+        // Appelle la route POST /traitements/questions-textuelles, avec le formulaire_id de
+        // l’import en cours (voir formulaireActuelId, rempli par importerFormulaireDepuisUrl).
+        const reponseHttp = await fetch(
+            `${API_URL}/traitements/questions-textuelles?formulaire_id=${formulaireActuelId}&modele_ia=${modele}`,
+            {
+                method: "POST",
+            }
+        );
+
+        if (!reponseHttp.ok) {
+            afficherMessage("Échec du traitement — réessaie dans un instant.");
+            return;
         }
-    );
 
-    // Transforme la réponse du backend en objet JavaScript.
-    const donnees = await reponseHttp.json();
+        // Transforme la réponse du backend en objet JavaScript.
+        const donnees = await reponseHttp.json();
 
-    // Affiche le résultat du traitement.
-    zoneMessage.textContent = `${donnees.nombre_reponses} nouvelle(s) réponse(s) générée(s) avec ${modele}.`;
-
-    // Recharge les réponses pour afficher les nouvelles cartes.
-    await chargerReponses();
-
-    // Réactive le bouton.
-    boutonTraitement.disabled = false;
-    boutonTraitement.textContent = "Lancer le traitement";
+        // Recharge les réponses pour afficher les nouvelles cartes, PUIS affiche le résultat —
+        // chargerReponses() modifie zoneMessage elle-même, donc ce message doit venir après,
+        // sinon il serait écrasé aussitôt.
+        await chargerReponses();
+        afficherMessage(`✓ ${donnees.nombre_reponses} nouvelle(s) réponse(s) générée(s) avec ${modele}.`, true);
+    } catch (erreur) {
+        afficherMessage("Erreur inattendue pendant le traitement — réessaie dans un instant.");
+    } finally {
+        // Réactive le bouton.
+        boutonTraitement.disabled = false;
+        boutonTraitement.textContent = "Lancer le traitement";
+    }
 }
 
 
@@ -207,14 +228,15 @@ function afficherReponse(reponse) {
     // Récupère le bouton Rejeter dans cette carte.
     const boutonRejeter = carte.querySelector(".rejeter");
 
-    // Quand on clique Valider, on envoie le statut "validee".
+    // Quand on clique Valider, on envoie le statut "validée" (avec accent — même valeur que
+    // StatutReponseModification/chk_reponse_statut, les 3 doivent rester synchronisés).
     boutonValider.addEventListener("click", () => {
-        modifierStatut(reponse.id, "validee", champCommentaire.value);
+        modifierStatut(reponse.id, "validée", champCommentaire.value);
     });
 
-    // Quand on clique Rejeter, on envoie le statut "rejetee".
+    // Quand on clique Rejeter, on envoie le statut "rejetée".
     boutonRejeter.addEventListener("click", () => {
-        modifierStatut(reponse.id, "rejetee", champCommentaire.value);
+        modifierStatut(reponse.id, "rejetée", champCommentaire.value);
     });
 
     // Ajoute la carte dans la liste affichée.
@@ -244,8 +266,22 @@ async function modifierStatut(reponseId, statut, commentaire) {
 // Quand on clique sur le bouton, on lance le traitement IA.
 boutonTraitement.addEventListener("click", lancerTraitementIA);
 
-// Quand on clique sur le bouton, on importe le formulaire.
-boutonImporter.addEventListener("click", importerFormulaire);
+// Quand on clique sur le bouton, on importe le formulaire depuis une URL.
+boutonImporterUrl.addEventListener("click", importerFormulaireDepuisUrl);
+
+// Affiche le bouton "remonter en haut" seulement après avoir un peu scrollé.
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        boutonHaut.classList.add("visible");
+    } else {
+        boutonHaut.classList.remove("visible");
+    }
+});
+
+// Remonte en douceur en haut de la page au clic.
+boutonHaut.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 
 // Charge les réponses automatiquement au démarrage de la page.

@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Smart Factory - Validation IA</title>
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
     <header class="topbar">
-        <div class="brand-text">
-            <p>3D Smart Factory</p>
-            <span>Assistant IA de validation</span>
+        <div class="topbar-haut">
+            <div class="brand-text">
+                <img src="1st-logo.png" alt="3D Smart Factory" class="logo">
+            </div>
+
+            <nav class="nav">
+                <a class="active" href="#">Accueil</a>
+                <a href="#reponses">Réponses</a>
+                <a href="historique.html">Historique</a>
+            </nav>
         </div>
 
-        <nav class="nav">
-            <a class="active" href="#">Accueil</a>
-            <a href="#reponses">Réponses</a>
-            <a href="#controle">Contrôle</a>
-        </nav>
+        <p class="tagline">Votre copilote IA pour les formulaires</p>
     </header>
 
     <main>
@@ -38,13 +41,13 @@
         <section class="import-formulaire">
             <div>
                 <p class="section-label">Source formulaire</p>
-                <h2>Importer un formulaire JSON</h2>
-                <p>Colle un formulaire au format JSON, puis envoie-le au backend pour enregistrer ses questions.</p>
+                <h2>Importer un formulaire</h2>
+                <p>Colle le lien d'un formulaire Google ou Microsoft Forms pour enregistrer ses questions.</p>
             </div>
 
             <div class="import-zone">
-                <textarea id="formulaire-json" placeholder='Colle ici le JSON du formulaire...'></textarea>
-                <button id="bouton-importer" class="secondary-button">Importer le formulaire</button>
+                <input id="formulaire-url" type="text" placeholder="https://docs.google.com/forms/...">
+                <button id="bouton-importer-url" class="secondary-button">Importer depuis une URL</button>
             </div>
         </section>
 
@@ -52,15 +55,16 @@
             <div>
                 <p class="section-label">Traitement IA</p>
                 <h2>Lancer une génération</h2>
-                <p>Choisis le modèle, puis demande au backend de générer les réponses manquantes.</p>
+                <p>Génère les réponses avec l'IA.</p>
             </div>
 
             <div class="traitement-actions">
                 <label for="modele-ia">Modèle</label>
+                <!-- Un seul modèle pour l'instant (celui réellement utilisé dans ia_service.py) —
+                     les anciennes options (gemini/modele_test/modele_simple) venaient du système
+                     à 3 backends interchangeables, qui n'existe plus. -->
                 <select id="modele-ia">
-                    <option value="gemini">Gemini</option>
-                    <option value="modele_test">Modèle test</option>
-                    <option value="modele_simple">Modèle simple</option>
+                    <option value="gemini-3.1-flash-lite">Gemini 3.1 Flash-Lite</option>
                 </select>
                 <button id="bouton-traitement" class="primary-button">Lancer le traitement</button>
             </div>
@@ -78,6 +82,38 @@
             </div>
         </section>
     </main>
+
+    <footer class="pied-de-page">
+        <div class="pied-colonne">
+            <a href="https://3dsmartfactory.csit.ma/" target="_blank" rel="noopener">
+                <img src="1st-logo.png" alt="3D Smart Factory" class="logo-pied">
+            </a>
+            <p>Plateforme interne de contrôle humain des réponses générées par IA pour les formulaires Google et Microsoft Forms.</p>
+        </div>
+
+        <div class="pied-colonne">
+            <h3>Navigation</h3>
+            <nav class="pied-nav">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#reponses">Réponses</a>
+                <a href="historique.html">Historique</a>
+            </nav>
+        </div>
+
+        <div class="pied-colonne">
+            <h3>Contact</h3>
+            <p>Villa Num 75, Lotissement la gare, Mohammedia, Maroc</p>
+            <p><a href="tel:+33624948083">+33 6 24 94 80 83</a></p>
+            <p><a href="mailto:3dsmartfactory@gmail.com">3dsmartfactory@gmail.com</a></p>
+        </div>
+
+        <div class="pied-bas">
+            <p>© 2026 3D Smart Factory · v1.0.0</p>
+            <a href="https://3dsmartfactory.csit.ma/" target="_blank" rel="noopener">Voir le site officiel</a>
+        </div>
+    </footer>
+
+    <button id="bouton-haut" class="bouton-remonter" aria-label="Remonter en haut">↑</button>
 </body>
-<script src="script.js?v=9"></script>
+<script src="script.js?v=10"></script>
 </html>

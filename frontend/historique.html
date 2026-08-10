@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Smart Factory - Historique</title>
+    <link rel="stylesheet" href="style.css?v=17">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-haut">
+            <div class="brand-text">
+                <img src="1st-logo.png" alt="3D Smart Factory" class="logo">
+            </div>
+
+            <nav class="nav">
+                <a href="index.html">Accueil</a>
+                <a class="active" href="historique.html">Historique</a>
+            </nav>
+        </div>
+
+        <p class="tagline">Votre copilote IA pour les formulaires</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay">
+                <p class="eyebrow">Historique des réponses</p>
+                <h2>Historique par formulaire</h2>
+                <p class="hero-text">
+                    Retrouve toutes les réponses passées d’un formulaire, y compris celles rejetées, avec leurs commentaires.
+                </p>
+
+                <div class="hero-actions">
+                    <span id="message" class="message">Chargement des formulaires...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- vue-liste : la liste des formulaires importés, vue par défaut. -->
+        <div id="vue-liste">
+            <section class="intro">
+                <p class="section-label">Formulaires importés</p>
+                <h2>Choisis un formulaire</h2>
+                <p class="intro-text">Clique sur un formulaire pour voir son historique complet.</p>
+            </section>
+
+            <section class="dashboard">
+                <input id="recherche-formulaire" type="text" class="recherche-formulaire" placeholder="Rechercher un formulaire par titre...">
+
+                <div id="liste-formulaires" class="liste-formulaires">
+                    <!-- Les formulaires venant du backend seront ajoutés ici par JavaScript. -->
+                </div>
+            </section>
+        </div>
+
+        <!-- vue-historique : l'historique complet d'UN formulaire, cachée tant qu'aucune
+             carte n'a été cliquée (voir chargerHistorique() dans historique.js). -->
+        <section id="vue-historique" class="dashboard" hidden>
+            <button id="bouton-retour" class="secondary-button retour-button">← Retour à la liste</button>
+            <h2 id="titre-historique-formulaire"></h2>
+            <div id="liste-historique" class="liste-historique">
+                <!-- L'historique, groupé par question, sera ajouté ici par JavaScript. -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="pied-de-page">
+        <div class="pied-colonne">
+            <a href="https://3dsmartfactory.csit.ma/" target="_blank" rel="noopener">
+                <img src="1st-logo.png" alt="3D Smart Factory" class="logo-pied">
+            </a>
+            <p>Plateforme interne de contrôle humain des réponses générées par IA pour les formulaires Google et Microsoft Forms.</p>
+        </div>
+
+        <div class="pied-colonne">
+            <h3>Navigation</h3>
+            <nav class="pied-nav">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#reponses">Réponses</a>
+                <a href="historique.html">Historique</a>
+            </nav>
+        </div>
+
+        <div class="pied-colonne">
+            <h3>Contact</h3>
+            <p>Villa Num 75, Lotissement la gare, Mohammedia, Maroc</p>
+            <p><a href="tel:+33624948083">+33 6 24 94 80 83</a></p>
+            <p><a href="mailto:3dsmartfactory@gmail.com">3dsmartfactory@gmail.com</a></p>
+        </div>
+
+        <div class="pied-bas">
+            <p>© 2026 3D Smart Factory · v1.0.0</p>
+            <a href="https://3dsmartfactory.csit.ma/" target="_blank" rel="noopener">Voir le site officiel</a>
+        </div>
+    </footer>
+
+    <button id="bouton-haut" class="bouton-remonter" aria-label="Remonter en haut">↑</button>
+</body>
+<script src="historique.js?v=4"></script>
+</html>

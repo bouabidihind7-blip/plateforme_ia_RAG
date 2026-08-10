@@ -1,16 +1,4 @@
--- =========================================================
--- Ce script REMPLACE entièrement le schéma créé par
--- 01_create_forms_schema.sql (gardé comme trace historique,
--- pas modifié). Raison : le pipeline d'extraction produit
--- maintenant beaucoup plus de types de questions et de champs
--- que ce que prévoyait le MVP initial (voir project_plan.md,
--- section "Types internes du MVP" vs le JSON réellement produit
--- par scripts_extraction/extraction_questions.py).
---
--- Aucune donnée de production à préserver à ce stade : on
--- supprime les anciennes tables et on recrée tout, plutôt que
--- d'empiler des ALTER TABLE (pas d'outil de migration comme
--- Alembic dans ce projet).
+
 -- =========================================================
 
 BEGIN;
@@ -471,7 +459,7 @@ CREATE TABLE reponses_proposees (
     type_reponse VARCHAR(30) NOT NULL,
 
     -- Réponse au format JSONB.
-    -- Elle peut être une chaîne, une liste ou rester vide en cas d’erreur.
+    -- Toujours une chaîne de texte (voir chk_reponse_format_valeur), ou vide en cas d’erreur.
     valeur JSONB,
 
     -- Nom du modèle ayant produit la réponse.
@@ -481,7 +469,7 @@ CREATE TABLE reponses_proposees (
     methode_traitement VARCHAR(30) NOT NULL,
 
     -- État de la réponse proposée.
-    statut VARCHAR(30) NOT NULL DEFAULT 'proposee',
+    statut VARCHAR(30) NOT NULL DEFAULT 'proposée',
 
     -- Message technique éventuel en cas d’échec.
     erreur TEXT,
@@ -503,13 +491,20 @@ CREATE TABLE reponses_proposees (
         REFERENCES questions(id)
         ON DELETE CASCADE,
 
-    -- Limite les types de réponses.
+    -- Limite les types de réponses à ceux que type_reponse_attendu peut valoir côté question
+    -- (chk_question_type_reponse), moins hors_perimetre/inconnu qui n'auront jamais de réponse
+    -- générée par l'IA. Avant, seuls 3 types MVP étaient acceptés — une réponse à une grille
+    -- ou une date n'aurait pas pu être enregistrée du tout.
     CONSTRAINT chk_reponse_type
         CHECK (
             type_reponse IN (
                 'texte',
                 'option_unique',
-                'options_multiples'
+                'options_multiples',
+                'date',
+                'heure',
+                'grille_option_unique',
+                'grille_options_multiples'
             )
         ),
 
@@ -522,30 +517,27 @@ CREATE TABLE reponses_proposees (
             )
         ),
 
-    -- Limite les statuts possibles.
+    -- Limite les statuts possibles (accentués — bonne orthographe française, cohérent avec
+    -- StatutReponseModification côté Pydantic et ce qu'envoie script.js).
     CONSTRAINT chk_reponse_statut
         CHECK (
             statut IN (
-                'proposee',
-                'validee',
-                'rejetee',
+                'proposée',
+                'validée',
+                'rejetée',
                 'erreur',
                 'humaine_requise'
             )
         ),
 
-    -- Vérifie la structure JSON selon le type de réponse.
+    -- proposer_reponse() dans ia_service.py renvoie TOUJOURS une chaîne de texte simple,
+    -- même pour choix_multiple/classement/grilles (déjà mises en forme en texte, ex:
+    -- "ligne1: colA; ligne2: colB") — jamais un tableau JSON. La branche "options_multiples
+    -- doit être un tableau" ne correspond donc à rien de ce que le code produit réellement.
     CONSTRAINT chk_reponse_format_valeur
         CHECK (
             valeur IS NULL
-            OR (
-                type_reponse IN ('texte', 'option_unique')
-                AND jsonb_typeof(valeur) = 'string'
-            )
-            OR (
-                type_reponse = 'options_multiples'
-                AND jsonb_typeof(valeur) = 'array'
-            )
+            OR jsonb_typeof(valeur) = 'string'
         ),
 
     -- Une réponse normale doit avoir une valeur.

@@ -235,7 +235,11 @@ def extraire_options_google(question_google):
 
 
 # Cette fonction extrait les lignes et colonnes d’une grille Google Forms.
-def extraire_grille_google(question_google):
+# texte_question sert de secours pour une ligne au texte vide (vu en réel : une grille à une
+# seule ligne où Google n'assigne aucun texte à cette ligne, le texte de la QUESTION elle-même
+# servant visiblement de label côté affichage — sans ce secours, grille_lignes.texte violerait
+# sa contrainte NOT NULL/non-vide en base).
+def extraire_grille_google(question_google, texte_question=None):
     # Une grille Google contient plusieurs sous-questions : une par ligne.
     try:
         blocs_lignes_google = question_google[4]
@@ -268,7 +272,7 @@ def extraire_grille_google(question_google):
         # On ajoute la ligne dans notre format standard.
         lignes.append({
             "ordre": ordre_ligne,
-            "texte": texte_ligne
+            "texte": texte_ligne or texte_question or "Ligne sans titre"
         })
 
         # Les colonnes sont souvent répétées dans chaque ligne, dans bloc_ligne[1].
@@ -613,8 +617,11 @@ def convertir_formulaire_google(donnees_google, url, html):
             "Google a probablement changé le format de la page."
         )
 
-    # Le titre visible du formulaire est généralement dans bloc_formulaire[8].
-    titre = bloc_formulaire[8]
+    # Le titre visible du formulaire est généralement dans bloc_formulaire[8] — vide (None)
+    # quand le créateur n'a jamais nommé son formulaire (vérifié en réel). Google affiche alors
+    # "Formulaire sans titre" dans la vraie balise <title> de la page — on reprend ce même texte
+    # par défaut, plutôt que de laisser une valeur vide qui prêterait à confusion plus tard.
+    titre = bloc_formulaire[8] or "Formulaire sans titre"
 
     # La description est généralement dans bloc_formulaire[0].
     description = bloc_formulaire[0]
