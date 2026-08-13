@@ -194,19 +194,22 @@ function afficherReponse(reponse) {
     // Ajoute la classe CSS pour le design.
     carte.className = "carte-reponse";
 
-    // Remplit la carte avec les informations de la réponse.
+    // reponse.valeur est déjà une chaîne simple (voir chk_reponse_format_valeur — l'IA ne
+    // renvoie jamais que du texte) — pas besoin de JSON.stringify pour l'afficher/l'éditer,
+    // contrairement à avant où ça ajoutait des guillemets superflus autour du texte.
     carte.innerHTML = `
         <div class="contenu-reponse">
             <p class="question">${reponse.question}</p>
-            <p class="reponse">Réponse proposée : ${JSON.stringify(reponse.valeur)}</p>
+            <p class="reponse">Réponse proposée : ${reponse.valeur}</p>
+            <textarea class="edition-reponse" style="display:none;">${reponse.valeur}</textarea>
+            <button class="ajuster">✎ Ajuster</button>
 
             <div class="historique">
-                <p><span>Modèle</span>${reponse.modele_ia}</p>
                 <p><span>Générée le</span>${formaterDate(reponse.date_generation)}</p>
                 <p><span>Dernière modification</span>${formaterDate(reponse.date_modification)}</p>
             </div>
 
-            <textarea placeholder="Ajouter un commentaire...">${reponse.commentaire_validation || ""}</textarea>
+            <textarea class="commentaire" placeholder="Ajouter un commentaire...">${reponse.commentaire_validation || ""}</textarea>
 
             <span class="statut">Statut : ${reponse.statut}</span>
         </div>
@@ -219,19 +222,30 @@ function afficherReponse(reponse) {
         </div>
     `;
 
-    // Récupère le champ commentaire dans cette carte.
-    const champCommentaire = carte.querySelector("textarea");
-
-    // Récupère le bouton Valider dans cette carte.
+    // Récupère les éléments propres à cette carte.
+    const texteReponse = carte.querySelector(".reponse");
+    const champEdition = carte.querySelector(".edition-reponse");
+    const boutonAjuster = carte.querySelector(".ajuster");
+    const champCommentaire = carte.querySelector(".commentaire");
     const boutonValider = carte.querySelector(".valider");
-
-    // Récupère le bouton Rejeter dans cette carte.
     const boutonRejeter = carte.querySelector(".rejeter");
 
+    // Bascule entre le texte affiché et le champ d'édition — le bouton "Ajuster" permet de
+    // corriger soi-même la réponse quand la régénération IA n'aiderait pas (ex. mauvaise
+    // donnée extraite en amont, pas une mauvaise interprétation de l'IA).
+    boutonAjuster.addEventListener("click", () => {
+        const enEdition = champEdition.style.display !== "none";
+        champEdition.style.display = enEdition ? "none" : "block";
+        texteReponse.style.display = enEdition ? "block" : "none";
+        boutonAjuster.textContent = enEdition ? "✎ Ajuster" : "Annuler l’ajustement";
+    });
+
     // Quand on clique Valider, on envoie le statut "validée" (avec accent — même valeur que
-    // StatutReponseModification/chk_reponse_statut, les 3 doivent rester synchronisés).
+    // StatutReponseModification/chk_reponse_statut, les 3 doivent rester synchronisés). Si le
+    // champ d'édition est visible, sa valeur remplace la réponse générée par l'IA.
     boutonValider.addEventListener("click", () => {
-        modifierStatut(reponse.id, "validée", champCommentaire.value);
+        const valeurAjustee = champEdition.style.display !== "none" ? champEdition.value : null;
+        modifierStatut(reponse.id, "validée", champCommentaire.value, valeurAjustee);
     });
 
     // Quand on clique Rejeter, on envoie le statut "rejetée".
@@ -244,8 +258,9 @@ function afficherReponse(reponse) {
 }
 
 
-// Envoie au backend le nouveau statut d’une réponse.
-async function modifierStatut(reponseId, statut, commentaire) {
+// Envoie au backend le nouveau statut d’une réponse — valeur est optionnelle (null = pas de
+// correction, on garde la valeur générée par l'IA telle quelle, voir schemas/reponse.py).
+async function modifierStatut(reponseId, statut, commentaire, valeur = null) {
     // Appelle la route PATCH /reponses/{id}/statut.
     await fetch(`${API_URL}/reponses/${reponseId}/statut`, {
         method: "PATCH",
@@ -255,6 +270,7 @@ async function modifierStatut(reponseId, statut, commentaire) {
         body: JSON.stringify({
             statut: statut,
             commentaire: commentaire,
+            valeur: valeur,
         }),
     });
 

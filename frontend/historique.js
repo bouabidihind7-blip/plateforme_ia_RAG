@@ -188,7 +188,7 @@ function afficherHistoriqueParQuestion(historique) {
             <p class="tentative-valeur">${JSON.stringify(tentative.valeur)}</p>
             <span class="statut-mini ${tentative.statut}">${tentative.statut}</span>
             ${tentative.commentaire_validation ? `<p class="tentative-commentaire">« ${tentative.commentaire_validation} »</p>` : ""}
-            <p class="tentative-meta">${tentative.modele_ia} · Généré le ${formaterDate(tentative.date_generation)}</p>
+            <p class="tentative-meta">Généré le ${formaterDate(tentative.date_generation)}</p>
         `;
 
         carteActuelle.appendChild(blocTentative);

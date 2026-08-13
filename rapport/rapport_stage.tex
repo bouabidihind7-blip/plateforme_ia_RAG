@@ -1,0 +1,609 @@
+% ============================================================================
+% RAPPORT DE STAGE — template autonome (classe report standard, aucune classe
+% d'école requise). Compile tel quel sur Overleaf ou en local (pdflatex x2 +
+% bibtex si tu remplis la bibliographie). Cherche "TODO" pour les endroits à
+% compléter avec tes propres infos/captures/résultats.
+% ============================================================================
+
+\documentclass[12pt,a4paper]{report}
+
+% ---------- Langue et encodage ----------
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% ---------- Mise en page ----------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---------- Images, couleurs, liens ----------
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Bleu foncé de l'entreprise (même couleur que --blue-night sur la
+% plateforme) — accent discret sur les titres, reste du texte en noir.
+\definecolor{bleufonce}{HTML}{162838}
+% Jaune de l'entreprise (--yellow sur la plateforme) — touche de couleur sur
+% la page de garde uniquement, pas ailleurs (trop vif pour du texte courant).
+\definecolor{jauneentreprise}{HTML}{f0ff00}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=bleufonce,
+    citecolor=bleufonce,
+    urlcolor=bleufonce,
+    pdftitle={Rapport de stage},
+}
+
+% ---------- Couleur des titres de chapitre/section ----------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries\color{bleufonce}}
+    {\Large\chaptertitlename\ \thechapter}
+    {10pt}
+    {\Huge}
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{bleufonce}}
+    {\thesection}{1em}{}
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\color{bleufonce}}
+    {\thesubsection}{1em}{}
+
+% ---------- Extraits de code (pour montrer des snippets Python/SQL/JS) ----------
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    backgroundcolor=\color{gray!5},
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+}
+
+% ---------- En-têtes / pieds de page ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% ---------- Tableaux ----------
+\usepackage{array}
+\usepackage{booktabs}
+
+\begin{document}
+
+% ============================================================================
+% PAGE DE GARDE
+% ============================================================================
+\begin{titlepage}
+    \centering
+    \vspace*{-3.3cm}
+
+    % En-tête à 2 logos, coincés dans les coins tout en haut de la page (pas
+    % centrés plus bas) : ENSA collé au bord gauche, Université Hassan
+    % Premier collé au bord droit. \makebox à largeur fixe (pas \hfill) pour
+    % éviter tout conflit avec le \centering global de titlepage.
+    \noindent
+    \makebox[0.5\linewidth][l]{\includegraphics[width=3cm]{ensa.jpeg}}%
+    \makebox[0.5\linewidth][r]{\includegraphics[width=3cm]{hassan.jpeg}}
+
+    \vspace{0.2cm}
+    \small
+    \textbf{UNIVERSITÉ HASSAN PREMIER}\\[0.5mm]
+    \textbf{ÉCOLE NATIONALE DES SCIENCES APPLIQUÉES DE BERCHID}
+
+    \vspace{0.5cm}
+    {\Large\bfseries Rapport de Stage}\\[0.2cm]
+    {\large Filière : Ingénierie des Systèmes d'Information et Big Data}
+
+    % Logo entreprise, petit et centré — même position que le logo "IHD" de
+    % ton modèle (sous la filière, avant le titre du projet).
+    \vspace{0.3cm}
+    \colorbox{bleufonce}{\includegraphics[width=3.2cm]{1st-logo.png}}
+
+    \vspace{0.5cm}
+    {\color{bleufonce}\rule{\linewidth}{0.6mm}}\\[0.5mm]
+    {\color{jauneentreprise}\rule{\linewidth}{0.6mm}}\\[0.3cm]
+    {\huge\bfseries\color{bleufonce} Plateforme de génération et de validation
+    de réponses aux formulaires assistée par IA}\\[0.3cm]
+    {\color{jauneentreprise}\rule{\linewidth}{0.6mm}}\\[0.5mm]
+    {\color{bleufonce}\rule{\linewidth}{0.6mm}}
+
+    \vspace{0.9cm}
+    {\large Présenté par :}\\[0.15cm]
+    {\large\bfseries Hind Bouabidi}
+
+    \vspace{0.7cm}
+    {\large Encadrée par :}\\[0.2cm]
+    \begin{tabular}{ll}
+        \textbf{Pr. Nafidi} & Encadrant à l'ENSA Berchid \\
+        \textbf{M. Issam Salmi} & Encadrant à 3D Smart Factory \\
+    \end{tabular}
+
+    \vspace{0.5cm}
+    {\small 3D Smart Factory --- \url{https://3dsmartfactory.csit.ma/}}
+
+    \vfill
+    {\large Année Universitaire : 2025 -- 2026}
+\end{titlepage}
+
+% ============================================================================
+% REMERCIEMENTS
+% ============================================================================
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+
+% Brouillon à personnaliser — ajoute des détails concrets et vrais sur ton
+% vécu du stage (une anecdote, ce que tu as le plus appris...), ça rend le
+% texte plus sincère qu'une formule toute faite.
+
+Je tiens à exprimer ma sincère gratitude à toutes les personnes qui ont
+contribué, de près ou de loin, à la réussite de ce stage.
+
+Mes remerciements s'adressent en premier lieu à M. Issam Salmi, mon
+encadrant au sein de 3D Smart Factory, pour sa disponibilité constante, ses
+conseils avisés, sa patience et la confiance qu'il m'a accordée tout au long
+de ce projet. Son accompagnement méthodique, étape par étape, m'a permis de
+comprendre en profondeur chaque choix technique plutôt que de me contenter
+de les appliquer, et d'aborder ce stage avec une véritable démarche
+d'apprentissage.
+
+Je tiens également à remercier chaleureusement M. Bertin, fondateur de
+3D Smart Factory, pour son accueil bienveillant, sa disponibilité et la
+gentillesse dont il a fait preuve lors de nos échanges, qui ont
+grandement contribué à mon intégration au sein de l'entreprise.
+
+Je remercie également l'ensemble de l'équipe de 3D Smart Factory pour leur
+accueil chaleureux, leur bonne humeur et leur soutien pendant toute la
+durée du stage, qui ont fait de cette expérience un moment aussi
+formateur qu'agréable.
+
+Je souhaite exprimer ma profonde reconnaissance à Pr. Nafidi, mon
+encadrant au sein de l'École Nationale des Sciences Appliquées de Berchid,
+pour son suivi rigoureux, ses conseils précieux et sa disponibilité tout au
+long de ce stage, ainsi que pour le temps qu'il a consacré à orienter et
+enrichir ce travail.
+
+Mes remerciements vont aussi à l'ensemble du corps professoral et
+administratif de l'École Nationale des Sciences Appliquées de Berchid,
+pour la qualité de la formation reçue, qui m'a permis d'aborder ce stage
+avec les bases théoriques et pratiques nécessaires.
+
+Je remercie également les membres du jury pour l'intérêt qu'ils ont bien
+voulu porter à ce travail en acceptant de l'évaluer.
+
+Enfin, je remercie ma famille et mes proches pour leur soutien
+inconditionnel et leurs encouragements tout au long de ce parcours, ainsi
+que toute personne ayant contribué, directement ou indirectement, à
+l'aboutissement de ce travail.
+
+% ============================================================================
+% RÉSUMÉ / ABSTRACT
+% ============================================================================
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+
+% Brouillon basé sur le projet réel — ajuste les chiffres/détails si tu en
+% as de plus précis (nombre de formulaires testés, temps de génération...).
+
+Ce rapport présente le travail réalisé dans le cadre d'un stage au sein de
+l'entreprise 3D Smart Factory, portant sur la conception d'une plateforme de
+traitement automatisé de formulaires en ligne. Le traitement manuel des
+formulaires (Google Forms et Microsoft Forms) — extraction des questions,
+rédaction des réponses, vérification — étant lent et répétitif, l'objectif
+du stage a été de construire une plateforme capable d'automatiser ce
+processus tout en conservant un contrôle humain avant toute publication.
+
+Le système développé repose sur trois étapes : un pipeline d'extraction qui
+récupère automatiquement la structure d'un formulaire depuis son URL, un
+agent d'intelligence artificielle (basé sur le modèle Gemini) qui génère des
+propositions de réponses adaptées à chaque question, et une interface web
+de validation humaine permettant de valider, rejeter ou commenter chaque
+réponse avant utilisation. Un historique complet conserve également toutes
+les tentatives de réponse, y compris celles rejetées.
+
+La plateforme a été développée avec Python (FastAPI) côté backend,
+PostgreSQL comme base de données, et JavaScript côté frontend. Le résultat
+est une application web fonctionnelle, testée sur des formulaires réels, qui
+réduit significativement le temps de traitement manuel tout en gardant
+l'humain décisionnaire final sur chaque réponse publiée.
+
+\textbf{Mots-clés :} intelligence artificielle, extraction de données,
+FastAPI, PostgreSQL, automatisation, validation humaine.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+This report presents the work carried out during an internship at 3D Smart
+Factory, focused on designing a platform for the automated processing of
+online forms. Manually processing forms (Google Forms and Microsoft
+Forms) — extracting questions, drafting answers, reviewing them — is slow
+and repetitive; the goal of this internship was to build a platform that
+automates this process while keeping a human in control before any
+publication.
+
+The system relies on three steps: an extraction pipeline that automatically
+retrieves a form's structure from its URL, an artificial intelligence agent
+(based on the Gemini model) that generates proposed answers tailored to
+each question, and a human validation web interface allowing each answer to
+be approved, rejected, or commented on before use. A complete history also
+keeps every answer attempt, including rejected ones.
+
+The platform was built with Python (FastAPI) on the backend, PostgreSQL as
+the database, and JavaScript on the frontend. The result is a working web
+application, tested on real forms, that significantly reduces manual
+processing time while keeping a human as the final decision-maker on every
+published answer.
+
+\textbf{Keywords:} artificial intelligence, data extraction, FastAPI,
+PostgreSQL, automation, human-in-the-loop validation.
+
+% ============================================================================
+% SOMMAIRE
+% ============================================================================
+\tableofcontents
+% \listoffigures   % à réactiver une fois les diagrammes du Chapitre 2 ajoutés
+% \listoftables  % décommente si tu ajoutes des tableaux
+
+% ============================================================================
+% INTRODUCTION GÉNÉRALE
+% ============================================================================
+\chapter*{Introduction générale}
+\addcontentsline{toc}{chapter}{Introduction générale}
+
+% Brouillon basé sur le projet réel — ajuste le ton/les détails si besoin,
+% notamment la dernière phrase de chaque paragraphe (transitions).
+
+Dans un contexte où la digitalisation des processus internes devient un
+levier essentiel de compétitivité pour les entreprises, la collecte
+d'informations via des formulaires en ligne (Google Forms, Microsoft Forms)
+s'est imposée comme une pratique courante. Cependant, le traitement de ces
+formulaires — l'extraction des questions posées, la rédaction de réponses
+adaptées, puis leur vérification avant publication — reste, dans de
+nombreux cas, une tâche manuelle, répétitive et chronophage, réalisée sans
+réel outillage.
+
+C'est dans ce cadre que s'inscrit le présent stage, effectué au sein de
+l'entreprise 3D Smart Factory, dont la mission consiste à accompagner la
+création et le développement de startups dans différents domaines
+d'activité. L'entreprise a exprimé le besoin de disposer d'un outil capable
+d'automatiser une partie de ce processus de traitement de formulaires, tout
+en conservant un contrôle humain sur chaque réponse avant son utilisation
+finale — une automatisation complète, sans validation humaine, présentant
+un risque trop important d'erreurs ou de réponses inadaptées.
+
+L'objectif général de ce stage a donc été de concevoir et de développer une
+plateforme web permettant, d'une part, d'extraire automatiquement la
+structure d'un formulaire à partir de son URL, d'autre part, de générer des
+propositions de réponses pertinentes grâce à un agent d'intelligence
+artificielle, et enfin, de soumettre chacune de ces propositions à une
+validation humaine avant toute publication. Un historique complet des
+réponses générées, y compris celles rejetées, devait également être
+accessible, afin de conserver une traçabilité totale du processus.
+
+Ce rapport présente l'ensemble de la démarche suivie pour répondre à cet
+objectif. Le premier chapitre situe le contexte général du stage, la
+problématique traitée et les objectifs fixés. Le deuxième chapitre est
+consacré à la conception et à la modélisation de la solution, à travers le
+cahier des charges, l'architecture générale et les principaux diagrammes.
+Le troisième chapitre présente l'étude technique menée et les outils
+retenus pour la réalisation. Le quatrième chapitre détaille la réalisation
+concrète de la plateforme, de l'extraction des formulaires jusqu'à
+l'interface de validation humaine. Enfin, le cinquième chapitre revient sur
+les tests effectués, les résultats obtenus, ainsi que les principales
+difficultés rencontrées et les solutions apportées.
+
+% ============================================================================
+% CHAPITRE 1 — CONTEXTE GÉNÉRAL
+% ============================================================================
+\chapter{Contexte général}
+
+\section{Présentation de l'entreprise}
+% Brouillon basé sur les infos publiques de l'entreprise (site officiel) —
+% complète avec des détails internes si tu en as (nombre d'employés,
+% projets en cours, organigramme...).
+
+3D Smart Factory est une structure mixte marocaine dont la mission
+s'étend de la recherche à la création d'activités socio-économiques, à
+travers l'accompagnement de startups issues de domaines variés. L'entreprise
+se positionne ainsi comme un véritable incubateur, prenant en charge les
+porteurs de projets depuis la phase de développement d'une idée jusqu'à sa
+concrétisation, en passant par la planification, l'exécution et l'analyse
+des résultats obtenus.
+
+Dans le cadre de ses activités internes, 3D Smart Factory traite un volume
+important de formulaires en ligne (candidatures, demandes diverses,
+enquêtes de satisfaction...), dont le traitement nécessitait jusqu'ici une
+intervention manuelle systématique.
+
+\section{Contexte et problématique}
+
+Le traitement d'un formulaire en ligne suit généralement trois étapes :
+l'identification des questions posées, la rédaction d'une réponse adaptée à
+chacune d'elles, puis une relecture avant validation finale. Réalisées
+manuellement, ces étapes présentent plusieurs limites :
+
+\begin{itemize}
+    \item un temps de traitement important, en particulier lorsque le
+    nombre de formulaires ou de questions par formulaire est élevé ;
+    \item un risque d'incohérence dans les réponses, notamment lorsque
+    plusieurs personnes interviennent sur des formulaires similaires ;
+    \item une tâche répétitive, à faible valeur ajoutée, qui mobilise du
+    temps qui pourrait être consacré à des activités plus stratégiques.
+\end{itemize}
+
+La problématique centrale de ce stage a donc été la suivante : comment
+automatiser la génération de réponses aux formulaires en ligne, tout en
+garantissant que chaque réponse publiée reste fiable et pertinente ? Cette
+question a orienté l'ensemble des choix effectués tout au long du projet,
+en particulier le choix de conserver un contrôle humain systématique avant
+toute publication, plutôt que de viser une automatisation complète.
+
+\section{Objectifs du stage}
+
+Les objectifs fixés pour ce stage peuvent être résumés ainsi :
+
+\begin{itemize}
+    \item concevoir un pipeline d'extraction capable de récupérer
+    automatiquement la structure d'un formulaire (questions, types de
+    réponse attendus, options, grilles...) à partir de son URL, que le
+    formulaire provienne de Google Forms ou de Microsoft Forms ;
+    \item développer un agent d'intelligence artificielle capable de
+    générer des propositions de réponses pertinentes pour chaque question
+    extraite ;
+    \item mettre en place une interface de validation humaine permettant
+    de valider, rejeter ou commenter chaque réponse proposée avant son
+    utilisation, ainsi qu'un historique complet conservant toutes les
+    tentatives de réponse ;
+    \item fournir une véritable application web fonctionnelle, utilisable
+    au quotidien, plutôt qu'une simple suite de scripts exécutés
+    manuellement en ligne de commande.
+\end{itemize}
+
+% ============================================================================
+% CHAPITRE 2 — CONCEPTION ET MODÉLISATION
+% ============================================================================
+\chapter{Conception et modélisation}
+
+\section{Cahier des charges}
+
+\subsection{Besoins fonctionnels}
+
+La plateforme doit permettre à son utilisateur de :
+
+\begin{itemize}
+    \item importer un formulaire à partir de son URL (Google Forms ou
+    Microsoft Forms) ;
+    \item extraire automatiquement les questions du formulaire importé ;
+    \item générer, via un agent d'intelligence artificielle, une proposition
+    de réponse pour chaque question ;
+    \item valider une réponse proposée ;
+    \item rejeter une réponse proposée, avec un commentaire optionnel
+    expliquant le rejet ;
+    \item relancer le traitement sur un formulaire déjà traité, sans
+    régénérer les réponses déjà validées ou en attente — seules les
+    questions dont la dernière réponse a été rejetée sont régénérées ;
+    \item corriger manuellement une réponse proposée avant de la valider,
+    lorsque la régénération par l'IA ne suffit pas à corriger le problème ;
+    \item consulter l'historique complet des réponses d'un formulaire,
+    y compris les tentatives rejetées.
+\end{itemize}
+
+\subsection{Besoins non fonctionnels}
+
+\begin{itemize}
+    \item \textbf{Rapidité} : éviter de régénérer inutilement une réponse
+    déjà validée ou déjà proposée, pour ne pas ralentir le traitement ni
+    solliciter l'IA sans raison.
+    \item \textbf{Absence de doublons} : un même formulaire ne doit pouvoir
+    être importé qu'une seule fois, et une question déjà répondue ne doit
+    pas apparaître plusieurs fois dans la file d'attente de validation.
+    \item \textbf{Traçabilité} : conserver un historique complet de toutes
+    les réponses générées, y compris les rejetées, plutôt que de les
+    supprimer.
+    \item \textbf{Simplicité de maintenance} : l'application devant être
+    développée et maintenue par une seule personne pendant le stage, les
+    choix techniques ont privilégié la simplicité (pas de framework
+    frontend, pas d'outil d'orchestration) plutôt que des solutions plus
+    complexes mais surdimensionnées pour ce contexte.
+\end{itemize}
+
+\section{Architecture générale}
+
+La plateforme repose sur un pipeline en trois étapes successives :
+
+\begin{enumerate}
+    \item \textbf{Extraction} : à partir de l'URL d'un formulaire Google
+    Forms ou Microsoft Forms, un script d'extraction récupère la structure
+    complète du formulaire (questions, types de réponse attendus, options,
+    grilles, images éventuelles avec reconnaissance optique de caractères).
+    \item \textbf{Génération} : les questions extraites sont transmises à
+    un agent d'intelligence artificielle, qui propose une réponse adaptée
+    à chacune d'elles.
+    \item \textbf{Validation humaine} : chaque réponse proposée est
+    soumise à un utilisateur, qui peut la valider, la rejeter, ou la
+    corriger manuellement avant utilisation finale.
+\end{enumerate}
+
+Techniquement, l'application est organisée en couches :
+
+\begin{itemize}
+    \item les \textbf{scripts d'extraction} (Python), responsables de
+    récupérer et structurer les données brutes des formulaires ;
+    \item une \textbf{base de données PostgreSQL}, qui stocke les
+    formulaires, leurs questions et les réponses générées, et sert de
+    source unique de vérité entre les différentes étapes ;
+    \item un \textbf{backend FastAPI}, qui expose une API REST reliant
+    l'extraction, la génération IA et la base de données ;
+    \item un \textbf{frontend} en HTML/CSS/JavaScript, qui offre
+    l'interface d'import, de traitement et de validation.
+\end{itemize}
+
+% Exemple de figure — remplace par un vrai schéma d'architecture.
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{architecture.png}
+%     \caption{Architecture générale de la plateforme}
+%     \label{fig:architecture}
+% \end{figure}
+
+\section{Diagramme de cas d'utilisation}
+TODO : qui utilise la plateforme (toi/le validateur humain) et pour quoi
+faire — importer un formulaire, lancer un traitement, valider/rejeter une
+réponse, consulter l'historique. Un diagramme de cas d'utilisation UML
+simple suffit (un acteur, quatre cas d'utilisation).
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{diagramme_cas_utilisation.png}
+%     \caption{Diagramme de cas d'utilisation}
+%     \label{fig:cas-utilisation}
+% \end{figure}
+
+\section{Diagramme de classes / modèle de données}
+TODO : les tables principales et leurs relations — \texttt{formulaires}
+(1) $\rightarrow$ (N) \texttt{questions} (1) $\rightarrow$ (N)
+\texttt{reponses\_proposees}, et \texttt{questions} (1) $\rightarrow$ (N)
+\texttt{grille\_lignes}/\texttt{grille\_colonnes} pour les questions de type
+grille. Tu peux dessiner ça comme un diagramme de classes UML ou un schéma
+entité-association, selon ce que ton école préfère.
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.85\textwidth]{diagramme_classes.png}
+%     \caption{Modèle de données}
+%     \label{fig:diagramme-classes}
+% \end{figure}
+
+\section{Diagramme de séquence}
+TODO : le déroulement d'une action clé dans le temps, par exemple "importer
+un formulaire et générer ses réponses" : Frontend $\rightarrow$ Backend
+$\rightarrow$ extraction $\rightarrow$ base de données $\rightarrow$ appel à
+l'IA $\rightarrow$ enregistrement des réponses $\rightarrow$ retour au
+frontend.
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.85\textwidth]{diagramme_sequence.png}
+%     \caption{Diagramme de séquence — import et génération}
+%     \label{fig:diagramme-sequence}
+% \end{figure}
+
+% ============================================================================
+% CHAPITRE 3 — ÉTUDE TECHNIQUE ET OUTILS UTILISÉS
+% ============================================================================
+\chapter{Étude technique et outils utilisés}
+
+\section{Choix technologiques}
+TODO : explique et justifie chaque choix (utilise ce que tu as déjà expliqué
+avec Claude Code pendant le stage) :
+\begin{itemize}
+    \item \textbf{FastAPI} plutôt que Flask : TODO (typage Pydantic natif,
+    validation automatique des schémas...).
+    \item \textbf{PostgreSQL} avec SQL brut (SQLAlchemy Core, pas l'ORM) :
+    TODO (contrôle total sur les contraintes CHECK, requêtes complexes comme
+    \texttt{DISTINCT ON}).
+    \item \textbf{JavaScript natif} (pas de framework comme React) côté
+    frontend : TODO (petite app, état simple, pas d'étape de compilation).
+    \item \textbf{Gemini} comme modèle IA : TODO.
+\end{itemize}
+
+\section{Environnement de développement}
+TODO : les outils utilisés au quotidien (VS Code, Git/GitHub, WSL, Postman ou
+curl pour tester l'API...).
+
+% ============================================================================
+% CHAPITRE 4 — RÉALISATION
+% ============================================================================
+\chapter{Réalisation}
+
+\section{Pipeline d'extraction}
+TODO : explique comment les formulaires Google/Microsoft Forms sont récupérés
+et transformés en JSON structuré (types de questions, grilles, OCR...).
+
+\section{Agent IA de génération de réponses}
+TODO : explique \texttt{ia\_service.py} — comment le prompt est construit,
+comment le modèle est appelé, la gestion du parallélisme
+(\texttt{ThreadPoolExecutor}), la détection de langue, etc.
+
+\section{Backend et base de données}
+TODO : décris les routes principales de l'API et les tables clés
+(\texttt{formulaires}, \texttt{questions}, \texttt{reponses\_proposees}...).
+Tu peux inclure un extrait de route ici :
+
+\begin{lstlisting}[language=Python, caption={Exemple de route FastAPI}]
+@app.get("/formulaires/{formulaire_id}/historique")
+def lire_historique_formulaire(formulaire_id: int):
+    historique = lister_historique_formulaire(formulaire_id)
+    return {
+        "formulaire_id": formulaire_id,
+        "nombre_reponses": len(historique),
+        "historique": historique,
+    }
+\end{lstlisting}
+
+\section{Frontend et interface de validation}
+TODO : décris les pages construites (accueil : import + traitement +
+validation ; historique : liste des formulaires + détail par question) et
+quelques choix d'ergonomie (badges par fournisseur, recherche en direct,
+message clair au lieu d'erreurs techniques...).
+
+% ============================================================================
+% CHAPITRE 4 — TESTS, RÉSULTATS ET DIFFICULTÉS RENCONTRÉES
+% ============================================================================
+\chapter{Tests, résultats et difficultés rencontrées}
+
+\section{Méthodologie de test}
+TODO : explique que les tests ont été faits manuellement sur de vrais
+formulaires (~50 formulaires réels testés au fil du stage), en observant les
+logs backend pour diagnostiquer chaque bug avant de le corriger.
+
+\section{Résultats obtenus}
+TODO : donne des chiffres concrets si tu en as (nombre de formulaires testés,
+temps de génération, taux de réponses correctes...).
+
+\section{Difficultés rencontrées et solutions}
+TODO : raconte 2-3 vrais problèmes rencontrés et comment tu les as résolus
+— par exemple :
+\begin{itemize}
+    \item Une erreur 500 non gérée bloquait le CORS et empêchait le frontend
+    de lire la vraie cause de l'échec (formulaire déjà importé).
+    \item Le regroupement des réponses par question (\texttt{DISTINCT ON})
+    pour éviter d'afficher plusieurs fois la même question après un rejet
+    suivi d'une régénération.
+\end{itemize}
+
+% ============================================================================
+% CONCLUSION GÉNÉRALE
+% ============================================================================
+\chapter*{Conclusion générale et perspectives}
+\addcontentsline{toc}{chapter}{Conclusion générale et perspectives}
+
+TODO : résume ce qui a été accompli, ce que tu as appris pendant le stage
+(techniquement et humainement), et les perspectives d'évolution possibles
+(multi-modèles IA, pagination si beaucoup de formulaires, tests automatisés...).
+
+% ============================================================================
+% BIBLIOGRAPHIE
+% ============================================================================
+\begin{thebibliography}{9}
+    % TODO : ajoute tes vraies sources (documentation FastAPI, PostgreSQL,
+    % Gemini API, etc.)
+    \bibitem{fastapi} Documentation officielle FastAPI, \url{https://fastapi.tiangolo.com/}
+    \bibitem{postgresql} Documentation officielle PostgreSQL, \url{https://www.postgresql.org/docs/}
+\end{thebibliography}
+
+% ============================================================================
+% ANNEXES
+% ============================================================================
+\appendix
+\chapter{Annexes}
+TODO : captures d'écran de l'application, extraits de code plus longs,
+exemples de JSON extraits, etc.
+
+\end{document}

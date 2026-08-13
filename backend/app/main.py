@@ -104,6 +104,7 @@ def changer_statut_reponse(
         reponse_id=reponse_id,
         statut=modification.statut,
         commentaire=modification.commentaire,
+        valeur=modification.valeur,
     )
 
     # Si l’id n’existe pas, aucune réponse n’a été modifiée.

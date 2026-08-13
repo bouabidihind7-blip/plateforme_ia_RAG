@@ -470,17 +470,21 @@ def trouver_url_image_pour_question(html, identifiant_google):
     # remonter accidentellement l’image d’une autre question plus loin dans la page.
     fenetre = html[position:position + 5000]
 
-    # [^"\\ )] exclut aussi la parenthèse fermante : une vraie URL de ce type n’en contient
-    # jamais, sa présence signale qu’on a dérivé dans un "background-image: url(...)" CSS.
+    # Cherche directement la vraie balise <img src="..."> plutôt qu'un domaine précis —
+    # Google a déjà servi ces images depuis au moins 2 domaines différents
+    # (lh7-rt.googleusercontent.com/formsz ET docs.google.com/forms-images-rt, ce dernier
+    # découvert le 2026-08-13), donc une liste de domaines fixe recasse à chaque nouveau
+    # domaine. La fenêtre de 5000 caractères ANCRÉE sur l'identifiant de la question (pas
+    # le domaine) reste ce qui empêche le vieux bug de "mélange d'images entre questions".
     correspondance = re.search(
-        r"https?://lh7-rt\.googleusercontent\.com/formsz/[^\"\\ )]*",
+        r'<img[^>]*\bsrc="(https?://[^"]+)"',
         fenetre
     )
 
     if not correspondance:
         return None
 
-    url = correspondance.group()
+    url = correspondance.group(1)
 
     # Une vraie URL d’image de ce type dépasse rarement 400 caractères (constaté en
     # conditions réelles) : au-delà, c’est le signe que la regex a quand même dérivé.

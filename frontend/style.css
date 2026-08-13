@@ -644,6 +644,21 @@ select {
     line-height: 1.45;
 }
 
+.edition-reponse {
+    margin: 0 0 14px;
+}
+
+.ajuster {
+    margin: 0 0 18px;
+    padding: 8px 16px;
+    border: 1px solid var(--blue-night);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--blue-night);
+    font-size: 13px;
+    font-weight: 900;
+}
+
 .historique {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

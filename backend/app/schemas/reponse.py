@@ -14,3 +14,8 @@ class StatutReponseModification(BaseModel):
 
     # Commentaire facultatif ajouté par l’humain lors de la validation ou du rejet.
     commentaire: str | None = None
+
+    # Valeur corrigée à la main par l’humain (bouton "Ajuster" dans le frontend) — quand
+    # elle est fournie, elle remplace la réponse proposée par l’IA. None = pas de correction,
+    # on garde la valeur générée par l’IA telle quelle.
+    valeur: str | None = None

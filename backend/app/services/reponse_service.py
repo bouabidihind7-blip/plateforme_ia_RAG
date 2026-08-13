@@ -84,22 +84,28 @@ def lister_reponses_proposees() -> list[dict]:
     
 
 
-# Modifie le statut d’une réponse proposée.
+# Modifie le statut d’une réponse proposée — et, si l’humain a corrigé le texte via le
+# bouton "Ajuster", sa valeur aussi.
 def modifier_statut_reponse(
     reponse_id: int,
     statut: str,
     commentaire: str | None = None,
+    valeur: str | None = None,
 ) -> dict | None:
     # Ouvre une session avec PostgreSQL.
     with SessionLocal() as session:
 
-        # Met à jour le statut et le commentaire de la réponse demandée.
+        # COALESCE(CAST(:valeur AS jsonb), valeur) : si valeur est None (pas de correction),
+        # CAST(NULL AS jsonb) reste NULL, donc COALESCE garde l’ancienne valeur en base —
+        # sinon, la nouvelle valeur (encodée en JSON, même format que enregistrer_reponse_proposee)
+        # remplace l’ancienne.
         resultat = session.execute(
             text("""
                 UPDATE reponses_proposees
                 SET
                     statut = :statut,
                     commentaire_validation = :commentaire,
+                    valeur = COALESCE(CAST(:valeur AS jsonb), valeur),
                     date_modification = CURRENT_TIMESTAMP
                 WHERE id = :reponse_id
                 RETURNING
@@ -117,6 +123,7 @@ def modifier_statut_reponse(
                 "reponse_id": reponse_id,
                 "statut": statut,
                 "commentaire": commentaire,
+                "valeur": json.dumps(valeur, ensure_ascii=False) if valeur is not None else None,
             },
         )
 
