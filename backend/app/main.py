@@ -36,7 +36,7 @@ from backend.app.services.reponse_service import (
 # backend, donc on l'ajoute au chemin de recherche des modules Python pour pouvoir importer
 # ses scripts d'ingestion directement, sans les dupliquer ici.
 sys.path.append(str(_RACINE_PROJET / "rag"))
-import ingest_pdf
+import standardiser_document
 import ingest_txt
 import ingest_tabulaire
 
@@ -220,11 +220,42 @@ def recevoir_formulaire_depuis_url(url: str):
 
 RAG_DOCUMENTS_DIR = _RACINE_PROJET / "rag_documents"
 
-# Associe chaque extension supportée à la fonction d'ingestion du bon script — un PDF passe
-# par ingest_pdf.main(), un Excel/CSV par ingest_tabulaire.main() (les deux formats partagent
-# déjà le même script), un TXT par ingest_txt.main().
+
+# Tous les formats "à mise en page" que Docling sait nativement décoder (vérifié dans
+# DocumentConverter().allowed_formats) — une seule liste, réutilisée pour le glob() ci-dessous
+# ET pour EXTENSIONS_VERS_INGESTION, pour ne jamais avoir à mettre à jour 2 endroits séparés
+# si un format est ajouté/retiré un jour.
+EXTENSIONS_MISE_EN_PAGE = [".pdf", ".docx", ".doc", ".pptx", ".html", ".odt"]
+
+
+# Un seul pipeline pour tous les documents à mise en page (voir retriever.py et
+# standardiser_document.py — DocumentConverter() de Docling détecte le format tout seul, tous
+# les formats de EXTENSIONS_MISE_EN_PAGE partagent donc exactement le même chemin, pas un
+# script par format) : Docling + découpage en lots + agent_standardisation, jamais un appel
+# direct sur tout le texte (qui perd du contenu sur un document volumineux), puis
+# ingest_txt.main() pour l'embedding. Idempotent : un document déjà standardisé (sortie déjà
+# présente) n'est jamais retraité, donc rappeler cette fonction sur tout le dossier (comme le
+# font déjà ingest_txt.main()/ingest_tabulaire.main()) ne fait le travail QUE pour les nouveaux
+# documents.
+def standardiser_et_ingerer_document():
+    chemins = [
+        chemin
+        for extension in EXTENSIONS_MISE_EN_PAGE
+        for chemin in RAG_DOCUMENTS_DIR.glob(f"*{extension}")
+    ]
+    for chemin_document in chemins:
+        chemin_sortie = RAG_DOCUMENTS_DIR / f"format_standard_{chemin_document.stem}.txt"
+        if not chemin_sortie.exists():
+            standardiser_document.main(str(chemin_document), str(chemin_sortie))
+    ingest_txt.main()
+
+
+# Associe chaque extension supportée à la fonction d'ingestion du bon script — un Excel/CSV
+# passe par ingest_tabulaire.main() (les deux formats partagent déjà le même script), un TXT
+# par ingest_txt.main(), tout format à mise en page par standardiser_et_ingerer_document()
+# (ci-dessus, même fonction pour tous — Docling détecte le format tout seul).
 EXTENSIONS_VERS_INGESTION = {
-    ".pdf": ingest_pdf.main,
+    **{extension: standardiser_et_ingerer_document for extension in EXTENSIONS_MISE_EN_PAGE},
     ".txt": ingest_txt.main,
     ".xlsx": ingest_tabulaire.main,
     ".csv": ingest_tabulaire.main,
@@ -247,7 +278,7 @@ async def recevoir_document_rag(
             raise HTTPException(
                 status_code=422,
                 detail=f"Format non supporté pour '{fichier.filename}' — "
-                       "seuls .pdf, .txt, .xlsx et .csv sont acceptés.",
+                       f"seuls {', '.join(sorted(EXTENSIONS_VERS_INGESTION))} sont acceptés.",
             )
 
         if (RAG_DOCUMENTS_DIR / fichier.filename).exists():
@@ -266,10 +297,10 @@ async def recevoir_document_rag(
             },
         )
 
-    # Sauvegarde chaque fichier dans rag_documents/ — le même dossier que les 3 scripts
+    # Sauvegarde chaque fichier dans rag_documents/ — le même dossier que les scripts
     # d'ingestion scannent déjà (jusqu'ici rempli à la main). fonctions_a_lancer est un set :
     # les fonctions Python sont hashables, donc si 3 PDF + 2 CSV arrivent dans le même lot,
-    # ingest_pdf.main et ingest_tabulaire.main n'y sont ajoutées qu'UNE fois chacune —
+    # standardiser_et_ingerer_document et ingest_tabulaire.main n'y sont ajoutées qu'UNE fois chacune —
     # inutile de ré-ingérer tout le dossier 5 fois pour 5 fichiers.
     fonctions_a_lancer = set()
     for fichier in fichiers:

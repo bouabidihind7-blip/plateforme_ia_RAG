@@ -141,28 +141,39 @@ def _invoquer_avec_reessai(chaine, texte_source: str) -> str:
     return chaine.invoke({"texte_source": texte_source})
 
 
-def standardiser_fichier(chemin_entree: str, chemin_sortie: str) -> None:
-    # Gemini a besoin d'un vrai message "human" en plus du "system" (sinon erreur "contents
-    # are required") — le texte source part donc dans le message human, pas dans le system.
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", SYSTEM_PROMPT),
-        ("human", "Texte source à transformer :\n\n{texte_source}"),
-    ])
-    # Clé API dédiée, séparée de GEMINI_API_KEY (utilisée par ia_service.py pour les vraies
-    # réponses aux utilisateurs) — projet Google Cloud distinct, donc quota distinct. Sinon,
-    # un traitement de standardisation en parallèle (plusieurs appels à la fois) pourrait
-    # consommer le même quota que les réponses RAG en direct et les ralentir.
-    llm = ChatGoogleGenerativeAI(
-        model="gemini-3.5-flash-lite",
-        temperature=0.1,
-        google_api_key=os.getenv("GEMINI_API_KEY_STANDARDISATION"),
-    )
-    chaine = prompt | llm | StrOutputParser()
+# Chaîne construite UNE fois au niveau module (pas à chaque appel) — réutilisée par
+# standardiser_texte ET par standardiser_document.py (traitement par lot des gros PDF), pour ne
+# jamais dupliquer le prompt/modèle entre les deux usages.
+_prompt = ChatPromptTemplate.from_messages([
+    ("system", SYSTEM_PROMPT),
+    ("human", "Texte source à transformer :\n\n{texte_source}"),
+])
+# Clé API dédiée, séparée de GEMINI_API_KEY (utilisée par ia_service.py pour les vraies
+# réponses aux utilisateurs) — projet Google Cloud distinct, donc quota distinct. Sinon,
+# un traitement de standardisation en parallèle (plusieurs appels à la fois) pourrait
+# consommer le même quota que les réponses RAG en direct et les ralentir.
+_llm = ChatGoogleGenerativeAI(
+    model="gemini-3.5-flash-lite",
+    temperature=0.1,
+    google_api_key=os.getenv("GEMINI_API_KEY_STANDARDISATION"),
+)
+_chaine = _prompt | _llm | StrOutputParser()
 
+
+# Séparée de standardiser_fichier (ci-dessous) pour être réutilisable sur un simple MORCEAU
+# de texte (un lot), pas seulement un fichier entier — standardiser_document.py en a besoin pour
+# traiter un gros document par lots de ~3000 caractères plutôt qu'en un seul appel (voir le
+# commentaire sur ce module : un trop long texte source en un seul appel fait perdre du
+# contenu par résumé implicite du LLM, indépendamment de ce garde-fou de longueur).
+def standardiser_texte(texte_source: str) -> str:
+    return _invoquer_avec_reessai(_chaine, texte_source)
+
+
+def standardiser_fichier(chemin_entree: str, chemin_sortie: str) -> None:
     texte_source = extraire_texte(chemin_entree)
     print(f"Standardisation de {chemin_entree} ({len(texte_source)} caracteres source)...")
 
-    resultat = _invoquer_avec_reessai(chaine, texte_source)
+    resultat = standardiser_texte(texte_source)
 
     Path(chemin_sortie).write_text(resultat, encoding="utf-8")
     print(f"  -> {chemin_sortie} ({len(resultat)} caracteres produits)")

@@ -127,11 +127,20 @@ def main():
     ).delete_collection()
 
     print(f"Embedding and storing in Chroma collection '{COLLECTION}'...")
-    vectorstore = Chroma.from_documents(
-        documents=docs,
-        embedding=embeddings,
+    # Pas Chroma.from_documents() : même raison que dans ingest_txt.py — préfixe "passage: "
+    # requis par e5-small pour l'embedding, mais jamais stocké dans le texte affiché au LLM.
+    textes = [d.page_content for d in docs]
+    vecteurs = embeddings.embed_documents([f"passage: {t}" for t in textes])
+    vectorstore = Chroma(
         collection_name=COLLECTION,
+        embedding_function=embeddings,
         persist_directory=CHROMA_DIR,
+    )
+    vectorstore._collection.add(
+        ids=[str(i) for i in range(len(docs))],
+        embeddings=vecteurs,
+        documents=textes,
+        metadatas=[d.metadata for d in docs],
     )
     print(f"  Done. {vectorstore._collection.count()} vectors stored.")
 

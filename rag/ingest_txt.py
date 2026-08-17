@@ -187,11 +187,23 @@ def main():
             continue
 
         print(f"Embedding and storing {len(chunks_categorie)} chunk(s) in Chroma collection '{nom_collection}'...")
-        vectorstore = Chroma.from_documents(
-            documents=chunks_categorie,
-            embedding=embeddings,
+        # Pas Chroma.from_documents() (qui embedderait page_content TEL QUEL) : e5-small est
+        # entraîné avec un préfixe "passage: " pour tout texte comparé à une question (voir le
+        # même commentaire dans retriever.py) — mais ce préfixe ne doit JAMAIS apparaître dans
+        # le texte stocké/montré au LLM, seulement dans le texte donné au modèle pour calculer
+        # le vecteur. D'où les 2 étapes séparées : embedder le texte préfixé, stocker l'original.
+        textes = [c.page_content for c in chunks_categorie]
+        vecteurs = embeddings.embed_documents([f"passage: {t}" for t in textes])
+        vectorstore = Chroma(
             collection_name=nom_collection,
+            embedding_function=embeddings,
             persist_directory=CHROMA_DIR,
+        )
+        vectorstore._collection.add(
+            ids=[str(c.metadata["chunk_index"]) for c in chunks_categorie],
+            embeddings=vecteurs,
+            documents=textes,
+            metadatas=[c.metadata for c in chunks_categorie],
         )
         print(f"  Done. {vectorstore._collection.count()} vectors stored.")
 

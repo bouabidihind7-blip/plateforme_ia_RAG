@@ -1,9 +1,17 @@
 """
 Construit un retriever fusionné sur nos collections Chroma :
   - tabulaire_excel_csv : lignes Excel/CSV (1 ligne = 1 doc, pas de chunking)
-  - politique_pdf       : chunks du PDF de politique (RecursiveCharacterTextSplitter à l'ingestion)
   - qa_<categorie>      : les 7 collections par sujet (qa_rh/qa_it/qa_finance/qa_production/
     qa_commercial/qa_legal/qa_general).
+
+Il n'existe plus qu'UN SEUL pipeline d'ingestion PDF (Docling + agent_standardisation.py, tous
+les PDF finissent dans qa_<categorie>) — l'ancien pipeline séparé (ingest_pdf.py, collection
+"politique_pdf", RecursiveCharacterTextSplitter brut sans IA) a été retiré. Bug réel constaté :
+les deux pipelines pouvaient traiter le MÊME PDF en double (un ajouté à rag_documents/ pour le
+nouveau pipeline se faisait aussi ramasser par l'ancien, qui scannait tout le dossier sans
+distinction) — le score réel a chuté de 34/42 à 27/34 le jour où ça s'est produit. Avoir deux
+chemins d'ingestion concurrents pour le même type de fichier est structurellement fragile, pas
+juste risqué pour ce cas précis — d'où le retrait complet plutôt qu'un correctif ciblé.
 
 La catégorie d'une question est devinée par EMBEDDING LOCAL, pas par Gemini : on compare le
 vecteur de la question à 7 phrases de référence (une par catégorie), et on prend la plus
@@ -69,6 +77,7 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.runnables import RunnableLambda
 from langchain_core.documents import Document
+from sentence_transformers import CrossEncoder
 
 # Chemin absolu ancré sur ce fichier (pas relatif au dossier courant) : sinon, lancer ce
 # script — ou ia_service.py qui l'appelle — depuis un dossier différent de la racine du
@@ -128,18 +137,28 @@ def _similarite_cosinus(a: list[float], b: list[float]) -> float:
 
 
 def build_retriever(
-    k_tabulaire: int = 3,
-    k_qa: int = 6,
-    k_politique: int = 3,
+    k_tabulaire: int = 6,
+    k_qa: int = 15,
+    k_pool_reranker: int = 25,
+    k_filet_categories_restantes: int = 1,
 ) -> RunnableLambda:
     # embeddings (le modèle, ~450 Mo) est chargé UNE fois ici, réutilisé à chaque recherche —
     # c'est la partie coûteuse, pas besoin de la refaire à chaque question.
     embeddings = HuggingFaceEmbeddings(model_name=EMBED_MODEL)
+    # Reranker chargé UNE fois ici aussi (~1.1 Go, déjà en cache local) — voir le commentaire
+    # sur pool_reranker plus bas dans retrieve() pour le pourquoi.
+    reranker = CrossEncoder("BAAI/bge-reranker-base", max_length=512)
 
     # Vecteurs de TOUTES les phrases de référence, calculés UNE fois ici (pas à chaque
     # question) — une LISTE de vecteurs par catégorie, pas un seul.
+    # Préfixe "passage: " : e5-small est ENTRAÎNÉ avec des préfixes différents pour une
+    # question ("query: ") et pour le texte auquel on la compare ("passage: ") — sans ça, le
+    # modèle utilise une comparaison générique, plus sensible à la ressemblance de surface
+    # entre les deux textes qu'à leur vrai lien sémantique (cf. FAQ officielle du modèle :
+    # "otherwise you will see a performance degradation"). Ces phrases de référence jouent le
+    # rôle du "passage" comparé à la question, d'où le préfixe ici.
     vecteurs_reference = {
-        categorie: [embeddings.embed_query(phrase) for phrase in phrases]
+        categorie: [embeddings.embed_query(f"passage: {phrase}") for phrase in phrases]
         for categorie, phrases in PHRASES_REFERENCE.items()
     }
     # Renvoie les N_CATEGORIES catégories les plus proches (pas juste la gagnante) — chercher
@@ -181,7 +200,10 @@ def build_retriever(
         # gardée depuis le démarrage du serveur pointerait vers l'ancien, déjà supprimé (bug
         # réel constaté : "Collection ... does not exist" pendant qu'un upload de document
         # tournait en arrière-plan).
-        vecteur_question = embeddings.embed_query(query)
+        # Préfixe "query: " appliqué UNE fois ici, réutilisé pour toute la fonction (classification
+        # ET recherche Chroma) — voir le commentaire sur vecteurs_reference plus haut pour le pourquoi.
+        query_prefixee = f"query: {query}"
+        vecteur_question = embeddings.embed_query(query_prefixee)
         categories = set(deviner_categories(vecteur_question))
         # "general" est un filet de sécurité PARTAGÉ (contenu jamais étiqueté par l'agent) —
         # toujours interrogé EN PLUS des catégories devinées (bug réel constaté avant :
@@ -194,15 +216,9 @@ def build_retriever(
             embedding_function=embeddings,
             persist_directory=CHROMA_DIR,
         )
-        politique_store = Chroma(
-            collection_name="politique_pdf",
-            embedding_function=embeddings,
-            persist_directory=CHROMA_DIR,
-        )
 
         listes_par_collection = [
-            tabulaire_store.similarity_search_with_relevance_scores(query, k=k_tabulaire),
-            politique_store.similarity_search_with_relevance_scores(query, k=k_politique),
+            tabulaire_store.similarity_search_with_relevance_scores(query_prefixee, k=k_tabulaire),
         ]
         for categorie in categories:
             qa_store = Chroma(
@@ -210,7 +226,28 @@ def build_retriever(
                 embedding_function=embeddings,
                 persist_directory=CHROMA_DIR,
             )
-            listes_par_collection.append(qa_store.similarity_search_with_relevance_scores(query, k=k_qa))
+            listes_par_collection.append(qa_store.similarity_search_with_relevance_scores(query_prefixee, k=k_qa))
+
+        # Filet de sécurité étendu à TOUTES les catégories, pas juste le top N_CATEGORIES=3 :
+        # bug réel constaté ("Quel est le statut de l'imprimante FDM-03 ?") — "production"
+        # classée 4e à la classification (0.7819, juste sous "legal" à 0.7847), donc jamais
+        # cherchée, alors que sa bonne réponse était 1re dans SA collection (score 0.88). Le
+        # reranker (pas un LLM, gratuit, immunisé au biais de score entre collections — voir
+        # plus bas) sait très bien écarter un candidat non pertinent ; le vrai risque n'est pas
+        # de lui donner trop de candidats, mais de ne jamais lui en donner la chance. On récupère
+        # donc au moins le meilleur candidat (k_filet_categories_restantes) de CHAQUE catégorie
+        # exclue du top 3 — coût : quelques recherches Chroma locales de plus, gratuites.
+        # Vérifié en réel : corrige FDM-03 sans casser aucune des questions déjà correctes.
+        categories_restantes = set(PHRASES_REFERENCE) - categories
+        for categorie in categories_restantes:
+            qa_store = Chroma(
+                collection_name=f"qa_{categorie}",
+                embedding_function=embeddings,
+                persist_directory=CHROMA_DIR,
+            )
+            listes_par_collection.append(
+                qa_store.similarity_search_with_relevance_scores(query_prefixee, k=k_filet_categories_restantes)
+            )
 
         # Fusion par RANG (Reciprocal Rank Fusion), PAS par score brut — bug réel constaté :
         # le score cosinus n'est pas comparable entre collections de styles de texte différents.
@@ -233,7 +270,24 @@ def build_retriever(
             for rang, (document, _score_brut) in enumerate(liste, start=1)
         ]
         candidats_tries = sorted(candidats_rrf, key=lambda paire: paire[1], reverse=True)
-        resultats = [document for document, score in candidats_tries[:k_total]]
+
+        # Reranker (cross-encoder) : contrairement à l'embedding, qui compare 2 vecteurs
+        # calculés SÉPARÉMENT (perd des nuances fines entre candidats très proches en surface,
+        # ex : "0-2 ans : 15 jours" vs "3-5 ans : 20 jours" dans un même tableau), le reranker
+        # lit la question ET le candidat ENSEMBLE et donne un score de pertinence plus précis.
+        # On élargit donc le pool RRF (k_pool_reranker, pas juste k_total) avant de reranker,
+        # sinon le reranker n'aurait jamais la chance de repêcher un bon candidat classé un peu
+        # plus bas par RRF. Testé en réel sur 42 questions du corpus complet :
+        #   sans préfixes ni reranker (ancien)      : 34/42
+        #   + préfixes query:/passage: seuls         : 36/42
+        #   + préfixes ET reranker (ce choix)        : 37/42
+        # Gratuit (modèle local, ~1.1 Go, déjà téléchargé) — coût en temps : +1.1s/question
+        # environ, le reranker doit passer chaque candidat du pool dans tout le modèle.
+        pool_reranker = [document for document, score in candidats_tries[:k_pool_reranker]]
+        paires = [[query, document.page_content] for document in pool_reranker]
+        scores_reranker = reranker.predict(paires)
+        pool_reclasse = sorted(zip(pool_reranker, scores_reranker), key=lambda p: p[1], reverse=True)
+        resultats = [document for document, score in pool_reclasse[:k_total]]
 
         # Pour toute réponse SCINDÉE (bloc trop long à l'ingestion, voir decouper_par_bloc
         # dans ingest_txt.py), remplace le fragment retrouvé par le texte ORIGINAL complet
