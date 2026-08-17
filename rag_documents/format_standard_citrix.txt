@@ -1,0 +1,63 @@
+Catégorie : IT
+Q : Quelle est la première étape à réaliser en cas de problème avec Citrix ?
+R : La première étape en cas de problème avec Citrix consiste à vérifier que l'appareil de l'utilisateur est connecté au serveur Citrix, au réseau de l'entreprise par câble ou sans fil, et dispose d'une connexion Internet stable.
+
+Catégorie : IT
+Q : Que faut-il vérifier pour un utilisateur distant qui rencontre des problèmes avec Citrix ?
+R : Pour un utilisateur distant qui rencontre des problèmes avec Citrix, il faut confirmer qu'il est connecté au VPN.
+
+Catégorie : IT
+Q : Comment vérifier la version de Citrix Receiver sur un appareil Windows ?
+R : Sur un appareil Windows, pour vérifier la version de Citrix Receiver, il faut aller dans le Panneau de configuration, puis dans Programmes et fonctionnalités, et rechercher Citrix Receiver.
+
+Catégorie : IT
+Q : Comment vérifier la version de Citrix Receiver sur un appareil Mac ?
+R : Sur un appareil Mac, pour vérifier la version de Citrix Receiver, il faut aller dans Applications, sélectionner Citrix Receiver et cliquer sur À propos de Citrix Receiver.
+
+Catégorie : IT
+Q : Où faut-il comparer la version de Citrix Receiver pour savoir si elle est obsolète ?
+R : Il faut comparer la version de Citrix Receiver avec la dernière version disponible sur le site web de Citrix à l'adresse https://www.citrix.com/downloads/.
+
+Catégorie : IT
+Q : Que faut-il faire si la version de Citrix Receiver est obsolète ?
+R : Si la version de Citrix Receiver est obsolète, il faut mettre à jour Citrix Receiver vers la dernière version.
+
+Catégorie : IT
+Q : Comment vérifier l'authentification d'un utilisateur sur Citrix ?
+R : Pour vérifier l'authentification d'un utilisateur sur Citrix, il faut s'assurer que ses identifiants sont corrects et qu'il utilise la bonne méthode d'authentification comme le nom d'utilisateur avec le mot de passe, la carte à puce ou la biométrie.
+
+Catégorie : IT
+Q : Que faut-il faire si l'authentification par carte à puce ou biométrique pose problème sur Citrix ?
+R : En cas de problème avec l'authentification par carte à puce ou biométrique sur Citrix, il faut vérifier que l'appareil est correctement configuré et que les identifiants de l'utilisateur sont à jour.
+
+Catégorie : IT
+Q : Comment vérifier la disponibilité d'une ressource Citrix ?
+R : Pour vérifier la disponibilité d'une ressource Citrix, il faut consulter le tableau de bord de surveillance des ressources Citrix ou contacter le propriétaire de la ressource.
+
+Catégorie : IT
+Q : Quel est le chemin d'accès pour vider le cache Citrix sur un appareil Windows ?
+R : Sur un appareil Windows, le chemin d'accès pour vider le cache Citrix est C:\Users\<username>\AppData\Local\Citrix\CtxCache, où il faut supprimer tous les fichiers et dossiers.
+
+Catégorie : IT
+Q : Quel est le chemin d'accès pour vider le cache Citrix sur un appareil Mac ?
+R : Sur un appareil Mac, le chemin d'accès pour vider le cache Citrix est ~/Library/Application Support/Citrix/CtxCache, où il faut supprimer tous les fichiers et dossiers.
+
+Catégorie : IT
+Q : Que faut-il faire après avoir vidé le cache Citrix pour terminer la procédure ?
+R : Après avoir vidé le cache Citrix, il faut redémarrer Citrix Receiver et essayer d'accéder à nouveau à la ressource.
+
+Catégorie : IT
+Q : Comment désinstaller et réinstaller Citrix Receiver sur un appareil Windows ?
+R : Sur un appareil Windows, il faut aller dans le Panneau de configuration, puis Programmes et fonctionnalités, sélectionner Citrix Receiver et cliquer sur Désinstaller, puis réinstaller Citrix Receiver depuis le portail logiciel de l'entreprise après la fin de la désinstallation.
+
+Catégorie : IT
+Q : Comment désinstaller et réinstaller Citrix Receiver sur un appareil Mac ?
+R : Sur un appareil Mac, il faut aller dans Applications, faire un clic droit ou un contrôle-clic sur Citrix Receiver et sélectionner Déplacer vers la corbeille, puis réinstaller Citrix Receiver depuis le portail logiciel de l'entreprise après la fin de la désinstallation.
+
+Catégorie : IT
+Q : À quel moment faut-il escalader un problème Citrix vers le support avancé ?
+R : Il faut escalader un problème Citrix vers l'équipe du support avancé si aucune des étapes de dépannage précédentes ne résout le problème.
+
+Catégorie : IT
+Q : Quelles informations faut-il fournir lors de l'escalade d'un problème Citrix vers le support avancé ?
+R : Lors de l'escalade d'un problème Citrix vers le support avancé, il faut fournir l'appareil et le système d'exploitation de l'utilisateur, la ressource Citrix accédée, les messages d'erreur ou captures d'écran, ainsi que les étapes de dépannage déjà réalisées.

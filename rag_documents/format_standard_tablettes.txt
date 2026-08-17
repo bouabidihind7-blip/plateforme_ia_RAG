@@ -1,0 +1,47 @@
+Catégorie : IT
+Q : Que faut-il faire en premier lieu pour résoudre un problème sur une tablette fournie par l'entreprise ?
+R : Il faut effectuer un cycle d'alimentation en maintenant le bouton d'alimentation enfoncé pour éteindre la tablette, attendre 30 secondes pour laisser le courant résiduel se dissiper, puis rallumer la tablette en appuyant à nouveau sur le bouton d'alimentation pour observer si le problème persiste.
+
+Catégorie : IT
+Q : Comment réaliser un cycle d'alimentation sur une tablette d'entreprise ?
+R : Pour faire un cycle d'alimentation, il faut éteindre la tablette via le bouton d'alimentation, attendre 30 secondes, puis la rallumer pour voir si le problème persiste.
+
+Catégorie : IT
+Q : Quelle est la deuxième étape de dépannage pour les tablettes d'entreprise ?
+R : La deuxième étape consiste à vérifier les mises à jour logicielles en s'assurant d'une connexion internet stable, puis en allant dans Paramètres, Système, et Mise à jour du système pour installer les mises à jour en attente et redémarrer la tablette.
+
+Catégorie : IT
+Q : Comment vérifier les mises à jour logicielles sur une tablette de l'entreprise ?
+R : Il faut connecter la tablette à internet, accéder à Paramètres puis Système et Mise à jour du système, installer les mises à jour disponibles et redémarrer la tablette.
+
+Catégorie : IT
+Q : Comment redémarrer une tablette d'entreprise en mode sans échec ?
+R : Pour redémarrer en mode sans échec, il faut éteindre la tablette, la rallumer en maintenant immédiatement le bouton de réduction du volume enfoncé jusqu'au démarrage, et observer si le problème persiste dans ce mode.
+
+Catégorie : IT
+Q : Quelle méthode permet de vérifier si un problème de tablette provient d'une application spécifique ?
+R : Il faut identifier l'application défectueuse, aller dans Paramètres puis Applications et sélectionner le nom de l'application, vider son cache et ses données, puis redémarrer l'application.
+
+Catégorie : IT
+Q : Comment effacer le cache et les données d'une application sur une tablette d'entreprise ?
+R : Pour effacer le cache et les données d'une application, il faut aller dans Paramètres, Applications, choisir l'application concernée, vider le cache et les données, puis redémarrer l'application.
+
+Catégorie : IT
+Q : Quelle est la procédure pour effectuer une réinitialisation d'usine sur une tablette de l'entreprise ?
+R : Il faut aller dans Paramètres, Système, Avancé, puis Options de réinitialisation, sélectionner Effacer toutes les données (réinitialisation d'usine) et suivre les instructions à l'écran, tout en sachant que cela efface toutes les données et nécessite une sauvegarde préalable.
+
+Catégorie : IT
+Q : Que faut-il faire avant d'effectuer une réinitialisation d'usine sur une tablette d'entreprise ?
+R : Il est impératif de sauvegarder toutes les données importantes car la réinitialisation d'usine effacera l'intégralité des données présentes sur la tablette.
+
+Catégorie : IT
+Q : Comment inspecter les problèmes matériels sur une tablette fournie par l'entreprise ?
+R : Il faut inspecter la tablette pour détecter d'éventuels signes de dommage physique ou d'usure, vérifier que le port de charge est exempt de débris, et essayer d'utiliser un câble de charge ou une source d'alimentation différente.
+
+Catégorie : IT
+Q : Comment rassembler les informations de diagnostic sur une tablette d'entreprise avant de contacter le support ?
+R : Il faut aller dans Paramètres, Système, puis À propos de la tablette, et noter la version du système d'exploitation, l'identifiant de l'appareil ainsi que les messages d'erreur pour les fournir au support avancé.
+
+Catégorie : IT
+Q : Quelles informations faut-il fournir au support avancé si la panne de la tablette persiste ?
+R : Il faut fournir un maximum de détails sur le problème, les étapes de dépannage déjà réalisées, ainsi que la version du système d'exploitation, l'identifiant de l'appareil et les messages d'erreur relevés dans les paramètres de la tablette.

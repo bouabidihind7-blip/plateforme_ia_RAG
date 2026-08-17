@@ -1,0 +1,275 @@
+Catégorie : RH
+Q : Quel est l'identifiant de la politique concernant le calendrier des jours fériés d'Acme Corp pour 2026 ?
+R : L'identifiant de la politique concernant le calendrier des jours fériés d'Acme Corp pour 2026 est ACME-HR-006.
+
+Catégorie : RH
+Q : Quelle est la date d'effet de la politique du calendrier des jours fériés 2026 d'Acme Corp ?
+R : La date d'effet de la politique du calendrier des jours fériés 2026 d'Acme Corp est le 1er janvier 2026.
+
+Catégorie : RH
+Q : Quand la politique du calendrier des jours fériés 2026 d'Acme Corp a-t-elle été révisée pour la dernière fois ?
+R : La politique du calendrier des jours fériés 2026 d'Acme Corp a été révisée pour la dernière fois le 1er janvier 2026.
+
+Catégorie : RH
+Q : Qui a approuvé la politique du calendrier des jours fériés 2026 d'Acme Corp ?
+R : La politique du calendrier des jours fériés 2026 d'Acme Corp a été approuvée par Sarah Chen, vice-présidente des ressources humaines.
+
+Catégorie : RH
+Q : À qui s'applique la politique du calendrier des jours fériés 2026 d'Acme Corp ?
+R : La politique du calendrier des jours fériés 2026 d'Acme Corp s'applique à tous les employés à temps plein et à temps partiel d'Acme Corp.
+
+Catégorie : RH
+Q : Quel est l'objectif du document sur le calendrier des jours fériés 2026 d'Acme Corp ?
+R : Le document sur le calendrier des jours fériés 2026 d'Acme Corp décrit les jours fériés officiels de l'entreprise observés pour l'année civile 2026.
+
+Catégorie : RH
+Q : Que se passe-t-il dans les bureaux d'Acme Corp pendant les jours fériés officiels ?
+R : Pendant les jours fériés officiels, les bureaux d'Acme Corp sont fermés et les employés ne sont pas tenus de travailler, à l'exception du personnel essentiel désigné par leur département.
+
+Catégorie : RH
+Q : Combien de jours fériés payés Acme Corp observe-t-elle par année civile en 2026 ?
+R : Acme Corp observe 12 jours fériés payés par année civile pour l'année 2026.
+
+Catégorie : RH
+Q : Quelle est la date du jour de l'An observée par Acme Corp en 2026 ?
+R : Le jour de l'An est observé par Acme Corp le jeudi 1er janvier 2026.
+
+Catégorie : RH
+Q : Quelle est la date du jour de Martin Luther King Jr. observée par Acme Corp en 2026 ?
+R : Le jour de Martin Luther King Jr. est observé par Acme Corp le lundi 19 janvier 2026.
+
+Catégorie : RH
+Q : Quelle est la date du jour des Présidents observée par Acme Corp en 2026 ?
+R : Le jour des Présidents est observé par Acme Corp le lundi 16 février 2026.
+
+Catégorie : RH
+Q : Quelle est la date du Memorial Day observée par Acme Corp en 2026 ?
+R : Le Memorial Day est observé par Acme Corp le lundi 25 mai 2026.
+
+Catégorie : RH
+Q : Quelle est la date de Juneteenth observée par Acme Corp en 2026 ?
+R : Juneteenth est observé par Acme Corp le vendredi 19 juin 2026.
+
+Catégorie : RH
+Q : Quelle est la date de l'Independence Day observée par Acme Corp en 2026 ?
+R : L'Independence Day est observé par Acme Corp le vendredi 3 juillet 2026 en tant que date de substitution.
+
+Catégorie : RH
+Q : Quelle est la date du Labor Day observée par Acme Corp en 2026 ?
+R : Le Labor Day est observé par Acme Corp le lundi 7 septembre 2026.
+
+Catégorie : RH
+Q : Quelle est la date de l'Indigenous Peoples' Day observée par Acme Corp en 2026 ?
+R : L'Indigenous Peoples' Day est observé par Acme Corp le lundi 12 octobre 2026.
+
+Catégorie : RH
+Q : Quelle est la date du Veterans Day observée par Acme Corp en 2026 ?
+R : Le Veterans Day est observé par Acme Corp le mercredi 11 novembre 2026.
+
+Catégorie : RH
+Q : Quelle est la date du jour de Thanksgiving observée par Acme Corp en 2026 ?
+R : Le jour de Thanksgiving est observé par Acme Corp le jeudi 26 novembre 2026.
+
+Catégorie : RH
+Q : Quelle est la date du lendemain de Thanksgiving observée par Acme Corp en 2026 ?
+R : Le lendemain de Thanksgiving est observé par Acme Corp le vendredi 27 novembre 2026.
+
+Catégorie : RH
+Q : Quelle est la date du jour de Noël observée par Acme Corp en 2026 ?
+R : Le jour de Noël est observé par Acme Corp le vendredi 25 décembre 2026.
+
+Catégorie : RH
+Q : Quelle règle s'applique chez Acme Corp lorsqu'un jour férié tombe un samedi ?
+R : Lorsqu'un jour férié tombe un samedi chez Acme Corp, le vendredi précédent est observé comme jour férié.
+
+Catégorie : RH
+Q : Quelle règle s'applique chez Acme Corp lorsqu'un jour férié tombe un dimanche ?
+R : Lorsqu'un jour férié tombe un dimanche chez Acme Corp, le lundi suivant est observé comme jour férié.
+
+Catégorie : RH
+Q : Pourquoi le vendredi 3 juillet 2026 est-il observé comme jour férié pour l'Independence Day ?
+R : Le vendredi 3 juillet 2026 est observé car l'Independence Day 2026 tombe un samedi 4 juillet, le vendredi précédent étant alors retenu.
+
+Catégorie : RH
+Q : Quelle est la période de fermeture des bureaux de fin d'année d'Acme Corp en 2026 ?
+R : La période de fermeture des bureaux de fin d'année d'Acme Corp en 2026 s'étend du 26 décembre au 31 décembre 2026.
+
+Catégorie : RH
+Q : La période de fermeture de fin d'année d'Acme Corp est-elle payée et déduite des soldes de congés payés ?
+R : La période de fermeture de fin d'année d'Acme Corp est un temps payé qui n'est pas déduit des soldes de congés payés des employés.
+
+Catégorie : RH
+Q : À qui s'applique la fermeture de fin d'année des bureaux d'Acme Corp ?
+R : La fermeture de fin d'année s'applique à tous les employés d'Acme Corp, sauf ceux désignés comme essentiels par les chefs de département.
+
+Catégorie : RH
+Q : Que reçoivent les employés essentiels d'Acme Corp qui travaillent pendant la période de fermeture de fin d'année ?
+R : Les employés essentiels d'Acme Corp qui travaillent pendant la fermeture reçoivent 1,5 fois leur taux de salaire régulier pour les heures travaillées.
+
+Catégorie : RH
+Q : Quel avantage supplémentaire reçoivent les employés essentiels d'Acme Corp travaillant pendant la fermeture de fin d'année ?
+R : Les employés essentiels travaillant pendant la fermeture de fin d'année reçoivent un jour de congé compensatoire à prendre au cours du premier trimestre de l'année suivante.
+
+Catégorie : RH
+Q : Combien de jours fériés flottants chaque employé à temps plein reçoit-il par année civile chez Acme Corp ?
+R : Chaque employé à temps plein d'Acme Corp reçoit 2 jours fériés flottants par année civile.
+
+Catégorie : RH
+Q : Quel est l'objet des jours fériés flottants chez Acme Corp ?
+R : Les jours fériés flottants offrent aux employés d'Acme Corp la flexibilité d'observer des jours d'importance personnelle, culturelle ou religieuse non couverts par le calendrier officiel.
+
+Catégorie : RH
+Q : À quelle date les jours fériés flottants sont-ils disponibles chaque année pour les employés de Acme Corp ?
+R : Les jours fériés flottants sont disponibles à partir du 1er janvier de chaque année, ou au prorata de la date d'embauche pour les nouveaux employés de Acme Corp.
+
+Catégorie : RH
+Q : Comment les jours fériés flottants sont-ils attribués pour les nouveaux arrivants chez Acme Corp ?
+R : Pour les nouveaux employés de Acme Corp, les jours fériés flottants sont calculés au prorata à partir de la date de leur embauche.
+
+Catégorie : RH
+Q : Que deviennent les jours fériés flottants non utilisés à la fin de l'année civile chez Acme Corp ?
+R : Les jours fériés flottants doivent être utilisés au cours de l'année civile et ne sont pas reportés à l'année suivante chez Acme Corp.
+
+Catégorie : RH
+Q : Les jours fériés flottants non utilisés sont-ils payés lors du départ d'un employé de Acme Corp ?
+R : Non, les jours fériés flottants ne sont pas payés lors de la cessation de fonctions ou du départ de l'employé de l'entreprise Acme Corp.
+
+Catégorie : RH
+Q : Quelle est la procédure à suivre pour demander un jour férié flottant chez Acme Corp ?
+R : Les demandes de jours fériés flottants suivent le même processus que les demandes de congés payés PTO, tel que décrit dans la politique PTO & Leave Policy, document ACME-HR-001, section 2.3 de Acme Corp.
+
+Catégorie : RH
+Q : Sous quelle durée les employés de Acme Corp peuvent-ils poser leurs jours fériés flottants ?
+R : Les employés de Acme Corp peuvent prendre leurs jours fériés flottants soit sous forme de journées complètes, soit sous forme de demi-journées.
+
+Catégorie : RH
+Q : Quelles sont les fêtes religieuses pour lesquelles les employés de Acme Corp utilisent couramment des jours fériés flottants ?
+R : Les employés de Acme Corp utilisent couramment des jours fériés flottants pour l'Aïd el-Fitr, l'Aïd el-Kébir, Diwali, Yom Kippour, Rosh Ha-Shana, le Nouvel An lunaire, le Vendredi saint et Noël orthodoxe.
+
+Catégorie : RH
+Q : Quelles célébrations culturelles motivent l'utilisation de jours fériés flottants chez Acme Corp ?
+R : Les célébrations culturelles motivant l'utilisation de jours fériés flottants chez Acme Corp incluent le Nouvel An lunaire, Norouz et le Jour des morts (Día de los Muertos).
+
+Catégorie : RH
+Q : Quels jalons personnels motivent l'usage de jours fériés flottants par les salariés de Acme Corp ?
+R : Les salariés de Acme Corp utilisent des jours fériés flottants pour des jalons personnels tels que les anniversaires, les anniversaires de mariage et divers événements familiaux.
+
+Catégorie : RH
+Q : Quel autre motif d'ordre géographique justifie l'usage de jours fériés flottants chez Acme Corp ?
+R : Les employés de Acme Corp utilisent des jours fériés flottants pour des vacances étatiques ou locales qui ne sont pas observées officiellement par Acme Corp.
+
+Catégorie : RH
+Q : Comment Acme Corp traite-t-elle les croyances et pratiques religieuses des employés ?
+R : Acme Corp respecte les croyances et pratiques religieuses de l'ensemble de ses employés et accorde des aménagements raisonnables conformément à la législation applicable.
+
+Catégorie : RH
+Q : Quelles options s'offrent aux employés de Acme Corp nécessitant du temps libre supplémentaire pour des observances religieuses ?
+R : Les employés de Acme Corp nécessitant du temps libre supplémentaire pour des observances religieuses peuvent utiliser leurs jours de congés PTO, demander un congé non payé ou organiser un horaire flexible avec leur manager.
+
+Catégorie : RH
+Q : Comment un employé de Acme Corp peut-il rattraper les heures prises pour une observance religieuse avec un horaire flexible ?
+R : Un employé de Acme Corp peut s'arranger avec son manager pour un horaire flexible afin de rattraper les heures d'absence pour observance religieuse au cours de la même semaine de travail.
+
+Catégorie : RH
+Q : À qui les demandes d'aménagements religieux doivent-elles être soumises chez Acme Corp ?
+R : Les demandes d'aménagements religieux chez Acme Corp doivent être soumises conjointement au manager direct de l'employé et au département des ressources humaines RH.
+
+Catégorie : RH
+Q : Qui est responsable de désigner le personnel essentiel devant travailler les jours fériés chez Acme Corp ?
+R : Les chefs de département de Acme Corp ont la responsabilité de désigner le personnel essentiel qui pourrait être requis pour travailler les jours de fête pour maintenir les opérations critiques.
+
+Catégorie : IT
+Q : Quels rôles informatiques font typiquement partie du personnel essentiel requis pour travailler les jours fériés chez Acme Corp ?
+R : Les opérations informatiques IT et les ingénieurs d'astreinte font typiquement partie du personnel essentiel désigné pour travailler les jours fériés chez Acme Corp.
+
+Catégorie : Commercial
+Q : Quels rôles du service client sont classés parmi le personnel essentiel chez Acme Corp ?
+R : Le support client de niveau 1 Tier 1 et de niveau 2 Tier 2 est classé parmi le personnel essentiel chez Acme Corp les jours fériés.
+
+Catégorie : Général
+Q : Quels services de gestion des installations et de protection sont désignés comme essentiels les jours fériés chez Acme Corp ?
+R : Le personnel des installations facilities et de la sécurité security staff fait partie du personnel essentiel désigné pour travailler les jours fériés chez Acme Corp.
+
+Catégorie : RH
+Q : Quel autre rôle peut être désigné comme personnel essentiel par les départements de Acme Corp ?
+R : Tout autre rôle désigné par les chefs de département avec l'approbation préalable des ressources humaines HR peut faire partie du personnel essentiel chez Acme Corp.
+
+Catégorie : Finance
+Q : Quelle rémunération perçoit le personnel essentiel qui travaille un jour férié officiel chez Acme Corp ?
+R : Le personnel essentiel travaillant un jour férié officiel chez Acme Corp reçoit 1,5 fois son taux horaire régulier ou l'équivalent pour les salariés payés au forfait pour toutes les heures travaillées.
+
+Catégorie : RH
+Q : Quel avantage en temps de repos reçoit le personnel essentiel travaillant un jour férié officiel chez Acme Corp ?
+R : Le personnel essentiel travaillant un jour férié officiel chez Acme Corp reçoit une journée de repos compensatoire à utiliser dans les 90 jours suivant le jour férié travaillé.
+
+Catégorie : RH
+Q : Dans quel délai le personnel essentiel doit-il utiliser sa journée de repos compensatoire chez Acme Corp ?
+R : Le personnel essentiel de Acme Corp doit utiliser sa journée de repos compensatoire dans un délai de 90 jours après le jour férié travaillé.
+
+Catégorie : RH
+Q : Quel est le délai de communication des plannings de travail des jours fériés pour le personnel essentiel de Acme Corp ?
+R : Les plannings de vacances du personnel essentiel de Acme Corp sont communiqués au moins 30 jours à l'avance.
+
+Catégorie : RH
+Q : Que se passe-t-il si un jour férié officiel de l'entreprise coïncide avec une période de congé payé PTO approuvée chez Acme Corp ?
+R : Si un jour férié officiel tombe pendant la période de congé PTO approuvée d'un employé de Acme Corp, le jour férié n'est pas déduit de son solde de congés PTO, conformément au document ACME-HR-001, section 10.
+
+Catégorie : RH
+Q : Quel est l'impact d'un jour férié sur un congé FMLA, parental ou un autre congé approuvé chez Acme Corp ?
+R : Les employés de Acme Corp en congé FMLA, en congé parental ou en autre congé approuvé pendant un jour férié restent considérés comme étant en congé, et le jour férié ne prolonge pas leur période de congé.
+
+Catégorie : Finance
+Q : Les employés de Acme Corp en congé non payé sont-ils éligibles à la rémunération des jours fériés ?
+R : Non, les employés de Acme Corp qui se trouvent en congé non payé ne sont pas éligibles à la prime de rémunération des jours fériés.
+
+Catégorie : RH
+Q : Comment les employés à temps partiel sont-ils payés lors des jours fériés officiels ?
+R : Les employés à temps partiel régulièrement programmés pour travailler un jour férié officiel reçoivent une rémunération de jour férié pour leurs heures régulièrement programmées ce jour-là.
+
+Catégorie : RH
+Q : Quel est le montant de la rémunération des jours fériés pour les employés à temps partiel ?
+R : Les employés à temps partiel reçoivent le paiement pour leurs heures régulièrement programmées le jour du jour férié officiel.
+
+Catégorie : RH
+Q : Combien de jours de congé flottants les employés à temps partiel reçoivent-ils par an ?
+R : Les employés à temps partiel reçoivent 1 jour de congé flottant par année civile.
+
+Catégorie : RH
+Q : Combien de jours de congé flottants les employés à temps partiel obtiennent-ils par rapport aux employés à temps plein ?
+R : Les employés à temps partiel reçoivent 1 jour de congé flottant par année civile, au lieu de 2 pour les employés à temps plein.
+
+Catégorie : RH
+Q : Acme Corp peut-elle modifier le calendrier des jours fériés ?
+R : Acme Corp se réserve le droit de modifier le calendrier des jours fériés en prévenant les employés au moins 60 jours à l'avance.
+
+Catégorie : RH
+Q : Quel est le délai de prévenance pour la modification du calendrier des jours fériés par Acme Corp ?
+R : Acme Corp doit donner un préavis d'au moins 60 jours aux employés pour modifier le calendrier des jours fériés.
+
+Catégorie : RH
+Q : Comment les modifications du calendrier des jours fériés sont-elles communiquées aux employés ?
+R : Les modifications du calendrier des jours fériés sont communiquées par e-mail et publiées sur le portail RH d'Acme.
+
+Catégorie : RH
+Q : Où les changements du calendrier des jours fériés sont-ils affichés en plus de l'e-mail ?
+R : Les changements du calendrier des jours fériés sont publiés sur le portail RH d'Acme.
+
+Catégorie : RH
+Q : Qui les employés doivent-ils contacter pour toute question concernant le calendrier des jours fériés ou les congés flottants ?
+R : Les employés doivent contacter le département des ressources humaines d'Acme Corp pour toute question sur le calendrier des jours fériés ou les congés flottants.
+
+Catégorie : RH
+Q : Quelle est l'adresse e-mail du département RH d'Acme Corp pour les questions sur les jours fériés ?
+R : L'adresse e-mail du département des ressources humaines d'Acme Corp est hr@acmecorp.com pour les questions relatives aux jours fériés.
+
+Catégorie : RH
+Q : Quel est le numéro de poste téléphonique du département des ressources humaines d'Acme Corp ?
+R : Le poste téléphonique du département des ressources humaines d'Acme Corp est l'extension x4500.
+
+Catégorie : RH
+Q : Le calendrier des jours fériés d'Acme Corp fait-il l'objet d'un examen annuel ?
+R : Oui, le calendrier des jours fériés est sujet à un examen et à une révision annuelle.
+
+Catégorie : RH
+Q : Quand le calendrier des jours pour l'année 2027 sera-t-il publié ?
+R : Le calendrier des jours fériés 2027 d'Acme Corp sera publié au plus tard le 1er novembre 2026.

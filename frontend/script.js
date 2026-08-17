@@ -7,8 +7,9 @@ const zoneMessage = document.getElementById("message");
 // Récupère la zone où on affichera les réponses.
 const listeReponses = document.getElementById("liste-reponses");
 
-// Récupère la liste de choix du modèle IA.
-const choixModele = document.getElementById("modele-ia");
+// Seul modèle actuellement utilisé côté backend (voir ia_service.py) — plus de menu
+// déroulant, le choix multi-modèles n'existe plus depuis la reconnexion backend.
+const MODELE_IA = "gemini-3.1-flash-lite";
 
 // Récupère le bouton qui lance le traitement IA.
 const boutonTraitement = document.getElementById("bouton-traitement");
@@ -21,6 +22,10 @@ const boutonImporterUrl = document.getElementById("bouton-importer-url");
 
 // Récupère le bouton flottant "remonter en haut".
 const boutonHaut = document.getElementById("bouton-haut");
+
+// Récupère le champ de fichier et le bouton pour ajouter un document à la base RAG.
+const champDocumentRag = document.getElementById("document-rag-fichier");
+const boutonUploaderDocument = document.getElementById("bouton-uploader-document");
 
 // Garde l’id interne du formulaire importé actuellement.
 // Au début, aucun formulaire n’est sélectionné.
@@ -135,6 +140,76 @@ async function importerFormulaireDepuisUrl() {
 }
 
 
+// Envoie un document (PDF/Excel/CSV/TXT) au backend pour l'ajouter à la base RAG.
+async function uploaderDocumentRag() {
+    const fichiers = champDocumentRag.files;
+
+    if (fichiers.length === 0) {
+        afficherMessage("Choisis d'abord un ou plusieurs fichiers à ajouter.");
+        return;
+    }
+
+    boutonUploaderDocument.disabled = true;
+    boutonUploaderDocument.textContent = "Ajout en cours...";
+    afficherMessage(`Envoi et indexation de ${fichiers.length} document(s)...`);
+
+    // FormData (pas JSON.stringify) : nécessaire pour envoyer de vrais fichiers binaires. fetch
+    // détecte tout seul le bon Content-Type (multipart/form-data) à partir d'un FormData —
+    // ne jamais le préciser à la main, ça casserait la frontière ("boundary") entre les champs.
+    // Plusieurs append() avec la MÊME clé "fichiers" : c'est ce qui permet au backend de les
+    // recevoir tous ensemble comme une liste (list[UploadFile]), pas un seul fichier écrasé.
+    const donneesFormulaire = new FormData();
+    for (const fichier of fichiers) {
+        donneesFormulaire.append("fichiers", fichier);
+    }
+
+    // try/catch/finally : même raison que importerFormulaireDepuisUrl() — sans ce filet, une
+    // erreur backend laisserait le bouton bloqué sur "Ajout en cours..." pour toujours.
+    try {
+        let reponseHttp = await fetch(`${API_URL}/documents-rag`, {
+            method: "POST",
+            body: donneesFormulaire,
+        });
+
+        // 409 = des fichiers de même nom existent déjà (voir le backend). On redemande la
+        // permission avant d'écraser quoi que ce soit, plutôt que refuser ou remplacer
+        // silencieusement — l'utilisateur décide.
+        if (reponseHttp.status === 409) {
+            const erreurDonnees = await reponseHttp.json();
+            const doublons = erreurDonnees.detail.doublons;
+            const veutRemplacer = confirm(
+                `Ce(s) document(s) existe(nt) déjà : ${doublons.join(", ")}. Veux-tu les remplacer ?`
+            );
+
+            if (!veutRemplacer) {
+                afficherMessage("Ajout annulé.");
+                return;
+            }
+
+            // Renvoie exactement la même requête, juste avec remplacer=true en plus.
+            reponseHttp = await fetch(`${API_URL}/documents-rag?remplacer=true`, {
+                method: "POST",
+                body: donneesFormulaire,
+            });
+        }
+
+        if (!reponseHttp.ok) {
+            afficherMessage("Ajout refusé : format de fichier non supporté (PDF, Excel, CSV ou TXT uniquement) ou erreur d'indexation.");
+            return;
+        }
+
+        const donnees = await reponseHttp.json();
+        champDocumentRag.value = "";
+        afficherMessage(`✓ ${donnees.noms_fichiers.length} document(s) reçu(s) : ${donnees.noms_fichiers.join(", ")}. Indexation en cours en arrière-plan (peut prendre quelques minutes).`, true);
+    } catch (erreur) {
+        afficherMessage("Erreur inattendue pendant l'ajout des documents — réessaie dans un instant.");
+    } finally {
+        boutonUploaderDocument.disabled = false;
+        boutonUploaderDocument.textContent = "Ajouter le document";
+    }
+}
+
+
 // Lance le traitement IA depuis le frontend.
 async function lancerTraitementIA() {
     // Sans formulaire importé, formulaire_id (obligatoire côté backend) n'existe pas encore.
@@ -143,13 +218,10 @@ async function lancerTraitementIA() {
         return;
     }
 
-    // Récupère le modèle choisi par l’utilisateur.
-    const modele = choixModele.value;
-
     // Désactive le bouton pendant l’appel backend.
     boutonTraitement.disabled = true;
     boutonTraitement.textContent = "Traitement en cours...";
-    afficherMessage(`Traitement lancé avec ${modele}...`);
+    afficherMessage(`Traitement lancé avec ${MODELE_IA}...`);
 
     // try/catch : même raison que dans importerFormulaireDepuisUrl() — une erreur backend non
     // gérée renvoie du texte brut, pas du JSON, et reponseHttp.json() planterait sans filet.
@@ -157,7 +229,7 @@ async function lancerTraitementIA() {
         // Appelle la route POST /traitements/questions-textuelles, avec le formulaire_id de
         // l’import en cours (voir formulaireActuelId, rempli par importerFormulaireDepuisUrl).
         const reponseHttp = await fetch(
-            `${API_URL}/traitements/questions-textuelles?formulaire_id=${formulaireActuelId}&modele_ia=${modele}`,
+            `${API_URL}/traitements/questions-textuelles?formulaire_id=${formulaireActuelId}&modele_ia=${MODELE_IA}`,
             {
                 method: "POST",
             }
@@ -175,7 +247,7 @@ async function lancerTraitementIA() {
         // chargerReponses() modifie zoneMessage elle-même, donc ce message doit venir après,
         // sinon il serait écrasé aussitôt.
         await chargerReponses();
-        afficherMessage(`✓ ${donnees.nombre_reponses} nouvelle(s) réponse(s) générée(s) avec ${modele}.`, true);
+        afficherMessage(`✓ ${donnees.nombre_reponses} nouvelle(s) réponse(s) générée(s) avec ${MODELE_IA}.`, true);
     } catch (erreur) {
         afficherMessage("Erreur inattendue pendant le traitement — réessaie dans un instant.");
     } finally {
@@ -284,6 +356,9 @@ boutonTraitement.addEventListener("click", lancerTraitementIA);
 
 // Quand on clique sur le bouton, on importe le formulaire depuis une URL.
 boutonImporterUrl.addEventListener("click", importerFormulaireDepuisUrl);
+
+// Quand on clique sur le bouton, on envoie le document choisi vers la base RAG.
+boutonUploaderDocument.addEventListener("click", uploaderDocumentRag);
 
 // Affiche le bouton "remonter en haut" seulement après avoir un peu scrollé.
 window.addEventListener("scroll", () => {

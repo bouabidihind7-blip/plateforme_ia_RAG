@@ -1,0 +1,59 @@
+Catégorie : IT
+Q : Quel est le rôle d'un point de restauration sur une machine Windows ?
+R : Un point de restauration sur une machine Windows permet de garantir que le système peut être restauré à un moment antérieur en cas de défaillance du système, d'installation de logiciels ou d'autres problèmes.
+
+Catégorie : IT
+Q : Quelles sont les conditions préalables requises pour créer un point de restauration sur une machine Windows ?
+R : Les conditions préalables pour créer un point de restauration sur une machine Windows sont de disposer de privilèges administratifs et de s'assurer que la protection du système est activée.
+
+Catégorie : IT
+Q : Comment ouvrir les propriétés du système en utilisant le bouton Démarrer sous Windows ?
+R : Pour ouvrir les propriétés du système sous Windows en utilisant le bouton Démarrer, il faut cliquer sur le bouton Démarrer, taper "System" dans la barre de recherche, puis cliquer sur "System" dans les résultats de recherche.
+
+Catégorie : IT
+Q : Quel raccourci clavier permet d'ouvrir directement les propriétés du système sur une machine Windows ?
+R : Le raccourci clavier permettant d'ouvrir les propriétés du système sur une machine Windows est la touche Windows combinée avec Pause/Break.
+
+Catégorie : IT
+Q : Comment accéder à l'onglet de protection du système après avoir ouvert les propriétés du système ?
+R : Pour accéder à l'onglet de protection du système après avoir ouvert les propriétés du système, il faut cliquer sur l'onglet "System Protection" dans la fenêtre des propriétés du système.
+
+Catégorie : IT
+Q : Comment lancer la création effective du point de restauration dans la fenêtre de protection du système ?
+R : Pour lancer la création effective du point de restauration dans la fenêtre de protection du système, il faut cliquer sur le bouton "Create" sous "System Protection", puis cliquer à nouveau sur le bouton "Create" dans la fenêtre "Create a restore point".
+
+Catégorie : IT
+Q : Que se passe-t-il une fois que Windows a créé le point de restauration ?
+R : Une fois que Windows a créé le point de restauration, le système affiche un message de confirmation.
+
+Catégorie : IT
+Q : Comment vérifier qu'un point de restauration a bien été créé sur une machine Windows ?
+R : Pour vérifier qu'un point de restauration a bien été créé sur une machine Windows, il faut cliquer à nouveau sur l'onglet "System Protection" pour afficher la liste des points de restauration disponibles et vérifier que le nouveau point apparaît avec la date et l'heure actuelles.
+
+Catégorie : IT
+Q : À quel moment est-il recommandé de créer un point de restauration sur sa machine Windows ?
+R : Il est recommandé de créer un point de restauration sur sa machine Windows avant d'apporter des modifications importantes au système, telles que l'installation de nouveaux logiciels ou de nouveaux pilotes.
+
+Catégorie : IT
+Q : Est-il possible d'automatiser la création de points de restauration sur Windows ?
+R : Oui, il est possible de programmer Windows pour qu'il crée des points de restauration automatiquement à intervalles réguliers.
+
+Catégorie : IT
+Q : Où sont enregistrés les points de restauration sur une machine Windows ?
+R : Les points de restauration sur une machine Windows sont enregistrés sur le lecteur système, qui est généralement le lecteur C:.
+
+Catégorie : IT
+Q : De quoi faut-il s'assurer concernant le stockage avant de créer des points de restauration ?
+R : Avant de créer des points de restauration, il faut s'assurer de disposer d'un espace disque suffisant sur la machine Windows.
+
+Catégorie : IT
+Q : Quelle fonctionnalité permet d'utiliser les points de restauration créés pour revenir à un état antérieur ?
+R : La fonctionnalité "System Restore" permet d'utiliser les points de restauration créés pour restaurer la machine Windows à un point dans le temps antérieur.
+
+Catégorie : IT
+Q : Que faut-on consulter en cas de problème lors de la création d'un point de restauration ?
+R : En cas de problème lors de la création d'un point de restauration sur une machine Windows, il faut consulter les journaux de l'observateur d'événements (Event Viewer) pour y trouver des erreurs ou des avertissements.
+
+Catégorie : IT
+Q : Quelle vérification technique effectuer si la création d'un point de restauration échoue sur Windows ?
+R : Si la création d'un point de restauration échoue sur Windows, il faut s'assurer que la fonctionnalité de protection du système est activée et correctement configurée.

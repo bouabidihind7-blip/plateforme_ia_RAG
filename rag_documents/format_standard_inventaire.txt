@@ -1,0 +1,51 @@
+Catégorie : Production
+Q : Quel est le numéro de série de l'imprimante SLS-01 ?
+R : Le numéro de série de l'imprimante SLS-01 est SLS-2023-001.
+
+Catégorie : Production
+Q : Quelle est la date de la dernière maintenance de l'imprimante SLS-01 ?
+R : La date de la dernière maintenance de l'imprimante SLS-01 est le 15 juin 2026.
+
+Catégorie : Production
+Q : Quel est le statut actuel de l'imprimante SLS-01 ?
+R : L'imprimante SLS-01 est opérationnelle.
+
+Catégorie : Production
+Q : Quel est le numéro de série de l'imprimante FDM-02 ?
+R : Le numéro de série de l'imprimante FDM-02 est FDM-2022-014.
+
+Catégorie : Production
+Q : Quand a eu lieu la dernière maintenance de l'imprimante FDM-02 ?
+R : La dernière maintenance de l'imprimante FDM-02 a eu lieu le 1er juillet 2026.
+
+Catégorie : Production
+Q : Quel est le statut de l'imprimante FDM-02 ?
+R : L'imprimante FDM-02 est opérationnelle.
+
+Catégorie : Production
+Q : Quel est le numéro de série de l'imprimante FDM-03 ?
+R : Le numéro de série de l'imprimante FDM-03 est FDM-2022-015.
+
+Catégorie : Production
+Q : Quelle est la date de la dernière maintenance de l'imprimante FDM-03 ?
+R : La date de la dernière maintenance de l'imprimante FDM-03 est le 1er juillet 2026.
+
+Catégorie : Production
+Q : Quel est le statut de l'imprimante FDM-03 ?
+R : L'imprimante FDM-03 est en maintenance.
+
+Catégorie : Production
+Q : Quel est le numéro de série de la découpeuse laser-01 ?
+R : Le numéro de série de la découpeuse laser-01 est LAS-2024-002.
+
+Catégorie : Production
+Q : Quelle est la date de la dernière maintenance de la découpeuse laser-01 ?
+R : La date de la dernière maintenance de la découpeuse laser-01 est le 20 mai 2026.
+
+Catégorie : Production
+Q : Quel est le statut de la découpeuse laser-01 ?
+R : La découpeuse laser-01 est opérationnelle.
+
+Catégorie : Production
+Q : Quelles sont les machines actuellement en maintenance chez 3D Smart Factory ?
+R : L'imprimante FDM-03 est actuellement en maintenance.

@@ -1,0 +1,335 @@
+Catégorie : RH
+Q : Quel est le numéro de politique de la politique de congés payés et de congés d'Acme Corp ?
+R : Le numéro de politique de la politique de congés payés et de congés d'Acme Corp est ACME-HR-001.
+
+Catégorie : RH
+Q : Quelle est la date d'entrée en vigueur de la politique de congés payés d'Acme Corp ?
+R : La date d'entrée en vigueur de la politique de congés payés d'Acme Corp est le 1er janvier 2026.
+
+Catégorie : RH
+Q : À quelle date la politique de congés payés d'Acme Corp a-t-elle été révisée pour la dernière fois ?
+R : La politique de congés payés d'Acme Corp a été révisée pour la dernière fois le 1er janvier 2026.
+
+Catégorie : RH
+Q : Qui a approuvé la politique de congés payés d'Acme Corp ?
+R : La politique de congés payés d'Acme Corp a été approuvée par Sarah Chen, vice-présidente des ressources humaines.
+
+Catégorie : RH
+Q : À qui s'applique la politique de congés payés d'Acme Corp ?
+R : La politique de congés payés d'Acme Corp s'applique à tous les employés à temps plein et à temps partiel d'Acme Corp.
+
+Catégorie : RH
+Q : Quel est le but de la politique de congés payés d'Acme Corp ?
+R : Le but de la politique de congés payés d'Acme Corp est d'établir des lignes directrices pour les congés payés, les congés de maladie, les congés familiaux et médicaux, les congés parentaux, les congés de deuil et d'autres formes de congés afin de soutenir l'équilibre entre vie professionnelle et vie privée tout en assurant la continuité des activités.
+
+Catégorie : RH
+Q : Comment les congés payés (PTO) s'accumulent-ils chez Acme Corp ?
+R : Chez Acme Corp, les congés payés s'accumulent sur une base par période de paie, de manière semi-mensuelle, soit 24 périodes de paie par an.
+
+Catégorie : RH
+Q : Combien de jours de congés payés annuels reçoivent les employés ayant une ancienneté de 0 à 2 ans chez Acme Corp ?
+R : Les employés ayant une ancienneté de 0 à 2 ans chez Acme Corp reçoivent 15 jours de congés payés par an, ce qui représente 120 heures.
+
+Catégorie : RH
+Q : Quel est le taux d'accumulation des congés payés par période de paie pour les employés ayant 0 à 2 ans d'ancienneté chez Acme Corp ?
+R : Le taux d'accumulation des congés payés par période de paie pour les employés ayant 0 à 2 ans d'ancienneté chez Acme Corp est de 5,0 heures.
+
+Catégorie : RH
+Q : Combien de jours de congés payés annuels reçoivent les employés ayant une ancienneté de 3 à 5 ans chez Acme Corp ?
+R : Les employés ayant une ancienneté de 3 à 5 ans chez Acme Corp reçoivent 20 jours de congés payés par an, ce qui représente 160 heures.
+
+Catégorie : RH
+Q : Quel est le taux d'accumulation des congés payés par période de paie pour les employés ayant 3 à 5 ans d'ancienneté chez Acme Corp ?
+R : Le taux d'accumulation des congés payés par période de paie pour les employés ayant 3 à 5 ans d'ancienneté chez Acme Corp est de 6,67 heures.
+
+Catégorie : RH
+Q : Combien de jours de congés payés annuels reçoivent les employés ayant une ancienneté de 6 à 10 ans chez Acme Corp ?
+R : Les employés ayant une ancienneté de 6 à 10 ans chez Acme Corp reçoivent 25 jours de congés payés par an, ce qui représente 200 heures.
+
+Catégorie : RH
+Q : Quel est le taux d'accumulation des congés payés par période de paie pour les employés ayant 6 à 10 ans d'ancienneté chez Acme Corp ?
+R : Le taux d'accumulation des congés payés par période de paie pour les employés ayant 6 à 10 ans d'ancienneté chez Acme Corp est de 8,33 heures.
+
+Catégorie : RH
+Q : Combien de jours de congés payés annuels reçoivent les employés ayant une ancienneté de 11 ans et plus chez Acme Corp ?
+R : Les employés ayant une ancienneté de 11 ans et plus chez Acme Corp reçoivent 30 jours de congés payés par an, ce qui représente 240 heures.
+
+Catégorie : RH
+Q : Quel est le taux d'accumulation des congés payés par période de paie pour les employés ayant 11 ans et plus d'ancienneté chez Acme Corp ?
+R : Le taux d'accumulation des congés payés par période de paie pour les employés ayant 11 ans et plus d'ancienneté chez Acme Corp est de 10,0 heures.
+
+Catégorie : RH
+Q : Comment les employés à temps partiel accumulent-ils leurs congés payés chez Acme Corp ?
+R : Les employés à temps partiel chez Acme Corp accumulent leurs congés payés sur une base proratisée en fonction de leurs heures hebdomadaires prévues par rapport à un horaire à temps plein de 40 heures.
+
+Catégorie : RH
+Q : Combien de jours de congés payés inutilisés les employés d'Acme Corp peuvent-ils reporter à l'année civile suivante ?
+R : Les employés d'Acme Corp peuvent reporter un maximum de 5 jours de congés payés inutilisés, soit 40 heures, à l'année civile suivante.
+
+Catégorie : RH
+Q : Que se passe-t-il pour le solde de congés payés qui dépasse 5 jours au 31 décembre chez Acme Corp ?
+R : Tout solde de congés payés dépassant 5 jours au 31 décembre chez Acme Corp sera perdu.
+
+Catégorie : RH
+Q : Qui peut accorder des exceptions par écrit pour le report des congés payés en cas de circonstances extraordinaires chez Acme Corp ?
+R : Des exceptions pour le report des congés payés en cas de circonstances extraordinaires chez Acme Corp peuvent être accordées par écrit par le chef de département de l'employé et le service des ressources humaines.
+
+Catégorie : RH
+Q : Quel est le délai de prévenance pour soumettre une demande de congés payés de 1 à 3 jours prévus chez Acme Corp ?
+R : Chez Acme Corp, les employés doivent soumettre leurs demandes de congés payés au moins 5 jours ouvrables à l'avance pour des absences prévues de 1 à 3 jours.
+
+Catégorie : RH
+Q : Par quel moyen les employés d'Acme Corp doivent-ils soumettre leurs demandes de congés payés ?
+R : Les employés d'Acme Corp doivent soumettre leurs demandes de congés payés via le portail des ressources humaines Acme HR Portal.
+
+Catégorie : RH
+Q : Quel est le délai de prévenance requis pour les demandes d'absence de 4 jours consécutifs ou plus chez Acme Corp ?
+R : Les demandes d'absence de 4 jours consécutifs ou plus chez Acme Corp exigent un préavis d'au moins 15 jours ouvrables.
+
+Catégorie : RH
+Q : Dans quel délai les gestionnaires doivent-ils approuver ou refuser les demandes de congés payés chez Acme Corp ?
+R : Les gestionnaires d'Acme Corp doivent approuver ou refuser les demandes de congés payés dans les 2 jours ouvrables suivant leur soumission.
+
+Catégorie : RH
+Q : Sur quoi l'approbation des congés payés est-elle subordonnée chez Acme Corp ?
+R : L'approbation des congés payés chez Acme Corp est subordonnée aux besoins de l'entreprise et aux exigences de couverture de l'équipe.
+
+Catégorie : RH
+Q : Comment les demandes de congés payés sont-elles traitées pendant les périodes de forte activité chez Acme Corp ?
+R : Pendant les périodes de forte activité chez Acme Corp, qui correspondent aux mois de fin de trimestre fiscal soit mars, juin, septembre et décembre, les demandes de congés payés peuvent être limitées et sont approuvées selon le principe du premier arrivé, premier servi.
+
+Catégorie : RH
+Q : Quelle est la règle concernant le paiement des congés payés lors d'une séparation d'emploi chez Acme Corp ?
+R : Lors d'une séparation volontaire ou involontaire d'Acme Corp, les employés recevront le paiement de tous leurs congés payés accumulés mais non utilisés, jusqu'à concurrence du solde de report maximal de 5 jours.
+
+Catégorie : RH
+Q : Comment les congés payés accumulés pendant la dernière période de paie sont-ils calculés lors du départ d'un employé d'Acme Corp ?
+R : Les congés payés accumulés pendant la dernière période de paie lors du départ d'un employé d'Acme Corp sont proratisés en fonction des jours travaillés.
+
+Catégorie : RH
+Q : Combien de jours de congé de maladie reçoivent tous les employés à temps plein par année civile chez Acme Corp ?
+R : Tous les employés à temps plein d'Acme Corp reçoivent 10 jours de congé de maladie, soit 80 heures, par année civile.
+
+Catégorie : RH
+Q : Comment les congés de maladie sont-ils attribués au cours de l'année chez Acme Corp ?
+R : Chez Acme Corp, les congés de maladie sont versés en une seule fois le 1er janvier de chaque année, ou à la date d'embauche pour les nouveaux employés avec un prorata pour le reste de l'année.
+
+Catégorie : RH
+Q : Comment les employés à temps partiel reçoivent-ils leurs congés de maladie chez Acme Corp ?
+R : Les employés à temps partiel d'Acme Corp reçoivent des congés de maladie proratisés en fonction de leurs heures hebdomadaires prévues.
+
+Catégorie : RH
+Q : Pour quels motifs personnels l'utilisation d'un congé de maladie est-elle autorisée chez Acme Corp ?
+R : Chez Acme Corp, le congé de maladie peut être utilisé pour une maladie personnelle, une blessure ou des rendez-vous médicaux.
+
+Catégorie : RH
+Q : Est-il permis d'utiliser un congé de maladie pour des rendez-vous médicaux chez Acme Corp ?
+R : Oui, chez Acme Corp, le congé de maladie peut être utilisé pour des rendez-vous médicaux, dentaires ou ophtalmologiques qui ne peuvent pas être planifiés en dehors des heures de travail.
+
+Catégorie : RH
+Q : Quels membres de la famille immédiate permettent l'utilisation d'un congé de maladie pour les soigner chez Acme Corp ?
+R : Chez Acme Corp, les membres de la famille immédiate sont le conjoint, le partenaire enregistré, l'enfant, le parent, le frère ou la sœur, et le grand-parent.
+
+Catégorie : RH
+Q : Combien de jours de santé mentale sans certificat médical peut-on prendre par an chez Acme Corp ?
+R : Chez Acme Corp, un employé peut prendre jusqu'à 3 jours de santé mentale par an sans qu'un certificat médical ne soit exigé.
+
+Catégorie : RH
+Q : Quelle est la règle concernant le report des congés de maladie non utilisés chez Acme Corp ?
+R : Chez Acme Corp, le congé de maladie non utilisé ne se reporte pas à l'année suivante et n'est pas payé lors de la cessation d'activité dans l'entreprise.
+
+Catégorie : RH
+Q : Quand un employé d'Acme Corp doit-il notifier son manager direct pour une absence imprévue pour maladie ?
+R : Un employé d'Acme Corp doit notifier son manager direct avant le début de son service prévu ou dès que possible en cas de congé de maladie imprévu.
+
+Catégorie : RH
+Q : Quels moyens de communication sont acceptés pour notifier une absence pour maladie chez Acme Corp ?
+R : Chez Acme Corp, la notification doit se faire par e-mail ou via le portail RH d'Acme, et les messages texte adressés au manager sont acceptés pour les absences du jour même.
+
+Catégorie : RH
+Q : À partir de combien de jours consécutifs d'absence pour maladie un certificat médical peut-il être exigé au retour chez Acme Corp ?
+R : Chez Acme Corp, un certificat médical ou une attestation médicale peut être exigé au retour pour des absences de 3 jours de congé de maladie consécutifs ou plus.
+
+Catégorie : RH
+Q : Quelles sont les conditions d'ancienneté et d'heures travaillées pour être éligible au congé FMLA chez Acme Corp ?
+R : Pour être éligible au congé FMLA chez Acme Corp, l'employé doit avoir travaillé pendant au moins 12 mois et avoir enregistré au moins 1 250 heures au cours des 12 mois précédents.
+
+Catégorie : RH
+Q : Quelle est la durée maximale du congé FMLA non rémunéré et protégé pour les employés éligibles d'Acme Corp ?
+R : Les employés éligibles d'Acme Corp peuvent prendre jusqu'à 12 semaines de congé non rémunéré et protégé par l'emploi sur une période de 12 mois.
+
+Catégorie : RH
+Q : Un employé d'Acme Corp peut-il prendre un congé FMLA pour la naissance et le lien avec un nouveau-né ?
+R : Oui, un employé d'Acme Corp peut prendre un congé FMLA pour la naissance d'un enfant et pour nouer des liens avec le nouveau-né dans l'année suivant sa naissance.
+
+Catégorie : RH
+Q : Le placement d'un enfant en adoption ou en accueil familial donne-t-il droit au congé FMLA chez Acme Corp ?
+R : Oui, le congé FMLA chez Acme Corp s'applique au placement d'un enfant en adoption ou en famille d'accueil et au lien avec cet enfant dans l'année suivant le placement.
+
+Catégorie : RH
+Q : Un employé d'Acme Corp peut-il utiliser le congé FMLA pour soigner un proche atteint d'une affection grave ?
+R : Un employé d'Acme Corp peut utiliser le congé FMLA pour soigner un conjoint, un enfant ou un parent souffrant d'une affection grave.
+
+Catégorie : RH
+Q : Une affection grave personnelle empêchant un employé d'Acme Corp de travailler est-elle couverte par le congé FMLA ?
+R : Oui, une affection grave qui rend l'employé d'Acme Corp incapable d'accomplir les fonctions essentielles de son poste est un motif de congé FMLA.
+
+Catégorie : RH
+Q : Quels motifs liés au service militaire des proches permettent de prendre un congé FMLA chez Acme Corp ?
+R : Chez Acme Corp, toute urgence admissible découlant du service actif couvert d'un conjoint, d'un enfant ou d'un parent dans les forces armées ouvre droit au congé FMLA.
+
+Catégorie : RH
+Q : Quelle est la durée maximale du congé pour proche aidant militaire accordé à un employé éligible d'Acme Corp ?
+R : Un employé éligible d'Acme Corp qui est un proche d'un militaire couvert peut prendre jusqu'à 26 semaines de congé non rémunéré sur une seule période de 12 mois.
+
+Catégorie : RH
+Q : Quel délai de préavis un employé d'Acme Corp doit-il fournir pour un congé FMLA prévisible ?
+R : L'employé d'Acme Corp doit fournir un préavis de 30 jours à l'avance lorsque le congé FMLA est prévisible.
+
+Catégorie : RH
+Q : Quel formulaire doit être rempli pour demander un congé FMLA chez Acme Corp ?
+R : L'employé d'Acme Corp doit compléter le formulaire de demande FMLA disponible sur le portail RH d'Acme.
+
+Catégorie : RH
+Q : Dans quel délai un employé d'Acme Corp doit-il fournir une certification médicale après une demande FMLA ?
+R : L'employé d'Acme Corp doit fournir une certification médicale émanant d'un professionnel de la santé dans les 15 jours calendaires suivant la demande FMLA.
+
+Catégorie : RH
+Q : Dans quel délai le département RH d'Acme Corp émet-il un avis de désignation après avoir reçu les informations FMLA ?
+R : Le département des ressources humaines d'Acme Corp émet un avis de désignation dans les 5 jours ouvrables suivant la réception d'informations suffisantes.
+
+Catégorie : RH
+Q : Qu'advient-il de l'assurance maladie d'un employé d'Acme Corp pendant son congé FMLA ?
+R : Pendant le congé FMLA chez Acme Corp, la couverture d'assurance maladie se poursuit selon les mêmes conditions que si l'employé travaillait encore.
+
+Catégorie : RH
+Q : Qui est responsable du paiement de sa part de prime d'assurance pendant un congé FMLA chez Acme Corp ?
+R : L'employé d'Acme Corp en congé FMLA reste responsable du paiement de sa propre part des primes d'assurance pendant son absence.
+
+Catégorie : RH
+Q : À quoi a droit un employé d'Acme Corp lors de son retour d'un congé FMLA ?
+R : Au retour d'un congé FMLA, l'employé d'Acme Corp est réintégré dans le même poste ou un poste équivalent avec un salaire, des avantages et des conditions d'emploi équivalents.
+
+Catégorie : RH
+Q : Quelle est la durée du congé parental payé chez Acme Corp ?
+R : Acme Corp fournit 12 semaines de congé parental payé à 100% du salaire de base régulier de l'employé.
+
+Catégorie : RH
+Q : Quels événements ouvrent droit au congé parental payé chez Acme Corp ?
+R : Le congé parental payé chez Acme Corp est accordé pour la naissance, l'adoption ou le placement en famille d'accueil d'un enfant.
+
+Catégorie : RH
+Q : Quelles sont les conditions d'ancienneté pour bénéficier du congé parental payé chez Acme Corp ?
+R : Le congé parental payé chez Acme Corp est accessible à tous les employés à temps plein ayant complété au moins 6 mois d'emploi continu chez Acme Corp.
+
+Catégorie : RH
+Q : Dans quel délai le congé parental doit-il commencer chez Acme Corp ?
+R : Chez Acme Corp, le congé parental doit commencer dans les 12 mois suivant l'événement de naissance, d'adoption ou de placement en famille d'accueil.
+
+Catégorie : RH
+Q : Comment le congé parental peut-il être pris chez Acme Corp ?
+R : Chez Acme Corp, le congé parental peut être pris consécutivement ou, avec l'approbation du manager, de manière intermittente par tranches d'au moins une semaine.
+
+Catégorie : RH
+Q : Les deux parents employés par Acme Corp ont-ils droit chacun à leur congé parental ?
+R : Oui, les deux parents sont éligibles aux 12 semaines complètes de congé parental si tous les deux sont employés par Acme Corp.
+
+Catégorie : RH
+Q : Comment le congé parental payé s'articule-t-il avec le congé FMLA chez Acme Corp ?
+R : Chez Acme Corp, le congé parental payé s'exécute en même temps que le congé FMLA là où cela est applicable.
+
+Catégorie : RH
+Q : Que se passe-t-il si un employé épuise ses 12 semaines de congé parental payé chez Acme Corp tout en étant éligible à un congé FMLA supplémentaire ?
+R : Si un employé épuise ses 12 semaines de congé parental payé chez Acme Corp et est éligible à un congé FMLA supplémentaire, le congé FMLA restant sera non payé.
+
+Catégorie : RH
+Q : Combien de jours de congé de deuil payé sont accordés pour le décès d'un membre de la famille immédiate chez Acme Corp ?
+R : Chez Acme Corp, les employés se voient accorder jusqu'à 5 jours ouvrables consécutifs de congé de deuil payé suite au décès d'un membre de la famille immédiate.
+
+Catégorie : RH
+Q : Qui est considéré comme un membre de la famille immédiate pour le congé de deuil chez Acme Corp ?
+R : Chez Acme Corp, la famille immédiate inclut le conjoint, le partenaire domestique, l'enfant (y compris le beau-fils ou la belle-fille), le parent (y compris le beau-parent), le frère ou la sœur, les grands-parents, les petits-enfants ou le beau-parent.
+
+Catégorie : RH
+Q : Combien de jours de congé de deuil payé sont accordés pour le décès d'un membre de la famille élargie chez Acme Corp ?
+R : Chez Acme Corp, les employés se voient accorder jusqu'à 3 jours ouvrables consécutifs de congé de deuil payé suite au décès d'un membre de la famille élargie.
+
+Catégorie : RH
+Q : Qui est inclus dans la famille élargie pour le congé de deuil chez Acme Corp ?
+R : Chez Acme Corp, la famille élargie comprend la tante, l'oncle, la nièce, le neveu, le cousin, le beau-frère ou la belle-sœur.
+
+Catégorie : RH
+Q : Que peut faire un employé d'Acme Corp s'il a besoin de temps additionnel au-delà de la période de congé de deuil ?
+R : Si du temps additionnel est nécessaire au-delà de la période de congé de deuil, les employés d'Acme Corp peuvent utiliser des congés payés PTO ou demander un congé non payé avec l'approbation du manager.
+
+Catégorie : RH
+Q : Quelle est la politique d'Acme Corp concernant la rémunération pendant le service de jury ?
+R : Acme Corp fournit une paie complète pour toute la durée du service de jury des employés.
+
+Catégorie : RH
+Q : Que doit faire un employé d'Acme Corp lorsqu'il reçoit une convocation pour un service de jury ?
+R : Un employé d'Acme Corp doit fournir une copie de la convocation de service de jury à son manager et aux ressources humaines dès sa réception.
+
+Catégorie : RH
+Q : Que doit faire un employé d'Acme Corp s'il est libéré tôt d'un service de jury ?
+R : S'il est libéré tôt un jour de service, l'employé d'Acme Corp est attendu au travail s'il reste plus de 4 heures dans la journée de travail.
+
+Catégorie : RH
+Q : Quel est le soutien d'Acme Corp pour le vote des employés le jour des élections ?
+R : Si l'horaire de travail d'un employé d'Acme Corp ne permet pas suffisamment de temps pour voter, jusqu'à 2 heures de congé payé sont fournies le jour des élections.
+
+Catégorie : RH
+Q : Quelle loi Acme Corp respecte-t-elle en matière de congé militaire ?
+R : Acme Corp respecte la loi américaine Uniformed Services Employment and Reemployment Rights Act (USERRA) concernant le congé militaire.
+
+Catégorie : RH
+Q : Comment Acme Corp compense-t-elle les employés en congé pour service militaire ?
+R : Acme Corp paie la différence entre la solde militaire et le salaire de base régulier de l'employé pour une durée maximale de 30 jours calendaires par an de congé militaire.
+
+Catégorie : RH
+Q : Comment les employés de l'organisation peuvent-ils demander un congé sans solde pour raisons personnelles ?
+R : Les employés de l'organisation peuvent demander un congé sans solde pour raisons personnelles en soumettant une demande écrite au département des ressources humaines au moins 30 jours à l'avance.
+
+Catégorie : RH
+Q : Quel délai faut-il respecter pour soumettre une demande écrite de congé sans solde au département des ressources humaines ?
+R : Il faut respecter un délai d'au moins 30 jours à l'avance pour soumettre une demande écrite de congé sans solde au département des ressources humaines.
+
+Catégorie : RH
+Q : Qui doit approuver une demande de congé sans solde pour raisons personnelles ?
+R : Une demande de congé sans solde pour raisons personnelles doit être approuvée par le chef de département de l'employé ainsi que par le vice-président des ressources humaines.
+
+Catégorie : RH
+Q : Quelle est la durée maximale autorisée pour un congé sans solde ?
+R : La durée maximale autorisée pour un congé sans solde est de 90 jours civils.
+
+Catégorie : RH
+Q : Comment les avantages sociaux sont-ils gérés pendant un congé sans solde ?
+R : Pendant un congé sans solde, les avantages sociaux peuvent être maintenus aux frais exclusifs de l'employé.
+
+Catégorie : RH
+Q : Est-il possible d'utiliser les congés payés ou les congés de maladie les jours de vacances désignés par l'entreprise ?
+R : Il n'est pas possible d'utiliser les congés payés ni les congés de maladie sur les jours de vacances désignés par l'entreprise, conformément à la politique ACME-HR-006 du calendrier des fêtes d'Acme Corp.
+
+Catégorie : RH
+Q : Que se passe-t-il si un jour férié de l'entreprise coïncide avec une période de congés payés approuvée pour un employé ?
+R : Si un jour férié de l'entreprise coïncide avec une période de congés payés approuvée pour un employé, ce jour férié n'est pas décompté du solde de congés payés de l'employé.
+
+Catégorie : RH
+Q : Quelles sont les conséquences d'un abus des politiques de congés chez Acme Corp ?
+R : Un abus des politiques de congés chez Acme Corp peut entraîner des mesures disciplinaires, pouvant aller jusqu'au licenciement inclus.
+
+Catégorie : RH
+Q : Qui les employés doivent-ils contacter s'ils ont des questions concernant la politique de congés ?
+R : Les employés ayant des questions concernant la politique de congés doivent contacter le département des ressources humaines d'Acme Corp par e-mail à hr@acmecorp.com ou via le poste x4500.
+
+Catégorie : RH
+Q : Comment joindre le département des ressources humaines d'Acme Corp pour des questions sur la politique ?
+R : Le département des ressources humaines d'Acme Corp peut être joint par e-mail à l'adresse hr@acmecorp.com ou par téléphone au poste x4500.
+
+Catégorie : RH
+Q : Qui a le pouvoir de modifier la politique de congés chez Acme Corp ?
+R : La politique de congés d'Acme Corp peut être modifiée à la discrétion de la direction d'Acme Corp.
+
+Catégorie : RH
+Q : De quelle manière les employés sont-ils informés des modifications matérielles apportées à la politique de congés d'Acme Corp ?
+R : Les employés d'Acme Corp sont informés des modifications matérielles de la politique par e-mail et par le biais du portail RH d'Acme.

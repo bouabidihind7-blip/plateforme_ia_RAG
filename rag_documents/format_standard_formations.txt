@@ -1,0 +1,59 @@
+Catégorie : Production
+Q : Quelle est la durée de la formation Prise en main de SolidWorks pour les nouveaux collaborateurs production chez 3D Smart Factory ?
+R : La durée de la formation Prise en main de SolidWorks pour les nouveaux collaborateurs production est de 3 jours.
+
+Catégorie : RH
+Q : La formation Prise en main de SolidWorks est-elle certifiante pour les nouveaux collaborateurs production ?
+R : Oui, la formation Prise en main de SolidWorks est certifiante pour les nouveaux collaborateurs production.
+
+Catégorie : Production
+Q : Quel est le public concerné par la formation Prise en main de SolidWorks ?
+R : Le public concerné par la formation Prise en main de SolidWorks est les nouveaux collaborateurs production.
+
+Catégorie : Production
+Q : Quelle est la durée de la formation Sécurité en atelier de production ?
+R : La durée de la formation Sécurité en atelier de production est de 1 jour.
+
+Catégorie : RH
+Q : La formation Sécurité en atelier de production est-elle certifiante ?
+R : Non, la formation Sécurité en atelier de production n'est pas certifiante.
+
+Catégorie : Production
+Q : Quel public doit suivre la formation Sécurité en atelier de production ?
+R : Tous les collaborateurs et les stagiaires doivent suivre la formation Sécurité en atelier de production.
+
+Catégorie : Commercial
+Q : Quelle est la durée de la formation Gestion de projet client ?
+R : La durée de la formation Gestion de projet client est de 2 jours.
+
+Catégorie : RH
+Q : La formation Gestion de projet client est-elle certifiante ?
+R : Non, la formation Gestion de projet client n'est pas certifiante.
+
+Catégorie : Commercial
+Q : À qui s'adresse la formation Gestion de projet client chez 3D Smart Factory ?
+R : La formation Gestion de projet client s'adresse à l'équipe commerciale et marketing.
+
+Catégorie : Production
+Q : Quelle est la durée de la formation Maintenance des imprimantes FDM ?
+R : La durée de la formation Maintenance des imprimantes FDM est de 2 jours.
+
+Catégorie : RH
+Q : Est-ce que la formation Maintenance des imprimantes FDM est certifiante ?
+R : Oui, la formation Maintenance des imprimantes FDM est certifiante.
+
+Catégorie : Production
+Q : Quel public participe à la formation Maintenance des imprimantes FDM ?
+R : La formation Maintenance des imprimantes FDM concerne les techniciens production.
+
+Catégorie : IT
+Q : Combien de jours dure la formation de Sensibilisation à la protection des données ?
+R : La formation de Sensibilisation à la protection des données dure 1 jour.
+
+Catégorie : RH
+Q : La formation de Sensibilisation à la protection des données est-elle certifiante ?
+R : Non, la formation de Sensibilisation à la protection des données n'est pas certifiante.
+
+Catégorie : IT
+Q : Qui doit participer à la formation Sensibilisation a la protection des donnees ?
+R : Tous les collaborateurs de 3D Smart Factory doivent participer à la formation Sensibilisation a la protection des donnees.

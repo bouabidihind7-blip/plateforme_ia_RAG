@@ -1,0 +1,75 @@
+Catégorie : Production
+Q : Quel est le premier contrôle obligatoire pour chaque pièce sortant de l'atelier de production de 3D Smart Factory ?
+R : Chaque pièce sortant de l'atelier de production de 3D Smart Factory doit passer par un contrôle dimensionnel complet avant validation.
+
+Catégorie : Production
+Q : Comment le technicien qualité réalise-t-il le contrôle dimensionnel des pièces chez 3D Smart Factory ?
+R : Le technicien qualité mesure d'abord les trois dimensions principales de la pièce (longueur, largeur, hauteur) au pied à coulisse numérique.
+
+Catégorie : Production
+Q : Quelle est la tolérance maximale acceptée lors du contrôle dimensionnel chez 3D Smart Factory ?
+R : La tolérance maximale acceptée est de plus ou moins 0,2 millimètre par rapport au plan de conception d'origine.
+
+Catégorie : Production
+Q : D'où provient le plan de conception d'origine utilisé pour le contrôle dimensionnel chez 3D Smart Factory ?
+R : Le plan de conception d'origine est fourni par le département Informatique via le logiciel SolidWorks.
+
+Catégorie : Production
+Q : Que se passe-t-il si l'une des trois mesures dépasse la tolérance maximale lors du contrôle dimensionnel chez 3D Smart Factory ?
+R : Si l'une des trois mesures dépasse la tolérance, la pièce est automatiquement classée non conforme et mise de côté pour analyse par le responsable production, Hamza Fassi.
+
+Catégorie : Production
+Q : Quel est le délai dont dispose Hamza Fassi pour décider du sort d'une pièce non conforme sur le plan dimensionnel ?
+R : Hamza Fassi décide dans les 24 heures suivantes si la pièce non conforme doit être réimprimée intégralement ou si elle peut être reprise manuellement selon la nature du défaut constaté.
+
+Catégorie : Production
+Q : Qui est le responsable production de 3D Smart Factory ?
+R : Le responsable production de 3D Smart Factory est Hamza Fassi.
+
+Catégorie : Production
+Q : Comment se déroule le contrôle visuel de surface chez 3D Smart Factory ?
+R : Après validation dimensionnelle, la pièce passe un contrôle visuel de surface sous un éclairage standardisé à 6500 kelvins, réalisé par un second technicien qualité différent du premier pour éviter tout biais.
+
+Catégorie : Production
+Q : Quels défauts sont vérifiés lors du contrôle visuel de surface chez 3D Smart Factory ?
+R : Le contrôle visuel de surface vérifie l'absence de fissures, de bulles d'air visibles, de déformations de surface et de décollage de couches.
+
+Catégorie : Production
+Q : Sur quel type de pièces le décollage de couches est-il particulièrement fréquent chez 3D Smart Factory ?
+R : Le décollage de couches est particulièrement fréquent sur les pièces imprimées en technologie FDM avec du filament PETG.
+
+Catégorie : Production
+Q : Que fait-on d'une pièce présentant un défaut visuel jugé mineur chez 3D Smart Factory ?
+R : Une pièce présentant un défaut visuel jugé mineur, comme une rayure légère ou un léger résidu de support, peut être corrigée sur place par ponçage manuel.
+
+Catégorie : Production
+Q : Quelle est la conséquence d'un défaut visuel majeur lors du contrôle de surface chez 3D Smart Factory ?
+R : Un défaut majeur, tel qu'une fissure structurelle ou une déformation supérieure à 5 pourcent, entraîne un rebut immédiat de la pièce.
+
+Catégorie : Production
+Q : Que devient le rebut immédiat constaté lors du contrôle visuel de surface chez 3D Smart Factory ?
+R : Le rebut est consigné dans le registre qualité hebdomadaire transmis chaque vendredi au responsable production.
+
+Catégorie : Production
+Q : À quelle fréquence le registre qualité est-il transmis au responsable production de 3D Smart Factory ?
+R : Le registre qualité est transmis chaque vendredi au responsable production.
+
+Catégorie : Production
+Q : Quand les tests de résistance mécanique sont-ils effectués sur les pièces chez 3D Smart Factory ?
+R : Les tests de résistance mécanique sont effectués pour les commandes clients spécifiant une exigence de résistance mécanique particulière, sur un échantillon représenté par une pièce sur dix de la même série.
+
+Catégorie : Production
+Q : Comment s'effectue le test de résistance mécanique sur l'échantillon chez 3D Smart Factory ?
+R : Le test de compression jusqu'à rupture est effectué sur le banc d'essai de l'atelier de 3D Smart Factory.
+
+Catégorie : Production
+Q : Quelle force de rupture minimale doit atteindre l'échantillon lors du test de résistance mécanique chez 3D Smart Factory ?
+R : La force de rupture mesurée doit atteindre au minimum 85 pourcent de la valeur théorique calculée par le logiciel SolidWorks lors de la conception.
+
+Catégorie : Production
+Q : Que se passe-t-il si l'échantillon testé ne respecte pas le seuil de 85 pourcent de résistance mécanique chez 3D Smart Factory ?
+R : L'intégralité de la série de production concernée est bloquée et une nouvelle série test est réimprimée avec des paramètres d'impression ajustés avant un nouveau test de validation.
+
+Catégorie : Production
+Q : Quels paramètres d'impression sont ajustés si une série ne respecte pas le seuil de résistance mécanique chez 3D Smart Factory ?
+R : La température de buse est augmentée de 5 degrés et la vitesse d'impression est réduite de 10 pourcent.

@@ -423,8 +423,9 @@ La plateforme repose sur un pipeline en trois étapes successives :
     complète du formulaire (questions, types de réponse attendus, options,
     grilles, images éventuelles avec reconnaissance optique de caractères).
     \item \textbf{Génération} : les questions extraites sont transmises à
-    un agent d'intelligence artificielle, qui propose une réponse adaptée
-    à chacune d'elles.
+    un agent d'intelligence artificielle qui, en s'appuyant sur un système
+    de recherche documentaire interne (RAG, détaillé au Chapitre 4),
+    propose une réponse adaptée à chacune d'elles.
     \item \textbf{Validation humaine} : chaque réponse proposée est
     soumise à un utilisateur, qui peut la valider, la rejeter, ou la
     corriger manuellement avant utilisation finale.
@@ -440,6 +441,11 @@ Techniquement, l'application est organisée en couches :
     source unique de vérité entre les différentes étapes ;
     \item un \textbf{backend FastAPI}, qui expose une API REST reliant
     l'extraction, la génération IA et la base de données ;
+    \item un \textbf{système de recherche documentaire (RAG)}, qui
+    interroge une base vectorielle Chroma contenant la documentation
+    interne de l'entreprise (politiques RH, procédures IT, données de
+    production...) afin de fournir à l'agent IA des extraits de contexte
+    pertinents et vérifiables avant qu'il ne rédige une réponse ;
     \item un \textbf{frontend} en HTML/CSS/JavaScript, qui offre
     l'interface d'import, de traitement et de validation.
 \end{itemize}
@@ -513,6 +519,37 @@ avec Claude Code pendant le stage) :
     \item \textbf{Gemini} comme modèle IA : TODO.
 \end{itemize}
 
+\section{Choix techniques pour le système de recherche documentaire (RAG)}
+
+La mise en place du système de recherche documentaire a nécessité des choix
+techniques spécifiques, distincts de ceux du reste de la plateforme :
+
+\begin{itemize}
+    \item \textbf{ChromaDB} comme base de données vectorielle : solution
+    locale, sans serveur dédié à installer ni à maintenir, dont
+    l'intégration avec LangChain est directe. Sa capacité correspond bien
+    à la taille du corpus documentaire interne de l'entreprise, sans
+    nécessiter l'infrastructure d'une base vectorielle plus lourde
+    (Pinecone, Weaviate...).
+    \item \textbf{LangChain} comme couche d'orchestration : déjà utilisé
+    pour l'agent IA de génération de réponses (Chapitre 4), il a été
+    naturellement réutilisé pour le chargement des documents, leur
+    découpage en fragments et la recherche vectorielle, plutôt que
+    d'introduire un nouvel outil pour une seule partie du projet.
+    \item \textbf{Un modèle d'embedding local}
+    (\texttt{intfloat/multilingual-e5-small}), plutôt qu'un service cloud
+    payant : coût nul par recherche, aucune donnée interne de l'entreprise
+    transmise à un tiers, et latence quasi nulle puisque le calcul se fait
+    sur la machine locale. Ce modèle a été comparé empiriquement à
+    plusieurs alternatives (voir Chapitre 5) avant d'être retenu comme
+    meilleur compromis entre précision et rapidité.
+    \item \textbf{Gemini} reste le seul modèle utilisé pour la
+    \emph{génération} de la réponse finale (déjà justifié plus haut) ; le
+    système RAG ne modifie pas le modèle de génération, il enrichit
+    uniquement le contexte qui lui est fourni avant qu'il ne rédige sa
+    réponse.
+\end{itemize}
+
 \section{Environnement de développement}
 TODO : les outils utilisés au quotidien (VS Code, Git/GitHub, WSL, Postman ou
 curl pour tester l'API...).
@@ -530,6 +567,105 @@ et transformés en JSON structuré (types de questions, grilles, OCR...).
 TODO : explique \texttt{ia\_service.py} — comment le prompt est construit,
 comment le modèle est appelé, la gestion du parallélisme
 (\texttt{ThreadPoolExecutor}), la détection de langue, etc.
+
+\section{Système de recherche documentaire (RAG)}
+
+Afin que l'agent IA puisse répondre avec des informations réellement
+propres à l'entreprise (politiques RH, procédures internes, données de
+production...) plutôt qu'avec les seules connaissances générales du
+modèle Gemini, un système de recherche documentaire (Retrieval-Augmented
+Generation, RAG) a été développé. Avant de générer une réponse, le
+système recherche automatiquement, dans une base documentaire interne,
+les extraits les plus pertinents par rapport à la question posée, et les
+fournit au modèle comme contexte.
+
+\subsection{Standardisation des documents sources}
+
+Les documents internes de l'entreprise existent dans des formats
+hétérogènes (PDF, fichiers Excel/CSV, Word, JSON, Markdown, texte brut).
+Plutôt que de développer une logique d'extraction spécifique à chaque
+format, un agent de standardisation (\texttt{agent\_standardisation.py})
+a été développé : il extrait le texte brut de n'importe quel format
+source, puis le transforme, via un appel au modèle Gemini, en un format
+standard unique — une série de paires question/réponse
+(\texttt{Q~:}~/~\texttt{R~:}), chacune étiquetée avec une catégorie.
+
+Ce format a été affiné de façon empirique, chaque règle correspondant à
+un problème réellement observé lors des tests :
+
+\begin{itemize}
+    \item \textbf{Autonomie} : chaque réponse doit être compréhensible
+    seule, sans pronom ambigu — un extrait retrouvé isolément par la
+    recherche vectorielle doit garder son sens propre.
+    \item \textbf{Longueur libre mais brève} : imposer une limite stricte
+    de caractères (300 caractères, testé en premier) provoquait une perte
+    d'information silencieuse, l'IA sacrifiant des détails secondaires
+    pour respecter la limite. Laisser l'IA juger la longueur naturelle
+    d'un fait, avec un simple repère indicatif (250 à 300 caractères
+    environ), a donné une bien meilleure fidélité au texte source.
+    \item \textbf{Langage naturel} : les réponses sont rédigées en
+    phrases complètes, jamais sous forme de notation "clé~: valeur", qui
+    s'est révélée moins bien reconnue par le modèle d'embedding lors des
+    tests de recherche.
+    \item \textbf{Catégorie} : chaque paire est étiquetée avec l'une de
+    7 catégories fixes (RH, IT, Finance, Production, Commercial, Legal,
+    Général), utilisée ensuite pour cibler la recherche.
+\end{itemize}
+
+\subsection{Découpage en chunks}
+
+Les documents standardisés sont ensuite découpés en fragments
+("chunks") avant d'être stockés dans la base vectorielle. Le découpage
+se fait d'abord par bloc question/réponse (séparé par une ligne vide
+dans le document), afin de ne jamais mélanger deux paires distinctes
+dans un même fragment. Un mécanisme de secours
+(\texttt{RecursiveCharacterTextSplitter} de LangChain) ne s'active que
+si un bloc dépasse malgré tout la taille maximale fixée
+(350 caractères) — un cas rare mais réel, observé notamment sur des
+procédures denses en plusieurs étapes.
+
+Ce mécanisme de secours a révélé un bug réel lors des tests : en
+scindant un bloc trop long, il pouvait couper exactement entre la
+question et sa réponse, plaçant chacune dans un fragment différent. Si
+la recherche ne retrouvait que le fragment contenant la question,
+l'agent IA répondait alors que l'information n'était pas disponible,
+alors qu'elle existait bien dans le document source. La correction a
+consisté à conserver, dans les métadonnées de chaque fragment issu d'un
+même bloc scindé, un identifiant de groupe commun et le texte complet
+d'origine : au moment de la recherche, tout fragment retrouvé est alors
+remplacé par ce texte complet non fragmenté, garantissant qu'aucune
+réponse n'est jamais présentée à l'agent IA de façon partielle.
+
+\subsection{Classification par catégorie et recherche vectorielle}
+
+Plutôt que de rechercher dans l'ensemble du corpus documentaire pour
+chaque question — plus lent et plus susceptible de retrouver des
+extraits non pertinents — le système devine d'abord la ou les
+catégories les plus probables de la question, avant de limiter la
+recherche vectorielle à ces catégories uniquement.
+
+Cette classification est réalisée par embedding local, sans appel à un
+modèle de langage : chaque catégorie est représentée par plusieurs
+phrases de référence rédigées à la main (couvrant les différents angles
+d'un même sujet — par exemple, pour la catégorie RH, un angle
+"gestion administrative du personnel" et un angle distinct "accueil des
+nouveaux stagiaires"), converties en vecteurs numériques. La question
+posée est également convertie en vecteur, puis comparée par similarité
+cosinus à l'ensemble des phrases de référence. La catégorie retenue est
+celle dont la meilleure phrase obtient le score le plus élevé, ainsi que
+toute catégorie dont le score reste proche du meilleur (à moins de 0,02
+d'écart) — une marge de tolérance destinée à couvrir les questions à la
+frontière de deux domaines (par exemple, une question sur la
+confidentialité liée au départ d'un collaborateur, à la fois RH et
+juridique).
+
+Cette approche a été comparée empiriquement à deux alternatives
+(détaillées au Chapitre 5) avant d'être retenue : un filtrage par
+catégorie devinée directement par Gemini, et une simple recherche
+fusionnée sans filtrage par catégorie. L'approche par embedding local
+s'est révélée aussi précise que la recherche fusionnée, tout en étant
+environ deux fois plus rapide et sans coût d'appel supplémentaire au
+modèle de langage.
 
 \section{Backend et base de données}
 TODO : décris les routes principales de l'API et les tables clés
@@ -563,9 +699,83 @@ TODO : explique que les tests ont été faits manuellement sur de vrais
 formulaires (~50 formulaires réels testés au fil du stage), en observant les
 logs backend pour diagnostiquer chaque bug avant de le corriger.
 
+Le système de recherche documentaire (RAG) a fait l'objet d'une
+méthodologie de test complémentaire, distincte des tests manuels sur
+formulaires réels et systématiquement automatisée :
+
+\begin{itemize}
+    \item Un script d'évaluation (\texttt{evaluer\_reponses.py}) exécute
+    une liste de questions à réponse connue à travers le pipeline complet
+    (recherche vectorielle puis génération par Gemini), et compare la
+    réponse obtenue à un ou plusieurs mots-clés attendus. Cette approche
+    a permis de mesurer objectivement l'effet de chaque modification
+    (format des documents, stratégie de recherche, modèle
+    d'embedding...) plutôt que de se fier à une impression subjective.
+    \item Un second script teste uniquement l'étape de classification par
+    catégorie, sans appel au modèle de génération : il réutilise
+    l'ensemble des paires question/réponse déjà présentes dans le corpus
+    documentaire (229 paires réelles, catégorie "Général" exclue) comme
+    vérité terrain. Ce test, entièrement local et sans coût, permet de
+    vérifier la classification sur la totalité du corpus plutôt que sur
+    un échantillon choisi à la main.
+    \item Un test de généralisation a également été mené sur des
+    documents et des formulations de questions n'ayant jamais servi à
+    la conception du système, afin de vérifier que les résultats ne
+    proviennent pas d'un ajustement trop spécifique aux données de test
+    habituelles.
+\end{itemize}
+
 \section{Résultats obtenus}
 TODO : donne des chiffres concrets si tu en as (nombre de formulaires testés,
 temps de génération, taux de réponses correctes...).
+
+Concernant le système RAG, sur un jeu de 34 questions couvrant l'ensemble
+des catégories documentaires, le pipeline complet obtient un score de
+32/34 (94\%) ; les deux échecs restants concernent des questions
+"pièges" pour lesquelles l'information n'existe volontairement pas dans
+les documents, le système répondant alors correctement qu'il ne dispose
+pas de l'information plutôt que d'en inventer une. Sur le test de
+classification par catégorie (229 questions réelles), la précision
+atteint 100\%, après plusieurs itérations de correction empirique des
+phrases de référence. Sur un test de généralisation portant sur des
+sujets et des formulations entièrement nouveaux, le système obtient
+12/12.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Modèle d'embedding & Score (/34) & Temps d'ingestion & Temps de recherche \\
+\midrule
+multilingual-e5-large-instruct (initial) & 31 & $\sim$150 s & 169,6 s \\
+multilingual-e5-small (retenu) & 31 & 16,6 s & 125,2 s \\
+BAAI/bge-m3 & 31 & 152,7 s & 132,5 s \\
+Qwen/Qwen3-Embedding-0.6B & 30 & 1013,8 s & 175,2 s \\
+\bottomrule
+\end{tabular}
+\caption{Comparaison empirique des modèles d'embedding locaux}
+\label{tab:embedding-comparaison}
+\end{table}
+
+Le modèle \texttt{multilingual-e5-small} a été retenu : précision
+identique au modèle "large" initialement utilisé, pour un temps
+d'ingestion environ 10 fois plus rapide, grâce à une taille nettement
+plus réduite (environ 120 millions de paramètres contre 560 millions).
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Stratégie de recherche & Score (/34) & Temps total \\
+\midrule
+Filtrage par catégorie devinée par Gemini & 28 & 369,1 s \\
+Recherche fusionnée (sans filtrage par catégorie) & 31 & 329,4 s \\
+Filtrage par catégorie devinée par embedding local (retenu) & 31 & 169,6 s \\
+\bottomrule
+\end{tabular}
+\caption{Comparaison empirique des stratégies de filtrage par catégorie}
+\label{tab:filtrage-comparaison}
+\end{table}
 
 \section{Difficultés rencontrées et solutions}
 TODO : raconte 2-3 vrais problèmes rencontrés et comment tu les as résolus
@@ -576,6 +786,22 @@ TODO : raconte 2-3 vrais problèmes rencontrés et comment tu les as résolus
     \item Le regroupement des réponses par question (\texttt{DISTINCT ON})
     pour éviter d'afficher plusieurs fois la même question après un rejet
     suivi d'une régénération.
+    \item Un bug de fragmentation dans le système RAG : le mécanisme de
+    découpage en chunks pouvait, dans de rares cas, séparer une question
+    de sa réponse lorsque celle-ci dépassait la taille maximale d'un
+    fragment — l'agent IA répondait alors que l'information n'était pas
+    disponible, alors qu'elle existait bien dans le document source.
+    Corrigé en conservant le texte complet d'origine dans les métadonnées
+    de chaque fragment concerné, substitué au fragment partiel au moment
+    de la recherche.
+    \item Un biais de classification par catégorie : un mot trop
+    générique dans une phrase de référence (par exemple "formation" pour
+    la catégorie RH) pouvait attirer à tort des questions portant sur un
+    tout autre sujet (une formation technique en Production). Corrigé en
+    remplaçant les formulations trop génériques par des phrases de
+    référence plus spécifiques, chaque correction étant systématiquement
+    revérifiée sur l'ensemble du corpus réel plutôt que sur quelques
+    exemples choisis à la main.
 \end{itemize}
 
 % ============================================================================

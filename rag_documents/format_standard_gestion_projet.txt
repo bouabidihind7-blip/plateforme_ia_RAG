@@ -1,0 +1,67 @@
+Catégorie : Commercial
+Q : Comment les commandes client sont-elles reçues chez 3D Smart Factory ?
+R : Les commandes client sont reçues chez 3D Smart Factory via le portail client en ligne géré par le département Marketing.
+
+Catégorie : Commercial
+Q : Par quel canal les commandes des clients parviennent-elles à 3D Smart Factory ?
+R : Les commandes des clients parviennent à 3D Smart Factory par l'intermédiaire du portail client en ligne géré par le département Marketing.
+
+Catégorie : Commercial
+Q : Qui est responsable de la gestion de la relation client lors de la réception d'une commande ?
+R : Leila Benjelloun est la responsable de la relation client qui reçoit la commande à l'issue de sa transmission par le portail client.
+
+Catégorie : Commercial
+Q : Quel est le délai accordé à Leila Benjelloun pour valider la faisabilité technique d'une commande ?
+R : Leila Benjelloun dispose d'un délai de 24 heures pour valider la faisabilité technique de la commande avec Hamza Fassi, le responsable production.
+
+Catégorie : Production
+Q : Avec qui Leila Benjelloun valide-t-elle la faisabilité technique d'une commande reçue ?
+R : Leila Benjelloun valide la faisabilité technique de la commande avec le responsable production, Hamza Fassi.
+
+Catégorie : Production
+Q : Quelle est la conséquence si une commande nécessite une pièce dont les dimensions dépassent 300x300x400 millimètres ?
+R : Si une commande nécessite une pièce dont les dimensions dépassent le volume d'impression maximal de 300x300x400 millimètres disponible sur les imprimantes FDM de l'atelier, elle est automatiquement redirigée vers une étude de faisabilité en impression SLS.
+
+Catégorie : Production
+Q : Quelle est la seule technologie de 3D Smart Factory capable de traiter des volumes supérieurs à 300x300x400 millimètres ?
+R : L'impression SLS est la seule technologie de 3D Smart Factory capable de traiter des volumes plus importants que les dimensions maximales des imprimantes FDM.
+
+Catégorie : Commercial
+Q : Comment le client peut-il suivre l'avancement de sa commande validée chez 3D Smart Factory ?
+R : Le client peut suivre l'avancement de sa commande en temps réel sur le portail client, où les étapes clés sont mises à jour sans sollicitation directe du département Marketing.
+
+Catégorie : Commercial
+Q : Quelles sont les étapes clés mises à jour sur le portail client pendant le suivi de production ?
+R : Les étapes clés mises à jour sur le portail client sont l'impression lancée, le contrôle qualité en cours et l'expédition programmée.
+
+Catégorie : Commercial
+Q : Quel est le délai moyen habituel pour la livraison des commandes chez 3D Smart Factory ?
+R : Le délai moyen habituel pour la livraison des commandes chez 3D Smart Factory est de 5 jours ouvrés.
+
+Catégorie : Commercial
+Q : Que doit faire Leila Benjelloun en cas de retard prévisible de production ?
+R : En cas de retard prévisible de plus de 2 jours ouvrés par rapport au délai moyen habituel de 5 jours ouvrés, Leila Benjelloun doit informer proactivement le client par e-mail avant l'échéance initialement communiquée.
+
+Catégorie : Commercial
+Q : Quelles sont les causes généralement mentionnées par Leila Benjelloun en cas de retard de commande ?
+R : Leila Benjelloun précise généralement que le retard est lié à une validation qualité supplémentaire ou à une indisponibilité temporaire de machine.
+
+Catégorie : Production
+Q : Que se passe-t-il si un client signale une non-conformité sur une pièce reçue ?
+R : Si un client signale une non-conformité sur une pièce reçue, la réclamation est transmise sous 48 heures au responsable production, Hamza Fassi.
+
+Catégorie : Production
+Q : Comment Hamza Fassi évalue-t-il la pièce retournée en cas de signalement de non-conformité ?
+R : Hamza Fassi évalue la pièce retournée selon les mêmes critères que ceux du contrôle qualité interne, à savoir une tolérance dimensionnelle de 0.2 millimètre et l'absence de défauts de surface majeurs.
+
+Catégorie : Production
+Q : Quels sont les critères du contrôle qualité interne appliqués par Hamza Fassi lors d'un litige ?
+R : Les critères du contrôle qualité interne appliqués par Hamza Fassi sont une tolérance dimensionnelle de 0.2 millimètre et l'absence de défauts de surface majeurs.
+
+Catégorie : Production
+Q : Quelle est la procédure de 3D Smart Factory si la non-conformité d'une pièce est confirmée ?
+R : Si la non-conformité est confirmée, 3D Smart Factory procède au remplacement gratuit de la pièce avec une priorité de production.
+
+Catégorie : Production
+Q : Dans quel délai et sous quelle modalité la nouvelle pièce est-elle réimprimée en cas de non-conformité avérée ?
+R : La nouvelle pièce est réimprimée en tête de file dans un délai maximal de 3 jours ouvrés, sans frais supplémentaire de livraison pour le client concerné.

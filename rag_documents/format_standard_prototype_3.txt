@@ -1,0 +1,59 @@
+Catégorie : IT
+Q : À quelle fréquence les collaborateurs de 3D Smart Factory doivent-ils changer leur mot de passe réseau ?
+R : Les collaborateurs de 3D Smart Factory doivent changer leur mot de passe réseau tous les 90 jours.
+
+Catégorie : IT
+Q : Tous les combien de jours le mot de passe réseau doit-il être modifié chez 3D Smart Factory ?
+R : Le mot de passe réseau doit être modifié tous les 90 jours chez 3D Smart Factory.
+
+Catégorie : IT
+Q : Quelles sont les exigences de composition pour un mot de passe réseau chez 3D Smart Factory ?
+R : Un mot de passe réseau de 3D Smart Factory doit contenir au minimum 10 caractères, avec au moins une majuscule, un chiffre et un caractère spécial.
+
+Catégorie : IT
+Q : Qui dirige le service informatique de 3D Smart Factory ?
+R : Le service informatique de 3D Smart Factory est dirigé par Youssef El Amrani.
+
+Catégorie : IT
+Q : Quand le rappel automatique pour le changement de mot de passe est-il envoyé par le service informatique ?
+R : Le rappel automatique pour le changement de mot de passe est envoyé par le service informatique 7 jours avant l'expiration.
+
+Catégorie : RH
+Q : Quels accès les collaborateurs permanents de 3D Smart Factory reçoivent-ils avec leur badge ?
+R : Chaque collaborateur permanent de 3D Smart Factory reçoit un badge donnant accès au siège ainsi qu'à son département.
+
+Catégorie : RH
+Q : Quelles sont les restrictions appliquées au badge d'accès des stagiaires à 3D Smart Factory ?
+R : Le badge des stagiaires à 3D Smart Factory est limité, valable uniquement pendant les horaires de bureau de 8h30 à 18h30, sans accès à l'atelier de production sauf accompagnement.
+
+Catégorie : RH
+Q : Que faut-il faire en cas de perte ou de vol d'un badge d'accès chez 3D Smart Factory ?
+R : En cas de badge perdu ou volé chez 3D Smart Factory, il faut prévenir immédiatement le service RH.
+
+Catégorie : RH
+Q : Que fait le service RH lorsqu'un badge est déclaré perdu ou volé ?
+R : Le service RH désactive le badge perdu ou volé dans l'heure et en commande un nouveau.
+
+Catégorie : RH
+Q : Quel est le délai de disponibilité d'un nouveau badge après une commande par le service RH ?
+R : Un nouveau badge commandé par le service RH est généralement disponible sous 3 jours ouvrés.
+
+Catégorie : IT
+Q : Comment fonctionne le Wi-Fi invité de 3D Smart Factory ?
+R : Le Wi-Fi invité de 3D Smart Factory est séparé du réseau interne de l'entreprise et son mot de passe change chaque semaine.
+
+Catégorie : IT
+Q : Où peut-on obtenir le mot de passe du Wi-Fi invité de 3D Smart Factory ?
+R : Le mot de passe du Wi-Fi invité de 3D Smart Factory est disponible auprès de l'accueil.
+
+Catégorie : IT
+Q : À qui est réservé le Wi-Fi interne de 3D Smart Factory et comment y accéder ?
+R : Le Wi-Fi interne de 3D Smart Factory est réservé aux collaborateurs et stagiaires et nécessite un compte personnel créé par le service informatique le premier jour.
+
+Catégorie : IT
+Q : Que se passe-t-il en cas de tentative de connexion suspecte avec plus de 5 échecs de mot de passe consécutifs ?
+R : Une tentative de connexion suspecte avec plus de 5 échecs de mot de passe consécutifs entraîne un blocage automatique du compte pendant 30 minutes, et une alerte est envoyée au service informatique pour vérification.
+
+Catégorie : IT
+Q : Quelle est la durée du blocage automatique d'un compte en cas d'échecs répétés de mot de passe ?
+R : En cas de plus de 5 échecs de mot de passe consécutifs, le blocage automatique du compte dure 30 minutes.

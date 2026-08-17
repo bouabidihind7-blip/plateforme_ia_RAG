@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Smart Factory - Validation IA</title>
-    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
     <header class="topbar">
@@ -38,6 +38,19 @@
             </div>
         </section>
 
+        <section class="documents-rag">
+            <div>
+                <p class="section-label">Base de connaissances</p>
+                <h2>Ajouter un document interne</h2>
+                <p>Ajoute un PDF, Excel ou CSV pour que l'IA puisse s'en servir pour répondre aux questions.</p>
+            </div>
+
+            <div class="import-zone">
+                <input id="document-rag-fichier" type="file" accept=".pdf,.xlsx,.csv,.txt" multiple>
+                <button id="bouton-uploader-document" class="secondary-button">Ajouter le document</button>
+            </div>
+        </section>
+
         <section class="import-formulaire">
             <div>
                 <p class="section-label">Source formulaire</p>
@@ -59,13 +72,6 @@
             </div>
 
             <div class="traitement-actions">
-                <label for="modele-ia">Modèle</label>
-                <!-- Un seul modèle pour l'instant (celui réellement utilisé dans ia_service.py) —
-                     les anciennes options (gemini/modele_test/modele_simple) venaient du système
-                     à 3 backends interchangeables, qui n'existe plus. -->
-                <select id="modele-ia">
-                    <option value="gemini-3.1-flash-lite">Gemini 3.1 Flash-Lite</option>
-                </select>
                 <button id="bouton-traitement" class="primary-button">Lancer le traitement</button>
             </div>
         </section>
@@ -115,5 +121,5 @@
 
     <button id="bouton-haut" class="bouton-remonter" aria-label="Remonter en haut">↑</button>
 </body>
-<script src="script.js?v=12"></script>
+<script src="script.js?v=17"></script>
 </html>

@@ -1,5 +1,5 @@
 # Importe FastAPI pour créer l’application backend.
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks
 # Importe CORSMiddleware pour autoriser le frontend à appeler le backend.
 from fastapi.middleware.cors import CORSMiddleware
 # Importe IntegrityError pour détecter un formulaire déjà importé (contrainte UNIQUE).
@@ -7,8 +7,11 @@ from sqlalchemy.exc import IntegrityError
 
 # os.getenv() lit les variables d'environnement, load_dotenv() charge backend/.env.
 import os
+import sys
 from pathlib import Path
 from dotenv import load_dotenv
+
+_RACINE_PROJET = Path(__file__).resolve().parent.parent.parent
 
 # Même schéma que database.py/ia_service.py : chaque fichier qui a besoin de variables
 # d'environnement charge explicitement backend/.env lui-même, sans dépendre de l'ordre
@@ -28,6 +31,15 @@ from backend.app.services.reponse_service import (
     lister_historique_formulaire,
    modifier_statut_reponse,
 )
+
+# Même principe que dans ia_service.py (rag/retriever.py) : rag/ n'est pas un package du
+# backend, donc on l'ajoute au chemin de recherche des modules Python pour pouvoir importer
+# ses scripts d'ingestion directement, sans les dupliquer ici.
+sys.path.append(str(_RACINE_PROJET / "rag"))
+import ingest_pdf
+import ingest_txt
+import ingest_tabulaire
+
 # Crée l’application principale.
 app = FastAPI(title="Plateforme IA de réponses aux formulaires")
 
@@ -204,4 +216,78 @@ def recevoir_formulaire_depuis_url(url: str):
         "formulaire_id": formulaire.formulaire_id,
         "nombre_questions": len(formulaire.questions),
     }
+
+
+RAG_DOCUMENTS_DIR = _RACINE_PROJET / "rag_documents"
+
+# Associe chaque extension supportée à la fonction d'ingestion du bon script — un PDF passe
+# par ingest_pdf.main(), un Excel/CSV par ingest_tabulaire.main() (les deux formats partagent
+# déjà le même script), un TXT par ingest_txt.main().
+EXTENSIONS_VERS_INGESTION = {
+    ".pdf": ingest_pdf.main,
+    ".txt": ingest_txt.main,
+    ".xlsx": ingest_tabulaire.main,
+    ".csv": ingest_tabulaire.main,
+}
+
+
+@app.post("/documents-rag", status_code=201)
+async def recevoir_document_rag(
+    taches_arriere_plan: BackgroundTasks,
+    fichiers: list[UploadFile] = File(...),
+    remplacer: bool = False,
+):
+    # Valide TOUS les fichiers avant d'en écrire un seul sur le disque — sinon, un format
+    # invalide ou un doublon au milieu du lot laisserait les fichiers précédents déjà
+    # sauvegardés pour rien.
+    doublons = []
+    for fichier in fichiers:
+        extension = Path(fichier.filename).suffix.lower()
+        if extension not in EXTENSIONS_VERS_INGESTION:
+            raise HTTPException(
+                status_code=422,
+                detail=f"Format non supporté pour '{fichier.filename}' — "
+                       "seuls .pdf, .txt, .xlsx et .csv sont acceptés.",
+            )
+
+        if (RAG_DOCUMENTS_DIR / fichier.filename).exists():
+            doublons.append(fichier.filename)
+
+    # remplacer=False (valeur par défaut, premier essai) : on liste TOUS les doublons trouvés
+    # (pas juste le premier) et on laisse le frontend demander confirmation à l'utilisateur
+    # avant d'écraser quoi que ce soit. remplacer=True (renvoyé après confirmation) : on
+    # ignore ce contrôle et on écrase directement.
+    if doublons and not remplacer:
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "message": "Ces documents existent déjà.",
+                "doublons": doublons,
+            },
+        )
+
+    # Sauvegarde chaque fichier dans rag_documents/ — le même dossier que les 3 scripts
+    # d'ingestion scannent déjà (jusqu'ici rempli à la main). fonctions_a_lancer est un set :
+    # les fonctions Python sont hashables, donc si 3 PDF + 2 CSV arrivent dans le même lot,
+    # ingest_pdf.main et ingest_tabulaire.main n'y sont ajoutées qu'UNE fois chacune —
+    # inutile de ré-ingérer tout le dossier 5 fois pour 5 fichiers.
+    fonctions_a_lancer = set()
+    for fichier in fichiers:
+        extension = Path(fichier.filename).suffix.lower()
+        destination = RAG_DOCUMENTS_DIR / fichier.filename
+        destination.write_bytes(await fichier.read())
+        fonctions_a_lancer.add(EXTENSIONS_VERS_INGESTION[extension])
+
+    # add_task() ne lance PAS la fonction maintenant — elle est mise de côté et exécutée
+    # seulement APRÈS que la réponse ait été envoyée au frontend. C'est ça qui rend l'upload
+    # rapide : l'utilisateur reçoit "201 OK" tout de suite, l'indexation (lente) tourne après,
+    # sans qu'il ait à attendre devant son écran.
+    for fonction_ingestion in fonctions_a_lancer:
+        taches_arriere_plan.add_task(fonction_ingestion)
+
+    return {
+        "message": "Documents reçus — indexation en cours en arrière-plan",
+        "noms_fichiers": [fichier.filename for fichier in fichiers],
+    }
+
 

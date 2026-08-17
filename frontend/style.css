@@ -220,7 +220,8 @@ button:hover {
 }
 
 .import-formulaire,
-.traitement-ia {
+.traitement-ia,
+.documents-rag {
     width: min(1120px, 90%);
     margin: -18px auto 24px;
     padding: 28px;
@@ -238,9 +239,20 @@ button:hover {
 .traitement-ia {
     margin-top: 0;
     margin-bottom: 46px;
+    /* Le bouton est maintenant seul dans .traitement-actions (menu modèle retiré) —
+       centré plutôt que collé en bas (align-items: end, hérité de .import-formulaire). */
+    align-items: center;
 }
 
+/* .documents-rag est maintenant la première carte (juste après le hero) : elle garde donc
+   le -18px de la règle partagée ci-dessus, pas de règle à part ici. .import-formulaire est
+   passée en carte du milieu — comme .traitement-ia, plus de -18px, juste 0 en haut. */
 .import-formulaire {
+    margin-top: 0;
+}
+
+.import-formulaire,
+.documents-rag {
     align-items: start;
 }
 
@@ -256,7 +268,8 @@ button:hover {
     letter-spacing: -0.5px;
 }
 
-.import-formulaire h2 {
+.import-formulaire h2,
+.documents-rag h2 {
     margin: 0;
     color: var(--blue-text);
     font-size: 30px;
@@ -264,7 +277,8 @@ button:hover {
 }
 
 .import-formulaire p:not(.section-label),
-.traitement-ia p:not(.section-label) {
+.traitement-ia p:not(.section-label),
+.documents-rag p:not(.section-label) {
     margin: 10px 0 0;
     color: var(--blue-muted);
     line-height: 1.5;
@@ -312,13 +326,42 @@ select {
     outline: 3px solid rgba(22, 40, 56, 0.25);
 }
 
+/* Même style que #formulaire-url — un input[type="file"] ne reprend rien du style des
+   input texte tout seul, il faut le cibler explicitement. */
+#document-rag-fichier {
+    width: 100%;
+    padding: 14px 16px;
+    color: var(--blue-text);
+    background: #ffffff;
+    border: 2px solid var(--blue-night);
+    border-radius: 14px;
+    font-weight: 900;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+/* Le bouton "Choisir un fichier" natif du navigateur est un élément à part
+   (::file-selector-button) — même s'il est DANS l'input, il ignore le style de l'input. */
+#document-rag-fichier::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 14px;
+    color: #ffffff;
+    background: var(--blue-night);
+    border: none;
+    border-radius: 8px;
+    font-weight: 900;
+    font-family: inherit;
+    cursor: pointer;
+}
+
 .primary-button {
     width: 100%;
     margin-top: 8px;
-    padding: 15px 20px;
+    padding: 22px 20px;
     border-radius: 14px;
     background: var(--yellow);
     color: var(--blue-deep);
+    font-size: 17px;
     text-transform: uppercase;
     animation: haloBouton 1.6s ease-in-out infinite alternate;
 }
@@ -889,6 +932,7 @@ textarea:focus {
 
     .import-formulaire,
     .traitement-ia,
+    .documents-rag,
     .carte-reponse {
         grid-template-columns: 1fr;
     }

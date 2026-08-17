@@ -11,6 +11,8 @@ import time
 # Doit venir AVANT tout import venant de ce dossier (google_forms_public, microsoft_forms_scraper...).
 racine_projet = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.append(str(racine_projet / "scripts_extraction"))
+# Même principe pour rag/ (retriever.py) — permet d'importer build_retriever ci-dessous.
+sys.path.append(str(racine_projet / "rag"))
 
 from pydantic import BaseModel
 from concurrent.futures import ThreadPoolExecutor
@@ -21,6 +23,7 @@ from langdetect import detect, DetectorFactory
 from langdetect.lang_detect_exception import LangDetectException
 from google_forms_public import extraire_formulaire_google_public
 from microsoft_forms_scraper import extraire_formulaire_microsoft
+from retriever import build_retriever
 
 # langdetect n'est pas déterministe par défaut (probabiliste) — fixer une graine rend ses
 # résultats reproductibles d'un lancement à l'autre.
@@ -48,24 +51,26 @@ modele = ChatGoogleGenerativeAI(
 # Extrait dans une constante (plutôt que gardé inline dans create_agent) pour pouvoir être
 # réimporté tel quel par les scripts de comparaison de modèles (ex: test_documents/), sans
 # dupliquer ce texte à chaque fois qu'on veut tester un autre LLM avec le même prompt.
+# Remplace l'ancien SYSTEM_PROMPT ("invente une réponse plausible", pensé pour des formulaires
+# RSVP/personnels) — les nouveaux formulaires portent uniquement sur des faits d'entreprise
+# (politique, annuaire...), donc ce comportement est maintenant l'INVERSE : ne jamais inventer,
+# répondre uniquement à partir du contexte RAG fourni dans le message (voir construire_prompt,
+# qui insère ce contexte avant la question).
 SYSTEM_PROMPT = (
-    "Tu remplis un formulaire à la place d'un utilisateur qui y répond. "
-    "Pour chaque question, imagine et donne une réponse plausible, comme si tu étais "
-    "cette personne — ne parle jamais de toi-même en tant qu'IA ou assistant. "
-    "Donne toujours une réponse concrète, même approximative si tu n'es pas sûr — "
-    "ne pose jamais de question de clarification en retour, personne ne pourra te répondre. "
+    "Tu es un assistant qui répond à des questions de formulaire en te basant UNIQUEMENT sur "
+    "le contexte fourni dans le message (des extraits de documents internes de l'entreprise). "
+    "N'invente JAMAIS d'information qui ne se trouve pas dans ce contexte — si le contexte ne "
+    "contient pas de quoi répondre avec certitude, réponds honnêtement quelque chose comme "
+    "\"Information non disponible dans les documents fournis\", plutôt que d'inventer une "
+    "réponse plausible. Ne parle jamais de toi-même en tant qu'IA ou assistant dans la réponse "
+    "elle-même — donne directement la réponse, comme une réponse de formulaire normale. "
     "Si des choix possibles sont donnés dans la question, réponds avec le texte EXACT "
     "du ou des choix concernés, sans le reformuler ni l'abréger — certaines questions "
     "acceptent plusieurs choix à la fois, respecte ce que la question demande. "
     "Si tu choisis l'option 'Other'/'Autre' (parce qu'aucun des autres choix ne convient), "
-    "tu DOIS aussi remplir precision_autre avec une réponse concrète et plausible qui explique "
-    "ce que tu veux dire — ne réponds jamais juste 'Other' ou 'Autre' sans précision. Pour "
-    "toutes les autres réponses, laisse precision_autre vide. "
-    "Si la question demande de joindre un document (CV, lettre de motivation...) mais que la "
-    "réponse attendue est un simple champ texte (pas un vrai bouton de dépôt de fichier), "
-    "n'invente JAMAIS un nom de fichier — écris directement le contenu texte plausible du "
-    "document à la place (ex : le texte d'une courte lettre de motivation), comme si tu le "
-    "collais dans le champ. "
+    "tu DOIS aussi remplir precision_autre avec une explication tirée du contexte — ne réponds "
+    "jamais juste 'Other' ou 'Autre' sans précision. Pour toutes les autres réponses, laisse "
+    "precision_autre vide. "
     "IMPORTANT — langue : détecte la langue EXACTE dans laquelle la question est écrite (le "
     "texte de la question lui-même, pas la langue de ces instructions) et réponds strictement "
     "dans cette même langue, du début à la fin, sans jamais changer de langue en cours de "
@@ -74,6 +79,10 @@ SYSTEM_PROMPT = (
 
 agent = create_agent(model=modele, tools=[], system_prompt=SYSTEM_PROMPT, response_format=ReponseAgent)
 
+# Construit le retriever RAG UNE SEULE FOIS au chargement du module (comme agent juste
+# au-dessus) — pas à chaque question, sinon on rechargerait le modèle d'embedding et les
+# connexions Chroma à chaque appel de construire_prompt, très coûteux inutilement.
+retriever_rag = build_retriever()
 
 def construire_prompt(question:dict )-> str:
     # On part du texte de base de la question.
@@ -232,6 +241,23 @@ def construire_prompt(question:dict )-> str:
             + "\". Si la question ci-dessus a un sens complet toute seule, ignore totalement "
             "cette référence et n'y fais aucune allusion.)"
         )
+
+    # RAG : ajouté APRÈS toute la logique ci-dessus (grilles, dates, options, contexte de
+    # question précédente...) — rien de tout ça n'est retiré, on ajoute juste le contexte
+    # documentaire par-dessus. On cherche avec le texte de BASE (texte_pour_ia), pas avec
+    # `texte` (qui contient déjà les instructions de format ajoutées plus haut, qui
+    # pollueraient la recherche sémantique avec du vocabulaire hors-sujet).
+    chunks_pertinents = retriever_rag.invoke(question.get("texte_pour_ia") or "")
+    contexte_documents = "\n\n---\n\n".join(
+        f"[{chunk.metadata.get('source', 'inconnue')}]\n{chunk.page_content}"
+        for chunk in chunks_pertinents
+    )
+    texte = (
+        "Contexte (extraits de documents internes de l'entreprise) :\n"
+        + contexte_documents
+        + "\n\n"
+        + texte
+    )
 
     return texte
 

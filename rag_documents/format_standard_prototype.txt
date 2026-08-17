@@ -1,0 +1,74 @@
+Q : Qui est responsable du département communication chez 3D Smart Factory ?
+R : Nadia Chraibi est responsable communication, une fonction au sein du département Marketing de 3D Smart Factory. Elle a 3 ans d'ancienneté.
+
+Q : Qui dirige le département Marketing chez 3D Smart Factory ?
+R : Le département Marketing de 3D Smart Factory est dirigé par Nadia Chraibi, avec une équipe de 3 personnes, basée au siège, au 1er étage.
+
+Q : Dans quel secteur travaille la startup incubée SolarNow chez 3D Smart Factory ?
+R : SolarNow est une startup incubée par 3D Smart Factory, spécialisée dans le secteur de l'énergie solaire.
+
+Q : Qui dirige le département Incubation Startups chez 3D Smart Factory ?
+R : Le département Incubation Startups de 3D Smart Factory est dirigé par le responsable incubation, basé à l'annexe, au rez-de-chaussée.
+
+Q : Combien de jours de télétravail par semaine sont autorisés aux stagiaires chez 3D Smart Factory ?
+R : Les stagiaires de 3D Smart Factory peuvent bénéficier de jusqu'à 2 jours de télétravail par semaine, avec l'accord préalable de leur tuteur de stage.
+
+Q : Combien de jours de congés a un employé de 3D Smart Factory après 3 ans d'ancienneté ?
+R : Un employé de 3D Smart Factory avec 3 ans d'ancienneté a droit à 25 jours de congés par an, selon le barème interne de l'entreprise.
+
+Q : Qui dirige le département Ressources Humaines chez 3D Smart Factory ?
+R : Le département Ressources Humaines de 3D Smart Factory est dirigé par Karim Bensouda, avec une équipe de 2 personnes, basée au siège, au 2e étage.
+
+Q : Qui dirige le département Informatique chez 3D Smart Factory ?
+R : Le département Informatique de 3D Smart Factory est dirigé par Youssef El Amrani, avec une équipe de 4 personnes, basée au siège, au 3e étage.
+
+Q : Qui dirige le département Finance chez 3D Smart Factory ?
+R : Le département Finance de 3D Smart Factory est dirigé par Salma Idrissi, avec une équipe de 2 personnes, basée au siège, au 2e étage.
+
+Q : Qui est le fondateur de 3D Smart Factory ?
+R : 3D Smart Factory a été fondée par M. Bertin, qui occupe aujourd'hui le poste de Directeur général de l'entreprise.
+
+Q : Qui est le responsable incubation chez 3D Smart Factory ?
+R : Rachid Ouazzani est le responsable incubation chez 3D Smart Factory, en charge du département Incubation Startups, basé à l'annexe, au rez-de-chaussée.
+
+Q : Dans quel secteur travaille la startup incubée AgriTech Maroc chez 3D Smart Factory ?
+R : AgriTech Maroc est une startup incubée par 3D Smart Factory, spécialisée dans les capteurs connectés pour l'agriculture de précision.
+
+Q : Dans quel secteur travaille la startup incubée MedLink chez 3D Smart Factory ?
+R : MedLink est une startup incubée par 3D Smart Factory, spécialisée dans les plateformes de téléconsultation médicale.
+
+Q : Combien de startups sont actuellement incubées chez 3D Smart Factory ?
+R : 3D Smart Factory incube actuellement 7 startups, dans des secteurs variés : énergie solaire, agritech, santé numérique, logistique et impression 3D industrielle.
+
+Q : Quel est le matériel fourni à un nouveau stagiaire chez 3D Smart Factory ?
+R : Un nouveau stagiaire chez 3D Smart Factory reçoit un ordinateur portable, un badge d'accès aux locaux, et un compte email professionnel dès son premier jour.
+
+Q : Comment un stagiaire de 3D Smart Factory doit-il demander un congé ?
+R : Un stagiaire de 3D Smart Factory doit envoyer une demande de congé à son tuteur de stage au moins 5 jours ouvrés à l'avance, par email ou via l'outil RH interne.
+
+Q : Quelle est la politique de remboursement des frais de transport chez 3D Smart Factory ?
+R : Chez 3D Smart Factory, les frais de transport professionnel (déplacements clients, salons) sont remboursés sur présentation de justificatifs, dans un délai de 30 jours.
+
+Q : Où se trouve le siège de 3D Smart Factory ?
+R : Le siège de 3D Smart Factory se trouve à Casablanca, avec une annexe dédiée à l'incubation de startups au rez-de-chaussée du même bâtiment.
+
+Q : Quels sont les horaires d'ouverture des bureaux de 3D Smart Factory ?
+R : Les bureaux de 3D Smart Factory sont ouverts du lundi au vendredi, de 8h30 à 18h30, avec un accès badge en dehors des horaires standards pour les employés permanents.
+
+Q : Comment signaler un problème informatique chez 3D Smart Factory ?
+R : Pour signaler un problème informatique chez 3D Smart Factory, il faut contacter le service IT via le portail interne ou par email à it-support@exemple-3dsmartfactory.test.
+
+Q : 3D Smart Factory organise-t-elle des événements pour les stagiaires ?
+R : Oui, 3D Smart Factory organise un événement d'intégration mensuel pour les nouveaux stagiaires, ainsi que des portes ouvertes trimestrielles pour présenter les startups incubées.
+
+Q : Quel est le budget de formation annuel chez 3D Smart Factory ?
+R : Chaque collaborateur permanent de 3D Smart Factory bénéficie d'un budget de formation annuel, dont le montant dépend de son ancienneté et de son poste, validé par le service RH.
+
+Q : Comment se déroule l'entretien annuel d'évaluation chez 3D Smart Factory ?
+R : Chez 3D Smart Factory, l'entretien annuel d'évaluation porte sur les objectifs de l'année écoulée et ceux de l'année suivante, organisé entre le collaborateur et son responsable direct.
+
+Q : Quelle est la politique de sécurité des mots de passe chez 3D Smart Factory ?
+R : Chez 3D Smart Factory, le partage d'identifiants entre collaborateurs est strictement interdit, et toute perte ou vol de matériel professionnel doit être signalé au service IT dans l'heure.
+
+Q : Qui contacter pour une question sur la paie chez 3D Smart Factory ?
+R : Pour toute question sur la paie chez 3D Smart Factory, il faut contacter le département Finance, dirigé par Salma Idrissi.
