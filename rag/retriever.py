@@ -78,6 +78,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.runnables import RunnableLambda
 from langchain_core.documents import Document
 from sentence_transformers import CrossEncoder
+from rank_bm25 import BM25Okapi
+import re
 
 # Chemin absolu ancré sur ce fichier (pas relatif au dossier courant) : sinon, lancer ce
 # script — ou ia_service.py qui l'appelle — depuis un dossier différent de la racine du
@@ -149,6 +151,65 @@ def build_retriever(
     # sur pool_reranker plus bas dans retrieve() pour le pourquoi.
     reranker = CrossEncoder("BAAI/bge-reranker-base", max_length=512)
 
+    # Crée dès maintenant les 8 collections (les 7 qa_<categorie> + tabulaire_excel_csv), même
+    # vides, plutôt que de laisser chacune se créer paresseusement au premier retrieve() qui en
+    # a besoin. Bug réel constaté : sur un Chroma tout juste réinitialisé (dossier vidé), une
+    # collection jamais encore créée pouvait être créée par PLUSIEURS threads en même temps
+    # (ThreadPoolExecutor dans generer_reponses_formulaire traite plusieurs questions en
+    # parallèle) — cette création simultanée entrait en conflit dans la base SQLite interne de
+    # Chroma et faisait échouer un des threads ("Could not connect to tenant default_tenant").
+    # Cette boucle est synchrone, exécutée une seule fois au démarrage du serveur (pas à chaque
+    # question) : le coût est négligeable, et il n'y a plus jamais de "première création" en
+    # cours de traitement multi-questions.
+    for nom_collection in [*PHRASES_REFERENCE, "tabulaire_excel_csv"]:
+        nom_reel = nom_collection if nom_collection == "tabulaire_excel_csv" else f"qa_{nom_collection}"
+        Chroma(collection_name=nom_reel, embedding_function=embeddings, persist_directory=CHROMA_DIR)
+
+    # Index BM25 (recherche par MOTS-CLÉS exacts, pas par sens) — un par collection, construit
+    # UNE fois ici à partir des mêmes documents déjà présents dans Chroma. Complète la recherche
+    # sémantique : un embedding confond facilement deux passages presque identiques ("QC-2026-1035"
+    # vs "QC-2026-1073", ou "Mark Palmer" noyé parmi des dizaines de phrases sur le rôle générique
+    # de "Managing Director") car ils se ressemblent trop en surface — mais BM25, qui compte les
+    # mots exacts en commun, distingue ces cas immédiatement (un ID ou un nom propre exact ne
+    # matche QUE le bon document). Testé empiriquement : voir chercher_bm25() et son usage dans
+    # retrieve() plus bas pour le détail des résultats.
+    def _tokeniser(texte: str) -> list[str]:
+        return re.findall(r"\w+", texte.lower())
+
+    index_bm25_par_collection: dict[str, tuple[BM25Okapi, list[Document]] | None] = {}
+    for nom_collection in [*PHRASES_REFERENCE, "tabulaire_excel_csv"]:
+        nom_reel = nom_collection if nom_collection == "tabulaire_excel_csv" else f"qa_{nom_collection}"
+        store = Chroma(collection_name=nom_reel, embedding_function=embeddings, persist_directory=CHROMA_DIR)
+        contenu = store.get(include=["documents", "metadatas"])
+        documents = [
+            Document(page_content=texte, metadata=metadonnees or {})
+            for texte, metadonnees in zip(contenu["documents"], contenu["metadatas"])
+        ]
+        if documents:
+            index_bm25_par_collection[nom_reel] = (
+                BM25Okapi([_tokeniser(document.page_content) for document in documents]),
+                documents,
+            )
+        else:
+            # Collection vide (rien indexé pour l'instant) : pas d'index BM25 tant qu'il n'y a
+            # rien à chercher — reconstruit au prochain démarrage du serveur une fois du contenu
+            # ajouté (même limite que vecteurs_reference/embeddings, rien de spécifique à BM25).
+            index_bm25_par_collection[nom_reel] = None
+
+    def chercher_bm25(
+        nom_collection: str, query: str, k: int, sources_autorisees: set[str] | None = None
+    ) -> list[tuple[Document, float]]:
+        entree = index_bm25_par_collection.get(nom_collection)
+        if entree is None:
+            return []
+        bm25, documents = entree
+        scores = bm25.get_scores(_tokeniser(query))
+        indices = range(len(scores))
+        if sources_autorisees is not None:
+            indices = [i for i in indices if documents[i].metadata.get("source") in sources_autorisees]
+        indices_tries = sorted(indices, key=lambda i: scores[i], reverse=True)[:k]
+        return [(documents[i], float(scores[i])) for i in indices_tries if scores[i] > 0]
+
     # Vecteurs de TOUTES les phrases de référence, calculés UNE fois ici (pas à chaque
     # question) — une LISTE de vecteurs par catégorie, pas un seul.
     # Préfixe "passage: " : e5-small est ENTRAÎNÉ avec des préfixes différents pour une
@@ -192,7 +253,9 @@ def build_retriever(
     # similarity_search_with_relevance_scores renvoie (Document, score) — score entre 0 et 1,
     # PLUS HAUT = PLUS PERTINENT (contrairement à similarity_search_with_score, qui renvoie
     # une distance où plus bas = plus proche — on préfère cette version pour éviter la confusion).
-    def retrieve(query: str, k_total: int = 6) -> list[Document]:
+    def retrieve(
+        query: str, k_total: int = 6, sources_autorisees: list[str] | None = None
+    ) -> list[Document]:
         # Contrairement à embeddings, les connexions Chroma(...) sont recréées à CHAQUE
         # recherche (léger : juste une connexion, pas un rechargement du modèle) — sinon, un
         # ré-import de document (delete_collection() + from_documents() dans les scripts
@@ -211,6 +274,14 @@ def build_retriever(
         # une question évidente comme le télétravail).
         categories.add("general")
 
+        # Filtre Chroma optionnel : restreint la recherche aux documents explicitement associés
+        # au formulaire (voir documents_associes en base) — None = pas de restriction, comportement
+        # inchangé. "$in" est la syntaxe Chroma pour "la métadonnée source doit être l'une de ces
+        # valeurs". sources_ensemble (set) réutilisé tel quel par chercher_bm25, qui filtre sur la
+        # même métadonnée "source" côté BM25.
+        filtre_chroma = {"source": {"$in": sources_autorisees}} if sources_autorisees else None
+        sources_ensemble = set(sources_autorisees) if sources_autorisees else None
+
         tabulaire_store = Chroma(
             collection_name="tabulaire_excel_csv",
             embedding_function=embeddings,
@@ -218,7 +289,10 @@ def build_retriever(
         )
 
         listes_par_collection = [
-            tabulaire_store.similarity_search_with_relevance_scores(query_prefixee, k=k_tabulaire),
+            tabulaire_store.similarity_search_with_relevance_scores(query_prefixee, k=k_tabulaire, filter=filtre_chroma),
+            # BM25 (mots-clés exacts, requête SANS préfixe "query: " — inutile ici, ce préfixe
+            # n'aide que le modèle d'embedding) — voir chercher_bm25() plus haut pour le pourquoi.
+            chercher_bm25("tabulaire_excel_csv", query, k=k_tabulaire, sources_autorisees=sources_ensemble),
         ]
         for categorie in categories:
             qa_store = Chroma(
@@ -226,7 +300,8 @@ def build_retriever(
                 embedding_function=embeddings,
                 persist_directory=CHROMA_DIR,
             )
-            listes_par_collection.append(qa_store.similarity_search_with_relevance_scores(query_prefixee, k=k_qa))
+            listes_par_collection.append(qa_store.similarity_search_with_relevance_scores(query_prefixee, k=k_qa, filter=filtre_chroma))
+            listes_par_collection.append(chercher_bm25(f"qa_{categorie}", query, k=k_qa, sources_autorisees=sources_ensemble))
 
         # Filet de sécurité étendu à TOUTES les catégories, pas juste le top N_CATEGORIES=3 :
         # bug réel constaté ("Quel est le statut de l'imprimante FDM-03 ?") — "production"
@@ -246,7 +321,14 @@ def build_retriever(
                 persist_directory=CHROMA_DIR,
             )
             listes_par_collection.append(
-                qa_store.similarity_search_with_relevance_scores(query_prefixee, k=k_filet_categories_restantes)
+                qa_store.similarity_search_with_relevance_scores(
+                    query_prefixee, k=k_filet_categories_restantes, filter=filtre_chroma
+                )
+            )
+            listes_par_collection.append(
+                chercher_bm25(
+                    f"qa_{categorie}", query, k=k_filet_categories_restantes, sources_autorisees=sources_ensemble
+                )
             )
 
         # Fusion par RANG (Reciprocal Rank Fusion), PAS par score brut — bug réel constaté :
@@ -311,4 +393,15 @@ def build_retriever(
 
         return resultats_finaux
 
-    return RunnableLambda(retrieve)
+    # RunnableLambda.invoke(x) passe x tel quel comme SEUL argument positionnel à la fonction
+    # enveloppée — impossible de lui faire aussi porter sources_autorisees sans changer la forme
+    # de l'entrée. adaptateur() accepte donc soit une simple chaîne (comportement existant,
+    # tous les appels actuels continuent de marcher sans changement), soit un dict
+    # {"query": ..., "sources_autorisees": [...]} quand un formulaire restreint la recherche à
+    # des documents précis (voir ia_service.construire_prompt).
+    def adaptateur(entree):
+        if isinstance(entree, dict):
+            return retrieve(entree["query"], sources_autorisees=entree.get("sources_autorisees"))
+        return retrieve(entree)
+
+    return RunnableLambda(adaptateur)

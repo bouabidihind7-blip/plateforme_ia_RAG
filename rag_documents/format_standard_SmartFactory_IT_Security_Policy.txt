@@ -1,0 +1,55 @@
+Catégorie : IT
+Q : Quelle est la longueur minimale exigée pour un mot de passe d'accès à l'infrastructure informatique de la Smart Factory ?
+R : Le mot de passe d'accès à l'infrastructure informatique de la Smart Factory doit comporter au minimum 16 caractères complexes, incluant des majuscules, des minuscules, des chiffres et des caractères spéciaux.
+
+Catégorie : IT
+Q : À quelle fréquence le renouvellement des mots de passe est-il obligatoire pour accéder au système informatique de la Smart Factory ?
+R : Le renouvellement du mot de passe pour accéder au système informatique de la Smart Factory est obligatoire tous les 90 jours.
+
+Catégorie : IT
+Q : Combien d'anciens mots de passe est-il interdit de réutiliser lors du changement de mot de passe à la Smart Factory ?
+R : La réutilisation des 8 anciens mots de passe est strictement bloquée lors du changement de mot de passe à la Smart Factory.
+
+Catégorie : IT
+Q : Quels types de caractères doivent composer obligatoirement les mots de passe informatiques de la Smart Factory ?
+R : Les mots de passe informatiques de la Smart Factory doivent obligatoirement comprendre des majuscules, des minuscules, des chiffres et des caractères spéciaux.
+
+Catégorie : IT
+Q : L'authentification Multi-Facteurs est-elle obligatoire pour les collaborateurs de la Smart Factory ?
+R : Oui, l'authentification Multi-Facteurs (MFA) est obligatoire pour l'ensemble des collaborateurs de la Smart Factory via l'application Microsoft Authenticator.
+
+Catégorie : IT
+Q : Quelle application mobile doit impérativement être utilisée pour l'authentification Multi-Facteurs à la Smart Factory ?
+R : L'application Microsoft Authenticator doit impérativement être utilisée pour l'authentification Multi-Facteurs des collaborateurs de la Smart Factory.
+
+Catégorie : IT
+Q : Les SMS sont-ils autorisés comme second facteur d'authentification à la Smart Factory ?
+R : Non, les SMS sont strictement interdits comme second facteur d'authentification pour les collaborateurs de la Smart Factory.
+
+Catégorie : IT
+Q : Quel moyen technologique doit être utilisé pour tout accès à distance au réseau industriel de la Smart Factory ?
+R : Tout accès à distance au réseau industriel de la Smart Factory, comprenant le VLAN Production et les capteurs IoT, doit emprunter exclusivement le tunnel VPN SSL sécurisé de l'entreprise.
+
+Catégorie : IT
+Q : Quelle est la durée maximale autorisée pour une session VPN continue sur le réseau de la Smart Factory ?
+R : La durée maximale d'une session VPN continue sur le réseau de la Smart Factory est fixée à 8 heures, après quoi une reconnexion avec authentification MFA est exigée.
+
+Catégorie : IT
+Q : Que doit faire un collaborateur après l'expiration de la durée maximale de sa session VPN continue à la Smart Factory ?
+R : Après l'expiration de la durée maximale de 8 heures d'une session VPN continue, le collaborateur de la Smart Factory doit effectuer une reconnexion avec authentification MFA.
+
+Catégorie : IT
+Q : Quelle est la première action à réaliser par un collaborateur de la Smart Factory en cas de réception d'un e-mail suspect ?
+R : En cas de réception d'un e-mail suspect, le collaborateur de la Smart Factory doit immédiatement cliquer sur le bouton 'Signaler un Phishing' dans Outlook ou transférer le message à l'adresse incident-it@smartfactory.com.
+
+Catégorie : IT
+Q : À quelle adresse e-mail faut-il transférer un message suspect en l'absence du bouton de signalement à la Smart Factory ?
+R : En cas de réception d'un e-mail suspect, le collaborateur de la Smart Factory doit transférer le message à l'adresse e-mail incident-it@smartfactory.com.
+
+Catégorie : IT
+Q : Quelle est la procédure d'urgence à suivre en cas de suspicion de ransomware sur un terminal de la Smart Factory ?
+R : En cas de suspicion de ransomware ou de compromission de compte à la Smart Factory, le collaborateur doit immédiatement isoler la machine du réseau en débranchant le câble Ethernet ou en coupant le Wi-Fi.
+
+Catégorie : IT
+Q : Comment contacter la hotline IT de la Smart Factory en cas d'incident de sécurité majeur ?
+R : En cas d'incident de sécurité à la Smart Factory, le collaborateur doit contacter la hotline IT au poste interne 4444, qui est disponible 24h/24 et 7j/7.

@@ -1,5 +1,14 @@
 // Adresse de notre backend FastAPI.
-const API_URL = "http://127.0.0.1:8000";
+// Vide (URL relative) : le backend sert maintenant le frontend depuis la même origine (voir
+// app.mount("/", StaticFiles(...)) dans main.py), donc plus besoin d'adresse codée en dur —
+// ça marche pareil en local (127.0.0.1:8000) et derrière un tunnel ngrok.
+const API_URL = "";
+
+// ngrok (gratuit) affiche une page d'avertissement HTML avant CHAQUE requête venant d'un
+// navigateur, y compris les appels fetch() — cet en-tête la contourne. Inutile en local
+// (127.0.0.1), mais on le laisse toujours présent pour ne pas avoir à y penser si API_URL
+// repasse un jour par un tunnel ngrok.
+const ENTETES_NGROK = { "ngrok-skip-browser-warning": "true" };
 
 // Récupère la zone où on affiche les messages.
 const zoneMessage = document.getElementById("message");
@@ -31,6 +40,73 @@ const boutonUploaderDocument = document.getElementById("bouton-uploader-document
 // Au début, aucun formulaire n’est sélectionné.
 let formulaireActuelId = null;
 
+// Zone où sont affichées les cases à cocher "restreindre à ces documents" (voir
+// documents_associes en base / retriever.py: retrieve(sources_autorisees=...)).
+const listeDocumentsAssocies = document.getElementById("liste-documents-associes");
+const champRechercheDocuments = document.getElementById("recherche-documents-associes");
+
+// Liste complète venant du backend (même principe que tousLesFormulaires dans historique.js) —
+// la recherche filtre CETTE liste en mémoire, sans redemander au backend à chaque frappe.
+let tousLesDocuments = [];
+
+// Sources cochées, conservées à part de l'affichage — sinon, filtrer la liste en tapant dans
+// la recherche redessine les cases et perd les coches déjà faites sur des documents qui
+// disparaissent temporairement du filtre.
+let documentsAssociesCoches = new Set();
+
+
+// Recharge la liste des documents RAG disponibles depuis le backend — appelée au chargement de
+// la page ET après chaque ajout de document, pour que la liste reste à jour sans recharger la
+// page. Rien de coché = pas de restriction (comportement par défaut, inchangé).
+async function chargerListeDocuments() {
+    try {
+        const reponseHttp = await fetch(`${API_URL}/documents-rag`, { headers: ENTETES_NGROK });
+        const donnees = await reponseHttp.json();
+        tousLesDocuments = donnees.documents;
+        afficherListeDocuments(tousLesDocuments);
+    } catch (erreur) {
+        // Silencieux : la liste reste vide, l'import fonctionne quand même sans restriction.
+    }
+}
+
+
+// Redessine les cases à cocher à partir d'une liste donnée (complète ou filtrée) — restaure
+// l'état coché depuis documentsAssociesCoches, pour ne rien perdre en filtrant.
+function afficherListeDocuments(documents) {
+    listeDocumentsAssocies.innerHTML = "";
+    documents.forEach((doc) => {
+        const label = document.createElement("label");
+        label.className = "case-document-associe";
+        const coche = documentsAssociesCoches.has(doc.source) ? "checked" : "";
+        label.innerHTML = `<input type="checkbox" value="${doc.source}" ${coche}> ${doc.nom_original}`;
+        label.querySelector("input").addEventListener("change", (evenement) => {
+            if (evenement.target.checked) {
+                documentsAssociesCoches.add(doc.source);
+            } else {
+                documentsAssociesCoches.delete(doc.source);
+            }
+        });
+        listeDocumentsAssocies.appendChild(label);
+    });
+}
+
+
+// Filtre tousLesDocuments par nom (insensible à la casse) — appelé à chaque frappe dans le
+// champ de recherche, même principe que filtrerFormulaires() dans historique.js.
+function filtrerDocuments() {
+    const recherche = champRechercheDocuments.value.trim().toLowerCase();
+    if (!recherche) {
+        afficherListeDocuments(tousLesDocuments);
+        return;
+    }
+    const resultats = tousLesDocuments.filter((doc) =>
+        doc.nom_original.toLowerCase().includes(recherche)
+    );
+    afficherListeDocuments(resultats);
+}
+
+champRechercheDocuments.addEventListener("input", filtrerDocuments);
+
 
 // Affiche un message dans zoneMessage — succes=true ajoute le style jaune du thème (.succes,
 // voir style.css) plutôt qu'un emoji ✅ à la couleur verte fixe, non personnalisable. Toujours
@@ -49,11 +125,12 @@ function afficherMessage(texte, succes = false) {
 function formaterDate(dateIso) {
     // Si la date n’existe pas, on affiche un texte simple.
     if (!dateIso) {
-        return "Non disponible";
+        return "Not available";
     }
 
-    // Convertit la date ISO en format français.
-    return new Date(dateIso).toLocaleString("fr-FR");
+    // Convertit la date ISO en format anglais (jour/mois conservé pour rester lisible
+    // sans ambiguïté, contrairement au format mois/jour américain).
+    return new Date(dateIso).toLocaleString("en-GB");
 }
 
 
@@ -64,18 +141,18 @@ function formaterDate(dateIso) {
 async function chargerReponses() {
     if (formulaireActuelId === null) {
         listeReponses.innerHTML = "";
-        afficherMessage("Importe un formulaire pour voir ses réponses.");
+        afficherMessage("Import a form to see its answers.");
         return;
     }
 
     // Affiche un message pendant le chargement.
-    afficherMessage("Chargement des réponses...");
+    afficherMessage("Loading answers...");
 
     // Charge seulement les réponses de CE formulaire précis.
     const urlReponses = `${API_URL}/formulaires/${formulaireActuelId}/reponses`;
 
     // Appelle le backend pour récupérer les réponses.
-    const reponseHttp = await fetch(urlReponses);
+    const reponseHttp = await fetch(urlReponses, { headers: ENTETES_NGROK });
 
     // Transforme la réponse HTTP en objet JavaScript.
     const donnees = await reponseHttp.json();
@@ -99,59 +176,72 @@ async function importerFormulaireDepuisUrl() {
     const url = champFormulaireUrl.value.trim();
 
     if (!url) {
-        afficherMessage("Colle d’abord une URL de formulaire.");
+        afficherMessage("Paste a form URL first.");
         return;
     }
 
     boutonImporterUrl.disabled = true;
-    boutonImporterUrl.textContent = "Import en cours...";
-    afficherMessage("Extraction et import du formulaire...");
+    boutonImporterUrl.textContent = "Importing...";
+    afficherMessage("Extracting and importing the form...");
 
     // try/catch : si le backend plante (ex. formulaire déjà importé, IntegrityError 500), sa
     // réponse est du texte brut, pas du JSON — reponseHttp.json() lève alors une exception. Sans
     // ce filet, le bouton restait bloqué sur "Import en cours..." pour toujours (le code qui le
     // réactive, plus bas, n'était jamais atteint).
     try {
-        // url est un query param côté backend (def recevoir_formulaire_depuis_url(url: str)),
-        // pas un Body — on la met donc directement dans l’URL de la requête, pas en JSON.
+        // Documents cochés (documentsAssociesCoches, pas les cases visibles à l'écran — un
+        // document coché puis masqué par la recherche doit rester pris en compte) : chacun
+        // ajouté comme un paramètre "documents_associes" séparé — c'est la syntaxe attendue par
+        // FastAPI pour une liste reçue en query params (list[str] = Query(...)), pas une chaîne
+        // unique séparée par virgules.
+        const parametres = new URLSearchParams({ url });
+        documentsAssociesCoches.forEach((source) => {
+            parametres.append("documents_associes", source);
+        });
+
         const reponseHttp = await fetch(
-            `${API_URL}/formulaires/depuis-url?url=${encodeURIComponent(url)}`,
-            { method: "POST" }
+            `${API_URL}/formulaires/depuis-url?${parametres.toString()}`,
+            { method: "POST", headers: ENTETES_NGROK }
         );
 
         if (!reponseHttp.ok) {
-            afficherMessage("Import refusé : ce formulaire a peut-être déjà été importé, ou l’URL n’est pas un formulaire Google/Microsoft valide.");
+            afficherMessage("Import rejected: this form may already have been imported, or the URL isn't a valid Google/Microsoft form.");
             return;
         }
 
         const donnees = await reponseHttp.json();
         formulaireActuelId = donnees.id;
 
+        // Vide la sélection après un import réussi — sinon elle resterait cochée pour le
+        // PROCHAIN formulaire importé, qui n'a probablement aucun rapport avec ces documents-ci.
+        documentsAssociesCoches.clear();
+        afficherListeDocuments(tousLesDocuments);
+
         // chargerReponses() modifie zoneMessage elle-même ("Chargement...", puis vide) — on
         // affiche donc le message de succès APRÈS, pour qu'il ne soit pas écrasé juste après.
         await chargerReponses();
-        afficherMessage(`✓ Formulaire importé avec succès : ${donnees.nombre_questions} question(s). Tu peux maintenant lancer le traitement.`, true);
+        afficherMessage(`✓ Form imported successfully: ${donnees.nombre_questions} question(s). You can now start processing.`, true);
     } catch (erreur) {
-        afficherMessage("Erreur inattendue pendant l’import — réessaie dans un instant.");
+        afficherMessage("Unexpected error during import — try again in a moment.");
     } finally {
         boutonImporterUrl.disabled = false;
-        boutonImporterUrl.textContent = "Importer depuis une URL";
+        boutonImporterUrl.textContent = "Import from URL";
     }
 }
 
 
-// Envoie un document (PDF/Excel/CSV/TXT) au backend pour l'ajouter à la base RAG.
+// Envoie un document (PDF/Word/PowerPoint/Excel/CSV/TXT) au backend pour l'ajouter à la base RAG.
 async function uploaderDocumentRag() {
     const fichiers = champDocumentRag.files;
 
     if (fichiers.length === 0) {
-        afficherMessage("Choisis d'abord un ou plusieurs fichiers à ajouter.");
+        afficherMessage("Choose one or more files to add first.");
         return;
     }
 
     boutonUploaderDocument.disabled = true;
-    boutonUploaderDocument.textContent = "Ajout en cours...";
-    afficherMessage(`Envoi et indexation de ${fichiers.length} document(s)...`);
+    boutonUploaderDocument.textContent = "Adding...";
+    afficherMessage(`Uploading and indexing ${fichiers.length} document(s)...`);
 
     // FormData (pas JSON.stringify) : nécessaire pour envoyer de vrais fichiers binaires. fetch
     // détecte tout seul le bon Content-Type (multipart/form-data) à partir d'un FormData —
@@ -168,6 +258,7 @@ async function uploaderDocumentRag() {
     try {
         let reponseHttp = await fetch(`${API_URL}/documents-rag`, {
             method: "POST",
+            headers: ENTETES_NGROK,
             body: donneesFormulaire,
         });
 
@@ -178,35 +269,69 @@ async function uploaderDocumentRag() {
             const erreurDonnees = await reponseHttp.json();
             const doublons = erreurDonnees.detail.doublons;
             const veutRemplacer = confirm(
-                `Ce(s) document(s) existe(nt) déjà : ${doublons.join(", ")}. Veux-tu les remplacer ?`
+                `These document(s) already exist: ${doublons.join(", ")}. Replace them?`
             );
 
             if (!veutRemplacer) {
-                afficherMessage("Ajout annulé.");
+                afficherMessage("Upload cancelled.");
                 return;
             }
 
             // Renvoie exactement la même requête, juste avec remplacer=true en plus.
             reponseHttp = await fetch(`${API_URL}/documents-rag?remplacer=true`, {
                 method: "POST",
+                headers: ENTETES_NGROK,
                 body: donneesFormulaire,
             });
         }
 
         if (!reponseHttp.ok) {
-            afficherMessage("Ajout refusé : format de fichier non supporté (PDF, Excel, CSV ou TXT uniquement) ou erreur d'indexation.");
+            afficherMessage("Upload rejected: unsupported file format (PDF, Word, PowerPoint, Excel, CSV, or TXT only) or indexing error.");
             return;
         }
 
         const donnees = await reponseHttp.json();
         champDocumentRag.value = "";
-        afficherMessage(`✓ ${donnees.noms_fichiers.length} document(s) reçu(s) : ${donnees.noms_fichiers.join(", ")}. Indexation en cours en arrière-plan (peut prendre quelques minutes).`, true);
+        afficherMessage(`✓ ${donnees.noms_fichiers.length} document(s) received: ${donnees.noms_fichiers.join(", ")}. Indexing in progress in the background (may take a few minutes).`, true);
+
+        // Vérifie toutes les 3 secondes si l'indexation est terminée, pour remplacer le message
+        // ci-dessus par une confirmation claire — sans ça, rien à l'écran ne dit jamais que
+        // c'est fini, l'utilisateur doit deviner ou réessayer "Start processing" au hasard.
+        attendreFinIndexation(donnees.noms_fichiers);
     } catch (erreur) {
-        afficherMessage("Erreur inattendue pendant l'ajout des documents — réessaie dans un instant.");
+        afficherMessage("Unexpected error while adding documents — try again in a moment.");
     } finally {
         boutonUploaderDocument.disabled = false;
-        boutonUploaderDocument.textContent = "Ajouter le document";
+        boutonUploaderDocument.textContent = "Add document";
     }
+}
+
+
+// Interroge GET /documents-rag/statut toutes les 3 secondes jusqu'à ce que l'indexation soit
+// terminée, puis affiche une confirmation claire. N'écrase pas un message plus récent affiché
+// entre-temps par une autre action (ex. l'utilisateur a lancé un import de formulaire) —
+// vérifié via zoneMessage.textContent avant de mettre à jour.
+async function attendreFinIndexation(nomsFichiers) {
+    const messageAttendu = zoneMessage.textContent;
+
+    const verifier = async () => {
+        const reponseHttp = await fetch(`${API_URL}/documents-rag/statut`, { headers: ENTETES_NGROK });
+        const statut = await reponseHttp.json();
+
+        if (!statut.indexation_en_cours) {
+            if (zoneMessage.textContent === messageAttendu) {
+                afficherMessage(`✓ Indexing complete for ${nomsFichiers.join(", ")} — you can now import your form.`, true);
+            }
+            // Rafraîchit la liste des cases à cocher pour que le(s) nouveau(x) document(s)
+            // apparaisse(nt) sans que l'utilisateur ait à recharger la page.
+            chargerListeDocuments();
+            return;
+        }
+
+        setTimeout(verifier, 3000);
+    };
+
+    setTimeout(verifier, 3000);
 }
 
 
@@ -214,14 +339,24 @@ async function uploaderDocumentRag() {
 async function lancerTraitementIA() {
     // Sans formulaire importé, formulaire_id (obligatoire côté backend) n'existe pas encore.
     if (formulaireActuelId === null) {
-        afficherMessage("Importe d’abord un formulaire avant de lancer le traitement.");
+        afficherMessage("Import a form first before starting processing.");
+        return;
+    }
+
+    // Vérifie qu'aucun document n'est encore en train d'être indexé — sinon le RAG chercherait
+    // dans une base pas encore à jour et pourrait manquer une réponse pourtant présente dans un
+    // document tout juste ajouté (voir _executer_avec_suivi_indexation côté backend).
+    const statutHttp = await fetch(`${API_URL}/documents-rag/statut`, { headers: ENTETES_NGROK });
+    const statut = await statutHttp.json();
+    if (statut.indexation_en_cours) {
+        afficherMessage("A document is still being indexed in the background — please wait a moment and try again.");
         return;
     }
 
     // Désactive le bouton pendant l’appel backend.
     boutonTraitement.disabled = true;
-    boutonTraitement.textContent = "Traitement en cours...";
-    afficherMessage(`Traitement lancé avec ${MODELE_IA}...`);
+    boutonTraitement.textContent = "Processing...";
+    afficherMessage(`Processing started with ${MODELE_IA}...`);
 
     // try/catch : même raison que dans importerFormulaireDepuisUrl() — une erreur backend non
     // gérée renvoie du texte brut, pas du JSON, et reponseHttp.json() planterait sans filet.
@@ -232,11 +367,12 @@ async function lancerTraitementIA() {
             `${API_URL}/traitements/questions-textuelles?formulaire_id=${formulaireActuelId}&modele_ia=${MODELE_IA}`,
             {
                 method: "POST",
+                headers: ENTETES_NGROK,
             }
         );
 
         if (!reponseHttp.ok) {
-            afficherMessage("Échec du traitement — réessaie dans un instant.");
+            afficherMessage("Processing failed — try again in a moment.");
             return;
         }
 
@@ -247,14 +383,28 @@ async function lancerTraitementIA() {
         // chargerReponses() modifie zoneMessage elle-même, donc ce message doit venir après,
         // sinon il serait écrasé aussitôt.
         await chargerReponses();
-        afficherMessage(`✓ ${donnees.nombre_reponses} nouvelle(s) réponse(s) générée(s) avec ${MODELE_IA}.`, true);
+        afficherMessage(`✓ ${donnees.nombre_reponses} new answer(s) generated with ${MODELE_IA}.`, true);
     } catch (erreur) {
-        afficherMessage("Erreur inattendue pendant le traitement — réessaie dans un instant.");
+        afficherMessage("Unexpected error during processing — try again in a moment.");
     } finally {
         // Réactive le bouton.
         boutonTraitement.disabled = false;
-        boutonTraitement.textContent = "Lancer le traitement";
+        boutonTraitement.textContent = "Start processing";
     }
+}
+
+
+// Traduit un statut (valeur française, contrainte par chk_reponse_statut en base — voir
+// modifierStatut()) en libellé anglais pour l'affichage, sans toucher à la valeur envoyée
+// au backend ni aux classes CSS qui, elles, restent indexées sur le mot français.
+const LIBELLES_STATUT = {
+    "proposée": "Proposed",
+    "validée": "Validated",
+    "rejetée": "Rejected",
+};
+
+function libelleStatut(statut) {
+    return LIBELLES_STATUT[statut] || statut;
 }
 
 
@@ -272,24 +422,24 @@ function afficherReponse(reponse) {
     carte.innerHTML = `
         <div class="contenu-reponse">
             <p class="question">${reponse.question}</p>
-            <p class="reponse">Réponse proposée : ${reponse.valeur}</p>
+            <p class="reponse">Proposed answer: ${reponse.valeur}</p>
             <textarea class="edition-reponse" style="display:none;">${reponse.valeur}</textarea>
-            <button class="ajuster">✎ Ajuster</button>
+            <button class="ajuster">✎ Edit</button>
 
             <div class="historique">
-                <p><span>Générée le</span>${formaterDate(reponse.date_generation)}</p>
-                <p><span>Dernière modification</span>${formaterDate(reponse.date_modification)}</p>
+                <p><span>Generated on</span>${formaterDate(reponse.date_generation)}</p>
+                <p><span>Last modified</span>${formaterDate(reponse.date_modification)}</p>
             </div>
 
-            <textarea class="commentaire" placeholder="Ajouter un commentaire...">${reponse.commentaire_validation || ""}</textarea>
+            <textarea class="commentaire" placeholder="Add a comment...">${reponse.commentaire_validation || ""}</textarea>
 
-            <span class="statut">Statut : ${reponse.statut}</span>
+            <span class="statut">Status: ${libelleStatut(reponse.statut)}</span>
         </div>
 
         <div class="panneau-controle">
             <div class="boutons">
-                <button class="valider">✓ Valider</button>
-                <button class="rejeter">× Rejeter</button>
+                <button class="valider">✓ Approve</button>
+                <button class="rejeter">× Reject</button>
             </div>
         </div>
     `;
@@ -309,12 +459,15 @@ function afficherReponse(reponse) {
         const enEdition = champEdition.style.display !== "none";
         champEdition.style.display = enEdition ? "none" : "block";
         texteReponse.style.display = enEdition ? "block" : "none";
-        boutonAjuster.textContent = enEdition ? "✎ Ajuster" : "Annuler l’ajustement";
+        boutonAjuster.textContent = enEdition ? "✎ Edit" : "Cancel edit";
     });
 
     // Quand on clique Valider, on envoie le statut "validée" (avec accent — même valeur que
     // StatutReponseModification/chk_reponse_statut, les 3 doivent rester synchronisés). Si le
     // champ d'édition est visible, sa valeur remplace la réponse générée par l'IA.
+    // NOTE : la valeur envoyée au backend ("validée"/"rejetée") reste en français à dessein —
+    // c'est une valeur de données contrainte par chk_reponse_statut en base, pas du texte
+    // affiché à l'utilisateur ; la traduire casserait la contrainte CHECK côté PostgreSQL.
     boutonValider.addEventListener("click", () => {
         const valeurAjustee = champEdition.style.display !== "none" ? champEdition.value : null;
         modifierStatut(reponse.id, "validée", champCommentaire.value, valeurAjustee);
@@ -338,6 +491,7 @@ async function modifierStatut(reponseId, statut, commentaire, valeur = null) {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
+            ...ENTETES_NGROK,
         },
         body: JSON.stringify({
             statut: statut,
@@ -377,3 +531,6 @@ boutonHaut.addEventListener("click", () => {
 
 // Charge les réponses automatiquement au démarrage de la page.
 chargerReponses();
+
+// Charge la liste des documents disponibles pour la case "restreindre à ces documents".
+chargerListeDocuments();

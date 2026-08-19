@@ -33,7 +33,8 @@ def enregistrer_formulaire(formulaire: FormulaireEntree) -> int:
                     description,
                     url_source,
                     date_extraction,
-                    statut_extraction
+                    statut_extraction,
+                    documents_associes
                 )
                 VALUES (
                     :identifiant_externe,
@@ -42,7 +43,8 @@ def enregistrer_formulaire(formulaire: FormulaireEntree) -> int:
                     :description,
                     :url_source,
                     :date_extraction,
-                    :statut_extraction
+                    :statut_extraction,
+                    :documents_associes
                 )
                 RETURNING id
             """),
@@ -54,6 +56,7 @@ def enregistrer_formulaire(formulaire: FormulaireEntree) -> int:
                 "url_source": formulaire.source.url if formulaire.source else None,
                 "date_extraction": formulaire.date_extraction,
                 "statut_extraction": formulaire.statut_extraction,
+                "documents_associes": formulaire.documents_associes,
             },
         )
 
@@ -211,10 +214,12 @@ def charger_formulaire_pour_generation(formulaire_id: int) -> dict:
         # url_source alimente formulaire["source"]["url"], attendu par generer_reponses_formulaire
         # (ia_service.py) exactement comme pour un formulaire fraîchement extrait.
         ligne_formulaire = session.execute(
-            text("SELECT titre, url_source FROM formulaires WHERE id = :formulaire_id"),
+            text("SELECT titre, url_source, documents_associes FROM formulaires WHERE id = :formulaire_id"),
             {"formulaire_id": formulaire_id},
         ).mappings().one()
         titre_formulaire = ligne_formulaire["titre"]
+        # None/tableau vide = pas de restriction (voir retrieve() dans retriever.py).
+        documents_associes = ligne_formulaire["documents_associes"]
 
         # Les questions de CE formulaire, triées par ordre — même filtre statut_extraction ==
         # "prete" que generer_reponses_formulaire, pour ignorer les questions incomplètes/
@@ -322,6 +327,7 @@ def charger_formulaire_pour_generation(formulaire_id: int) -> dict:
             )
             question["langue_formulaire"] = langue_formulaire
             question["titre_formulaire"] = titre_formulaire
+            question["documents_associes"] = documents_associes
 
         return {
             "titre": titre_formulaire,

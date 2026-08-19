@@ -1,0 +1,55 @@
+Catégorie : Général
+Q : Quel est le domaine d'activité de l'entreprise NovaSport Analytics ?
+R : NovaSport Analytics est une entreprise d'intelligence de données sportives d'élite spécialisée dans l'analyse avancée du football et la modélisation statistique prédictive.
+
+Catégorie : Général
+Q : Quelle est la spécialité principale de NovaSport Analytics ?
+R : NovaSport Analytics est spécialisée dans l'analyse avancée du football et la modélisation statistique prédictive pour évaluer les matchs, les performances des joueurs et l'efficacité tactique.
+
+Catégorie : Commercial
+Q : Quels types de clients NovaSport Analytics sert-elle ?
+R : NovaSport Analytics fournit des analyses aux clubs, aux radiodiffuseurs et aux analystes afin de les aider à évaluer les résultats des matchs, les performances des joueurs et l'efficacité tactique.
+
+Catégorie : Général
+Q : Quelle est la mission de NovaSport Analytics ?
+R : La mission de NovaSport Analytics est de combler le fossé entre les données brutes et l'intelligence exploitable sur le terrain de football en utilisant des algorithmes d'apprentissage automatique de pointe.
+
+Catégorie : Commercial
+Q : Quels services principaux sont inclus dans la suite d'outils analytiques de NovaSport Analytics ?
+R : La suite d'outils analytiques de NovaSport Analytics comprend l'évaluation des tendances des buts attendus (xG), la modélisation de la probabilité de clean-sheet et les résumés de match automatisés.
+
+Catégorie : Commercial
+Q : Que mesure le service d'évaluation des tendances des buts attendus (xG) de NovaSport Analytics ?
+R : L'évaluation des tendances des buts attendus (xG) par NovaSport Analytics fournit une évaluation détaillée des probabilités de marquer selon l'emplacement du tir, le jeu de construction et le positionnement défensif.
+
+Catégorie : Commercial
+Q : En quoi consiste la modélisation de la probabilité de clean-sheet de NovaSport Analytics ?
+R : La modélisation de la probabilité de clean-sheet de NovaSport Analytics consiste en une analyse structurelle défensive à travers les tournois internationaux pour prédire les fréquences de matchs sans encaisser de buts.
+
+Catégorie : IT
+Q : Comment fonctionnent les résumés de match automatisés chez NovaSport Analytics ?
+R : Les résumés de match automatisés de NovaSport Analytics intègrent des pipelines de génération augmentée par récupération (RAG) pour interroger instantanément les métriques d'équipe historiques et générer des rapports en langage naturel.
+
+Catégorie : IT
+Q : Quelles technologies composent l'interface client et le backend de NovaSport Analytics ?
+R : L'infrastructure de NovaSport Analytics utilise Angular pour les interfaces clients dynamiques, et s'appuie sur des microservices Spring Boot pour le backend.
+
+Catégorie : IT
+Q : Quels outils alimentent l'ingestion de données et l'observabilité chez NovaSport Analytics ?
+R : L'ingestion de données et les pipelines d'observabilité de NovaSport Analytics sont alimentés par ElasticSearch, Logstash et Kibana pour assurer le suivi en temps réel et la gestion des journaux.
+
+Catégorie : Général
+Q : Où se trouve le siège social de NovaSport Analytics ?
+R : Le siège social de NovaSport Analytics est situé au 101 Data Avenue, dans le Tech District.
+
+Catégorie : Général
+Q : Quelle est l'adresse e-mail de contact de NovaSport Analytics ?
+R : L'adresse e-mail de contact de NovaSport Analytics est contact@novasportanalytics.com.
+
+Catégorie : Général
+Q : Quel est le site web officiel de NovaSport Analytics ?
+R : Le site web officiel de NovaSport Analytics est accessible à l'adresse www.novasportanalytics.com.
+
+Catégorie : Général
+Q : Quel est le numéro de téléphone pour joindre NovaSport Analytics ?
+R : Le numéro de téléphone pour joindre NovaSport Analytics est le +1 (555) 019-8273.

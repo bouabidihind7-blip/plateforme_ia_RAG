@@ -86,6 +86,8 @@ Choix de la catégorie — ne jamais en inventer d'autre que ces 7 :
 
 6. Reformulations : pour les faits importants ou susceptibles d'être demandés de plusieurs façons différentes, ajoute 1 à 2 paires Q/R supplémentaires avec une formulation différente de la question, mais la même information en réponse.
 
+7. Distinction entre faits proches : si le texte source contient PLUSIEURS faits différents sur un sujet très proche (par exemple deux contacts différents pour deux démarches différentes, ou deux règles proches s'appliquant à des cas distincts), formule chaque question de façon à inclure le détail précis qui la distingue clairement des autres questions similaires — jamais deux questions qui pourraient se confondre l'une avec l'autre à la lecture. Exemple à éviter : "Auprès de qui obtenir le programme écrit ?" et "Auprès de qui obtenir des informations supplémentaires ?" (trop proches, risque de confusion) ; préfère : "Auprès de qui obtenir une COPIE du programme écrit ?" et "Auprès de qui obtenir des informations générales en dehors des copies du document ?".
+
 Ne produis RIEN d'autre que ces paires Q/R — pas d'introduction, pas de titre, pas de conclusion, pas de commentaire.
 """
 

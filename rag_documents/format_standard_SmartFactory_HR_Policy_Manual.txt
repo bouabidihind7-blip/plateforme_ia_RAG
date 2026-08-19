@@ -1,0 +1,139 @@
+Catégorie : Général
+Q : Quelle est la référence documentaire de la politique RH et du règlement intérieur 2026 de Smart Factory 3D ?
+R : La référence documentaire de la politique RH et du règlement intérieur 2026 de Smart Factory 3D est POL-RH-2026-V3.2.
+
+Catégorie : Général
+Q : À quelle date entre en vigueur la politique RH et le règlement intérieur 2026 de Smart Factory 3D ?
+R : La politique RH et le règlement intérieur 2026 de Smart Factory 3D entrent en vigueur le 1er janvier 2026.
+
+Catégorie : RH
+Q : Combien de jours de congés payés chaque salarié accumule-t-il par mois de travail effectif chez Smart Factory 3D ?
+R : Chaque salarié de Smart Factory 3D accumule 2,08 jours ouvrés de congés payés par mois de travail effectif, ce qui représente 25 jours par an.
+
+Catégorie : RH
+Q : Quelle est la période d'acquisition des congés payés chez Smart Factory 3D ?
+R : La période d'acquisition des congés payés chez Smart Factory 3D s'étend du 1er juin N-1 au 31 mai N.
+
+Catégorie : RH
+Q : Quelle est la durée minimale et la période imposée pour le congé principal d'été chez Smart Factory 3D ?
+R : Le congé principal d'été chez Smart Factory 3D doit durer au moins 10 jours ouvrés consécutifs et doit être pris entre le 1er mai et le 31 octobre.
+
+Catégorie : RH
+Q : Quel est le délai et le moyen requis pour soumettre une demande de congé d'été chez Smart Factory 3D ?
+R : Toute demande de congé d'été chez Smart Factory 3D doit être soumise au manager direct au moins 30 jours à l'avance via le portail RH.
+
+Catégorie : RH
+Q : Combien de jours RTT les cadres au forfait jours obtiennent-ils par an chez Smart Factory 3D ?
+R : Les cadres au forfait jours chez Smart Factory 3D bénéficient de 12 jours RTT par an.
+
+Catégorie : RH
+Q : Quelle proportion des jours RTT est à l'initiative de l'employeur chez Smart Factory 3D ?
+R : Au moins 50% des RTT chez Smart Factory 3D sont à l'initiative de l'employeur sous forme de RTT employeur imposés lors des fermetures annuelles de l'usine.
+
+Catégorie : RH
+Q : Que deviennent les RTT non pris au 31 décembre chez Smart Factory 3D ?
+R : Les RTT non pris au 31 décembre chez Smart Factory 3D sont définitivement perdus et ne peuvent pas faire l'objet d'un rachat.
+
+Catégorie : RH
+Q : Quels postes sont éligibles au télétravail chez Smart Factory 3D ?
+R : Le télétravail chez Smart Factory 3D est réservé aux postes administratifs, support et ingénierie appartenant aux catégories RH, IT, Commercial et Finance.
+
+Catégorie : RH
+Q : Quels salariés sont strictement exclus du dispositif de télétravail chez Smart Factory 3D ?
+R : Les opérateurs de production, les ingénieurs de maintenance d'atelier et les contrôleurs qualité en laboratoire sont strictement exclus du télétravail chez Smart Factory 3D pour des raisons de sécurité et de présence sur ligne.
+
+Catégorie : RH
+Q : Quel est le volume maximum de télétravail accordé par semaine aux salariés éligibles chez Smart Factory 3D ?
+R : Les salariés éligibles chez Smart Factory 3D bénéficient de 2 jours maximum de télétravail par semaine.
+
+Catégorie : RH
+Q : Quels sont les jours déclarés de présence obligatoire sur le site d'Agadir pour l'ensemble des équipes de Smart Factory 3D ?
+R : Le mardi et le jeudi sont déclarés jours de présence obligatoire sur le site d'Agadir pour l'ensemble des équipes de Smart Factory 3D.
+
+Catégorie : RH
+Q : Quel est le montant et les modalités de versement de l'indemnité forfaitaire de télétravail chez Smart Factory 3D ?
+R : Une indemnité de 2,50 € par jour de télétravail effectué est versée automatiquement sur la paie des salariés de Smart Factory 3D, avec un plafond mensuel de 20,00 €.
+
+Catégorie : Finance
+Q : Quel est le plafond de remboursement autorisé pour un repas de mission chez Smart Factory 3D ?
+R : Le plafond de remboursement autorisé pour un repas de mission chez Smart Factory 3D est de 25,00 € par repas.
+
+Catégorie : Finance
+Q : Quels justificatifs sont nécessaires pour se faire rembourser un repas de mission chez Smart Factory 3D ?
+R : Le remboursement d'un repas de mission chez Smart Factory 3D nécessite une facture détaillée mentionnant la TVA.
+
+Catégorie : Finance
+Q : Quelle condition géographique doit être remplie pour bénéficier du remboursement d'un repas de mission chez Smart Factory 3D ?
+R : Le remboursement d'un repas de mission chez Smart Factory 3D est possible uniquement si le déplacement est supérieur à 50 km.
+
+Catégorie : Finance
+Q : Quel est le plafond de remboursement autorisé pour une nuitée d'hôtel en province chez Smart Factory 3D ?
+R : Le plafond de remboursement autorisé pour une nuitée d'hôtel en province chez Smart Factory 3D est de 110,00 € par nuit.
+
+Catégorie : Finance
+Q : Quel justificatif et quelle condition s'appliquent pour le remboursement d'une nuitée d'hôtel en province chez Smart Factory 3D ?
+R : Le remboursement d'une nuitée d'hôtel en province chez Smart Factory 3D nécessite une facture nominative et le petit-déjeuner doit obligatoirement être inclus.
+
+Catégorie : Finance
+Q : Quel est le plafond de remboursement autorisé pour une nuitée d'hôtel en capitale ou en Île-de-France chez Smart Factory 3D ?
+R : Le plafond de remboursement autorisé pour une nuitée d'hôtel en capitale ou en Île-de-France chez Smart Factory 3D est de 160,00 € par nuit.
+
+Catégorie : Finance
+Q : Quels sont le justificatif et la condition de réservation pour une nuitée d'hôtel en capitale ou en Île-de-France chez Smart Factory 3D ?
+R : Le remboursement d'une nuitée d'hôtel en capitale ou en Île-de-France chez Smart Factory 3D requiert une facture nominative et une réservation effectuée obligatoirement via la plateforme interne.
+
+Catégorie : Finance
+Q : Quel est le montant de l'indemnité kilométrique pour l'utilisation d'un véhicule personnel chez Smart Factory 3D ?
+R : L'indemnité kilométrique pour l'utilisation d'un véhicule personnel chez Smart Factory 3D est de 0,45 € par kilomètre.
+
+Catégorie : Finance
+Q : Quels documents justificatifs sont exigés pour toucher l'indemnité kilométrique chez Smart Factory 3D ?
+R : Les documents justificatifs exigés pour l'indemnité kilométrique chez Smart Factory 3D sont un relevé Mappy et la carte grise.
+
+Catégorie : Finance
+Q : Quelle condition préalable est indispensable pour obtenir l'indemnité kilométrique avec un véhicule personnel chez Smart Factory 3D ?
+R : L'obtention de l'indemnité kilométrique chez Smart Factory 3D nécessite l'utilisation d'un véhicule personnel avec un accord préalable.
+
+Catégorie : Production
+Q : À partir de quel moment précis le port des Équipements de Protection Individuelle devient-il rigoureusement obligatoire dans l'organisation ?
+R : Le port des Équipements de Protection Individuelle devient rigoureusement obligatoire dès le franchissement de la ligne jaune matérialisant l'entrée dans la zone de production 3D et les ateliers d'usinage.
+
+Catégorie : Production
+Q : Dans quelles zones précises le port des Équipements de Protection Individuelle est-il rigoureusement obligatoire dès le franchissement de la ligne jaune ?
+R : Le port des Équipements de Protection Individuelle est obligatoire dès le franchissement de la ligne jaune dans la zone de production 3D et les ateliers d'usinage.
+
+Catégorie : Production
+Q : Quelle est la norme exigée pour les chaussures de sécurité obligatoires en permanence dans toute l'usine ?
+R : Les chaussures de sécurité obligatoires en permanence dans toute l'usine doivent répondre à la norme S3.
+
+Catégorie : Production
+Q : Où et quand les chaussures de sécurité de norme S3 sont-elles obligatoires au sein de l'usine ?
+R : Les chaussures de sécurité de norme S3 sont obligatoires en permanence dans toute l'usine.
+
+Catégorie : Production
+Q : Quelle est la norme exigée pour les lunettes de protection obligatoires à proximité des cellules laser et machines CNC ?
+R : Les lunettes de protection obligatoires à proximité des cellules laser et machines CNC doivent répondre à la norme EN 166.
+
+Catégorie : Production
+Q : À proximité de quels équipements précis les lunettes de protection de norme EN 166 sont-elles obligatoires ?
+R : Les lunettes de protection de norme EN 166 sont obligatoires à proximité des cellules laser et des machines CNC.
+
+Catégorie : Production
+Q : Quelle est la norme exigée pour le casque anti-bruit obligatoire dans la zone B ?
+R : Le casque anti-bruit obligatoire dans la zone B de l'usine doit répondre à la norme EN 352.
+
+Catégorie : Production
+Q : Dans quelle zone spécifique de l'usine le port du casque anti-bruit de norme EN 352 est-il obligatoire ?
+R : Le port du casque anti-bruit de norme EN 352 est obligatoire dans la zone B, où le niveau sonore est supérieur à 80 dB.
+
+Catégorie : Production
+Q : Quel est le niveau sonore minimum dans la zone B qui rend le port du casque anti-bruit obligatoire ?
+R : Le port du casque anti-bruit est obligatoire dans la zone B lorsque le niveau sonore est supérieur à 80 dB.
+
+Catégorie : RH
+Q : Quelle qualification juridique est attribuée à tout non-respect des consignes de sécurité concernant les Équipements de Protection Individuelle ?
+R : Tout non-respect des consignes de sécurité constitue une faute grave pouvant entraîner des sanctions disciplinaires.
+
+Catégorie : RH
+Q : Quelles sanctions disciplinaires exactes peuvent être entraînées par un non-respect des consignes de sécurité dans l'organisation ?
+R : Le non-respect des consignes de sécurité peut entraîner un avertissement immédiat ou une mise à pied conservatoire en tant que faute grave.

@@ -247,7 +247,14 @@ def construire_prompt(question:dict )-> str:
     # documentaire par-dessus. On cherche avec le texte de BASE (texte_pour_ia), pas avec
     # `texte` (qui contient déjà les instructions de format ajoutées plus haut, qui
     # pollueraient la recherche sémantique avec du vocabulaire hors-sujet).
-    chunks_pertinents = retriever_rag.invoke(question.get("texte_pour_ia") or "")
+    # documents_associes (voir formulaires.documents_associes en base) : liste de documents
+    # RAG choisis par l'utilisateur à l'import du formulaire. None/absent = pas de restriction,
+    # recherche dans toute la base (comportement historique, inchangé pour les formulaires sans
+    # restriction explicite).
+    chunks_pertinents = retriever_rag.invoke({
+        "query": question.get("texte_pour_ia") or "",
+        "sources_autorisees": question.get("documents_associes"),
+    })
     contexte_documents = "\n\n---\n\n".join(
         f"[{chunk.metadata.get('source', 'inconnue')}]\n{chunk.page_content}"
         for chunk in chunks_pertinents

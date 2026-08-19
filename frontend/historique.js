@@ -1,5 +1,9 @@
 // Adresse de notre backend FastAPI.
-const API_URL = "http://127.0.0.1:8000";
+// Voir le commentaire équivalent dans script.js : URL relative, même origine que le backend.
+const API_URL = "";
+
+// Voir le commentaire équivalent dans script.js : contourne la page d'avertissement ngrok.
+const ENTETES_NGROK = { "ngrok-skip-browser-warning": "true" };
 
 // Récupère la zone où on affiche les messages.
 const zoneMessage = document.getElementById("message");
@@ -38,25 +42,39 @@ function afficherMessage(texte, succes = false) {
 }
 
 
+// Traduit un statut (valeur française, contrainte par chk_reponse_statut en base) en
+// libellé anglais pour l'affichage — la classe CSS statut-mini, elle, reste indexée sur
+// le mot français (voir style.css : .statut-mini.validée/.proposée/.rejetée).
+const LIBELLES_STATUT = {
+    "proposée": "Proposed",
+    "validée": "Validated",
+    "rejetée": "Rejected",
+};
+
+function libelleStatut(statut) {
+    return LIBELLES_STATUT[statut] || statut;
+}
+
+
 // Transforme une date technique en date lisible.
 function formaterDate(dateIso) {
     if (!dateIso) {
-        return "Non disponible";
+        return "Not available";
     }
 
-    return new Date(dateIso).toLocaleString("fr-FR");
+    return new Date(dateIso).toLocaleString("en-GB");
 }
 
 
 // Charge la liste des formulaires importés depuis le backend.
 async function chargerFormulaires() {
-    afficherMessage("Chargement des formulaires...");
+    afficherMessage("Loading forms...");
 
     try {
-        const reponseHttp = await fetch(`${API_URL}/formulaires`);
+        const reponseHttp = await fetch(`${API_URL}/formulaires`, { headers: ENTETES_NGROK });
 
         if (!reponseHttp.ok) {
-            afficherMessage("Impossible de charger les formulaires — réessaie dans un instant.");
+            afficherMessage("Unable to load forms — try again in a moment.");
             return;
         }
 
@@ -66,15 +84,15 @@ async function chargerFormulaires() {
         tousLesFormulaires = donnees.formulaires;
 
         if (donnees.formulaires.length === 0) {
-            afficherMessage("Aucun formulaire importé pour l’instant.");
+            afficherMessage("No forms imported yet.");
             return;
         }
 
         afficherListeFormulaires(tousLesFormulaires);
 
-        afficherMessage(`${donnees.nombre_formulaires} formulaire(s) importé(s).`, true);
+        afficherMessage(`${donnees.nombre_formulaires} form(s) imported.`, true);
     } catch (erreur) {
-        afficherMessage("Erreur inattendue pendant le chargement — réessaie dans un instant.");
+        afficherMessage("Unexpected error while loading — try again in a moment.");
     }
 }
 
@@ -115,10 +133,10 @@ function afficherFormulaire(formulaire) {
     carte.dataset.formulaireId = formulaire.id;
 
     carte.innerHTML = `
-        <h3>${formulaire.titre || "Formulaire sans titre"}</h3>
+        <h3>${formulaire.titre || "Untitled form"}</h3>
         <p class="carte-formulaire-meta">
             <span class="badge-fournisseur ${formulaire.fournisseur}">${formulaire.fournisseur.replace("_", " ")}</span>
-            Importé le ${formaterDate(formulaire.date_extraction)}
+            Imported on ${formaterDate(formulaire.date_extraction)}
         </p>
     `;
 
@@ -132,23 +150,23 @@ function afficherFormulaire(formulaire) {
 
 // Charge l'historique complet d'un formulaire et bascule vers la vue historique.
 async function chargerHistorique(formulaireId, titre) {
-    afficherMessage("Chargement de l’historique...");
+    afficherMessage("Loading history...");
 
     try {
-        const reponseHttp = await fetch(`${API_URL}/formulaires/${formulaireId}/historique`);
+        const reponseHttp = await fetch(`${API_URL}/formulaires/${formulaireId}/historique`, { headers: ENTETES_NGROK });
 
         if (!reponseHttp.ok) {
-            afficherMessage("Impossible de charger l’historique — réessaie dans un instant.");
+            afficherMessage("Unable to load history — try again in a moment.");
             return;
         }
 
         const donnees = await reponseHttp.json();
 
-        titreHistoriqueFormulaire.textContent = titre || "Formulaire sans titre";
+        titreHistoriqueFormulaire.textContent = titre || "Untitled form";
         listeHistorique.innerHTML = "";
 
         if (donnees.historique.length === 0) {
-            listeHistorique.innerHTML = "<p>Aucune réponse générée pour ce formulaire.</p>";
+            listeHistorique.innerHTML = "<p>No answers generated for this form.</p>";
         } else {
             afficherHistoriqueParQuestion(donnees.historique);
         }
@@ -157,9 +175,9 @@ async function chargerHistorique(formulaireId, titre) {
         vueListe.hidden = true;
         vueHistorique.hidden = false;
 
-        afficherMessage(`Historique de « ${titre || "ce formulaire"} » chargé.`, true);
+        afficherMessage(`History for "${titre || "this form"}" loaded.`, true);
     } catch (erreur) {
-        afficherMessage("Erreur inattendue pendant le chargement — réessaie dans un instant.");
+        afficherMessage("Unexpected error while loading — try again in a moment.");
     }
 }
 
@@ -186,9 +204,9 @@ function afficherHistoriqueParQuestion(historique) {
         blocTentative.className = "tentative";
         blocTentative.innerHTML = `
             <p class="tentative-valeur">${JSON.stringify(tentative.valeur)}</p>
-            <span class="statut-mini ${tentative.statut}">${tentative.statut}</span>
-            ${tentative.commentaire_validation ? `<p class="tentative-commentaire">« ${tentative.commentaire_validation} »</p>` : ""}
-            <p class="tentative-meta">Généré le ${formaterDate(tentative.date_generation)}</p>
+            <span class="statut-mini ${tentative.statut}">${libelleStatut(tentative.statut)}</span>
+            ${tentative.commentaire_validation ? `<p class="tentative-commentaire">"${tentative.commentaire_validation}"</p>` : ""}
+            <p class="tentative-meta">Generated on ${formaterDate(tentative.date_generation)}</p>
         `;
 
         carteActuelle.appendChild(blocTentative);

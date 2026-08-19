@@ -1,0 +1,131 @@
+Catégorie : IT
+Q : À qui appartiennent les ordinateurs portables, les appareils mobiles et les périphériques fournis par l'entreprise Acme Corp ?
+R : Les ordinateurs portables, les appareils mobiles et les périphériques fournis par l'entreprise Acme Corp restent la propriété d'Acme Corp.
+
+Catégorie : IT
+Q : Quel est l'objectif principal des appareils fournis par Acme Corp ?
+R : Les appareils fournis par l'entreprise Acme Corp sont fournis principalement pour des raisons professionnelles.
+
+Catégorie : IT
+Q : L'utilisation personnelle des appareils de l'entreprise Acme Corp est-elle autorisée ?
+R : Une utilisation personnelle incidente des appareils de l'entreprise Acme Corp est tolérée.
+
+Catégorie : IT
+Q : Quelles sont les interdictions concernant l'utilisation des appareils professionnels d'Acme Corp ?
+R : Sur les appareils professionnels d'Acme Corp, il est interdit de télécharger des logiciels non approuvés, d'accéder à des contenus illégaux ou de stocker des médias personnels tels que des photos de famille ou des bibliothèques musicales personnelles.
+
+Catégorie : IT
+Q : En combien de niveaux les données sont-elles classées chez Acme Corp ?
+R : Chez Acme Corp, toutes les données sont réparties en trois niveaux de classification afin d'en garantir la manipulation correcte et la sécurité.
+
+Catégorie : IT
+Q : Qu'est-ce que le niveau de données Public chez Acme Corp ?
+R : Chez Acme Corp, le niveau Public correspond aux données destinées à une consommation externe, telles que le matériel marketing et les communiqués de presse.
+
+Catégorie : IT
+Q : Quelles sont les exigences de stockage pour les données de niveau Public chez Acme Corp ?
+R : Les données de niveau Public chez Acme Corp doivent être stockées sur les disques cloud standard et ne nécessitent aucun chiffrement au repos.
+
+Catégorie : IT
+Q : Qu'est-ce que le niveau de données Internal Use Only chez Acme Corp ?
+R : Chez Acme Corp, le niveau Internal Use Only comprend les données commerciales quotidiennes, les mémos internes et les procédures opérationnelles standard.
+
+Catégorie : IT
+Q : Quelles sont les exigences de stockage pour les données de niveau Internal Use Only chez Acme Corp ?
+R : Les données de niveau Internal Use Only chez Acme Corp doivent être stockées sur l'intranet de l'entreprise ou sur des disques internes, et leur accès nécessite l'utilisation d'un VPN.
+
+Catégorie : IT
+Q : Qu'est-ce que le niveau de données Restricted / Confidential chez Acme Corp ?
+R : Chez Acme Corp, le niveau Restricted / Confidential regroupe les informations personnelles identifiables (PII), les dossiers financiers, le code source non publié et les dossiers RH.
+
+Catégorie : IT
+Q : Quelles sont les exigences de stockage pour les données de niveau Restricted / Confidential chez Acme Corp ?
+R : Les données de niveau Restricted / Confidential chez Acme Corp nécessitent un stockage sur des volumes chiffrés uniquement, avec un accès accordé selon le principe strict du moindre privilège.
+
+Catégorie : IT
+Q : Que doit faire un employé d'Acme Corp en cas de suspicion de tentative de phishing ?
+R : En cas de suspicion de tentative de phishing, l'employé d'Acme Corp doit contacter immédiatement le centre des opérations de sécurité informatique (SOC).
+
+Catégorie : IT
+Q : Quelle est la marche à suivre pour un employé d'Acme Corp qui égare un appareil professionnel ?
+R : Si un employé d'Acme Corp égrène un appareil professionnel, il doit contacter immédiatement le centre des opérations de sécurité informatique (SOC).
+
+Catégorie : IT
+Q : Qui contacter en cas d'accès non autorisé à des données Restricted chez Acme Corp ?
+R : En cas d'accès non autorisé à des données de niveau Restricted, l'employé d'Acme Corp doit contacter immédiatement le centre des opérations de sécurité informatique (SOC).
+
+Catégorie : IT
+Q : Quel est le numéro de poste pour joindre le centre des opérations de sécurité informatique (SOC) d'Acme Corp ?
+R : Le centre des opérations de sécurité informatique (SOC) d'Acme Corp est joignable au poste 9911.
+
+Catégorie : IT
+Q : Quelle est l'adresse e-mail pour contacter le centre des opérations de sécurité informatique (SOC) d'Acme Corp ?
+R : Le centre des opérations de sécurité informatique (SOC) d'Acme Corp peut être contacté par e-mail à l'adresse soc@acmecorp.internal.
+
+Catégorie : RH
+Q : Quel type d'environnement de travail Acme Corp s'engage-t-elle à fournir en matière de discrimination et de harcèlement ?
+R : Acme Corp s'engage à fournir un environnement de travail exempt de discrimination et de harcèlement fondé sur la race, la couleur, la religion, le sexe, l'orientation sexuelle, l'identité de genre, l'origine nationale, le handicap ou l'âge.
+
+Catégorie : RH
+Q : Comment les cas de harcèlement sur le lieu de travail doivent-ils être signalés chez Acme Corp ?
+R : Tout cas de harcèlement sur le lieu de travail doit être signalé immédiatement au manager ou directement au responsable de la conformité des ressources humaines (HR Compliance Officer) chez Acme Corp.
+
+Catégorie : RH
+Q : Quelle est la politique d'Acme Corp concernant les représailles contre un employé qui signale une réclamation ?
+R : Les représailles contre tout employé qui signale une réclamation pour harcèlement ou discrimination sont strictement interdites chez Acme Corp.
+
+Catégorie : RH
+Q : Quelle est l'ancienneté minimale requise pour être éligible au congé parental chez Acme Corp ?
+R : Pour être éligible au congé parental chez Acme Corp, les employés doivent avoir travaillé pour l'entreprise pendant au moins 12 mois consécutifs.
+
+Catégorie : RH
+Q : Quelle est la durée maximale du congé de proche aidant principal (Primary Caregiver) payé chez Acme Corp ?
+R : Un employé désigné comme proche aidant principal (Primary Caregiver) chez Acme Corp est éligible à un maximum de 16 semaines de congé entièrement rémunéré.
+
+Catégorie : RH
+Q : Quelle est la durée maximale du congé de second proche aidant (Secondary Caregiver) payé chez Acme Corp ?
+R : Un employé désigné comme second proche aidant (Secondary Caregiver) chez Acme Corp est éligible à un maximum de 8 semaines de congé entièrement rémunéré.
+
+Catégorie : RH
+Q : Quelles sont les modalités de la période de transition pour les employés de retour de congé parental chez Acme Corp ?
+R : Lors du retour de congé parental chez Acme Corp, les employés peuvent opter pour un horaire à temps partiel de 20 heures par semaine pendant une durée maximale de 4 semaines avec un salaire complet.
+
+Catégorie : Finance
+Q : Quel outil doit être utilisé obligatoirement pour réserver tous les voyages professionnels chez Acme Corp ?
+R : Tous les voyages professionnels chez Acme Corp doivent être réservés par l'intermédiaire du portail de voyage désigné Concur.
+
+Catégorie : Finance
+Q : Les réservations directes de voyages sur des sites tiers sont-elles autorisées chez Acme Corp ?
+R : Les réservations directes sur des sites tiers ne sont pas autorisées chez Acme Corp, sauf si une autorisation préalable est accordée par un cadre de niveau vice-président (VP-level executive).
+
+Catégorie : Finance
+Q : Quelle classe de vol doit être réservée pour tous les vols intérieurs chez Acme Corp ?
+R : La classe économique doit être réservée pour tous les vols intérieurs lors des déplacements professionnels chez Acme Corp.
+
+Catégorie : Finance
+Q : Dans quel cas la classe affaires est-elle autorisée pour les vols chez Acme Corp ?
+R : La classe affaires est autorisée pour les vols internationaux dépassant 8 heures de temps de vol continu chez Acme Corp.
+
+Catégorie : Finance
+Q : Quelles sont les limites à respecter pour les tarifs des hôtels lors de voyages d'affaires chez Acme Corp ?
+R : Les tarifs des hôtels chez Acme Corp ne doivent pas dépasser les plafonds régionaux prédéfinis dans le système Concur, tels que 250 dollars par nuit pour les villes de niveau 1 et 150 dollars par nuit pour les villes de niveau 3.
+
+Catégorie : Finance
+Q : Dans quel délai les rapports de dépenses doivent-ils être soumis chez Acme Corp ?
+R : Les rapports de dépenses doivent être soumis dans les 30 jours suivant la date de la transaction chez Acme Corp.
+
+Catégorie : Finance
+Q : À partir de quel montant une note de frais nécessite-t-elle un reçu détaillé et lisible chez Acme Corp ?
+R : Toute dépense supérieure à 25 dollars américains nécessite un reçu détaillé et lisible chez Acme Corp.
+
+Catégorie : Finance
+Q : Les relevés de carte de crédit seuls suffisent-ils comme reçus détaillés pour les notes de frais chez Acme Corp ?
+R : Les relevés de carte de crédit seuls ne suffisent pas comme reçus détaillés pour les notes de frais chez Acme Corp.
+
+Catégorie : Finance
+Q : Que se passe-t-il en cas de soumission tardive des notes de frais chez Acme Corp ?
+R : Les soumissions tardives de notes de frais chez Acme Corp peuvent être refusées à la discrétion du département des finances.
+
+Catégorie : Général
+Q : Quelle est la classification de diffusion du document interne concernant les directives de voyage et de notes de frais d'Acme Corp ?
+R : Le document interne d'Acme Corp ne doit pas être distribué à l'externe de l'organisation et a été mis à jour pour la dernière fois en août 2026.

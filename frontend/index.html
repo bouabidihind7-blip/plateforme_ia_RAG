@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Smart Factory - Validation IA</title>
-    <link rel="stylesheet" href="style.css?v=22">
+    <title>3D Smart Factory - AI Validation</title>
+    <link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
     <header class="topbar">
@@ -14,72 +14,92 @@
             </div>
 
             <nav class="nav">
-                <a class="active" href="#">Accueil</a>
-                <a href="#reponses">Réponses</a>
-                <a href="historique.html">Historique</a>
+                <a class="active" href="#">Home</a>
+                <a href="#reponses">Answers</a>
+                <a href="historique.html">History</a>
             </nav>
         </div>
 
-        <p class="tagline">Votre copilote IA pour les formulaires</p>
+        <p class="tagline">Your AI copilot for forms</p>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-overlay">
-                <p class="eyebrow">Pipeline actif · Extraction → Génération → Validation</p>
-                <h2>Contrôle humain des réponses générées</h2>
+                <p class="eyebrow">Active pipeline · Extraction → Generation → Validation</p>
+                <h2>Human control over generated answers</h2>
                 <p class="hero-text">
-                    Chaque réponse proposée par l’IA passe par une vérification humaine avant son utilisation.
+                    Every answer proposed by the AI goes through human review before it is used.
                 </p>
 
                 <div class="hero-actions">
-                    <span id="message" class="message">En attente de chargement...</span>
+                    <span id="message" class="message">Loading...</span>
                 </div>
             </div>
         </section>
 
         <section class="documents-rag">
             <div>
-                <p class="section-label">Base de connaissances</p>
-                <h2>Ajouter un document interne</h2>
-                <p>Ajoute un PDF, Excel ou CSV pour que l'IA puisse s'en servir pour répondre aux questions.</p>
+                <p class="section-label">Knowledge base</p>
+                <h2>Add an internal document</h2>
+                <p>Add a PDF, Word, PowerPoint, Excel, or CSV file so the AI can use it to answer questions.</p>
+                <!-- Indicateur permanent, séparé de #message : reste visible et à jour même si
+                     l'utilisateur fait autre chose entre-temps (ex. importer un formulaire) —
+                     voir verifierStatutIndexationEnBoucle() dans script.js. -->
+                <span id="badge-indexation" class="badge-indexation" hidden></span>
             </div>
 
             <div class="import-zone">
-                <input id="document-rag-fichier" type="file" accept=".pdf,.xlsx,.csv,.txt" multiple>
-                <button id="bouton-uploader-document" class="secondary-button">Ajouter le document</button>
+                <!-- Liste alignée sur EXTENSIONS_VERS_INGESTION (backend/app/main.py) : le
+                     backend traite maintenant tous les formats à mise en page via Docling
+                     (pas seulement le PDF), ce champ doit rester synchronisé avec lui. -->
+                <input id="document-rag-fichier" type="file" accept=".pdf,.docx,.doc,.pptx,.html,.odt,.xlsx,.csv,.txt" multiple>
+                <button id="bouton-uploader-document" class="secondary-button">Add document</button>
             </div>
         </section>
 
         <section class="import-formulaire">
             <div>
-                <p class="section-label">Source formulaire</p>
-                <h2>Importer un formulaire</h2>
-                <p>Colle le lien d'un formulaire Google ou Microsoft Forms pour enregistrer ses questions.</p>
+                <p class="section-label">Form source</p>
+                <h2>Import a form</h2>
+                <p>Paste the link to a Google Forms or Microsoft Forms form to save its questions.</p>
             </div>
 
             <div class="import-zone">
                 <input id="formulaire-url" type="text" placeholder="https://docs.google.com/forms/...">
-                <button id="bouton-importer-url" class="secondary-button">Importer depuis une URL</button>
+                <button id="bouton-importer-url" class="secondary-button">Import from URL</button>
+            </div>
+
+            <!-- Restreint (facultatif) la recherche RAG de ce formulaire à des documents précis
+                 — évite qu'une réponse vienne d'un document sans rapport (voir attribute
+                 formulaires.documents_associes). Rien de coché = recherche dans toute la base,
+                 comportement inchangé. Rempli dynamiquement par chargerListeDocuments() dans
+                 script.js. -->
+            <div class="choix-documents">
+                <p class="section-label">Restrict to specific documents (optional)</p>
+                <input id="recherche-documents-associes" type="text" class="recherche-formulaire" placeholder="Search a document by name...">
+                <div id="liste-documents-associes" class="liste-documents-associes">
+                    <!-- Cases à cocher ajoutées ici par script.js -->
+                </div>
             </div>
         </section>
 
         <section class="traitement-ia">
             <div>
-                <p class="section-label">Traitement IA</p>
-                <h2>Lancer une génération</h2>
-                <p>Génère les réponses avec l'IA.</p>
+                <p class="section-label">AI processing</p>
+                <h2>Start a generation</h2>
+                <p>Generate answers with AI.</p>
             </div>
 
             <div class="traitement-actions">
-                <button id="bouton-traitement" class="primary-button">Lancer le traitement</button>
+                <button id="bouton-traitement" class="primary-button">Start processing</button>
             </div>
         </section>
 
         <section id="controle" class="intro">
-            <p class="section-label">File d’attente</p>
-            <h2>Réponses proposées à vérifier</h2>
-            <p class="intro-text">Valide, rejette ou commente chaque proposition avant publication.</p>
+            <p class="section-label">Queue</p>
+            <h2>Proposed answers to review</h2>
+            <p class="intro-text">Approve, reject, or comment on each proposal before publication.</p>
         </section>
 
         <section id="reponses" class="dashboard">
@@ -94,32 +114,32 @@
             <a href="https://3dsmartfactory.csit.ma/" target="_blank" rel="noopener">
                 <img src="1st-logo.png" alt="3D Smart Factory" class="logo-pied">
             </a>
-            <p>Plateforme interne de contrôle humain des réponses générées par IA pour les formulaires Google et Microsoft Forms.</p>
+            <p>Internal platform for human control of AI-generated answers to Google Forms and Microsoft Forms.</p>
         </div>
 
         <div class="pied-colonne">
             <h3>Navigation</h3>
             <nav class="pied-nav">
-                <a href="index.html">Accueil</a>
-                <a href="index.html#reponses">Réponses</a>
-                <a href="historique.html">Historique</a>
+                <a href="index.html">Home</a>
+                <a href="index.html#reponses">Answers</a>
+                <a href="historique.html">History</a>
             </nav>
         </div>
 
         <div class="pied-colonne">
             <h3>Contact</h3>
-            <p>Villa Num 75, Lotissement la gare, Mohammedia, Maroc</p>
+            <p>Villa Num 75, Lotissement la gare, Mohammedia, Morocco</p>
             <p><a href="tel:+33624948083">+33 6 24 94 80 83</a></p>
             <p><a href="mailto:3dsmartfactory@gmail.com">3dsmartfactory@gmail.com</a></p>
         </div>
 
         <div class="pied-bas">
             <p>© 2026 3D Smart Factory · v1.0.0</p>
-            <a href="https://3dsmartfactory.csit.ma/" target="_blank" rel="noopener">Voir le site officiel</a>
+            <a href="https://3dsmartfactory.csit.ma/" target="_blank" rel="noopener">Visit official website</a>
         </div>
     </footer>
 
-    <button id="bouton-haut" class="bouton-remonter" aria-label="Remonter en haut">↑</button>
+    <button id="bouton-haut" class="bouton-remonter" aria-label="Back to top">↑</button>
 </body>
-<script src="script.js?v=17"></script>
+<script src="script.js?v=20"></script>
 </html>

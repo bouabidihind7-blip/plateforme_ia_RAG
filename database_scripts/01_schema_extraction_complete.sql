@@ -65,6 +65,18 @@ CREATE TABLE formulaires (
     date_modification TIMESTAMP WITH TIME ZONE
         NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
+    -- Documents RAG (noms de fichiers standardisés, ex :
+    -- "format_standard_Politique RH.txt") auxquels ce formulaire est
+    -- explicitement rattaché — choisi par l'utilisateur à l'import, pas
+    -- deviné automatiquement (voir retriever.py: retrieve(sources_autorisees=...)).
+    -- NULL ou tableau vide = pas de restriction, recherche dans toute la base
+    -- (comportement par défaut, inchangé). Corrige un vrai problème constaté :
+    -- avec plusieurs documents d'entreprises différentes dans la même base,
+    -- une question pouvait recevoir une réponse exacte mais venant du MAUVAIS
+    -- document (ex: "politique télétravail" d'une autre société que celle
+    -- visée par le formulaire).
+    documents_associes TEXT[],
+
     -- Empêche d’importer deux fois le même formulaire
     -- pour un même fournisseur.
     CONSTRAINT uq_formulaire_fournisseur_identifiant
@@ -266,12 +278,20 @@ CREATE TABLE questions (
     -- Une question doit contenir du texte, une image, ou les deux —
     -- SAUF une grille, dont le contenu vit dans grille_lignes/
     -- grille_colonnes et dont le titre général peut être vide
-    -- (ex : "Grille sans titre" chez Google, texte NULL en pratique).
+    -- (ex : "Grille sans titre" chez Google, texte NULL en pratique),
+    -- SAUF une question dont statut_extraction indique déjà que son
+    -- contenu est incomplet (ex : "texte_manquant") — ce statut existe
+    -- justement pour signaler ce cas à un humain plutôt que de bloquer
+    -- l'import de tout le formulaire (bug réel constaté : un formulaire
+    -- entier devenait impossible à importer à cause d'une seule question
+    -- vide, alors que ce cas est prévu et doit rester visible pour
+    -- correction manuelle, pas rejeté silencieusement).
     CONSTRAINT chk_question_contenu
         CHECK (
             NULLIF(BTRIM(texte), '') IS NOT NULL
             OR image IS NOT NULL
             OR type_question IN ('grille_choix_unique', 'grille_choix_multiple')
+            OR statut_extraction <> 'prete'
         ),
 
     -- Limite le statut d'extraction aux valeurs produites par

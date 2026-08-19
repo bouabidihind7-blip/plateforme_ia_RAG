@@ -196,3 +196,8 @@ class FormulaireEntree(BaseModel):
     # Liste des questions validées avec le modèle QuestionFormulaire.
     #
     questions: list[QuestionFormulaire] = Field(min_length=1)
+
+    # Documents RAG (valeurs "source" exactes, voir GET /documents-rag) choisis par
+    # l'utilisateur pour restreindre la recherche RAG à ce périmètre précis. None/vide = pas
+    # de restriction (voir retrieve() dans retriever.py).
+    documents_associes: list[str] | None = None

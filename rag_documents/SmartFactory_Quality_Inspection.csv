@@ -1,0 +1,121 @@
+﻿Inspection_ID,Date_Contrôle,Quart_Travail,Ligne_Production,Référence_Pièce,Inspecteur,Type_Défaut,Sévérité,Action_Corrective,Coût_Rebut_EUR,Statut_Dossier
+QC-2026-1001,2026-08-12,Matin (06h-14h),Atelier_Usinage_CNC,GEAR-BOX-TR,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1002,2026-08-07,Après-midi (14h-22h),Ligne_Assemblage_2,HOUSING-ALU-01,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1003,2026-08-12,Matin (06h-14h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1004,2026-08-16,Après-midi (14h-22h),Atelier_Usinage_CNC,HOUSING-ALU-01,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1005,2026-08-10,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1006,2026-08-14,Matin (06h-14h),Cellule_Robotique_3D,PART-A902,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1007,2026-08-09,Matin (06h-14h),Cellule_Robotique_3D,PART-B114,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1008,2026-08-05,Nuit (22h-06h),Ligne_Assemblage_2,SENSOR-MODULE-X,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1009,2026-08-09,Matin (06h-14h),Atelier_Usinage_CNC,PART-A902,INSP-07 (Lefebvre),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,77.07,En attente de retouche
+QC-2026-1010,2026-08-01,Après-midi (14h-22h),Cellule_Robotique_3D,HOUSING-ALU-01,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1011,2026-08-15,Après-midi (14h-22h),Ligne_Assemblage_1,PART-B114,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,37.67,Clôturé
+QC-2026-1012,2026-08-06,Matin (06h-14h),Atelier_Usinage_CNC,PART-B114,INSP-01 (Kowalski),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,104.56,En attente de retouche
+QC-2026-1013,2026-08-13,Nuit (22h-06h),Atelier_Usinage_CNC,GEAR-BOX-TR,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1014,2026-08-09,Matin (06h-14h),Ligne_Assemblage_1,PART-B114,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1015,2026-08-16,Après-midi (14h-22h),Ligne_Assemblage_2,PART-B114,INSP-07 (Lefebvre),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,153.74,En attente de retouche
+QC-2026-1016,2026-08-09,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-07 (Lefebvre),Erreur d'assemblage,Élevée,Démontage manuel et vérification capteurs,150.12,En cours d'investigation
+QC-2026-1017,2026-08-03,Après-midi (14h-22h),Ligne_Assemblage_1,SENSOR-MODULE-X,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1018,2026-08-13,Nuit (22h-06h),Atelier_Usinage_CNC,PART-B114,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1019,2026-08-09,Après-midi (14h-22h),Atelier_Usinage_CNC,HOUSING-ALU-01,INSP-01 (Kowalski),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,162.92,En attente de retouche
+QC-2026-1020,2026-08-11,Matin (06h-14h),Ligne_Assemblage_1,PART-B114,INSP-04 (Dupont),Erreur d'assemblage,Élevée,Démontage manuel et vérification capteurs,170.69,En cours d'investigation
+QC-2026-1021,2026-08-13,Nuit (22h-06h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-12 (Moreau),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,971.37,En cours d'investigation
+QC-2026-1022,2026-08-12,Après-midi (14h-22h),Atelier_Usinage_CNC,PART-B114,INSP-04 (Dupont),Défaut de peinture,Faible,Ponçage léger et re-peinture,43.95,Clôturé
+QC-2026-1023,2026-08-01,Matin (06h-14h),Cellule_Robotique_3D,GEAR-BOX-TR,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1024,2026-08-10,Nuit (22h-06h),Cellule_Robotique_3D,HOUSING-ALU-01,INSP-07 (Lefebvre),Erreur d'assemblage,Élevée,Démontage manuel et vérification capteurs,367.7,En cours d'investigation
+QC-2026-1025,2026-08-10,Matin (06h-14h),Atelier_Usinage_CNC,PART-A902,INSP-01 (Kowalski),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,101.64,En attente de retouche
+QC-2026-1026,2026-08-16,Après-midi (14h-22h),Ligne_Assemblage_1,PART-B114,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1027,2026-08-09,Matin (06h-14h),Cellule_Robotique_3D,PART-B114,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1028,2026-08-05,Nuit (22h-06h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-04 (Dupont),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,775.27,En cours d'investigation
+QC-2026-1029,2026-08-04,Matin (06h-14h),Cellule_Robotique_3D,GEAR-BOX-TR,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1030,2026-08-08,Après-midi (14h-22h),Ligne_Assemblage_1,GEAR-BOX-TR,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1031,2026-08-11,Nuit (22h-06h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-01 (Kowalski),Erreur d'assemblage,Élevée,Démontage manuel et vérification capteurs,165.45,En cours d'investigation
+QC-2026-1032,2026-08-08,Nuit (22h-06h),Cellule_Robotique_3D,PART-B114,INSP-12 (Moreau),Défaut de peinture,Faible,Ponçage léger et re-peinture,37.32,Clôturé
+QC-2026-1033,2026-08-07,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-07 (Lefebvre),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,58.7,En attente de retouche
+QC-2026-1034,2026-08-15,Nuit (22h-06h),Ligne_Assemblage_1,HOUSING-ALU-01,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,73.07,Clôturé
+QC-2026-1035,2026-08-10,Après-midi (14h-22h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-07 (Lefebvre),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,1056.82,En cours d'investigation
+QC-2026-1036,2026-08-08,Nuit (22h-06h),Ligne_Assemblage_1,PART-B114,INSP-12 (Moreau),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,986.29,En cours d'investigation
+QC-2026-1037,2026-08-08,Après-midi (14h-22h),Ligne_Assemblage_1,HOUSING-ALU-01,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1038,2026-08-16,Matin (06h-14h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1039,2026-08-13,Après-midi (14h-22h),Ligne_Assemblage_2,PART-A902,INSP-12 (Moreau),Défaut de peinture,Faible,Ponçage léger et re-peinture,56.41,Clôturé
+QC-2026-1040,2026-08-01,Après-midi (14h-22h),Atelier_Usinage_CNC,SENSOR-MODULE-X,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1041,2026-08-11,Après-midi (14h-22h),Atelier_Usinage_CNC,GEAR-BOX-TR,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1042,2026-08-13,Après-midi (14h-22h),Ligne_Assemblage_2,PART-A902,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1043,2026-08-12,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-12 (Moreau),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,163.0,En attente de retouche
+QC-2026-1044,2026-08-16,Après-midi (14h-22h),Ligne_Assemblage_2,PART-B114,INSP-04 (Dupont),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,164.24,En attente de retouche
+QC-2026-1045,2026-08-02,Après-midi (14h-22h),Ligne_Assemblage_2,PART-A902,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1046,2026-08-05,Nuit (22h-06h),Ligne_Assemblage_2,HOUSING-ALU-01,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,52.8,Clôturé
+QC-2026-1047,2026-08-04,Matin (06h-14h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-01 (Kowalski),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,753.2,En cours d'investigation
+QC-2026-1048,2026-08-11,Après-midi (14h-22h),Ligne_Assemblage_2,PART-A902,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1049,2026-08-08,Matin (06h-14h),Cellule_Robotique_3D,GEAR-BOX-TR,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,35.42,Clôturé
+QC-2026-1050,2026-08-09,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1051,2026-08-15,Nuit (22h-06h),Cellule_Robotique_3D,PART-B114,INSP-04 (Dupont),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,136.71,En attente de retouche
+QC-2026-1052,2026-08-16,Nuit (22h-06h),Cellule_Robotique_3D,PART-B114,INSP-04 (Dupont),Défaut de peinture,Faible,Ponçage léger et re-peinture,33.4,Clôturé
+QC-2026-1053,2026-08-06,Nuit (22h-06h),Ligne_Assemblage_1,PART-B114,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1054,2026-08-10,Après-midi (14h-22h),Atelier_Usinage_CNC,GEAR-BOX-TR,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1055,2026-08-14,Nuit (22h-06h),Cellule_Robotique_3D,PART-B114,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1056,2026-08-03,Après-midi (14h-22h),Ligne_Assemblage_2,HOUSING-ALU-01,INSP-01 (Kowalski),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,72.06,En attente de retouche
+QC-2026-1057,2026-08-16,Matin (06h-14h),Atelier_Usinage_CNC,SENSOR-MODULE-X,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,20.94,Clôturé
+QC-2026-1058,2026-08-12,Matin (06h-14h),Cellule_Robotique_3D,PART-B114,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1059,2026-08-11,Matin (06h-14h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1060,2026-08-04,Matin (06h-14h),Ligne_Assemblage_2,HOUSING-ALU-01,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1061,2026-08-04,Matin (06h-14h),Ligne_Assemblage_2,PART-B114,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,40.71,Clôturé
+QC-2026-1062,2026-08-16,Nuit (22h-06h),Ligne_Assemblage_1,GEAR-BOX-TR,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1063,2026-08-15,Après-midi (14h-22h),Cellule_Robotique_3D,PART-A902,INSP-01 (Kowalski),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,614.17,En cours d'investigation
+QC-2026-1064,2026-08-06,Nuit (22h-06h),Cellule_Robotique_3D,HOUSING-ALU-01,INSP-01 (Kowalski),Erreur d'assemblage,Élevée,Démontage manuel et vérification capteurs,214.31,En cours d'investigation
+QC-2026-1065,2026-08-06,Après-midi (14h-22h),Atelier_Usinage_CNC,HOUSING-ALU-01,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1066,2026-08-07,Après-midi (14h-22h),Ligne_Assemblage_2,HOUSING-ALU-01,INSP-12 (Moreau),Défaut de peinture,Faible,Ponçage léger et re-peinture,25.18,Clôturé
+QC-2026-1067,2026-08-08,Matin (06h-14h),Cellule_Robotique_3D,PART-A902,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1068,2026-08-06,Matin (06h-14h),Cellule_Robotique_3D,HOUSING-ALU-01,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1069,2026-08-15,Après-midi (14h-22h),Atelier_Usinage_CNC,HOUSING-ALU-01,INSP-04 (Dupont),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,85.13,En attente de retouche
+QC-2026-1070,2026-08-08,Nuit (22h-06h),Ligne_Assemblage_2,SENSOR-MODULE-X,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1071,2026-08-06,Matin (06h-14h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1072,2026-08-05,Après-midi (14h-22h),Ligne_Assemblage_1,HOUSING-ALU-01,INSP-01 (Kowalski),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,901.96,En cours d'investigation
+QC-2026-1073,2026-08-04,Matin (06h-14h),Ligne_Assemblage_1,PART-B114,INSP-12 (Moreau),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,1005.2,En cours d'investigation
+QC-2026-1074,2026-08-16,Après-midi (14h-22h),Cellule_Robotique_3D,HOUSING-ALU-01,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1075,2026-08-03,Après-midi (14h-22h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-12 (Moreau),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,472.69,En cours d'investigation
+QC-2026-1076,2026-08-04,Matin (06h-14h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-01 (Kowalski),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,158.15,En attente de retouche
+QC-2026-1077,2026-08-14,Après-midi (14h-22h),Ligne_Assemblage_1,PART-A902,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1078,2026-08-15,Matin (06h-14h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-01 (Kowalski),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,287.49,En cours d'investigation
+QC-2026-1079,2026-08-04,Nuit (22h-06h),Ligne_Assemblage_1,GEAR-BOX-TR,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1080,2026-08-15,Après-midi (14h-22h),Ligne_Assemblage_1,SENSOR-MODULE-X,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1081,2026-08-06,Matin (06h-14h),Ligne_Assemblage_2,SENSOR-MODULE-X,INSP-12 (Moreau),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,146.4,En attente de retouche
+QC-2026-1082,2026-08-12,Après-midi (14h-22h),Cellule_Robotique_3D,PART-B114,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1083,2026-08-05,Matin (06h-14h),Ligne_Assemblage_2,SENSOR-MODULE-X,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,31.88,Clôturé
+QC-2026-1084,2026-08-08,Après-midi (14h-22h),Ligne_Assemblage_2,SENSOR-MODULE-X,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1085,2026-08-12,Nuit (22h-06h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1086,2026-08-06,Après-midi (14h-22h),Ligne_Assemblage_2,HOUSING-ALU-01,INSP-04 (Dupont),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,164.08,En attente de retouche
+QC-2026-1087,2026-08-14,Après-midi (14h-22h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-12 (Moreau),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,124.17,En attente de retouche
+QC-2026-1088,2026-08-07,Après-midi (14h-22h),Cellule_Robotique_3D,GEAR-BOX-TR,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1089,2026-08-04,Matin (06h-14h),Atelier_Usinage_CNC,HOUSING-ALU-01,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1090,2026-08-15,Après-midi (14h-22h),Ligne_Assemblage_2,PART-B114,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,46.69,Clôturé
+QC-2026-1091,2026-08-14,Après-midi (14h-22h),Ligne_Assemblage_2,SENSOR-MODULE-X,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1092,2026-08-16,Après-midi (14h-22h),Atelier_Usinage_CNC,SENSOR-MODULE-X,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1093,2026-08-01,Après-midi (14h-22h),Cellule_Robotique_3D,PART-A902,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1094,2026-08-16,Après-midi (14h-22h),Cellule_Robotique_3D,SENSOR-MODULE-X,INSP-07 (Lefebvre),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,716.48,En cours d'investigation
+QC-2026-1095,2026-08-12,Matin (06h-14h),Atelier_Usinage_CNC,PART-B114,INSP-12 (Moreau),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1096,2026-08-09,Après-midi (14h-22h),Ligne_Assemblage_1,HOUSING-ALU-01,INSP-12 (Moreau),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,665.99,En cours d'investigation
+QC-2026-1097,2026-08-14,Nuit (22h-06h),Ligne_Assemblage_2,PART-B114,INSP-04 (Dupont),Défaut de peinture,Faible,Ponçage léger et re-peinture,41.66,Clôturé
+QC-2026-1098,2026-08-02,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-07 (Lefebvre),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,137.07,En attente de retouche
+QC-2026-1099,2026-08-05,Après-midi (14h-22h),Cellule_Robotique_3D,PART-A902,INSP-01 (Kowalski),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1100,2026-08-07,Nuit (22h-06h),Ligne_Assemblage_1,HOUSING-ALU-01,INSP-12 (Moreau),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,105.01,En attente de retouche
+QC-2026-1101,2026-08-10,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-12 (Moreau),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,532.63,En cours d'investigation
+QC-2026-1102,2026-08-04,Après-midi (14h-22h),Cellule_Robotique_3D,HOUSING-ALU-01,INSP-01 (Kowalski),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,881.07,En cours d'investigation
+QC-2026-1103,2026-08-12,Après-midi (14h-22h),Ligne_Assemblage_2,PART-A902,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1104,2026-08-02,Après-midi (14h-22h),Ligne_Assemblage_1,GEAR-BOX-TR,INSP-07 (Lefebvre),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,1128.5,En cours d'investigation
+QC-2026-1105,2026-08-16,Matin (06h-14h),Ligne_Assemblage_2,SENSOR-MODULE-X,INSP-01 (Kowalski),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,122.43,En attente de retouche
+QC-2026-1106,2026-08-05,Matin (06h-14h),Cellule_Robotique_3D,PART-B114,INSP-07 (Lefebvre),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,60.02,En attente de retouche
+QC-2026-1107,2026-08-05,Matin (06h-14h),Ligne_Assemblage_2,HOUSING-ALU-01,INSP-01 (Kowalski),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,146.56,En attente de retouche
+QC-2026-1108,2026-08-05,Après-midi (14h-22h),Ligne_Assemblage_1,SENSOR-MODULE-X,INSP-01 (Kowalski),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,909.67,En cours d'investigation
+QC-2026-1109,2026-08-15,Matin (06h-14h),Cellule_Robotique_3D,HOUSING-ALU-01,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1110,2026-08-15,Nuit (22h-06h),Cellule_Robotique_3D,PART-B114,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1111,2026-08-17,Nuit (22h-06h),Ligne_Assemblage_1,SENSOR-MODULE-X,INSP-04 (Dupont),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,137.09,En attente de retouche
+QC-2026-1112,2026-08-07,Matin (06h-14h),Ligne_Assemblage_2,GEAR-BOX-TR,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1113,2026-08-08,Après-midi (14h-22h),Atelier_Usinage_CNC,PART-A902,INSP-01 (Kowalski),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,419.63,En cours d'investigation
+QC-2026-1114,2026-08-11,Nuit (22h-06h),Atelier_Usinage_CNC,PART-A902,INSP-12 (Moreau),Défaut de peinture,Faible,Ponçage léger et re-peinture,59.46,Clôturé
+QC-2026-1115,2026-08-11,Après-midi (14h-22h),Ligne_Assemblage_2,PART-A902,INSP-07 (Lefebvre),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1116,2026-08-01,Après-midi (14h-22h),Atelier_Usinage_CNC,SENSOR-MODULE-X,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé
+QC-2026-1117,2026-08-12,Après-midi (14h-22h),Atelier_Usinage_CNC,HOUSING-ALU-01,INSP-04 (Dupont),Micro-fissure,Critique,Rebut immédiat + Alerte chef d'atelier,703.53,En cours d'investigation
+QC-2026-1118,2026-08-08,Matin (06h-14h),Atelier_Usinage_CNC,SENSOR-MODULE-X,INSP-12 (Moreau),Écart dimensionnel (>0.05mm),Moyenne,Retouche sur tour numérique,50.54,En attente de retouche
+QC-2026-1119,2026-08-14,Matin (06h-14h),Ligne_Assemblage_1,PART-A902,INSP-07 (Lefebvre),Défaut de peinture,Faible,Ponçage léger et re-peinture,27.97,Clôturé
+QC-2026-1120,2026-08-13,Matin (06h-14h),Atelier_Usinage_CNC,GEAR-BOX-TR,INSP-04 (Dupont),Conforme (Aucun),Aucune,Validation qualité OK - Mise en stock,0.0,Clôturé

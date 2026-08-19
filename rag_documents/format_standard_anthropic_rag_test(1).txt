@@ -1,0 +1,47 @@
+Catégorie : Général
+Q : Quel est le domaine d'activité principal d'Anthropic ?
+R : Anthropic est une entreprise d'intelligence artificielle spécialisée dans la conception de systèmes d'intelligence artificielle fiables, interprétables et pilotables.
+
+Catégorie : Général
+Q : En quelle année l'entreprise Anthropic a-t-elle été fondée ?
+R : Anthropic a été fondée en 2021 par un groupe de chercheurs et d'ingénieurs ayant précédemment travaillé sur des systèmes d'intelligence artificielle à grande échelle.
+
+Catégorie : Général
+Q : Quand Anthropic a-t-elle été créée ?
+R : L'entreprise Anthropic a été créée en 2021 par des chercheurs et des ingénieurs spécialisés dans les systèmes d'intelligence artificielle à grande échelle.
+
+Catégorie : Général
+Q : Qu'est-ce que Claude développé par Anthropic ?
+R : Claude est une famille de grands modèles de langage conçus pour la conversation, le raisonnement, la rédaction, le code, l'analyse et d'autres tâches de travail intellectuel.
+
+Catégorie : Général
+Q : Comment les utilisateurs peuvent-ils accéder aux modèles Claude d'Anthropic ?
+R : Claude est accessible via des applications web et des API destinées aux développeurs, permettant ainsi aux organisations d'intégrer des fonctionnalités d'intelligence artificielle dans leurs propres logiciels.
+
+Catégorie : Général
+Q : Quel est l'un des axes de recherche majeurs menés par Anthropic ?
+R : Une part majeure de la recherche d'Anthropic se concentre sur la sécurité de l'intelligence artificielle en étudiant des méthodes pour rendre les systèmes avancés plus fiables et alignés sur les intentions humaines.
+
+Catégorie : Général
+Q : Qu'est-ce que la Constitutional AI chez Anthropic ?
+R : La Constitutional AI est une approche de recherche d'Anthropic qui utilise des principes explicites pour guider le comportement du modèle lors de son entraînement et de son évaluation.
+
+Catégorie : Général
+Q : Quels types de clients Anthropic sert-elle avec ses produits et son infrastructure ?
+R : Anthropic fournit des produits et des infrastructures d'intelligence artificielle à la fois pour les utilisateurs individuels et pour les entreprises.
+
+Catégorie : Général
+Q : Quels cas d'usage les services d'Anthropic peuvent-ils prendre en charge ?
+R : Les services d'Anthropic peuvent prendre en charge l'assistance client, l'analyse de documents, le développement logiciel, la génération de contenu et la recherche de connaissances en entreprise.
+
+Catégorie : Général
+Q : Comment Anthropic parvient-elle à rendre ses modèles disponibles à grande échelle ?
+R : Anthropic travaille en collaboration avec des partenaires technologiques et de cloud computing afin de rendre ses modèles disponibles à grande échelle.
+
+Catégorie : Général
+Q : Pourquoi Anthropic est-elle une entreprise importante dans l'industrie de l'intelligence artificielle générative ?
+R : Anthropic est importante car elle associe le développement de grands modèles de langage à un fort accent sur la sécurité, l'évaluation des modèles et le déploiement responsable.
+
+Catégorie : Général
+Q : À quoi contribue le travail d'Anthropic dans le domaine de l'intelligence artificielle ?
+R : Le travail d'Anthropic contribue au développement global de systèmes d'intelligence artificielle qui sont utiles tout en demeurant contrôlables et fiables.

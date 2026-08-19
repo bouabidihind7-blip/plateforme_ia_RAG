@@ -1,13 +1,17 @@
 # Importe FastAPI pour créer l’application backend.
-from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks
+from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks, Query
 # Importe CORSMiddleware pour autoriser le frontend à appeler le backend.
 from fastapi.middleware.cors import CORSMiddleware
+# Importe StaticFiles pour servir le frontend depuis ce même serveur (voir bas de fichier) —
+# évite d'avoir besoin d'un deuxième tunnel ngrok/serveur juste pour les fichiers statiques.
+from fastapi.staticfiles import StaticFiles
 # Importe IntegrityError pour détecter un formulaire déjà importé (contrainte UNIQUE).
 from sqlalchemy.exc import IntegrityError
 
 # os.getenv() lit les variables d'environnement, load_dotenv() charge backend/.env.
 import os
 import sys
+import threading
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -58,8 +62,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Route simple utilisée pour vérifier que le backend fonctionne.
-@app.get("/")
+# Route simple utilisée pour vérifier que le backend fonctionne — déplacée de "/" vers "/api"
+# pour laisser "/" au frontend (voir StaticFiles monté en bas de ce fichier).
+@app.get("/api")
 def accueil():
     return {"message": "Bienvenue sur l'API"}
 
@@ -177,7 +182,7 @@ FOURNISSEUR_PAR_TYPE_SOURCE = {
 
 
 @app.post("/formulaires/depuis-url", status_code=201)
-def recevoir_formulaire_depuis_url(url: str):
+def recevoir_formulaire_depuis_url(url: str, documents_associes: list[str] | None = Query(default=None)):
     # Étape 1 : extrait le formulaire (détecte Google/Microsoft toute seule).
     formulaire_brut = extraire_formulaire_depuis_url(url)
 
@@ -193,6 +198,7 @@ def recevoir_formulaire_depuis_url(url: str):
         date_extraction=formulaire_brut.get("date_extraction"),
         statut_extraction=formulaire_brut.get("statut_extraction"),
         questions=formulaire_brut["questions"],
+        documents_associes=documents_associes,
     )
 
     # Étape 3 : enregistre le formulaire validé — même fonction que POST /formulaires.
@@ -202,12 +208,25 @@ def recevoir_formulaire_depuis_url(url: str):
     # (ServerErrorMiddleware, en dehors du CORS, génère la réponse) : le navigateur bloquait alors
     # la réponse et fetch() plantait côté frontend avant même de lire le code HTTP. Un 409 (déjà
     # géré par FastAPI) passe normalement par le CORS et laisse le frontend afficher un message clair.
+    #
+    # IMPORTANT : cette table n'est pas la seule à avoir une contrainte — enregistrer_formulaire
+    # insère aussi dans questions/options/grille_*, qui ont chacune leurs propres contraintes
+    # (bug réel constaté : une question au contenu incomplet levait une IntegrityError totalement
+    # différente, mais tombait dans ce même except et affichait à tort "déjà importé"). On regarde
+    # donc le NOM de la contrainte violée pour ne renvoyer ce message que si c'est vraiment un
+    # doublon ; toute autre violation renvoie son vrai message.
     try:
         formulaire_db_id = enregistrer_formulaire(formulaire)
-    except IntegrityError:
+    except IntegrityError as erreur:
+        nom_contrainte = getattr(getattr(erreur.orig, "diag", None), "constraint_name", None)
+        if nom_contrainte == "uq_formulaire_fournisseur_identifiant":
+            raise HTTPException(
+                status_code=409,
+                detail="Ce formulaire a déjà été importé.",
+            )
         raise HTTPException(
-            status_code=409,
-            detail="Ce formulaire a déjà été importé.",
+            status_code=422,
+            detail=f"Le formulaire contient des données invalides ({nom_contrainte or 'contrainte inconnue'}).",
         )
 
     return {
@@ -228,22 +247,72 @@ RAG_DOCUMENTS_DIR = _RACINE_PROJET / "rag_documents"
 EXTENSIONS_MISE_EN_PAGE = [".pdf", ".docx", ".doc", ".pptx", ".html", ".odt"]
 
 
+# Compteur d'ingestions RAG actuellement en cours en arrière-plan (documents à mise en page ET
+# fichiers txt/xlsx/csv) — bug réel constaté : un document tout juste uploadé pouvait être
+# interrogé par "Start processing" AVANT que son indexation en arrière-plan soit terminée, le
+# RAG cherchant alors dans une base pas encore à jour (aucun résultat trouvé, réponse "information
+# non disponible" alors que l'information existe bien). Le frontend interroge GET
+# /documents-rag/statut pour savoir s'il faut attendre avant de lancer un traitement.
+# threading.Lock() : plusieurs tâches d'arrière-plan peuvent s'exécuter en parallèle
+# (ThreadPoolExecutor interne de FastAPI), incrémenter/décrémenter un entier partagé sans
+# verrou n'est pas garanti atomique.
+_verrou_indexation = threading.Lock()
+_indexations_en_cours = 0
+
+
+def _executer_avec_suivi_indexation(fonction, *args):
+    global _indexations_en_cours
+    with _verrou_indexation:
+        _indexations_en_cours += 1
+    try:
+        fonction(*args)
+    finally:
+        with _verrou_indexation:
+            _indexations_en_cours -= 1
+
+
+@app.get("/documents-rag/statut")
+def statut_indexation_documents():
+    return {"indexation_en_cours": _indexations_en_cours > 0}
+
+
+# Liste les documents RAG déjà uploadés, pour que le frontend propose une case à cocher par
+# document au moment d'importer un formulaire (voir formulaires.documents_associes en base et
+# retrieve(sources_autorisees=...) dans retriever.py). "source" est la valeur EXACTE stockée
+# dans les métadonnées Chroma (voir ingest_txt.py/ingest_tabulaire.py) — c'est elle qu'il faut
+# renvoyer telle quelle à POST /formulaires/depuis-url, pas "nom_original" (juste pour l'affichage).
+@app.get("/documents-rag")
+def lister_documents_rag():
+    documents = []
+    for chemin in sorted(RAG_DOCUMENTS_DIR.iterdir()):
+        if chemin.name.endswith(":Zone.Identifier") or chemin.name.startswith("format_standard_"):
+            continue
+        if chemin.suffix.lower() in EXTENSIONS_MISE_EN_PAGE or chemin.suffix.lower() == ".txt":
+            source = f"format_standard_{chemin.stem}.txt"
+        else:
+            # .xlsx/.csv : la métadonnée "source" est le nom du fichier original tel quel
+            # (voir ingest_tabulaire.py), pas un format_standard_*.txt dérivé.
+            source = chemin.name
+        documents.append({"nom_original": chemin.name, "source": source})
+    return {"documents": documents}
+
+
 # Un seul pipeline pour tous les documents à mise en page (voir retriever.py et
 # standardiser_document.py — DocumentConverter() de Docling détecte le format tout seul, tous
 # les formats de EXTENSIONS_MISE_EN_PAGE partagent donc exactement le même chemin, pas un
 # script par format) : Docling + découpage en lots + agent_standardisation, jamais un appel
 # direct sur tout le texte (qui perd du contenu sur un document volumineux), puis
-# ingest_txt.main() pour l'embedding. Idempotent : un document déjà standardisé (sortie déjà
-# présente) n'est jamais retraité, donc rappeler cette fonction sur tout le dossier (comme le
-# font déjà ingest_txt.main()/ingest_tabulaire.main()) ne fait le travail QUE pour les nouveaux
-# documents.
-def standardiser_et_ingerer_document():
-    chemins = [
-        chemin
-        for extension in EXTENSIONS_MISE_EN_PAGE
-        for chemin in RAG_DOCUMENTS_DIR.glob(f"*{extension}")
-    ]
-    for chemin_document in chemins:
+# ingest_txt.main() pour l'embedding.
+# Prend la liste EXACTE des documents à traiter (pas un scan de tout rag_documents/) — bug
+# réel constaté : un scan complet, à chaque upload, retraitait aussi les 11 PDF DÉJÀ
+# standardisés sous d'autres noms historiques (ex. format_standard_aup.txt pour
+# acceptable-use-policy.pdf, pas format_standard_acceptable-use-policy.txt) : la convention de
+# nommage automatique ne matchait jamais ces anciens fichiers, donc "chemin_sortie.exists()"
+# était toujours faux pour eux — 4 doublons complets recréés (nouveaux appels Gemini réels,
+# temps et quota gaspillés) avant même d'atteindre le document réellement envoyé par
+# l'utilisateur. Chaque upload ne doit standardiser QUE ce qu'il vient d'envoyer.
+def standardiser_et_ingerer_document(chemins_documents: list[Path]):
+    for chemin_document in chemins_documents:
         chemin_sortie = RAG_DOCUMENTS_DIR / f"format_standard_{chemin_document.stem}.txt"
         if not chemin_sortie.exists():
             standardiser_document.main(str(chemin_document), str(chemin_sortie))
@@ -252,10 +321,13 @@ def standardiser_et_ingerer_document():
 
 # Associe chaque extension supportée à la fonction d'ingestion du bon script — un Excel/CSV
 # passe par ingest_tabulaire.main() (les deux formats partagent déjà le même script), un TXT
-# par ingest_txt.main(), tout format à mise en page par standardiser_et_ingerer_document()
-# (ci-dessus, même fonction pour tous — Docling détecte le format tout seul).
+# par ingest_txt.main(). Les formats à mise en page (EXTENSIONS_MISE_EN_PAGE) n'ont PAS
+# d'entrée ici : contrairement à ingest_txt.main()/ingest_tabulaire.main() (rescans complets,
+# sans coût IA, donc sûrs à relancer sur tout le dossier), standardiser_et_ingerer_document()
+# a un vrai coût (appels Gemini) et doit recevoir la liste précise des fichiers concernés —
+# gérée séparément dans la route ci-dessous, pas via ce dictionnaire de fonctions sans argument.
 EXTENSIONS_VERS_INGESTION = {
-    **{extension: standardiser_et_ingerer_document for extension in EXTENSIONS_MISE_EN_PAGE},
+    **{extension: None for extension in EXTENSIONS_MISE_EN_PAGE},
     ".txt": ingest_txt.main,
     ".xlsx": ingest_tabulaire.main,
     ".csv": ingest_tabulaire.main,
@@ -298,27 +370,44 @@ async def recevoir_document_rag(
         )
 
     # Sauvegarde chaque fichier dans rag_documents/ — le même dossier que les scripts
-    # d'ingestion scannent déjà (jusqu'ici rempli à la main). fonctions_a_lancer est un set :
-    # les fonctions Python sont hashables, donc si 3 PDF + 2 CSV arrivent dans le même lot,
-    # standardiser_et_ingerer_document et ingest_tabulaire.main n'y sont ajoutées qu'UNE fois chacune —
-    # inutile de ré-ingérer tout le dossier 5 fois pour 5 fichiers.
+    # d'ingestion scannent déjà (jusqu'ici rempli à la main).
+    # fonctions_a_lancer (set) : pour .txt/.xlsx/.csv, un rescan complet est sûr et gratuit,
+    # donc dédoublonner par fonction suffit (2 CSV -> ingest_tabulaire.main() une seule fois).
+    # documents_mise_en_page (liste) : pour PDF/DOCX/..., on garde le chemin EXACT de chaque
+    # fichier reçu dans CETTE requête — jamais un rescan de tout le dossier (voir le commentaire
+    # sur standardiser_et_ingerer_document plus haut pour le bug réel que ça causait).
     fonctions_a_lancer = set()
+    documents_mise_en_page = []
     for fichier in fichiers:
         extension = Path(fichier.filename).suffix.lower()
         destination = RAG_DOCUMENTS_DIR / fichier.filename
         destination.write_bytes(await fichier.read())
-        fonctions_a_lancer.add(EXTENSIONS_VERS_INGESTION[extension])
+        if extension in EXTENSIONS_MISE_EN_PAGE:
+            documents_mise_en_page.append(destination)
+        else:
+            fonctions_a_lancer.add(EXTENSIONS_VERS_INGESTION[extension])
 
     # add_task() ne lance PAS la fonction maintenant — elle est mise de côté et exécutée
     # seulement APRÈS que la réponse ait été envoyée au frontend. C'est ça qui rend l'upload
     # rapide : l'utilisateur reçoit "201 OK" tout de suite, l'indexation (lente) tourne après,
     # sans qu'il ait à attendre devant son écran.
     for fonction_ingestion in fonctions_a_lancer:
-        taches_arriere_plan.add_task(fonction_ingestion)
+        taches_arriere_plan.add_task(_executer_avec_suivi_indexation, fonction_ingestion)
+    if documents_mise_en_page:
+        taches_arriere_plan.add_task(
+            _executer_avec_suivi_indexation, standardiser_et_ingerer_document, documents_mise_en_page
+        )
 
     return {
         "message": "Documents reçus — indexation en cours en arrière-plan",
         "noms_fichiers": [fichier.filename for fichier in fichiers],
     }
+
+
+# Monté en dernier, sur "/" : Starlette teste les routes dans l'ordre où elles sont
+# déclarées, donc toutes les routes API ci-dessus (déclarées avant) restent prioritaires —
+# ce montage ne sert que ce qu'aucune route API n'a déjà pris en charge. html=True fait
+# répondre index.html automatiquement sur "/".
+app.mount("/", StaticFiles(directory=str(_RACINE_PROJET / "frontend"), html=True), name="frontend")
 
 

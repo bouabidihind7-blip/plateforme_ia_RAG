@@ -1,0 +1,387 @@
+Catégorie : Général
+Q : Quelle est la date de dernière révision du manuel de sécurité de Burt Township ?
+R : La dernière révision du manuel de sécurité de Burt Township date du 08/05/08.
+
+Catégorie : Général
+Q : Quelle est la date d'adoption du manuel de sécurité de Burt Township ?
+R : Le manuel de sécurité de Burt Township a été adopté le 08/12/08.
+
+Catégorie : Général
+Q : Quelle est l'adresse postale de Burt Township ?
+R : L'adresse postale de Burt Township est PO Box 430, Grand Marais, Michigan 49839.
+
+Catégorie : RH
+Q : Qui réalise des inspections régulières et tient des réunions régulières sur la sécurité à Burt Township ?
+R : Le superviseur du Township (Township Supervisor) réalise des inspections régulières et tient des réunions régulières sur la sécurité à Burt Township.
+
+Catégorie : RH
+Q : Avec qui le superviseur du Township se réunit-il pour planifier et mettre en œuvre de nouvelles améliorations du programme de sécurité ?
+R : Le superviseur du Township se réunit avec la direction pour planifier et mettre en œuvre de nouvelles améliorations du programme de sécurité.
+
+Catégorie : RH
+Q : Quelle est la conséquence d'une violation volontaire ou habituelle des règles de sécurité à Burt Township ?
+R : Toute violation volontaire ou habituelle des règles de sécurité à Burt Township est considérée comme une cause de licenciement.
+
+Catégorie : RH
+Q : À qui les employés doivent-ils signaler immédiatement les conditions non sécurisées ou les dangers constatés ?
+R : Les employés doivent signaler immédiatement les conditions non sécurisées ou les dangers constatés à leur superviseur ou à un membre du comité de sécurité.
+
+Catégorie : RH
+Q : Que doit faire un employé en cas de blessure au travail, quelle que soit sa taille ?
+R : En cas de blessure au travail, quelle que soit sa taille, l'employé doit la signaler immédiatement à son superviseur et recevoir des soins de premiers secours.
+
+Catégorie : Production
+Q : Quelle est la règle concernant le port de vêtements amples ou de bijoux autour des machines ?
+R : Il ne faut jamais porter de vêtements amples ou de bijoux autour des machines, car ils risquent de s'accrocher aux équipements en mouvement et de causer des blessures graves.
+
+Catégorie : Production
+Q : Que doit faire un employé si un autre employé doit être attiré pour une question de sécurité ?
+R : Si un employé doit attirer l'attention d'un autre employé, il doit attendre que cela puisse être fait en toute sécurité sans distraire l'autre employé et risquer de le blesser.
+
+Catégorie : Production
+Q : Quel équipement de protection doit être porté lorsque cela est requis ?
+R : Lorsque cela est requis, les employés doivent porter des équipements de protection tels que des lunettes de protection, des lunettes de sécurité, des masques, des gants et des filets à cheveux.
+
+Catégorie : Production
+Q : Comment les dispositifs de sécurité tels que les dispositifs de retenue et les commandes bimanuelles doivent-ils être utilisés ?
+R : Les équipements de sécurité tels que les dispositifs de retenue, les rappels et les dispositifs bimanuels doivent être correctement ajustés pour chaque employé pour assurer sa protection.
+
+Catégorie : Production
+Q : Comment le matériel, les palettes, les bacs et les boîtes doivent-ils être empilés pour assurer la sécurité ?
+R : Le matériel, les palettes, les bacs, les boîtes et autres équipements doivent être empilés de manière à ne pas bloquer les allées, les sorties, le matériel de lutte contre l'incendie, les tableaux électriques ou les vannes.
+
+Catégorie : Production
+Q : Quelles zones doivent impérativement être maintenues dégagées en tout temps ?
+R : Les portes coupe-feu et les allées (Fire doors and aisles) doivent impérativement être maintenues dégagées en tout temps.
+
+Catégorie : Production
+Q : Quelle est la règle concernant l'utilisation de l'air comprimé dans les ateliers ?
+R : L'air comprimé ne doit être utilisé que pour le travail auquel il est destiné ; il est interdit de nettoyer ses vêtements avec l'air comprimé ou de jouer avec.
+
+Catégorie : Production
+Q : Que doit faire un employé avant de nettoyer, réparer ou quitter sa machine ?
+R : Un employé doit éteindre complètement sa machine avant de la nettoyer, de la réparer ou de la quitter.
+
+Catégorie : Production
+Q : Qui est autorisé à faire fonctionner les chariots élévateurs à fourche (tow motors and lift trucks) ?
+R : Les chariots élévateurs à fourche (tow motors and lift trucks) ne peuvent être opérés que par du personnel autorisé.
+
+Catégorie : Production
+Q : Quelle est la règle de transport pour les chariots élévateurs de type marche (walk-type lift trucks) et les chariots motorisés (tow motors) ?
+R : Les chariots élévateurs de type marche ne doivent pas être montés, et personne d'autre que l'opérateur n'est autorisé à monter sur les chariots motorisés (tow motors).
+
+Catégorie : Production
+Q : Quelle est la règle de vitesse pour l'utilisation des chariots élévateurs ?
+R : Les conducteurs de chariots élévateurs ne doivent pas dépasser une vitesse qui est sûre pour les conditions existantes.
+
+Catégorie : Production
+Q : Quelle est la règle concernant la course et les pitreries (running and horseplay) sur le lieu de travail ?
+R : La course et les pitreries (running and horseplay) sont strictement interdites sur le lieu de travail.
+
+Catégorie : Production
+Q : Quelle est la consigne concernant l'accès aux extincteurs ?
+R : Il est interdit de bloquer l'accès aux extincteurs d'incendie.
+
+Catégorie : Production
+Q : Quelle est la règle concernant les commandes et les interrupteurs électriques ?
+R : Il est strictement interdit de manipuler ou de modifier (tamper with) les commandes ou les interrupteurs électriques.
+
+Catégorie : Production
+Q : À quelles conditions un employé peut-il faire fonctionner des machines ou des équipements ?
+R : Un employé ne peut faire fonctionner des machines ou des équipements qu'après avoir été correctement instruit et autorisé à le faire par son superviseur.
+
+Catégorie : Production
+Q : Comment faut-il se déplacer d'un endroit à un autre au sein de l'entreprise ?
+R : Il faut utiliser les passages désignés pour se déplacer d'un endroit à un autre et ne jamais prendre de raccourcis dangereux.
+
+Catégorie : Production
+Q : Quelle est la bonne méthode pour soulever des charges lourdes ?
+R : Il faut soulever les charges correctement en utilisant ses jambes et non son dos, et demander de l'aide pour les charges plus lourdes.
+
+Catégorie : Production
+Q : Quelle est la règle concernant l'ajustement, le nettoyage ou l'huilage des machines en mouvement ?
+R : Il est interdit d'ajuster, de nettoyer ou de lubrifier des machines en mouvement.
+
+Catégorie : Production
+Q : Où doivent être maintenus les carters de protection des machines (machine guards) ?
+R : Les carters de protection des machines doivent être maintenus à leur place prévue (intended place).
+
+Catégorie : Production
+Q : Quelle est la règle concernant le jet d'objets ?
+R : Il est interdit de jeter des objets.
+
+Catégorie : Production
+Q : Que faut-il faire en cas de déversement de liquide, d'huile ou de graisse ?
+R : Il faut nettoyer immédiatement tout liquide, huile ou graisse renversé pour éviter les chutes.
+
+Catégorie : Production
+Q : Quelles chaussures et vêtements sont requis pour travailler à Burt Township ?
+R : Les employés doivent porter des chaussures à semelles dures et des vêtements appropriés, les shorts et les mini-robes n'étant pas autorisés.
+
+Catégorie : Production
+Q : Où les déchets et papiers doivent-ils être jetés ?
+R : Les déchets et les papiers doivent être placés dans les conteneurs appropriés et non dans les boîtes destinées aux mégots de cigarettes.
+
+Catégorie : RH
+Q : Qui est responsable de la fourniture des vêtements de protection et des équipements requis pour le poste de travail ?
+R : Le superviseur de l'employé veille à ce que celui-ci reçoive les vêtements de protection et les équipements requis pour son poste.
+
+Catégorie : RH
+Q : Dans quel cas un employé est-il facturé pour la perte ou la destruction d'articles de protection ?
+R : Un employé est facturé pour la perte ou la destruction d'articles de protection uniquement lorsque cela se produit par négligence.
+
+Catégorie : RH
+Q : Qui détermine quels emplois et zones de travail nécessitent des chaussures de sécurité ?
+R : Le Township désigne les emplois et les zones de travail qui nécessitent des chaussures de sécurité.
+
+Catégorie : RH
+Q : Est-il permis de travailler en sandales ou chaussures ouvertes à Burt Township ?
+R : Sous aucun prétexte un employé n'est autorisé à travailler en sandales ou en chaussures ouvertes.
+
+Catégorie : RH
+Q : Le port de lunettes de sécurité et de protections auditives est-il obligatoire pour tous les employés ?
+R : Le port de lunettes de sécurité et de protections auditives est obligatoire pour tous les employés lorsqu'ils utilisent des équipements ou selon les instructions du superviseur.
+
+Catégorie : RH
+Q : Quelle est la règle concernant le port de la ceinture de sécurité dans les véhicules de l'entreprise ?
+R : Tous les employés doivent utiliser la ceinture de sécurité et les dispositifs de retenue d'épaule lorsqu'ils conduisent un véhicule pour les besoins du Township.
+
+Catégorie : RH
+Q : Qui est responsable de s'assurer que tous les passagers avant et arrière sont attachés dans un véhicule d'entreprise ?
+R : Le conducteur du véhicule est responsable de s'assurer que tous les passagers des sièges avant et arrière sont attachés.
+
+Catégorie : RH
+Q : Comment les étagères de stockage doivent-elles être approvisionnées ?
+R : Les étagères doivent être stockées avec soin afin que les articles ne basculent pas en cas de contact.
+
+Catégorie : Production
+Q : Quelles sont les conditions requises pour effectuer de la maintenance ou des réparations sur du matériel roulant (rolling stock) ?
+R : Pour réparer du matériel roulant, un employé supplémentaire doit être présent, les pneus doivent être bloqués, les freins verrouillés, toutes les clés en possession de l'intervenant, et tous les composants hydrauliques abaissés et verrouillés.
+
+Catégorie : Production
+Q : Que faire si les composants hydrauliques du matériel roulant doivent être laissés en position levée pour des réparations ?
+R : Si les composants hydrauliques doivent rester levés, ils doivent être solidement bloqués ou sécurisés d'une autre manière pour éviter tout abaissement accidentel.
+
+Catégorie : Production
+Q : Quelles sont les conditions requises pour effectuer des réparations ou de la maintenance sur des équipements électriques ?
+R : Pour réparer de l'équipement électrique, un employé supplémentaire doit être présent, l'unité doit être éteinte et débranchée de la source électrique.
+
+Catégorie : Production
+Q : Que doit-on faire si un équipement électrique à réparer ne peut pas être débranché de sa source ?
+R : Si l'équipement électrique ne peut pas être débranché, le disjoncteur électrique doit être éteint, le boîtier du disjoncteur verrouillé, et toutes les clés remises à l'employé effectuant le travail.
+
+Catégorie : Production
+Q : Quelles précautions faut-il prendre lors de la maintenance ou de la réparation de petits moteurs ?
+R : Lors de la maintenance ou de la réparation de petits moteurs, il faut s'assurer que tous les interrupteurs sont éteints et que les freins de chaîne ou autres interrupteurs de sécurité sont activés.
+
+Catégorie : Général
+Q : Où sont affichées les copies de la politique de verrouillage (Lock Out Policy) ?
+R : Des copies de la politique de verrouillage sont affichées au Département des Travaux Publics (Department of Public Works), au garage de maintenance de Woodland Park (Woodland Park Maintenance Garage) et au garage du service d'incendie et d'ambulance (Fire and Ambulance Department Garage).
+
+Catégorie : Général
+Q : Quelle zone de Burt Township a été officiellement désignée comme zone de travail confinée (confined work area) ?
+R : La zone du réservoir de stockage du service des eaux (Water Department Storage Tank area) a été désignée comme zone de travail confinée.
+
+Catégorie : Général
+Q : À quelle date la politique de zone confinée a-t-elle été intégrée au manuel de politiques du Township de Burt, dans le comté d'Alger ?
+R : La politique de zone confinée a été intégrée au manuel de politiques le 5 août 2008.
+
+Catégorie : Général
+Q : Qui doit superviser directement un employé souhaitant entrer dans la zone confinée du réservoir d'eau ?
+R : Aucun employé ne peut entrer dans la zone confinée du réservoir d'eau sans la supervision directe du superviseur du Township et/ou du gestionnaire opérateur du service des eaux (Water Department Operator Manager).
+
+Catégorie : Général
+Q : Quel numéro de téléphone faut-il contacter pour l'entrée autorisée dans la zone confinée pendant les heures normales de bureau ?
+R : Pendant les heures normales de bureau (9h00 à 16h00), l'employé doit contacter le bureau du Township au 906-494-2381 avant d'entrer et après avoir quitté la zone confinée.
+
+Catégorie : Général
+Q : Que se passe-t-il si le bureau du Township n'est pas contacté dans l'heure suivant l'entrée d'un employé dans la zone confinée en journée ?
+R : Si le bureau du Township n'est pas contacté dans l'heure suivant l'entrée, un employé du Township est envoyé sur place pour évaluer la situation en suivant la procédure établie.
+
+Catégorie : Général
+Q : Qui faut-il contacter pour une entrée autorisée dans la zone confinée en dehors des heures normales de bureau ?
+R : En dehors des heures normales de bureau, l'employé doit contacter la ligne non urgente du bureau du shérif du comté d'Alger (Alger County Sheriff Office, Non-emergency line) au 906-387-4444 avant d'entrer et après avoir quitté la zone.
+
+Catégorie : Général
+Q : Qui le répartiteur du comté d'Alger (Alger County Dispatcher) doit-il informer lorsqu'un employé entre ou sort de la zone confinée en dehors des heures de bureau ?
+R : Le répartiteur du comté d'Alger doit informer le service d'incendie de Burt Township (Burt Township Fire Department) lorsqu'un employé entre ou sort de la zone confinée.
+
+Catégorie : Général
+Q : Que se passe-t-il si le répartiteur du comté d'Alger n'est pas contacté dans l'heure suivant l'entrée d'un employé dans la zone confinée hors horaires de bureau ?
+R : Si le répartiteur du comté d'Alger n'est pas contacté dans l'heure suivant l'entrée, un membre du service d'incendie de Burt Township est dépêché sur place pour évaluer la situation.
+
+Catégorie : Général
+Q : Où les copies de la politique sur les zones confinées sont-elles affichées ou archivées ?
+R : Des copies sont affichées aux départements des travaux publics et des services des eaux de Burt Township, et sont archivées auprès du service d'incendie de Burt Township et du bureau du shérif du comté d'Alger.
+
+Catégorie : Legal
+Q : Quelle norme fédérale OSHA Burt Township respecte-t-il concernant la communication des dangers ?
+R : Burt Township respecte la norme de communication des dangers de l'OSHA, intitulée Titre 20 du Code of Federal Regulations 1910.1200.
+
+Catégorie : Legal
+Q : Par quels moyens Burt Township se conforme-t-il à la norme OSHA sur la communication des dangers ?
+R : Burt Township se conforme à la norme en établissant une liste de produits chimiques dangereux, en utilisant des fiches de données de sécurité (MSDS), en étiquetant les conteneurs et en assurant la formation des employés.
+
+Catégorie : Legal
+Q : À quelles opérations de travail le programme de communication des dangers de Burt Township s'applique-t-il ?
+R : Ce programme s'applique à toutes les opérations de travail à Burt Township où les employés peuvent être exposés à des substances dangereuses dans des conditions normales ou en cas d'urgence.
+
+Catégorie : RH
+Q : Qui est le coordinateur du programme de communication des dangers et responsable de sa mise à jour ?
+R : Le superviseur du Township est le coordinateur du programme qui examine et met à jour le programme de communication des dangers si nécessaire.
+
+Catégorie : Legal
+Q : Auprès de qui peut-on obtenir des copies du programme écrit de communication des dangers ?
+R : Des copies du programme écrit de communication des dangers peuvent être obtenues auprès de Jack Hubbard, dont le bureau est situé au bureau du Township, au E21837 Grand Marais Avenue.
+
+Catégorie : Legal
+Q : Quelles informations sont communiquées aux employés dans le cadre du programme de communication des dangers ?
+R : Les employés sont informés du contenu de la norme, des propriétés dangereuses des produits chimiques manipulés, des procédures de manipulation sûre et des mesures de protection à prendre.
+
+Catégorie : Legal
+Q : Sur quoi les employés sont-ils informés en plus des produits chimiques de routine dans le cadre du programme de communication des dangers ?
+R : Les employés sont également informés des dangers associés aux tâches non routinières qu'ils peuvent être amenés à effectuer.
+
+Catégorie : Production
+Q : Qui établit et tient à jour la liste des produits chimiques dangereux et des pratiques de travail associées ?
+R : Le superviseur du Township établit une liste de tous les produits chimiques dangereux et pratiques de travail utilisés dans l'installation et la met à jour si nécessaire.
+
+Catégorie : Production
+Q : Où la liste spécifique des produits chimiques d'une zone de travail est-elle affichée ?
+R : Une liste séparée identifiant tous les produits chimiques utilisés est disponible et affichée dans chaque zone de travail respective.
+
+Catégorie : Production
+Q : Qui gère et détient la liste maîtresse (master list) des produits chimiques dangereux de Burt Township ?
+R : Une liste maîtresse des produits chimiques dangereux est gérée et mise à disposition par le responsable du service des travaux publics (DPW Manager) ou le superviseur du Township.
+
+Catégorie : Production
+Q : Que fournissent les fiches de données de sécurité (MSDS) aux employés de Burt Township ?
+R : Les fiches de données de sécurité (MSDS) fournissent aux employés des informations spécifiques sur les produits chimiques qu'ils utilisent.
+
+Catégorie : Production
+Q : Qui maintient le classeur contenant une fiche de données de sécurité (MSDS) pour chaque substance chimique répertoriée ?
+R : Le responsable du service des travaux publics (DPW Manager) ou le superviseur du Township maintient un classeur avec une MSDS pour chaque substance de la liste.
+
+Catégorie : Production
+Q : Sous quelle forme exacte se présente la fiche de données de sécurité (MSDS) conservée par l'entreprise ?
+R : La MSDS est un formulaire OSHA Form 174 entièrement complété ou son équivalent.
+
+Catégorie : Production
+Q : Où les fiches de données de sécurité (MSDS) sont-elles rendues disponibles pour les employés pendant leur service ?
+R : Les fiches de données de sécurité (MSDS) sont mises à disposition des employés à leur poste de travail pendant leur service.
+
+Catégorie : Production
+Q : Qui est responsable de l'acquisition et de la mise à jour des fiches de données de sécurité (MSDS) ?
+R : Le superviseur du Township est responsable de l'acquisition et de la mise à jour des fiches de données de sécurité (MSDS).
+
+Catégorie : Production
+Q : Que fait le superviseur du Township si des recherches supplémentaires sont nécessaires ou si une MSDS manque lors de la livraison initiale d'un produit ?
+R : Le superviseur du Township contacte le fabricant ou le fournisseur du produit chimique si des recherches supplémentaires sont nécessaires ou si une MSDS n'a pas été fournie.
+
+Catégorie : Production
+Q : Qui doit autoriser et donner son accord préalable pour tous les nouveaux approvisionnements de produits chimiques à Burt Township ?
+R : Tous les nouveaux approvisionnements de produits chimiques pour Burt Township doivent être préalablement autorisés (cleared) par le superviseur du Township.
+
+Catégorie : Production
+Q : Où peut-on obtenir la liste maîtresse (master list) des fiches de données de sécurité (MSDS) ?
+R : Une liste maîtresse des fiches de données de sécurité (MSDS) peut être obtenue auprès du superviseur du Township.
+
+Catégorie : Legal
+Q : Quelles informations minimales doivent figurer sur les étiquettes des produits chimiques dangereux ?
+R : Les étiquettes doivent indiquer au moins l'identité chimique du contenu, les avertissements de danger appropriés, ainsi que le nom et l'adresse du fabricant, de l'importateur ou de la partie responsable.
+
+Catégorie : Legal
+Q : Comment le superviseur du Township s'assure-t-il que l'étiquetage des conteneurs chimiques est correct ?
+R : Le superviseur du Township se réfère à la fiche de données de sécurité (MSDS) correspondante de chaque produit chimique pour vérifier que l'étiquetage est correct.
+
+Catégorie : Legal
+Q : Comment sont signalés les conteneurs stationnaires d'une zone de travail qui ont des contenus et des dangers similaires ?
+R : Si un nombre de conteneurs stationnaires ont des contenus et des dangers similaires, des panneaux sont affichés sur eux pour transmettre les informations sur les dangers.
+
+Catégorie : Legal
+Q : Quels documents écrits peuvent remplacer les étiquettes sur les équipements de processus stationnaires ?
+R : Des feuilles de processus régulières, des bons de fabrication (batch tickets), des bons de mélange (blend tickets) et des documents écrits similaires peuvent remplacer les étiquettes s'ils contiennent les mêmes informations.
+
+Catégorie : Legal
+Q : Faut-il étiqueter un conteneur portable lorsque des produits chimiques y sont transférés pour un usage immédiat ?
+R : Aucun étiquetage n'est requis sur le conteneur portable si des produits chimiques y sont transférés d'un conteneur étiqueté pour un usage immédiat et exclusif par l'employé.
+
+Catégorie : Legal
+Q : Les tuyaux et systèmes de tuyauterie sont-ils étiquetés pour indiquer les produits chimiques qu'ils contiennent ?
+R : Les tuyaux et les systèmes de tuyauterie ne sont pas étiquetés, mais leur contenu est décrit lors d'une session de formation.
+
+Catégorie : RH
+Q : Que se passe-t-il lorsqu'un employé doit effectuer des tâches non routinières et potentiellement dangereuses ?
+R : Lorsqu'un employé doit effectuer des tâches non routinières dangereuses, une session de formation spéciale est organisée pour l'informer des risques d'exposition et des précautions à prendre.
+
+Catégorie : RH
+Q : Qui dispense la formation initiale sur la norme de communication des dangers et l'utilisation sûre des produits chimiques ?
+R : Le superviseur du Township dispense la formation initiale sur la norme de communication des dangers et l'utilisation sécurisée des produits chimiques à tous ceux qui travaillent avec ou sont exposés à ces substances.
+
+Catégorie : RH
+Q : Quand une formation supplémentaire sur les produits chimiques dangereux est-elle dispensée aux employés ?
+R : Une formation supplémentaire est dispensée chaque fois qu'un nouveau danger est introduit sur le lieu de travail.
+
+Catégorie : RH
+Q : Quel autre moyen est utilisé en dehors de la formation initiale pour revoir les informations sur les produits chimiques dangereux ?
+R : Des réunions de sécurité régulières sont également utilisées pour revoir les informations présentées lors de la formation initiale.
+
+Catégorie : RH
+Q : Quel niveau de formation le personnel d'encadrement reçoit-il concernant les dangers chimiques et les mesures de protection ?
+R : Le personnel d'encadrement reçoit une formation approfondie (extensively trained) sur les dangers et les mesures de protection appropriées pour répondre aux questions et surveiller les pratiques de travail.
+
+Catégorie : RH
+Q : Quels sont les points principaux mis en avant dans le programme de formation sur la communication des dangers ?
+R : Le programme met l'accent sur le résumé du standard, les propriétés chimiques et physiques, les dangers physiques et sanitaires, les procédures de protection, les consignes de nettoyage des déversements, et l'accès aux MSDS.
+
+Catégorie : RH
+Q : Dans quelles situations une reconversion ou une formation de recyclage (retraining) des employés est-elle exigée ?
+R : La formation de recyclage est exigée lorsque le danger change ou lorsqu'un nouveau danger est introduit dans l'environnement de travail.
+
+Catégorie : RH
+Q : Comment le superviseur du Township évalue-t-il le programme de formation des employés en vue de son amélioration ?
+R : Le superviseur du Township examine le programme de formation, donne des conseils sur les besoins de formation et recueille les commentaires et suggestions des employés pour l'améliorer.
+
+Catégorie : Commercial
+Q : De quelle manière le superviseur du Township informe-t-il les entrepreneurs extérieurs des risques chimiques sur les lieux de travail ?
+R : Le superviseur du Township avise les entrepreneurs extérieurs en personne de tout danger chimique, du système d'étiquetage, des mesures de protection, des procédures de manipulation et de l'emplacement des MSDS.
+
+Catégorie : Commercial
+Q : Que doivent fournir les entrepreneurs extérieurs qui apportent des produits chimiques sur le site de Burt Township ?
+R : Chaque entrepreneur apportant des produits chimiques sur site doit fournir à Burt Township les informations appropriées sur les dangers, y compris les étiquettes utilisées et les précautions à prendre.
+
+Catégorie : Legal
+Q : Auprès de qui tous les employés peuvent-ils obtenir des informations supplémentaires sur le programme écrit et les listes de produits chimiques ?
+R : Tous les employés peuvent obtenir des informations supplémentaires sur le programme écrit, la norme, les MSDS et les listes chimiques auprès du superviseur du Township.
+
+Catégorie : RH
+Q : Qui est tenu de conserver les registres concernant chaque blessure survenue sur le lieu de travail ?
+R : Le superviseur de Burt Township est tenu de conserver les registres concernant chaque blessure survenue sur le lieu de travail.
+
+Catégorie : RH
+Q : À qui un formulaire d'accident doit-il être envoyé dès qu'un employé subit une blessure professionnelle, même mineure ?
+R : Un formulaire d'accident doit être envoyé au superviseur du Township chaque fois qu'un employé subit une blessure au travail, peu importe sa gravité.
+
+Catégorie : RH
+Q : Que doit obtenir obligatoirement un employé s'il est incapable d'accomplir ses tâches régulières en raison d'une blessure ?
+R : Un employé incapable d'accomplir ses tâches régulières doit obtenir un formulaire de restriction de travail (work restriction form) auprès de son médecin.
+
+Catégorie : RH
+Q : Que doit faire un employé si son formulaire de restriction de travail expire alors qu'il ne peut toujours pas reprendre ses tâches normales ?
+R : Si le formulaire de restriction de travail expire et que l'employé ne peut toujours pas faire ses tâches habituelles, il doit retourner chez son médecin pour obtenir un nouveau formulaire.
+
+Catégorie : RH
+Q : À quelle date la liste de toutes les blessures et maladies professionnelles de l'année est-elle affichée par le superviseur du Township ?
+R : La liste de toutes les blessures et maladies professionnelles de l'année est affichée par le superviseur du Township le 1er avril de chaque année.
+
+Catégorie : RH
+Q : Pendant combien de temps Burt Township conserve-t-il les registres et résumés des blessures et maladies professionnelles ?
+R : Burt Township conserve les registres et résumés des blessures et maladies professionnelles pendant 5 ans à l'installation où l'employé a travaillé ou où la blessure est intervenue.
+
+Catégorie : Général
+Q : Où est affichée l'affiche officielle décrivant les responsabilités et devoirs de Burt Township et des employés en vertu de l'OSHA ?
+R : L'affiche OSHA est affichée au Département des Travaux Publics (Department of Public Works), au Service des Eaux (Water Department) et au bureau de Woodland Park, ainsi que d'autres affiches informatives.
+
+Catégorie : Général
+Q : Que doit faire un employé qui a des questions sur l'affiche OSHA ou qui a besoin d'aide pour la comprendre ou la traduire ?
+R : L'employé doit contacter le superviseur du Township s'il a des questions sur l'affiche ou s'il a besoin d'aide pour la comprendre, la lire ou la faire traduire.

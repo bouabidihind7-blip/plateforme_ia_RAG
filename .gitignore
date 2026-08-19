@@ -4,6 +4,7 @@ __pycache__/
 *.pyc
 chroma_store/
 chroma_store_test/
+logs/
 
 backend/.env
 scripts_extraction/google_forms_credentials.json
