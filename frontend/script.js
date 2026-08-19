@@ -54,6 +54,14 @@ let tousLesDocuments = [];
 // disparaissent temporairement du filtre.
 let documentsAssociesCoches = new Set();
 
+// Au-delà de ce nombre, la liste est repliée derrière un lien "... voir tout" — évite qu'elle
+// devienne interminable à mesure que des documents s'accumulent (voir chargerListeDocuments()).
+const NB_DOCUMENTS_VISIBLES = 4;
+
+// Mémorise si la liste est actuellement dépliée (persiste tant que la page reste ouverte, pour
+// ne pas la replier automatiquement après chaque rafraîchissement — voir attendreFinIndexation()).
+let listeDocumentsDepliee = false;
+
 
 // Recharge la liste des documents RAG disponibles depuis le backend — appelée au chargement de
 // la page ET après chaque ajout de document, pour que la liste reste à jour sans recharger la
@@ -71,10 +79,21 @@ async function chargerListeDocuments() {
 
 
 // Redessine les cases à cocher à partir d'une liste donnée (complète ou filtrée) — restaure
-// l'état coché depuis documentsAssociesCoches, pour ne rien perdre en filtrant.
-function afficherListeDocuments(documents) {
+// l'état coché depuis documentsAssociesCoches, pour ne rien perdre en filtrant. Replie la liste
+// au-delà de NB_DOCUMENTS_VISIBLES tant que listeDocumentsDepliee est faux, avec un lien "..."
+// pour tout afficher — sans jamais cacher un document déjà coché (sinon on perdrait de vue une
+// restriction active sans prévenir l'utilisateur).
+function afficherListeDocuments(documents, forcerAffichageComplet = false) {
     listeDocumentsAssocies.innerHTML = "";
-    documents.forEach((doc) => {
+
+    const coches = documents.filter((doc) => documentsAssociesCoches.has(doc.source));
+    const nonCoches = documents.filter((doc) => !documentsAssociesCoches.has(doc.source));
+    const repliee = !forcerAffichageComplet && !listeDocumentsDepliee && documents.length > NB_DOCUMENTS_VISIBLES;
+    const aAfficher = repliee
+        ? [...coches, ...nonCoches.slice(0, Math.max(0, NB_DOCUMENTS_VISIBLES - coches.length))]
+        : documents;
+
+    aAfficher.forEach((doc) => {
         const label = document.createElement("label");
         label.className = "case-document-associe";
         const coche = documentsAssociesCoches.has(doc.source) ? "checked" : "";
@@ -88,6 +107,28 @@ function afficherListeDocuments(documents) {
         });
         listeDocumentsAssocies.appendChild(label);
     });
+
+    const peutReplier = !forcerAffichageComplet && documents.length > NB_DOCUMENTS_VISIBLES;
+    if (repliee || (peutReplier && listeDocumentsDepliee)) {
+        const lien = document.createElement("button");
+        lien.type = "button";
+        lien.className = "lien-voir-plus";
+        if (repliee) {
+            lien.textContent = "Voir plus";
+            lien.addEventListener("click", () => {
+                listeDocumentsDepliee = true;
+                afficherListeDocuments(documents);
+            });
+        } else {
+            lien.textContent = "Voir moins";
+            lien.classList.add("deplie");
+            lien.addEventListener("click", () => {
+                listeDocumentsDepliee = false;
+                afficherListeDocuments(documents);
+            });
+        }
+        listeDocumentsAssocies.appendChild(lien);
+    }
 }
 
 
@@ -102,7 +143,7 @@ function filtrerDocuments() {
     const resultats = tousLesDocuments.filter((doc) =>
         doc.nom_original.toLowerCase().includes(recherche)
     );
-    afficherListeDocuments(resultats);
+    afficherListeDocuments(resultats, true);
 }
 
 champRechercheDocuments.addEventListener("input", filtrerDocuments);
@@ -214,7 +255,9 @@ async function importerFormulaireDepuisUrl() {
 
         // Vide la sélection après un import réussi — sinon elle resterait cochée pour le
         // PROCHAIN formulaire importé, qui n'a probablement aucun rapport avec ces documents-ci.
+        // Replie aussi la liste, pour repartir sur un affichage compact au prochain import.
         documentsAssociesCoches.clear();
+        listeDocumentsDepliee = false;
         afficherListeDocuments(tousLesDocuments);
 
         // chargerReponses() modifie zoneMessage elle-même ("Chargement...", puis vide) — on

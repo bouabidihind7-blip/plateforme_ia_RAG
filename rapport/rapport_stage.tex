@@ -9,6 +9,11 @@
 
 % ---------- Langue et encodage ----------
 \usepackage[french]{babel}
+% babel-french remplace par défaut les puces d'itemize par un tiret
+% ("—"), en ignorant \labelitemi — cette option repasse sur le
+% comportement standard de LaTeX pour que notre puce personnalisée
+% (cercle jaune, voir plus bas) soit bien utilisée.
+\frenchbsetup{StandardItemizeEnv=true}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -27,6 +32,11 @@
 % Jaune de l'entreprise (--yellow sur la plateforme) — touche de couleur sur
 % la page de garde uniquement, pas ailleurs (trop vif pour du texte courant).
 \definecolor{jauneentreprise}{HTML}{f0ff00}
+
+% ---------- Puces de liste (cercle jaune entreprise, au lieu du tiret
+% par défaut de babel-french) ----------
+\usepackage{enumitem}
+\renewcommand{\labelitemi}{\textcolor{jauneentreprise!70!bleufonce}{\textbullet}}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -164,7 +174,7 @@ comprendre en profondeur chaque choix technique plutôt que de me contenter
 de les appliquer, et d'aborder ce stage avec une véritable démarche
 d'apprentissage.
 
-Je tiens également à remercier chaleureusement M. Bertin, fondateur de
+Je tiens également à remercier chaleureusement M. Bertin, co-fondateur de
 3D Smart Factory, pour son accueil bienveillant, sa disponibilité et la
 gentillesse dont il a fait preuve lors de nos échanges, qui ont
 grandement contribué à mon intégration au sein de l'entreprise.
@@ -254,8 +264,8 @@ PostgreSQL, automation, human-in-the-loop validation.
 % SOMMAIRE
 % ============================================================================
 \tableofcontents
-% \listoffigures   % à réactiver une fois les diagrammes du Chapitre 2 ajoutés
-% \listoftables  % décommente si tu ajoutes des tableaux
+\listoffigures
+\listoftables
 
 % ============================================================================
 % INTRODUCTION GÉNÉRALE
@@ -546,9 +556,9 @@ unique, choix multiple, notation...), les choix possibles forment une
 simple liste, stockée dans la table \texttt{options}.
 
 Une question de type grille est structurellement différente : elle
-combine plusieurs sous-questions (les \emph{lignes} de la grille — par
+combine plusieurs sous-questions (les \emph{lignes} de la grille  par
 exemple plusieurs critères à évaluer) avec les \emph{mêmes} choix de
-réponse pour chacune d'elles (les \emph{colonnes} — par exemple une
+réponse pour chacune d'elles (les \emph{colonnes} par exemple une
 échelle de satisfaction commune). Une seule liste d'options ne suffit pas
 à représenter ce croisement ligne $\times$ colonne : la grille utilise
 donc deux tables séparées, \texttt{grille\_lignes} et
@@ -671,23 +681,23 @@ de la plateforme : importer un formulaire, puis générer ses réponses.
 \begin{itemize}
     \item \textbf{Scraping ciblé par fournisseur, sans API officielle} : ni Google ni
     Microsoft n'exposent d'API publique pour récupérer la structure d'un formulaire
-    arbitraire. Le besoin fonctionnel — lire un formulaire à partir de son seul lien
-    public, sans compte ni configuration côté créateur — a donc imposé une approche par
+    arbitraire. Le besoin fonctionnel lire un formulaire à partir de son seul lien
+    public, sans compte ni configuration côté créateur a donc imposé une approche par
     scraping, mais \emph{différente selon le fournisseur}, en fonction de la façon dont
     chacun sert réellement sa page : Google Forms intègre toutes les données du formulaire
     sous forme d'une variable JavaScript (\texttt{FB\_PUBLIC\_LOAD\_DATA\_}) déjà présente
-    dans le HTML brut renvoyé par le serveur — une simple requête HTTP
+    dans le HTML brut renvoyé par le serveur  une simple requête HTTP
     (\texttt{urllib.request}) suffit donc à la récupérer, sans navigateur. Microsoft Forms,
     à l'inverse, construit sa page côté client en JavaScript après le chargement initial :
     le contenu utile n'existe pas dans le HTML brut, et un navigateur automatisé réel
     (Playwright, Chromium en mode \emph{headless}) est nécessaire pour obtenir le DOM une
     fois rendu. Le type de chaque question y est déterminé à partir d'un texte caché à
     l'écran mais présent dans le DOM à des fins d'accessibilité (lecteurs d'écran), par
-    exemple \og Single choice. \fg{} ou \og Date. \fg{} — plus fiable qu'une déduction à
+    exemple \og Single choice. \fg{} ou \og Date. \fg{}  plus fiable qu'une déduction à
     partir de la seule structure HTML visible.
     \item \textbf{EasyOCR avec prétraitement d'image (OpenCV)} : certaines questions ne
     sont accessibles que sous forme d'image (capture d'écran d'un tableau, logo, consigne
-    visuelle) — le besoin fonctionnel est d'en extraire un texte exploitable par l'agent
+    visuelle)  le besoin fonctionnel est d'en extraire un texte exploitable par l'agent
     IA, sans intervention humaine systématique. EasyOCR a été retenu pour son support
     multilingue prêt à l'emploi (français et anglais, les deux langues des formulaires
     traités) sans modèle à entraîner. Un premier essai en conditions réelles a montré
@@ -697,18 +707,18 @@ de la plateforme : importer un formulaire, puis générer ses réponses.
     isolement du texte clair/sombre selon le fond, agrandissement x4 pour le texte fin),
     dont les variantes les plus coûteuses (agrandissement, tests multiples) ne sont
     calculées que si une première passe rapide n'atteint pas un score de confiance
-    suffisant — évite de payer ce coût de calcul sur les images déjà bien reconnues dès le
+    suffisant  évite de payer ce coût de calcul sur les images déjà bien reconnues dès le
     premier essai. Le score de confiance final conditionne aussi le
     \texttt{statut\_extraction} de la question (\texttt{ocr\_incertain} en dessous d'un
     seuil), pour qu'une extraction douteuse soit signalée à la validation humaine plutôt
     que silencieusement acceptée.
     \item \textbf{Le framework backend, FastAPI} : les formulaires
     proviennent de sources externes (Google Forms, Microsoft Forms
-    récupérés par scraping) — le besoin fonctionnel est de garantir
+    récupérés par scraping) le besoin fonctionnel est de garantir
     qu'aucune donnée malformée n'entre en base sans vérification
     systématique, sans avoir à écrire ce contrôle manuellement pour
     chaque route. FastAPI s'appuie nativement sur Pydantic pour la
-    validation des schémas de données — chaque formulaire reçu par l'API
+    validation des schémas de données  chaque formulaire reçu par l'API
     est automatiquement vérifié (types, champs obligatoires, valeurs
     autorisées), contrairement à d'autres frameworks Python plus
     minimalistes, qui n'imposent aucune structure et demanderaient
@@ -719,19 +729,19 @@ de la plateforme : importer un formulaire, puis générer ses réponses.
     \item \textbf{PostgreSQL avec SQL brut} (SQLAlchemy Core via
     \texttt{text()}, pas l'ORM) : les données entrent en base depuis
     plusieurs points du pipeline (import initial, régénération après un
-    rejet de validation humaine) — le besoin fonctionnel est que les
+    rejet de validation humaine) le besoin fonctionnel est que les
     règles métier (types de questions valides, cohérence entre
     \texttt{type\_question} et \texttt{type\_reponse\_attendu}...)
     soient appliquées de façon centralisée en base, pas dupliquées dans
     chaque script Python qui y écrit. Le schéma repose donc sur de
     nombreuses contraintes \texttt{CHECK} directement définies en
-    base — un ORM masquerait ce niveau de contrôle ou obligerait à le
+    base  un ORM masquerait ce niveau de contrôle ou obligerait à le
     dupliquer côté Python. Le SQL brut permet aussi d'écrire directement
     des requêtes plus complexes (par exemple \texttt{DISTINCT ON} pour
     ne garder que la dernière réponse proposée par question) sans
     contourner les limites d'un
     ORM.
-    \item \textbf{JavaScript natif} (pas de framework comme React) côté
+    \item \textbf{JavaScript natif}  côté
     frontend : l'interface reste simple (import, traitement, validation
     de réponses) et ne justifie pas la complexité d'un framework moderne
     ni d'une étape de compilation  cohérent avec le besoin non
@@ -742,13 +752,13 @@ de la plateforme : importer un formulaire, puis générer ses réponses.
     générale. D'abord, la sortie structurée (\emph{structured output}) :
     chaque réponse générée doit respecter un schéma Pydantic fixe
     (une valeur, et une précision optionnelle si l'option "Autre" est
-    choisie) — Gemini expose nativement ce mécanisme via LangChain
+    choisie)  Gemini expose nativement ce mécanisme via LangChain
     (\texttt{create\_agent} avec un schéma de sortie typé), sans avoir à
     analyser du texte libre pour en extraire la structure attendue.
     Ensuite, le support multilingue natif : les formulaires traités
     peuvent être rédigés en français ou en anglais, détecté
     automatiquement (\texttt{langdetect}) puis attendu dans la réponse
-    générée — Gemini gère cette bascule sans dégradation notable de
+    générée  Gemini gère cette bascule sans dégradation notable de
     qualité, contrairement à des modèles plus spécialisés sur une seule
     langue. La variante \texttt{flash-lite}, plus légère, a été retenue
     spécifiquement pour sa faible latence par appel : les questions d'un
@@ -785,9 +795,9 @@ techniques spécifiques, distincts de ceux du reste de la plateforme :
     384 dimensions, environ 120 millions de paramètres) est nettement
     plus légère que les modèles d'embedding cloud typiques, ce qui rend
     son exécution sur CPU, sans GPU dédié, réaliste en pratique. Ensuite,
-    sa méthode d'entraînement — apprentissage contrastif avec des
+    sa méthode d'entraînement  apprentissage contrastif avec des
     préfixes distincts pour la question (\texttt{"query: "}) et le
-    document comparé (\texttt{"passage: "}) — l'optimise spécifiquement
+    document comparé (\texttt{"passage: "})  l'optimise spécifiquement
     pour la tâche de recherche question~$\rightarrow$~document, plutôt
     que pour une similarité de texte générique. Enfin, son tokenizer
     multilingue (\texttt{XLMRobertaTokenizer}, plus de 100 langues)
@@ -839,7 +849,7 @@ ensuite vers un même format brut intermédiaire, normalisé par
 d'origine.
 
 Cette normalisation détermine, pour chaque question, sa \emph{modalité}
-(texte, image, ou les deux — selon les champs réellement présents dans
+(texte, image, ou les deux  selon les champs réellement présents dans
 la question brute), son \emph{type} standardisé (choix unique, choix
 multiple, notation, grille..., déduit du type brut propre à chaque
 fournisseur) et le \emph{type de réponse attendu} qui en découle. Une
@@ -851,7 +861,7 @@ texte exploitable par l'agent IA.
 Chaque question se voit enfin attribuer un \texttt{statut\_extraction}
 (\texttt{prete}, \texttt{texte\_manquant}, \texttt{ocr\_incertain},
 \texttt{type\_inconnu}...) qui reflète la fiabilité réelle de son
-extraction — seules les questions au statut \texttt{prete} sont ensuite
+extraction seules les questions au statut \texttt{prete} sont ensuite
 transmises à l'agent IA pour génération de réponse (Section 4.2), les
 autres restant visibles mais signalées comme nécessitant une
 intervention humaine directe.
@@ -865,7 +875,7 @@ est ajoutée pour les dates, heures, grilles et questions à choix
 (énumération des options valides, précision sur le nombre de réponses
 attendu), le texte OCR est intégré si la question est une image, et le
 titre du formulaire est systématiquement ajouté comme indice de
-contexte général — un même intitulé de question peut avoir un sens très
+contexte général, car un même intitulé de question peut avoir un sens très
 différent selon qu'il provient d'une enquête de satisfaction ou d'un
 formulaire de candidature. Pour les questions dont l'énoncé seul n'a pas
 de sens sans ce qui précède (par exemple "Lesquels ?"), le texte de la
@@ -884,12 +894,12 @@ au cas où le modèle reformulerait légèrement une option plutôt que de la
 recopier telle quelle.
 
 Les questions d'un même formulaire sont traitées en parallèle
-(\texttt{ThreadPoolExecutor}, jusqu'à 3 appels simultanés), plutôt que
+(\texttt{ThreadPoolExecutor}), jusqu'à 3 appels simultanés, plutôt que
 séquentiellement, pour réduire le temps total de traitement d'un
 formulaire à plusieurs dizaines de questions. La langue dominante du
 formulaire est détectée une seule fois pour l'ensemble des questions
 (\texttt{detecter\_langue\_formulaire}, à partir du texte combiné de
-toutes les questions — un texte isolé trop court donnant une détection
+toutes les questions un texte isolé trop court donnant une détection
 peu fiable), puis chaque réponse générée est comparée à cette langue
 attendue comme filet de sécurité supplémentaire, indépendamment de la
 consigne de langue déjà donnée dans le prompt.
@@ -914,7 +924,7 @@ différentes, traitées par deux pipelines distincts.
 
 Les formats à mise en page visuelle (PDF, Word, PowerPoint...) sont
 d'abord analysés par Docling, qui en extrait la structure réelle
-(titres, paragraphes, tableaux) — une information invisible dans le
+(titres, paragraphes, tableaux), une information invisible dans le
 texte brut d'un tel fichier, qu'un simple découpage par nombre de
 caractères ne peut pas deviner. Le contenu structuré est ensuite
 regroupé en lots d'environ 3000 caractères avant d'être transformé, via
@@ -941,7 +951,7 @@ un problème réellement observé lors des tests :
 
 \begin{itemize}
     \item \textbf{Autonomie} : chaque réponse doit être compréhensible
-    seule, sans pronom ambigu — un extrait retrouvé isolément par la
+    seule, sans pronom ambigu, car un extrait retrouvé isolément par la
     recherche vectorielle doit garder son sens propre.
     \item \textbf{Longueur libre mais brève} : imposer une limite stricte
     de caractères (300 caractères, testé en premier) provoquait une perte
@@ -965,9 +975,9 @@ Les documents standardisés sont ensuite découpés en fragments
 se fait d'abord par bloc question/réponse (séparé par une ligne vide
 dans le document), afin de ne jamais mélanger deux paires distinctes
 dans un même fragment. Un mécanisme de secours
-(\texttt{RecursiveCharacterTextSplitter} de LangChain) ne s'active que
+(\texttt{RecursiveCharacterTextSplitter}) de LangChain ne s'active que
 si un bloc dépasse malgré tout la taille maximale fixée
-(350 caractères) — un cas rare mais réel, observé notamment sur des
+(350 caractères)  un cas rare mais réel, observé notamment sur des
 procédures denses en plusieurs étapes.
 
 Ce mécanisme de secours a révélé un bug réel lors des tests : en
@@ -985,15 +995,15 @@ réponse n'est jamais présentée à l'agent IA de façon partielle.
 \subsection{Classification par catégorie et recherche vectorielle}
 
 Plutôt que de rechercher dans l'ensemble du corpus documentaire pour
-chaque question — plus lent et plus susceptible de retrouver des
-extraits non pertinents — le système devine d'abord la ou les
+chaque question  plus lent et plus susceptible de retrouver des
+extraits non pertinents le système devine d'abord la ou les
 catégories les plus probables de la question, avant de limiter la
 recherche vectorielle à ces catégories uniquement.
 
 Cette classification est réalisée par embedding local, sans appel à un
 modèle de langage : chaque catégorie est représentée par plusieurs
 phrases de référence rédigées à la main (couvrant les différents angles
-d'un même sujet — par exemple, pour la catégorie RH, un angle
+d'un même sujet  par exemple, pour la catégorie RH, un angle
 "gestion administrative du personnel" et un angle distinct "accueil des
 nouveaux stagiaires"), converties en vecteurs numériques. La question
 posée est également convertie en vecteur, puis comparée par similarité
@@ -1007,7 +1017,7 @@ diversifié, cette marge fixe a cessé de filtrer quoi que ce soit : les
 7 catégories obtenaient des scores trop proches les uns des autres
 (moins de 0,03 d'écart entre la meilleure et la moins bonne, dans un cas
 mesuré), si bien que la quasi-totalité des 7 catégories étaient
-interrogées à chaque question — noyant les candidats réellement
+interrogées à chaque question noyant les candidats réellement
 pertinents sous des dizaines de candidats hors sujet avant même l'étape
 de tri. Un top~3 fixe (les 3 catégories les plus proches de la question,
 peu importe l'écart entre elles) a remplacé cette marge, avec un net
@@ -1025,7 +1035,7 @@ résultats de plusieurs collections différentes a révélé un biais
 structurel réel : une phrase tabulaire synthétique ("cette entrée a les
 caractéristiques suivantes...") obtient un score de similarité cosinus
 systématiquement plus bas qu'une vraie paire question/réponse en
-langage naturel, même quand son contenu est la bonne réponse — un
+langage naturel, même quand son contenu est la bonne réponse  un
 candidat correct issu des données tabulaires pouvait ainsi se faire
 évincer par des candidats d'une autre collection, hors sujet mais mieux
 notés dans l'absolu, uniquement à cause du style de la phrase. La
@@ -1038,7 +1048,7 @@ structurel entre styles de texte.
 Un second biais du même ordre a été corrigé en appliquant au modèle
 d'embedding la convention de préfixes pour laquelle il est
 spécifiquement entraîné (\texttt{"query: "} devant la question,
-\texttt{"passage: "} devant chaque document comparé, voir Chapitre 3) —
+\texttt{"passage: "} devant chaque document comparé, voir Chapitre 3) 
 jusque-là jamais utilisée, alors que la documentation officielle du
 modèle indique explicitement qu'omettre ces préfixes dégrade ses
 performances.
@@ -1048,7 +1058,7 @@ Enfin, un reclassement final par \emph{reranker} (modèle
 après la fusion par rang. Contrairement à l'embedding, qui compare deux
 vecteurs calculés séparément pour la question et pour chaque document,
 un reranker lit la question et un candidat ensemble, dans un seul
-passage du modèle — ce qui lui permet de distinguer des candidats très
+passage du modèle  ce qui lui permet de distinguer des candidats très
 proches en surface (par exemple, dans un même tableau, deux lignes qui
 ne diffèrent que par une valeur numérique) que l'embedding seul confond
 parfois. Un filet de sécurité complémentaire a également été ajouté :
@@ -1061,11 +1071,95 @@ la classification.
 L'ensemble de ces corrections, mesuré sur le même corpus de test que
 précédemment, porte le score final de 34/42 à 38/42 (Chapitre 5).
 
+\subsection{Recherche hybride (embedding + BM25)}
+
+Un nouveau motif d'échec a été identifié sur des documents ajoutés
+ultérieurement au corpus de test, structurellement différents des
+précédents : des politiques internes très répétitives, où une même
+formulation ("le Managing Director doit...", "l'employé doit...") revient
+plusieurs dizaines de fois avec un sujet différent à chaque fois. Cas
+réel constaté : la question "Qui a signé la politique en tant que
+Managing Director ?" n'obtenait jamais le nom recherché, alors que la
+phrase exacte contenant ce nom était bien présente dans le corpus. Elle
+se trouvait noyée, en similarité cosinus, parmi des dizaines de phrases
+au style identique mais sans rapport avec la question. Le même motif
+s'observait sur un fichier CSV de contrôle qualité : une question portant
+sur un identifiant de ligne précis (\texttt{QC-2026-1035}) ne retrouvait
+pas la bonne ligne, noyée parmi une centaine de lignes à la structure
+identique.
+
+Un embedding compare le \emph{sens} de deux textes ; il n'est pas conçu
+pour distinguer deux passages dont la structure de surface est quasi
+identique, seul un détail précis (un nom propre, un identifiant)
+différant. La correction retenue complète la recherche sémantique par
+une recherche lexicale classique (BM25, un comptage pondéré des mots
+exacts en commun entre la question et chaque passage, insensible au
+sens mais très précis sur des chaînes exactes), construite sur les
+mêmes documents déjà indexés. Les deux méthodes sont fusionnées par le
+même mécanisme de Reciprocal Rank Fusion déjà en place (Section
+4.3.4) : la recherche BM25 s'ajoute simplement comme une source
+supplémentaire à fusionner, sans modifier le reste du pipeline.
+
+Testé empiriquement sur un jeu de 15 questions couvrant les cas d'échec
+réels identifiés (noms propres noyés dans du texte répétitif,
+identifiants de lignes CSV, réponses "piège" absentes du corpus) : le
+score passe de 10/15 à 12/15. Les deux cas corrigés concernent
+exactement les identifiants de ligne CSV mentionnés plus haut, retrouvés
+au rang~1 après l'ajout de BM25 alors qu'ils étaient absents du pool de
+candidats auparavant. Une régression mineure a également été observée
+sur une question sans rapport (BM25 a fait remonter un passage partageant
+un mot rare avec la question mais moins pertinent que celui trouvé par
+l'embedding seul), un compromis attendu de toute recherche hybride,
+aucune méthode n'étant strictement meilleure que l'autre sur tous les
+cas.
+
+Une limite réelle et non résolue subsiste : BM25 compare des mots
+exacts, il ne traverse donc pas les langues, contrairement à l'embedding
+multilingue déjà en place. Sur les deux cas de noms propres noyés dans
+du texte répétitif, le fait était retrouvé correctement dès lors que la
+question était posée dans la même langue que le corpus (français, la
+langue de standardisation systématique, voir Section 4.3.1), mais
+restait introuvable lorsque la question était posée en anglais. Cette
+limite a été vérifiée empiriquement (même question, testée dans les deux
+langues, sur le même corpus) plutôt que supposée.
+
+\subsection{Restriction de la recherche à des documents précis}
+\label{subsec:restriction-documents}
+
+Un dernier problème, distinct des précédents, est apparu à mesure que le
+corpus de test s'est enrichi de documents provenant d'entreprises
+fictives différentes : une question pouvait recevoir une réponse
+factuellement exacte, mais extraite du \textbf{mauvais document}. Par
+exemple, une question sur la politique de télétravail d'une entreprise
+A recevait la politique de télétravail (bien réelle, mais sans rapport)
+d'une entreprise B présente ailleurs dans la même base documentaire.
+Le RAG ne mélangeait pas des faits inventés, mais des faits réels
+provenant de sources différentes de celle attendue par la question.
+
+Restreindre la recherche à un seul document par requête aurait résolu
+ce cas précis, mais au prix d'une régression fonctionnelle : rien
+n'empêche un même formulaire de contenir des questions dont les
+réponses proviennent légitimement de plusieurs documents différents
+(une question RH répondue par le manuel RH, une question IT répondue
+par la charte sécurité). La solution retenue laisse donc la recherche
+multi-documents intacte par défaut, et ajoute une restriction
+\emph{optionnelle}, explicitement choisie par l'utilisateur au moment
+d'importer un formulaire : une colonne \texttt{documents\_associes}
+(tableau de chaînes, \texttt{NULL} par défaut) sur la table
+\texttt{formulaires}, remplie depuis une liste de cases à cocher
+alimentée par les documents déjà indexés. Quand elle est renseignée,
+\texttt{retrieve()} filtre chaque recherche (embedding \emph{et} BM25)
+sur la métadonnée \texttt{source} déjà attachée à chaque chunk depuis
+l'ingestion, sans qu'aucune donnée supplémentaire n'ait besoin d'être
+recalculée. Vérifié en réel sur les deux cas identifiés précédemment :
+la restriction élimine complètement le mélange entre documents, sans
+qu'aucune autre question déjà correcte n'en soit affectée.
+
 \section{Backend et base de données}
 
 Le backend expose une API REST regroupant quatre familles de routes,
 correspondant aux quatre étapes du pipeline (Section 2.2). L'\emph{import}
-d'un formulaire est possible par deux voies — un JSON déjà extrait
+d'un formulaire est possible par deux voies  un JSON déjà extrait
 (\texttt{POST /formulaires}) ou directement depuis une URL
 (\texttt{POST /formulaires/depuis-url}, qui appelle l'extraction avant
 d'enregistrer le résultat), toutes deux aboutissant au même
@@ -1085,17 +1179,6 @@ ces routes : une réponse générée ou validée est toujours immédiatement
 persistée en base, plutôt que gardée en mémoire côté serveur, pour que
 l'état de l'application survive à un redémarrage du backend.
 
-\begin{lstlisting}[language=Python, caption={Exemple de route FastAPI}]
-@app.get("/formulaires/{formulaire_id}/historique")
-def lire_historique_formulaire(formulaire_id: int):
-    historique = lister_historique_formulaire(formulaire_id)
-    return {
-        "formulaire_id": formulaire_id,
-        "nombre_reponses": len(historique),
-        "historique": historique,
-    }
-\end{lstlisting}
-
 \section{Frontend et interface de validation}
 
 L'interface se compose de deux pages. La page d'accueil
@@ -1114,7 +1197,7 @@ titre ; la liste des formulaires peut être filtrée en direct par mot-clé
 au fur et à mesure de la frappe, sans rechargement de page ni bouton de
 recherche séparé. Les erreurs remontées par le backend sont interceptées
 et reformulées en message clair pour l'utilisateur plutôt
-qu'affichées telles quelles — par exemple, un import en double
+qu'affichées telles quelles  par exemple, un import en double
 (erreur 409) déclenche une demande de confirmation explicite avant
 écrasement, plutôt qu'un simple code d'erreur technique.
 
@@ -1123,6 +1206,20 @@ qu'affichées telles quelles — par exemple, un import en double
 \fbox{\includegraphics[width=0.98\textwidth]{screenshot_acceuil.png}}
 \caption{Page d'accueil : ajout de document à la base RAG et import de formulaire}
 \label{fig:screenshot-accueil}
+\end{figure}
+
+La restriction d'un formulaire à un ou plusieurs documents précis (voir
+\ref{subsec:restriction-documents}) se fait directement depuis cette page
+d'import, par une liste de cases à cocher repliée par défaut sur les
+premiers documents pour rester lisible même quand la base RAG en compte
+une dizaine, avec un bouton « Voir plus / Voir moins » pour dérouler le
+reste.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=0.98\textwidth]{screenshot_import_documents_associes.png}}
+\caption{Import d'un formulaire avec restriction optionnelle à des documents précis}
+\label{fig:screenshot-import-documents}
 \end{figure}
 
 \begin{figure}[H]
@@ -1137,6 +1234,13 @@ qu'affichées telles quelles — par exemple, un import en double
 \fbox{\includegraphics[width=0.98\textwidth]{screenshot_historique_reponses.png}}
 \caption{Détail des réponses d'un formulaire, avec statut de validation et réponse corrigée manuellement}
 \label{fig:screenshot-historique-reponses}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=0.98\textwidth]{screenshot_validation_reponse.png}}
+\caption{Validation individuelle d'une réponse proposée par l'IA}
+\label{fig:screenshot-validation-reponse}
 \end{figure}
 
 % ============================================================================
@@ -1154,7 +1258,7 @@ structures variées (grilles, questions à choix multiple, questions
 image, formulaires bilingues), ont été importés et traités au fil du
 stage. Chaque exécution était suivie dans les logs du backend, qui
 tracent chaque étape du traitement (classification RAG, appel au modèle,
-normalisation de la réponse) — un comportement inattendu était
+normalisation de la réponse)  un comportement inattendu était
 d'abord reproduit et localisé précisément dans ces logs avant d'être
 corrigé, plutôt que corrigé par supposition. Cette approche a permis de
 détecter des cas limites qu'un jeu de test artificiel n'aurait pas
@@ -1194,7 +1298,7 @@ Sur les formulaires réels testés au fil du stage (Section 5.1), les
 résultats restent qualitatifs plutôt que chiffrés : contrairement au
 système RAG (mesuré objectivement ci-dessous par un score sur un jeu de
 questions à réponse connue), il n'existe pas de "bonne réponse" unique
-et vérifiable automatiquement pour un formulaire réel — chaque réponse
+et vérifiable automatiquement pour un formulaire réel  chaque réponse
 générée a été relue manuellement. Ces tests ont surtout permis
 d'identifier et corriger des bugs réels non visibles sur un jeu de
 données synthétique restreint : gestion des grilles, cohérence des
@@ -1202,17 +1306,31 @@ dates, détection de la langue du formulaire, prise en compte du
 contexte de la question précédente, ou normalisation des choix proposés
 par le modèle.
 
-Concernant le système RAG, sur un jeu de 34 questions couvrant l'ensemble
-des catégories documentaires, le pipeline complet obtient un score de
-32/34 (94\%) ; les deux échecs restants concernent des questions
-"pièges" pour lesquelles l'information n'existe volontairement pas dans
-les documents, le système répondant alors correctement qu'il ne dispose
-pas de l'information plutôt que d'en inventer une. Sur le test de
+Concernant le système RAG, la Section 4.3.4 a déjà présenté la
+progression mesurée sur un jeu de 42 questions (corpus complet, y
+compris les fichiers tabulaires) : 34/42 sans les corrections, 38/42
+avec fusion par rang, préfixes et reranker. Sur le test de
 classification par catégorie (229 questions réelles), la précision
 atteint 100\%, après plusieurs itérations de correction empirique des
 phrases de référence. Sur un test de généralisation portant sur des
 sujets et des formulations entièrement nouveaux, le système obtient
 12/12.
+
+Un test complémentaire, mené plus tard sur un corpus renouvelé
+(documents d'entreprises fictives variées, volontairement choisies pour
+leur diversité de structure : politiques répétitives, fichiers
+tabulaires, fiches courtes), a révélé un nouveau motif d'échec non
+couvert par les corrections précédentes : un fait précis (un nom propre,
+un identifiant de ligne CSV) noyé parmi des dizaines de passages au
+style très proche échappait à la fois à la classification par catégorie
+et au reclassement par reranker, alors même que le fait recherché
+existait littéralement dans le corpus. La Section 4.3.5 détaille la
+correction apportée (recherche hybride) et ses résultats chiffrés.
+
+Les deux tableaux suivants (comparaison des modèles d'embedding et des
+stratégies de filtrage par catégorie) datent de l'étape de mesure
+initiale sur 34 questions, avant l'ajout des fichiers tabulaires au
+corpus de test. Les scores y sont donc exprimés sur 34, pas 42.
 
 \begin{table}[h]
 \centering
@@ -1229,10 +1347,12 @@ Qwen/Qwen3-Embedding-0.6B & 30 & 1013,8 s & 175,2 s \\
 \caption{Comparaison empirique des modèles d'embedding locaux}
 \label{tab:embedding-comparaison}
 \end{table}
+
 Le modèle \texttt{multilingual-e5-small} a été retenu : précision
 identique au modèle "large" initialement utilisé, pour un temps
 d'ingestion environ 10 fois plus rapide, grâce à une taille nettement
 plus réduite (environ 120 millions de paramètres contre 560 millions).
+
 \begin{table}[h]
 \centering
 \begin{tabular}{lcc}
@@ -1263,7 +1383,7 @@ correction :
     \item Un bug de fragmentation dans le système RAG : le mécanisme de
     découpage en chunks pouvait, dans de rares cas, séparer une question
     de sa réponse lorsque celle-ci dépassait la taille maximale d'un
-    fragment — l'agent IA répondait alors que l'information n'était pas
+    fragment l'agent IA répondait alors que l'information n'était pas
     disponible, alors qu'elle existait bien dans le document source.
     Corrigé en conservant le texte complet d'origine dans les métadonnées
     de chaque fragment concerné, substitué au fragment partiel au moment
@@ -1276,7 +1396,51 @@ correction :
     référence plus spécifiques, chaque correction étant systématiquement
     revérifiée sur l'ensemble du corpus réel plutôt que sur quelques
     exemples choisis à la main.
+    \item Une condition de concurrence sur l'indexation en arrière-plan :
+    un document venait d'être uploadé, mais l'utilisateur lançait le
+    traitement d'un formulaire AVANT que l'indexation en tâche de fond ne
+    soit terminée. Le RAG cherchait alors dans une base pas encore à
+    jour, renvoyant "information non disponible" pour un fait pourtant
+    présent dans le document tout juste ajouté. Corrigé par un compteur
+    global d'indexations en cours (verrouillé par un \texttt{threading.Lock}
+    contre les accès concurrents de plusieurs tâches d'arrière-plan),
+    exposé via une route dédiée que le frontend interroge avant d'autoriser
+    le lancement d'un traitement.
+    \item Deux questions du texte source, formulées de façon trop
+    proche l'une de l'autre pendant la standardisation ("auprès de qui
+    obtenir une copie du programme écrit" et "auprès de qui obtenir des
+    informations supplémentaires sur le programme"), se faisaient
+    régulièrement confondre par la recherche, alors même que chacune
+    avait sa propre réponse correcte dans le document source. Corrigé en
+    ajoutant une règle explicite au prompt de standardisation, demandant
+    à l'agent de reformuler chaque question de façon à inclure le détail
+    qui la distingue des autres questions proches du même document,
+    plutôt que de laisser deux formulations quasi identiques cohabiter.
 \end{itemize}
+
+\section{Mon point de vue personnel}
+
+Au-delà des résultats techniques présentés dans ce chapitre, ce stage
+m'a surtout appris à raisonner comme une ingénieure face à un problème
+concret, plutôt qu'à appliquer une méthode déjà connue. Chaque
+difficulté décrite plus haut (le mélange entre documents, le contenu
+répétitif qui noyait un fait précis, la condition de concurrence sur
+l'indexation...) n'avait pas de solution évidente au moment où elle est
+apparue : il a fallu d'abord comprendre précisément pourquoi le système
+échouait, avant même de chercher comment le corriger. Cette démarche,
+observer, formuler une hypothèse, la vérifier par un test mesuré, puis
+corriger, est probablement ce que je retiens de plus utile de ce stage
+sur le plan technique.
+
+Il m'est aussi arrivé de me sentir limitée, notamment face à des sujets
+que je découvrais en même temps que je devais les mettre en pratique
+(la recherche vectorielle, les architectures RAG, la conception d'une
+base de données relationnelle). Mais à chaque fois, y compris quand une
+première piste ne fonctionnait pas ou révélait un nouveau problème, il
+s'est avéré qu'une solution existait, du moment que j'acceptais de
+creuser plutôt que de contourner. C'est cette conviction, qu'il y a
+toujours un moyen d'avancer, que je retiens comme le principal
+apprentissage humain de ce stage.
 
 % ============================================================================
 % CONCLUSION GÉNÉRALE
@@ -1290,17 +1454,17 @@ la structure d'un formulaire Google Forms ou Microsoft Forms, générer
 des propositions de réponses pertinentes en s'appuyant sur la
 documentation interne de l'entreprise, et soumettre chaque proposition
 à une validation humaine avant toute utilisation, avec un historique
-complet et traçable. Les trois briques prévues — extraction, génération
-par IA, validation — sont aujourd'hui connectées de bout en bout, de
+complet et traçable. Les trois briques prévues (extraction, génération
+par IA, validation) sont aujourd'hui connectées de bout en bout, de
 l'import d'un formulaire jusqu'à l'interface web de validation.
 
 Sur le plan technique, ce stage a été l'occasion d'approfondir des
 sujets qui dépassaient largement mes connaissances de départ : la
-conception d'un système de recherche documentaire (RAG) fiable
-— au-delà de son fonctionnement de principe, comprendre pourquoi une
-recherche par similarité pouvait échouer silencieusement, et corriger
-ces échecs par une démarche empirique et mesurée plutôt que par
-intuition — ainsi que la construction d'une API backend structurée
+conception d'un système de recherche documentaire (RAG) fiable, ce qui
+va au-delà de son fonctionnement de principe et implique de comprendre
+pourquoi une recherche par similarité pouvait échouer silencieusement,
+puis de corriger ces échecs par une démarche empirique et mesurée
+plutôt que par intuition, ainsi que la construction d'une API backend structurée
 autour d'une base de données relationnelle avec des contraintes
 métier réelles. Sur le plan humain, le stage a aussi demandé de
 travailler avec deux niveaux d'encadrement aux attentes différentes, et
@@ -1315,9 +1479,9 @@ travaux menés. La possibilité de choisir entre plusieurs modèles d'IA
 pour la génération de réponses, actuellement fixé à un seul modèle,
 ainsi qu'une pagination de l'historique pour absorber un nombre
 croissant de formulaires, sont également identifiées. Une réflexion sur
-une architecture plus modulaire — des briques fonctionnelles
+une architecture plus modulaire, faite de briques fonctionnelles
 indépendantes, testables et réutilisables au-delà de cette seule
-application — a par ailleurs été suggérée par mon encadrant académique
+application, a par ailleurs été suggérée par mon encadrant académique
 et reste à formaliser. Enfin, une suite de tests automatisés
 viendrait consolider la fiabilité de la plateforme au-delà des tests
 manuels menés jusqu'ici.
@@ -1337,6 +1501,7 @@ manuels menés jusqu'ici.
     \bibitem{e5} Fiche du modèle \texttt{intfloat/multilingual-e5-small}, Hugging Face, \url{https://huggingface.co/intfloat/multilingual-e5-small}
     \bibitem{bge} Fiche du modèle \texttt{BAAI/bge-reranker-base}, Hugging Face, \url{https://huggingface.co/BAAI/bge-reranker-base}
     \bibitem{rrf} G. V. Cormack, C. L. A. Clarke, S. Buettcher, \emph{Reciprocal Rank Fusion outperforms Condorcet and individual rank learning methods}, SIGIR 2009.
+    \bibitem{bm25} Dépôt officiel \texttt{rank\_bm25} (recherche lexicale BM25), \url{https://github.com/dorianbrown/rank_bm25}
     \bibitem{docling} Documentation officielle Docling, \url{https://docling-project.github.io/docling/}
     \bibitem{easyocr} Dépôt officiel EasyOCR, \url{https://github.com/JaidedAI/EasyOCR}
     \bibitem{opencv} Documentation officielle OpenCV, \url{https://docs.opencv.org/}
@@ -1350,94 +1515,28 @@ manuels menés jusqu'ici.
 \appendix
 \chapter{Annexes}
 
-\section{Exemple de formulaire extrait (format JSON intermédiaire)}
+Le code source complet du projet (backend, pipeline d'extraction,
+système RAG et frontend) est disponible sur le dépôt Git suivant :
 
-L'extrait ci-dessous illustre la structure produite par le pipeline
-d'extraction (Section 4.1) pour deux questions représentatives d'un
-même formulaire : une question à choix unique simple, et une question
-de type grille (plusieurs lignes évaluées sur les mêmes colonnes). Le
-formulaire complet en compte généralement une dizaine à une vingtaine.
+\begin{center}
+    \url{https://github.com/bouabidihind7-blip/plateforme_ia_RAG}
+\end{center}
 
-\begin{lstlisting}[caption={Extrait représentatif du format JSON intermédiaire}]
-{
-  "titre": "IT Security Policy - Quick Check",
-  "questions": [
-    {
-      "question_id": "q1",
-      "ordre": 1,
-      "modalite": "texte",
-      "texte": "Which authentication app is recommended for MFA?",
-      "type_question": "choix_unique",
-      "type_reponse_attendu": "option_unique",
-      "obligatoire": true,
-      "options": [
-        {"texte": "Microsoft Authenticator"},
-        {"texte": "Google Authenticator"},
-        {"texte": "SMS uniquement"}
-      ],
-      "contrainte": null,
-      "ocr": null,
-      "grille": null,
-      "statut_extraction": "prete"
-    },
-    {
-      "question_id": "q2",
-      "ordre": 2,
-      "modalite": "texte",
-      "texte": "Rate each device type against these criteria",
-      "type_question": "grille_choix_unique",
-      "type_reponse_attendu": "grille_option_unique",
-      "obligatoire": true,
-      "options": [],
-      "grille": {
-        "lignes": [
-          {"ordre": 1, "texte": "Ordinateur portable"},
-          {"ordre": 2, "texte": "Telephone personnel"}
-        ],
-        "colonnes": [
-          {"texte": "Autorise"},
-          {"texte": "Autorise sous condition"},
-          {"texte": "Interdit"}
-        ]
-      },
-      "contrainte": null,
-      "ocr": null,
-      "statut_extraction": "prete"
-    }
-  ]
-}
-\end{lstlisting}
+% ============================================================================
+% MOT DE FIN
+% ============================================================================
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+{\Large\bfseries\color{bleufonce} Merci de votre attention}
 
-\section{Extrait de code : fusion multi-collections et reclassement (RAG)}
-
-L'extrait suivant reprend le cœur de la fonction \texttt{retrieve()}
-(\texttt{rag/retriever.py}, Section 4.3.4) : fusion par rang
-(\emph{Reciprocal Rank Fusion}) des candidats venant de plusieurs
-collections Chroma, puis reclassement final par un modèle cross-encoder.
-Les commentaires détaillés justifiant chaque choix ont été retirés ici
-pour ne garder que la logique ; ils sont présents dans le code source.
-
-\begin{lstlisting}[language=Python, caption={Fusion RRF et reclassement par cross-encoder (extrait de retriever.py)}]
-# Fusion par RANG (pas par score brut) : evite qu'une collection au
-# style de texte different (ex. donnees tabulaires) soit desavantagee
-# par un score cosinus non comparable entre collections.
-K_RRF = 60
-candidats_rrf = [
-    (document, 1.0 / (K_RRF + rang))
-    for liste in listes_par_collection
-    for rang, (document, _score_brut) in enumerate(liste, start=1)
-]
-candidats_tries = sorted(candidats_rrf, key=lambda p: p[1], reverse=True)
-
-# Reranker (cross-encoder) : relit la question ET chaque candidat
-# ENSEMBLE, contrairement aux embeddings compares separement.
-pool_reranker = [document for document, score in candidats_tries[:k_pool_reranker]]
-paires = [[query, document.page_content] for document in pool_reranker]
-scores_reranker = reranker.predict(paires)
-pool_reclasse = sorted(
-    zip(pool_reranker, scores_reranker), key=lambda p: p[1], reverse=True
-)
-resultats = [document for document, score in pool_reclasse[:k_total]]
-\end{lstlisting}
+\vspace{1cm}
+{\normalsize\itshape Merci d'avoir pris le temps de lire ce rapport.\\
+Ce stage a été pour moi une expérience très enrichissante, aussi bien
+sur le plan technique qu'humain, et j'espère avoir réussi à expliquer
+clairement le travail que j'ai accompli.}
+\end{center}
+\vspace*{\fill}
 
 \end{document}

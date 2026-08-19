@@ -1,0 +1,355 @@
+Catégorie : IT
+Q : Quel est le nom de l'organisation émettrice de la Politique Générale des Systèmes d'Information ?
+R : L'organisation émettrice de la Politique Générale des Systèmes d'Information est l'INSERM.
+
+Catégorie : IT
+Q : Quel est le titre exact du document de politique de sécurité de l'INSERM ?
+R : Le document s'intitule Politique Générale des Systèmes d'Information de l'INSERM V1.1, également désigné comme la Politique de Sécurité du Système d'information v1.
+
+Catégorie : IT
+Q : Quel est le sujet principal couvert par le document de l'INSERM version V1.1 ?
+R : Le sujet principal couvert par le document V1.1 de l'INSERM est la Politique Générale de la Sécurité des Systèmes d'Information.
+
+Catégorie : IT
+Q : Quel est le numéro de version de la Politique Générale de la Sécurité des Systèmes d'Information de l'INSERM ?
+R : Le numéro de version de la Politique Générale de la Sécurité des Systèmes d'Information de l'INSERM est V1.1.
+
+Catégorie : IT
+Q : Qui a rédigé le document de la Politique Générale de la Sécurité des Systèmes d'Information de l'INSERM ?
+R : Le document de la Politique Générale de la Sécurité des Systèmes d'Information de l'INSERM a été rédigé par TADJADIT qui exerce la fonction de consultant.
+
+Catégorie : IT
+Q : Quelle est la fonction de TADJADIT dans le cadre de la rédaction du document de l'INSERM ?
+R : TADJADIT exerce la fonction de consultant et a réalisé la rédaction du document pour l'INSERM.
+
+Catégorie : IT
+Q : Qui a validé le document de l'INSERM en tant que chef de projet ?
+R : Le document de l'INSERM a été validé par CHAMBI en qualité de chef de projet.
+
+Catégorie : IT
+Q : Quelle est la date de validation du document de l'INSERM par CHAMBI, chef de projet ?
+R : La date de validation du document par le chef de projet CHAMBI est le 20/04/2019.
+
+Catégorie : IT
+Q : Qui occupe le poste de RSSI ayant validé le document de l'INSERM ?
+R : ARCHER occupe le poste de RSSI et a validé le document de l'INSERM.
+
+Catégorie : IT
+Q : À quelle date le RSSI ARCHER a-t-il validé le document de l'INSERM ?
+R : Le RSSI ARCHER a validé le document de l'INSERM le 04/06/2020.
+
+Catégorie : IT
+Q : Qui est le DSI ayant validé le document de l'INSERM ?
+R : SAHNOUNE est le DSI qui a procédé à la validation du document de l'INSERM.
+
+Catégorie : IT
+Q : Qui a approuvé le document de l'INSERM en tant que directrice générale déléguée ?
+R : GIRY, directrice générale déléguée, a approuvé le document de l'INSERM.
+
+Catégorie : IT
+Q : Quelle est la date de création de la version de travail initiale du document de l'INSERM ?
+R : La version de travail initiale (version V0.0) du document de l'INSERM a été créée le 20/02/2019.
+
+Catégorie : IT
+Q : Quelle est la date d'application enregistrée pour la version de travail V0.0 du document de l'INSERM ?
+R : La date d'application enregistrée pour la version de travail V0.0 du document de l'INSERM est N/A.
+
+Catégorie : IT
+Q : Quel est le commentaire associé à la version V0.0 du document de l'INSERM datée du 20/02/2019 ?
+R : Le commentaire associé à la version V0.0 du document de l'INSERM est qu'il s'agit d'une version de travail.
+
+Catégorie : IT
+Q : Quelle est la date de création de la version finale V1.1 du document de l'INSERM ?
+R : La date de création de la version finale V1.1 du document de l'INSERM est le 04/06/2020.
+
+Catégorie : IT
+Q : Quelle est la date d'application enregistrée pour la version finale V1.1 du document de l'INSERM ?
+R : La date d'application enregistrée pour la version finale V1.1 du document de l'INSERM est N/A.
+
+Catégorie : IT
+Q : Quel est le commentaire associé à la version V1.1 du document de l'INSERM ?
+R : Le commentaire associé à la version V1.1 du document de l'INSERM indique qu'il s'agit de la version finale.
+
+Catégorie : IT
+Q : Quel est le document de référence externe mentionné pour la politique de l'INSERM ?
+R : Le document de référence mentionné est La Politique de Sécurité des Systèmes d'Information de l'État (PSSI-E).
+
+Catégorie : IT
+Q : Quel est le titre complet du document de référence de l'État utilisé par l'INSERM ?
+R : Le titre complet du document de référence est La Politique de Sécurité des Systèmes d'Information de l'État, abrégé en PSSI-E.
+
+Catégorie : IT
+Q : Quelle est la version du document de référence de l'État (PSSI-E) associé aux documents de l'INSERM ?
+R : La version du document de référence de l'État (PSSI-E) associé est la version V1.0.
+
+Catégorie : IT
+Q : Quelle est la date du document de référence de l'État (PSSI-E) référencé par l'INSERM ?
+R : La date du document de référence de l'État (PSSI-E) est le 23/09/2015.
+
+Catégorie : IT
+Q : Quel est l'objectif principal de la PGSSI de l'INSERM ?
+R : L'objectif principal de la PGSSI de l'INSERM est d'énumérer les grands principes de sécurité des systèmes d'information qui sont ensuite déclinés dans les PSSIs Administrative et Recherche de l'INSERM.
+
+Catégorie : IT
+Q : Que définit la PGSSI de l'INSERM concernant les objectifs de sécurité ?
+R : La PGSSI de l'INSERM définit les principes directeurs permettant d'élaborer les objectifs de sécurité des systèmes d'information des structures administratives et de recherche de l'INSERM, formalisés dans les PSSIs administrative et recherche.
+
+Catégorie : IT
+Q : Quand la PGSSI de l'INSERM entre-t-elle en vigueur ?
+R : La PGSSI de l'INSERM doit être validée et rentre en vigueur le jour même de sa publication.
+
+Catégorie : IT
+Q : À quelle fréquence minimale la PGSSI de l'INSERM doit-elle être revue ?
+R : La PGSSI de l'INSERM doit être revue a minima tous les trois ans.
+
+Catégorie : IT
+Q : Quels événements liés à un contrôle peuvent motiver une révision de la PGSSI de l'INSERM avant le délai de trois ans ?
+R : Un contrôle, des résultats d'audits ou des analyses de risques peuvent motiver une révision de la PGSSI de l'INSERM avant le délai de trois ans.
+
+Catégorie : IT
+Q : Quels changements importants peuvent motiver une révision de la PGSSI de l'INSERM avant le délai de trois ans ?
+R : Un changement important en termes d'organisation, d'évolution technologique ou de la réglementation peut motiver une révision de la PGSSI de l'INSERM avant le délai de trois ans.
+
+Catégorie : IT
+Q : Quel type d'incident survenu sur le Système d'Information peut motiver une révision de la PGSSI de l'INSERM avant le délai de trois ans ?
+R : Un incident important survenu sur le Système d'Information de l'INSERM peut motiver une révision de la PGSSI de l'INSERM avant le délai de trois ans.
+
+Catégorie : IT
+Q : Qu'entraîne un changement important sur la version de la PSSI de l'INSERM ?
+R : En cas de changement important, la PSSI de l'INSERM change de version majeure.
+
+Catégorie : IT
+Q : Qu'entraîne une simple révision pour clarification ou ajustement de la PSSI de l'INSERM ?
+R : Une simple révision pour clarification ou ajustement de la PSSI de l'INSERM entraîne un changement de version mineure.
+
+Catégorie : IT
+Q : Quel est le périmètre d'application de la PSSI de l'INSERM ?
+R : La PSSI de l'INSERM s'applique à l'ensemble du périmètre des systèmes d'information de l'INSERM.
+
+Catégorie : IT
+Q : Que incluent les systèmes d'information de l'INSERM selon la PSSI ?
+R : Les systèmes d'information de l'INSERM incluent l'ensemble des informations, des processus et des échanges informationnels entre entités afin qu'elles accomplissent leurs fonctions dans le cadre du service à délivrer.
+
+Catégorie : IT
+Q : Qui doit se conformer aux principes de la PGSSI de l'INSERM ?
+R : Toutes les parties prenantes de l'INSERM doivent se conformer aux principes de cette PGSSI et, le cas échéant, aux règles des PSSIs administrative et ou recherche.
+
+Catégorie : IT
+Q : Quel est le regroupement du périmètre de la PGSSI de l'INSERM ?
+R : Le périmètre de la PGSSI de l'INSERM regroupe le périmètre des systèmes d'information des structures administratives ainsi que des structures de recherche.
+
+Catégorie : IT
+Q : Quelles entités composent le périmètre des structures administratives de l'INSERM ?
+R : Le périmètre des structures administratives de l'INSERM regroupe la direction générale, les Instituts Thématiques, l'ANRS-maladies infectieuses émergentes, les départements ainsi que les délégations régionales.
+
+Catégorie : IT
+Q : Quelles entités composent principalement le périmètre des structures de recherche de l'INSERM ?
+R : Le périmètre des structures de recherche de l'INSERM regroupe essentiellement les structures de recherche de l'INSERM.
+
+Catégorie : IT
+Q : Qui d'autre peut être concerné par le périmètre des structures de recherche de l'INSERM ?
+R : Le périmètre des structures de recherche de l'INSERM peut également concerner les personnels des délégations régionales de l'INSERM ou du Département des Systèmes d'Information par rapport aux règles de gestion des SI des structures de recherche.
+
+Catégorie : IT
+Q : Quel est l'objectif de la politique générale de sécurité des systèmes d'information de l'INSERM vis-à-vis de la PSSI-E ?
+R : La politique générale de sécurité des systèmes d'information de l'INSERM cadre les principes directeurs pour assurer une cohérence d'ensemble avec les objectifs de sécurité des PSSIs administrative et recherche, afin de se mettre en conformité avec la PSSI-E.
+
+Catégorie : IT
+Q : Que définissent les principes directeurs à la lecture de la politique de sécurité des systèmes d'information de l'INSERM ?
+R : À la lecture de ces principes, ces derniers définissent la stratégie suivie au sein de l'INSERM afin d'assurer la sécurité des systèmes d'information.
+
+Catégorie : IT
+Q : Quels moyens l'INSERM dimensionne-t-il et met-il en œuvre pour répondre aux enjeux de la sécurité des systèmes d'information ?
+R : L'INSERM dimensionne et met en œuvre les moyens humains et financiers nécessaires afin de répondre aux enjeux de la sécurité.
+
+Catégorie : IT
+Q : Comment l'INSERM assure-t-il la mise en œuvre des moyens nécessaires face aux enjeux de sécurité ?
+R : L'INSERM dimensionne et met en œuvre des moyens humains et financiers adaptés pour répondre aux enjeux de la sécurité des systèmes d'information.
+
+Catégorie : IT
+Q : Quels types d'actifs principaux l'INSERM sécurise-t-il dans le cadre de sa politique de sécurité ?
+R : L'INSERM sécurise ses principaux actifs tels que les méthodologies, les travaux de recherche avant leurs publications, les inventions, les brevets et les moyens de financement.
+
+Catégorie : IT
+Q : De quelle manière l'INSERM protège-t-il ses principaux actifs informatiques et de recherche ?
+R : L'INSERM sécurise ses principaux actifs en appliquant des mesures de protection ciblées sur des éléments comme les méthodologies, les travaux de recherche avant publication, les brevets et les moyens de financement.
+
+Catégorie : IT
+Q : Quelle attention l'INSERM porte-t-il aux données à caractère personnel et sensibles au sein de son système ?
+R : L'INSERM sécurise les données à caractère personnel et attache une attention particulière aux données sensibles comme les séquences ADN, les dossiers médicaux et les actes de décès.
+
+Catégorie : IT
+Q : Quels exemples de données sensibles l'INSERM protège-t-il particulièrement dans ses systèmes ?
+R : L'INSERM protège des données sensibles en portant une attention particulière à des exemples précis tels que les séquences ADN, les dossiers médicaux et les actes de décès.
+
+Catégorie : IT
+Q : Vers quoi l'INSERM tend-il concernant ses services informatiques pour favoriser l'innovation et la recherche ?
+R : L'INSERM tend vers une haute disponibilité et une meilleure accessibilité aux services informatiques afin de favoriser l'innovation et la recherche.
+
+Catégorie : IT
+Q : Quel est le but recherché par l'INSERM en favorisant la haute disponibilité et l'accessibilité des services informatiques ?
+R : L'INSERM recherche une haute disponibilité et une meilleure accessibilité de ses services informatiques dans le but exprès de favoriser l'innovation et la recherche.
+
+Catégorie : IT
+Q : Que vérifie l'INSERM avant toute mise en œuvre d'un système informatique ?
+R : Avant toute mise en œuvre d'un système, l'INSERM s'assure préalablement de la conformité et de la sécurité de ce système.
+
+Catégorie : IT
+Q : À quel moment précis l'INSERM s'assure-t-il de la conformité et de la sécurité d'un système ?
+R : L'INSERM s'assure de la conformité et de la sécurité d'un système avant toute mise en œuvre effective de celui-ci.
+
+Catégorie : RH
+Q : Quelle action doit être menée auprès de chaque utilisateur des ressources informatiques mises à disposition par l'INSERM ?
+R : Chaque utilisateur des ressources informatiques mises à sa disposition par l'INSERM doit être sensibilisé et informé de ses droits et de ses devoirs.
+
+Catégorie : RH
+Q : De quoi chaque utilisateur des ressources informatiques de l'INSERM doit-il être informé et sensibilisé ?
+R : Chaque utilisateur des ressources informatiques fournies par l'INSERM doit obligatoirement être sensibilisé et informé concernant ses droits et ses devoirs.
+
+Catégorie : IT
+Q : Que doit mettre en œuvre l'INSERM pour protéger son système d'information de manière adéquate ?
+R : Afin de protéger son système d'information, l'INSERM doit mettre en œuvre les mesures techniques de protection nécessaires.
+
+Catégorie : IT
+Q : Quel type de mesures l'INSERM déploie-t-il pour assurer la protection de son système d'information ?
+R : L'INSERM déploie les mesures techniques de protection nécessaires pour assurer la sécurité et la protection globale de son système d'information.
+
+Catégorie : Commercial
+Q : Comment l'INSERM procède-t-il lorsqu'il fait appel à des prestations pour la mise en œuvre de systèmes d'information ?
+R : Dans le cas où l'INSERM ferait appel à des prestations pour mettre en œuvre des systèmes d'information, l'organisation veillera au respect des exigences de sécurité relatives à la relation avec les tiers.
+
+Catégorie : Commercial
+Q : À quoi l'INSERM veille-t-il spécifiquement lorsqu'il recourt à des prestataires pour ses systèmes d'information ?
+R : Lorsque l'INSERM fait appel à des prestations externes pour des systèmes d'information, il veille strictement au respect des exigences de sécurité concernant la relation avec les tiers.
+
+Catégorie : IT
+Q : Quels types de moyens d'authentification l'INSERM utilise-t-il pour gérer l'accès aux ressources ?
+R : L'INSERM utilise des moyens d'authentification adéquats, robustes et proportionnels aux besoins de sécurité afin de gérer les accès aux ressources.
+
+Catégorie : IT
+Q : Comment l'INSERM gère-t-il les accès aux ressources de son système d'information ?
+R : Pour gérer les accès aux ressources, l'INSERM utilise des moyens d'authentification qui sont à la fois adéquats, robustes et proportionnels aux besoins de sécurité identifiés.
+
+Catégorie : IT
+Q : Quelle action l'INSERM réalise-t-il sur les opérations liées à la gestion et à l'administration du Système d'Information ?
+R : L'INSERM trace et contrôle toute opération liée à la gestion et à l'administration de son Système d'Information.
+
+Catégorie : IT
+Q : Que fait l'INSERM concernant l'ensemble des opérations d'administration et de gestion de son Système d'Information ?
+R : L'INSERM applique un traçage et un contrôle systématiques sur toute opération liée à la gestion et à l'administration du Système d'Information.
+
+Catégorie : IT
+Q : Que doivent adopter les administrateurs des systèmes d'information de l'INSERM dans le cadre de leurs fonctions ?
+R : Les administrateurs des systèmes d'information de l'INSERM doivent adopter les bonnes règles d'hygiène informatique dans le cadre de l'exercice de leurs fonctions.
+
+Catégorie : IT
+Q : Dans quel cadre professionnel les administrateurs de l'INSERM appliquent-ils de bonnes règles d'hygiène informatique ?
+R : Les administrateurs des systèmes d'information de l'INSERM appliquent de bonnes règles d'hygiène informatique directement dans le cadre de leurs fonctions.
+
+Catégorie : IT
+Q : Quels types de produits l'INSERM met-il en œuvre pour assurer la sécurité de son Système d'Information ?
+R : Quand cela répond à son besoin, l'INSERM met en œuvre des produits qualifiés par l'ANSSI pour assurer la sécurité de son Système d'Information.
+
+Catégorie : IT
+Q : Sous quelle condition l'INSERM utilise-t-il des produits qualifiés par l'ANSSI pour la sécurité de son Système d'Information ?
+R : L'INSERM utilise des produits qualifiés par l'ANSSI pour assurer la sécurité de son Système d'Information lorsque cela répond spécifiquement à son besoin.
+
+Catégorie : IT
+Q : Où doit être hébergée toute information de nature sensible selon les règles de sécurité de l'INSERM ?
+R : Toute information de nature sensible doit impérativement être hébergée sur le territoire national.
+
+Catégorie : IT
+Q : Quelle est l'exigence géographique concernant l'hébergement des informations de nature sensible à l'INSERM ?
+R : Les informations de nature sensible doivent obligatoirement faire l'objet d'un hébergement localisé sur le territoire national.
+
+Catégorie : IT
+Q : Pourquoi l'INSERM se dote-t-il d'une chaîne fonctionnelle de pilotage de la Sécurité ?
+R : Afin de veiller à la bonne application des PSSI administrative et de recherche de l'INSERM, l'organisation se dote d'une chaîne fonctionnelle de pilotage de la Sécurité adaptée à sa structure.
+
+Catégorie : IT
+Q : Comment est structurée la chaîne fonctionnelle mise en place pour l'application des politiques de sécurité de l'INSERM ?
+R : L'INSERM se dote d'une chaîne fonctionnelle de pilotage de la Sécurité adaptée à sa structure afin de veiller à la bonne application de ses PSSI administrative et de recherche.
+
+Catégorie : IT
+Q : Où s'insère la chaîne fonctionnelle de pilotage de la Sécurité de l'INSERM ?
+R : Cette chaîne fonctionnelle s'insère directement dans le dispositif décrit dans la PSSI-E au niveau des tutelles de l'INSERM.
+
+Catégorie : IT
+Q : Dans quel dispositif global s'intègre la chaîne fonctionnelle de l'INSERM pour le suivi des politiques de sécurité ?
+R : La chaîne fonctionnelle de pilotage de la Sécurité de l'INSERM s'insère dans le dispositif décrit dans la PSSI-E au niveau des tutelles de l'organisation.
+
+Catégorie : IT
+Q : Qui exerce la fonction d'Autorité Qualifiée en Sécurité des Systèmes d'Information au sein de l'INSERM ?
+R : Le PDG de l'INSERM exerce la fonction d'Autorité Qualifiée en Sécurité des Systèmes d'Information au sein de l'organisation.
+
+Catégorie : IT
+Q : Quel est le rôle du PDG de l'INSERM en tant qu'Autorité Qualifiée en Sécurité des Systèmes d'Information ?
+R : Le PDG de l'INSERM définit la Politique de Sécurité des Systèmes d'Information et est responsable vis-à-vis des ministères de tutelle du respect de celle-ci et des réglementations.
+
+Catégorie : IT
+Q : Qui est responsable vis-à-vis des ministères de tutelle du respect de la PSSI et des réglementations à l'INSERM ?
+R : Le PDG de l'INSERM est responsable vis-à-vis des ministères de tutelle du respect de la PSSI et des réglementations.
+
+Catégorie : IT
+Q : Par qui le PDG de l'INSERM est-il assisté pour définir et veiller à l'application de la PSSI ?
+R : Le PDG de l'INSERM est assisté d'un Responsable de la Sécurité des Systèmes d'Information national, qu'il nomme et mandate à cet effet.
+
+Catégorie : IT
+Q : Qui nomme et mandate le Responsable de la Sécurité des Systèmes d'Information national à l'INSERM ?
+R : Le PDG de l'INSERM nomme et mandate le Responsable de la Sécurité des Systèmes d'Information national.
+
+Catégorie : IT
+Q : Quel est le rôle du Responsable de la Sécurité des Systèmes d'Information national nommé à l'INSERM ?
+R : Le Responsable de la Sécurité des Systèmes d'Information national est mandaté pour définir et veiller à la bonne réalisation et application de la PSSI.
+
+Catégorie : IT
+Q : Par qui le PDG de l'INSERM est-il assisté pour veiller à la compatibilité de la PSSI avec la protection du potentiel scientifique et technique ?
+R : Le PDG de l'INSERM est assisté d'un Fonctionnaire Sécurité Défense pour veiller à cette compatibilité.
+
+Catégorie : IT
+Q : Quel est le rôle du Fonctionnaire Sécurité Défense auprès du PDG de l'INSERM ?
+R : Le Fonctionnaire Sécurité Défense veille à la compatibilité de la PSSI avec les objectifs de la Protection du Potentiel Scientifique et Technique de la Nation.
+
+Catégorie : IT
+Q : Par qui le RSSI est-il assisté dans les diverses régions administratives de l'INSERM ?
+R : Le RSSI est assisté dans les diverses régions administratives de l'INSERM par un Chargé Régional de la Sécurité des Systèmes d'Information.
+
+Catégorie : IT
+Q : Qui nomme le Chargé Régional de la Sécurité des Systèmes d'Information dans chaque région de l'INSERM ?
+R : Le Chargé Régional de la Sécurité des Systèmes d'Information est nommé par le Délégué Régional de la région concernée.
+
+Catégorie : IT
+Q : Sur qui le RSSI et les CRSSI s'appuient-ils pour le pilotage de la PSSI en local à l'INSERM ?
+R : Le RSSI et les CRSSI s'appuient sur des Correspondants Sécurité du Système d'Information pour chaque entité de l'INSERM.
+
+Catégorie : IT
+Q : Quelles sont les entités de l'INSERM dotées de Correspondants Sécurité du Système d'Information pour le pilotage local de la PSSI ?
+R : Les entités dotées de CSSI sont le Siège, l'ANRS-maladies infectieuses émergentes, les Délégations Régionales et les Unités de Recherche labellisées INSERM.
+
+Catégorie : IT
+Q : Que regroupe précisément le Siège de l'INSERM en matière de Correspondants Sécurité du Système d'Information ?
+R : Le Siège de l'INSERM regroupe la direction générale de l'INSERM, les Instituts Thématiques et les départements.
+
+Catégorie : IT
+Q : Qui nomme le Correspondant Sécurité du Système d'Information du Siège de l'INSERM ?
+R : Le CSSI du Siège de l'INSERM est nommé par l'Administrateur du Siège.
+
+Catégorie : IT
+Q : Qui nomme le Correspondant Sécurité du Système d'Information de l'entité ANRS-maladies infectieuses émergentes ?
+R : Le CSSI de l'ANRS-maladies infectieuses émergentes est nommé par le Directeur de l'ANRS-maladies infectieuses émergentes.
+
+Catégorie : IT
+Q : Qui nomme le Correspondant Sécurité du Système d'Information de chaque Délégation Régionale de l'INSERM ?
+R : Le CSSI de chaque Délégation Régionale de l'INSERM est nommé par le Délégué Régional.
+
+Catégorie : IT
+Q : Quelle est la particularité de la fonction de CSSI dans chaque Délégation Régionale de l'INSERM ?
+R : Le CSSI de chaque Délégation Régionale de l'INSERM est exactement la même personne que le CRSSI de cette région.
+
+Catégorie : IT
+Q : Qui nomme le Correspondant Sécurité du Système d'Information de chaque Unité de recherche, formation de recherche ou d'appui à la recherche ?
+R : Le CSSI de chaque unité ou formation de recherche et d'appui à la recherche est nommé par le Directeur d'Unité.
+
+Catégorie : IT
+Q : Sur quels moyens les CSSI s'appuient-ils pour la réalisation des objectifs de la PSSI sur leur périmètre ?
+R : Les CSSI s'appuient sur les moyens locaux ou nationaux pour la réalisation des objectifs de la PSSI sur leur périmètre.

@@ -283,6 +283,39 @@ button:hover {
     cursor: pointer;
 }
 
+.lien-voir-plus {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-basis: 100%;
+    width: fit-content;
+    margin-top: 2px;
+    background: var(--blue-soft);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    color: var(--blue-text);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 14px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.lien-voir-plus:hover {
+    background: var(--white);
+    border-color: var(--blue-text);
+}
+
+.lien-voir-plus::after {
+    content: "▾";
+    font-size: 11px;
+    transition: transform 0.15s ease;
+}
+
+.lien-voir-plus.deplie::after {
+    transform: rotate(180deg);
+}
+
 .traitement-ia h2 {
     margin: 0;
     color: var(--blue-text);

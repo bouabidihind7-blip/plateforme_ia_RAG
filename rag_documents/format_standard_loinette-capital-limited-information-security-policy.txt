@@ -1,0 +1,475 @@
+Catégorie : IT
+Q : Quel est le statut de la version 2 de l'Information Security Policy ?
+R : La version 2 de l'Information Security Policy date de septembre 2020.
+
+Catégorie : IT
+Q : Pourquoi l'information est-elle considérée comme la subsistance de l'entreprise selon l'Information Security Policy ?
+R : Sans information, les employés ne peuvent pas travailler, les clients ne peuvent pas interagir avec l'entreprise, les factures ne peuvent pas être payées et les bénéfices ne peuvent pas être générés.
+
+Catégorie : IT
+Q : Quelle est l'utilité d'un environnement technologique si la sécurité de l'information est menacée ?
+R : Tout environnement technologique est inutile si son objectif principal, qui est le traitement et le partage de l'information, est menacé ou éliminé.
+
+Catégorie : IT
+Q : Pourquoi une politique rigoureuse de sécurité de l'information est-elle essentielle pour l'entreprise ?
+R : Une politique rigoureuse de sécurité de l'information est essentielle pour assurer le bon fonctionnement de l'entreprise et garantir un avenir prospère.
+
+Catégorie : IT
+Q : Quel est le but principal de l'Information Security Policy ?
+R : L'Information Security Policy fournit des directives pour sauvegarder les informations de l'entreprise, réduire les risques commerciaux et juridiques, et protéger les investissements et la réputation de l'entreprise.
+
+Catégorie : IT
+Q : Que couvre l'Information Security Policy et que couvre sa politique connexe, la Network Security Policy ?
+R : L'Information Security Policy couvre les données, tandis que sa politique connexe, la Network Security Policy, couvre les systèmes et les appareils qui transportent et stockent les données.
+
+Catégorie : IT
+Q : Qui est concerné par le champ d'application de l'Information Security Policy ?
+R : L'Information Security Policy s'applique à tous les employés à temps partiel et à temps plein, aux sous-traitants, aux consultants, aux stagiaires, aux bénévoles et aux visiteurs.
+
+Catégorie : IT
+Q : Quels types de logiciels et d'appareils sont concernés par l'Information Security Policy ?
+R : L'Information Security Policy s'applique à tous les logiciels détenus, développés ou concédés sous licence par l'entreprise, ainsi qu'aux postes de travail, serveurs et autres appareils utilisés pour créer, accéder ou modifier les données de l'entreprise.
+
+Catégorie : IT
+Q : Existe-t-il des exceptions à l'Information Security Policy ?
+R : Il n'y a aucune exception à l'Information Security Policy.
+
+Catégorie : IT
+Q : Que doit établir l'Information Security Policy pour sauvegarder les données de l'entreprise ?
+R : Pour sauvegarder les données, l'Information Security Policy doit établir ce qui constitue une utilisation acceptable ou inacceptable des systèmes et identifier les responsabilités des employés, du personnel informatique et des superviseurs ou gestionnaires.
+
+Catégorie : IT
+Q : Que représentent les employés lorsqu'ils utilisent des équipements de l'entreprise ou leur propre équipement à des fins professionnelles ?
+R : Les employés utilisant des équipements de l'entreprise ou leur propre équipement à des fins professionnelles représentent l'entreprise, que ce soit pendant ou après les heures de travail.
+
+Catégorie : IT
+Q : De quoi les employés sont-ils responsables lors de l'utilisation d'équipements pour l'entreprise ?
+R : Les employés sont responsables de s'assurer que l'équipement est utilisé d'une manière efficace, éthique et légale.
+
+Catégorie : IT
+Q : Est-il acceptable d'accéder à des partages de fichiers ou à des bases de données selon l'Information Security Policy ?
+R : Il est acceptable d'accéder à des partages de fichiers ou à des bases de données pour travailler sur du matériel appartenant à l'entreprise dont l'employé a besoin pour accomplir ses tâches professionnelles.
+
+Catégorie : IT
+Q : Est-il permis d'utiliser des navigateurs Web dans le cadre de l'utilisation acceptable des systèmes ?
+R : Il est permis d'utiliser des navigateurs Web pour obtenir des informations commerciales à partir de sites Web commerciaux dans le cadre de l'utilisation acceptable des systèmes.
+
+Catégorie : IT
+Q : Quel est l'usage acceptable du courrier électronique au sein de l'entreprise selon la politique de sécurité ?
+R : L'utilisation du courrier électronique pour la communication professionnelle constitue un exemple d'usage acceptable des systèmes informatiques.
+
+Catégorie : IT
+Q : Est-il autorisé d'accéder à des informations sur un appareil mobile appartenant à l'entreprise ?
+R : Il est autorisé d'accéder à des informations sur un appareil mobile appartenant à l'entreprise dans le cadre de l'utilisation acceptable des systèmes.
+
+Catégorie : IT
+Q : L'impression de documents confidentiels est-elle autorisée selon les règles d'utilisation acceptable ?
+R : L'impression de documents confidentiels pour une réunion du personnel est un exemple d'utilisation acceptable des systèmes de l'entreprise.
+
+Catégorie : IT
+Q : Pourquoi les employés ne doivent-ils pas utiliser les équipements de l'entreprise à des fins illégales, non productives, nuisibles ou contraires à l'éthique ?
+R : Les employés ne doivent pas utiliser les équipements de l'entreprise à ces fins, car cela place l'entreprise à risque.
+
+Catégorie : IT
+Q : Est-il autorisé pour les employés de jouer à des jeux, de faire des paris en ligne ou d'accéder à du matériel offensant ou inapproprié sur les équipements de l'entreprise ?
+R : Non, jouer à des jeux, s'engager dans des paris en ligne ou accéder à du matériel offensant ou inapproprié constitue un usage inacceptable des équipements de l'entreprise.
+
+Catégorie : IT
+Q : Les employés peuvent-ils diffuser des courriels sans rapport avec le travail à des destinataires internes ou externes ?
+R : Non, diffuser des courriels sans rapport avec le travail à des destinataires internes ou externes est interdit.
+
+Catégorie : IT
+Q : Est-il permis de mener des affaires personnelles en utilisant les ressources de l'entreprise ?
+R : Non, mener des affaires personnelles en utilisant les ressources de l'entreprise fait partie des utilisations inacceptables des systèmes.
+
+Catégorie : IT
+Q : Quel type de contenu les employés ont-ils interdiction de transmettre via les équipements de l'entreprise ?
+R : Les employés ont interdiction de transmettre tout contenu qui est offensant, harcelant ou frauduleux.
+
+Catégorie : IT
+Q : Les employés ont-ils le droit d'accéder à des informations pour lesquelles ils ne sont pas autorisés ou qui ne sont pas nécessaires à leurs tâches ?
+R : Non, les employés ne doivent pas accéder à des informations qu'ils ne sont pas autorisés à consulter ou dont ils n'ont pas besoin pour accomplir leurs fonctions professionnelles.
+
+Catégorie : IT
+Q : Que risque un employé qui accède ou partage des logiciels ou du matériel piraté ?
+R : Accéder ou partager des logiciels ou du matériel piraté est interdit car cela constitue un usage inacceptable des systèmes de l'entreprise.
+
+Catégorie : IT
+Q : Est-il permis de tenter de perturber ou de pirater d'autres systèmes, en interne ou en externe ?
+R : Non, tenter de perturber ou de pirater d'autres systèmes, en interne ou en externe, est strictement interdit.
+
+Catégorie : IT
+Q : Quelles actions sont considérées comme la production de résultats malveillants sur les systèmes ?
+R : La production de résultats malveillants inclut le fait d'endommager des systèmes, de voler ou de supprimer des données, et d'implanter des virus.
+
+Catégorie : IT
+Q : Quel est l'objectif d'utilisation requis pour tout équipement d'entreprise utilisé par un employé ?
+R : Un employé utilisant les postes de travail ou les systèmes de l'entreprise doit s'assurer que tout l'équipement utilisé est destiné à des fins professionnelles.
+
+Catégorie : IT
+Q : Quelles informations un employé est-il autorisé à consulter sur les systèmes de l'entreprise ?
+R : Un employé ne doit accéder qu'aux informations nécessaires pour accomplir son travail ou pour aider d'autres personnes à le faire dans le cadre valide de ses fonctions.
+
+Catégorie : IT
+Q : De quoi l'employé est-il responsable concernant les données partagées en interne ou en externe ?
+R : L'employé est responsable du contenu de toutes les données, y compris les textes, l'audio et les images qu'il partage en interne ou en externe.
+
+Catégorie : IT
+Q : Que doit comporter obligatoirement toute communication envoyée par un employé dans le cadre professionnel ?
+R : Toutes les communications effectuées par l'employé doivent comporter son nom.
+
+Catégorie : IT
+Q : De quoi l'employé est-il responsable concernant l'utilisation de ses comptes informatiques ?
+R : L'employé est responsable de toutes les actions et transactions effectuées avec ses comptes informatiques.
+
+Catégorie : IT
+Q : Quelle consigne s'applique concernant les postes de travail ou les appareils professionnels sans surveillance ?
+R : Un employé ne doit jamais laisser sans surveillance les postes de travail ou les appareils utilisés pour les affaires de l'entreprise.
+
+Catégorie : IT
+Q : Quels dispositifs de sécurité doit-on utiliser sur les systèmes ou appareils de l'entreprise ?
+R : L'employé doit utiliser des mots de passe et des verrouillages d'écran sur les systèmes ou appareils appartenant à l'entreprise, ou sur ceux approuvés pour accéder aux données de l'entreprise.
+
+Catégorie : IT
+Q : Quand un employé doit-il se déconnecter d'un poste de travail selon les règles de l'entreprise ?
+R : L'employé doit se déconnecter lorsqu'il quitte un poste de travail pour une période prolongée.
+
+Catégorie : IT
+Q : Quelles sont les interdictions concernant le partage ou le stockage des mots de passe personnels ?
+R : L'employé ne doit jamais partager ses mots de passe privés avec des personnes non autorisées, ni laisser ses mots de passe dans un endroit accessible tel qu'un post-it.
+
+Catégorie : IT
+Q : Que doit faire un employé s'il soupçonne que son mot de passe est connu par d'autres personnes ?
+R : Les mots de passe doivent être changés immédiatement si l'employé soupçonne qu'ils ont pu être connus par d'autres personnes.
+
+Catégorie : IT
+Q : Où les mots de passe partagés, tels que ceux des comptes départementaux, doivent-ils être stockés ?
+R : Les mots de passe partagés, comme ceux des comptes départementaux, doivent être stockés dans une base de données de mots de passe centralisée et chiffrée, telle que Password Safe ou KeePass.
+
+Catégorie : IT
+Q : Comment doit être géré le mot de passe principal des bases de données de mots de passe partagés ?
+R : Le mot de passe principal de ces bases de données doit également être gardé privé et fourni uniquement aux personnes autorisées.
+
+Catégorie : IT
+Q : À quelle fréquence les mots de passe doivent-ils être modifiés selon la politique de l'entreprise ?
+R : Les mots de passe doivent être changés conformément à la politique de l'entreprise, par exemple tous les 90 jours.
+
+Catégorie : Legal
+Q : Quelle est la règle concernant la copie ou le transfert de documents protégés par des droits d'auteur ?
+R : L'employé ne doit pas copier ou transférer de matériels protégés par des droits d'auteur sans autorisation.
+
+Catégorie : IT
+Q : Quelles actions sont interdites concernant les informations ou programmes appartenant à autrui sans permission ?
+R : L'employé ne doit pas copier, transférer, renommer, ajouter ou supprimer des informations ou des programmes appartenant à autrui, sauf s'il a reçu l'autorisation expresse du propriétaire pour le faire.
+
+Catégorie : IT
+Q : Que doit connaître et respecter un employé en matière de sécurité des dossiers de l'organisation ?
+R : L'employé doit connaître et respecter toutes les politiques de l'entreprise applicables traitant de la sécurité et de la confidentialité des dossiers de l'entreprise.
+
+Catégorie : IT
+Q : Quelle est la règle générale concernant la transmission d'informations privées ou confidentielles ?
+R : L'employé doit éviter la transmission d'informations privées ou confidentielles.
+
+Catégorie : IT
+Q : Quelles mesures prendre s'il est nécessaire de transmettre des données privées ou confidentielles ?
+R : Si la transmission de données privées ou confidentielles est nécessaire, l'employé doit prendre des mesures raisonnablement destinées à garantir que l'information est livrée à la bonne personne autorisée à la recevoir pour un usage légitime.
+
+Catégorie : IT
+Q : Comment les informations privées ou confidentielles doivent-elles être partagées et stockées ?
+R : L'employé doit partager et stocker les informations privées ou confidentielles en respectant les restrictions de sécurité, par exemple via une transmission chiffrée ou un support chiffré.
+
+Catégorie : IT
+Q : Où est-il interdit de conserver des informations privées ou confidentielles ?
+R : L'employé ne doit pas conserver d'informations privées ou confidentielles sur des supports non sécurisés, sur des appareils appartenant à des employés ou non sécurisés, tels que des clés USB, des ordinateurs portables personnels ou des applications de stockage cloud appartenant à des employés.
+
+Catégorie : IT
+Q : D'où un employé est-il autorisé à télécharger des fichiers pour les besoins de l'entreprise ?
+R : L'employé ne doit télécharger des fichiers que depuis des sources reconnues comme sûres pour les besoins de l'entreprise.
+
+Catégorie : IT
+Q : Quelle exigence s'applique aux programmes anti-malware sur les systèmes gérant des fichiers téléchargés ?
+R : Tous les systèmes manipulant ces fichiers doivent être dotés de programmes anti-malware mis à jour, qui ne doivent en aucun cas être désactivés ou altérés.
+
+Catégorie : IT
+Q : Quelle action doit être menée face à un fichier exécutable reçu par Internet ?
+R : L'employé doit exécuter une analyse antivirus sur tout fichier exécutable reçu par Internet.
+
+Catégorie : IT
+Q : Que doit faire un employé si un virus est découvert sur son système informatique ?
+R : Si un virus est détecté lors d'une analyse ou par un logiciel anti-malware, l'employé doit éteindre le système et contacter immédiatement le département informatique pour l'informer de la situation, puis s'abstenir de toute autre action jusqu'à nouvel ordre.
+
+Catégorie : IT
+Q : Quelle est la règle concernant l'utilisation de logiciels piratés, de virus ou d'autres programmes malveillants ?
+R : L'employé ne doit jamais accéder sciemment, introduire ou utiliser des logiciels piratés, des virus ou d'autres logiciels malveillants sur les systèmes de l'entreprise.
+
+Catégorie : IT
+Q : Quels types de logiciels un employé est-il autorisé à installer sur les systèmes de l'entreprise ?
+R : L'employé ne doit installer que des logiciels qui appartiennent à l'entreprise et/ou dont l'utilisation a été autorisée par le département informatique.
+
+Catégorie : IT
+Q : Quelle est la consigne concernant l'utilisation de supports de stockage amovibles d'origine inconnue ?
+R : L'employé ne doit jamais accéder, insérer ou connecter aux systèmes de l'entreprise des disques, des clés USB ou d'autres supports de stockage d'origine inconnue.
+
+Catégorie : IT
+Q : À quelles conditions est-il permis de sortir du site des équipements portables comme les ordinateurs portables ?
+R : L'employé ne doit pas emporter d'équipement portable tel qu'un ordinateur portable en dehors de l'entreprise, à moins qu'il ne lui ait été attribué pour son utilisation ou qu'il dispose du consentement éclairé de son responsable de département ou du département informatique.
+
+Catégorie : IT
+Q : Que signifie précisément le concept de consentement éclairé pour l'emprunt d'un équipement portable ?
+R : Le consentement éclairé signifie que l'individu habilité approprié sait quel équipement quitte les locaux, quelles données y figurent et à quoi il va servir.
+
+Catégorie : IT
+Q : Quelle responsabilité ont les employés concernant l'équipement électronique de valeur qui leur est confié ?
+R : L'employé doit faire preuve de soin pour protéger le précieux équipement électronique qui lui a été attribué.
+
+Catégorie : IT
+Q : Quelles sont les conséquences pour un employé qui néglige de protéger l'équipement électronique qui lui a été attribué ?
+R : Les employés qui négligent ce devoir de protection peuvent être tenus responsables de toute perte ou de tout dommage qui pourrait en résulter.
+
+Catégorie : IT
+Q : Quelle est l'interdiction concernant l'accès aux ressources de l'entreprise via des réseaux sans fil distants ?
+R : L'employé ne doit jamais utiliser ou accéder aux ressources de l'entreprise à distance via des réseaux sans fil non sécurisés tels que ceux des hôtels ou des cafés.
+
+Catégorie : IT
+Q : Qui est strictement interdit d'accès aux systèmes ou appareils appartenant à l'entreprise ?
+R : L'employé ne doit jamais permettre à des personnes non autorisées, y compris des membres de sa famille, d'accéder aux systèmes ou appareils appartenant à l'entreprise.
+
+Catégorie : IT
+Q : Que doit faire un employé de tous les systèmes ou appareils fournis par l'entreprise lors de la fin de son contrat ?
+R : L'employé doit restituer tous les systèmes ou appareils fournis par l'entreprise lors de la cessation de son emploi.
+
+Catégorie : IT
+Q : Quelle démarche effectuer avec les systèmes ou appareils personnels ayant accédé aux ressources de l'entreprise au moment du départ ?
+R : L'employé doit soumettre tout système ou appareil lui appartenant ayant accédé aux ressources de l'entreprise au département informatique pour inspection lors de la cessation d'emploi ou lorsque le système ou l'appareil ne nécessite plus cet accès.
+
+Catégorie : IT
+Q : Quelles informations l'employé doit-il transmettre au département informatique lors de la cessation de son emploi ?
+R : L'employé doit notifier au département informatique tous ses mots de passe, ainsi que l'emplacement de toutes les données confidentielles et tous les autres détails devant être transférés à d'autres personnes lors de la cessation de son emploi.
+
+Catégorie : IT
+Q : Quel département est responsable de l'installation, de la déconnexion, de la modification et du déplacement des équipements ?
+R : Le département IT de l'entreprise doit effectuer toutes les installations, déconnexions, modifications et tous les déplacements d'équipements.
+
+Catégorie : IT
+Q : Qui doit réaliser toutes les modifications, installations, déconnexions et relocalisations d'équipements ?
+R : Le département IT de l'organisation prend en charge toutes les installations, déconnexions, modifications et relocalisations d'équipements.
+
+Catégorie : IT
+Q : Avec qui le département IT doit-il collaborer pour établir des politiques d'accès standard ?
+R : Le département IT doit travailler avec les responsables de département pour établir un ensemble standard de politiques d'accès pour les différents employés.
+
+Catégorie : IT
+Q : Comment les politiques d'accès standard pour les employés sont-elles déterminées par le département IT ?
+R : Le département IT travaille avec les responsables de département afin d'établir un ensemble standard de politiques d'accès basées sur les rôles et responsabilités des employés.
+
+Catégorie : IT
+Q : Qui administre les contrôles d'accès aux systèmes informatiques de l'entreprise ?
+R : Le département IT administre les contrôles d'accès à tous les systèmes informatiques de l'entreprise et s'assure que les employés n'obtiennent que l'accès nécessaire à leurs fonctions.
+
+Catégorie : IT
+Q : Quel est le niveau d'accès accordé aux employés sur les systèmes informatiques par le département IT ?
+R : Le département IT veille à ce que les employés ne se voient accorder que l'accès strictement nécessaire pour faire leur travail sur les systèmes informatiques.
+
+Catégorie : IT
+Q : Qui traite les ajouts, suppressions et modifications des comptes utilisateurs, des systèmes et des appareils ?
+R : Le département IT traite les ajouts, les suppressions et les modifications concernant les comptes d'utilisateurs, les systèmes et les appareils.
+
+Catégorie : IT
+Q : Où le département IT doit-il installer et maintenir un logiciel anti-malware approprié ?
+R : Le département IT doit installer et maintenir un logiciel anti-malware approprié sur tous les systèmes concernés, incluant les postes de travail, les serveurs et les appareils mobiles.
+
+Catégorie : IT
+Q : Que doit faire le département IT lorsqu'une attaque de malware se produit ?
+R : Le département IT doit répondre à toutes les attaques de malwares, détruire tout malware détecté et documenter chacun de ces incidents.
+
+Catégorie : IT
+Q : Quelle est la procédure du département IT face aux attaques de malwares pour la documentation ?
+R : Le département IT doit répondre à toutes les attaques de malwares, détruire tout logiciel malveillant détecté et consigner par écrit chaque incident survenu.
+
+Catégorie : IT
+Q : Comment le département IT gère-t-il les atteintes à la sécurité suspectées ou confirmées ?
+R : Le département IT doit répondre à toutes les atteintes à la sécurité, qu'elles soient suspectées ou confirmées, tout en assistant et en se conformant à toute enquête interne ou externe.
+
+Catégorie : IT
+Q : Quel rôle joue le département IT lors d'enquêtes internes ou externes sur la sécurité ?
+R : Le département IT doit répondre aux atteintes à la sécurité et doit obligatoirement assister et se conformer à toute enquête, qu'elle soit interne ou externe.
+
+Catégorie : IT
+Q : Qui conserve les registres des licences de logiciels détenues par l'entreprise ?
+R : Le département IT doit maintenir et conserver des registres précis des licences de logiciels qui sont possédées par l'entreprise.
+
+Catégorie : IT
+Q : À quelle fréquence le département IT doit-il analyser les ordinateurs et systèmes pour détecter les vulnérabilités ?
+R : Le département IT doit périodiquement, au moins chaque trimestre, analyser les ordinateurs et systèmes de l'entreprise pour repérer les vulnérabilités et les menaces de sécurité.
+
+Catégorie : IT
+Q : Comment le département IT vérifie-t-il que seuls des logiciels autorisés sont installés sur les systèmes ?
+R : Le département IT analyse périodiquement, au moins de façon trimestrielle, les ordinateurs et systèmes pour vérifier et confirmer que seul un logiciel autorisé est installé.
+
+Catégorie : IT
+Q : Sur quels systèmes le département IT doit-il implémenter la journalisation des accès et de la sécurité ?
+R : Le département IT doit implémenter la journalisation des accès et de la sécurité sur l'ensemble des systèmes critiques de l'entreprise.
+
+Catégorie : IT
+Q : Quelle interdiction s'applique aux journaux d'accès et de sécurité mis en place par le département IT ?
+R : Le département IT doit veiller à ne pas altérer, modifier ni supprimer les journaux d'accès et de sécurité mis en place sur les systèmes critiques.
+
+Catégorie : IT
+Q : Comment le département IT assure-t-il la conformité à la politique de sécurité en bloquant certains matériels ?
+R : Le département IT édicte des systèmes et des contrôles de sécurité, incluant le blocage de l'utilisation des périphériques USB non autorisés, pour assurer la conformité à la politique.
+
+Catégorie : IT
+Q : Quel type de logiciel le département IT utilise-t-il pour empêcher la transmission de données de cartes de crédit ?
+R : Le département IT utilise des logiciels de prévention des pertes de données pour empêcher la transmission des informations relatives aux cartes de crédit.
+
+Catégorie : IT
+Q : Que vérifie le département IT lors de la conduite de balayages de sécurité pour la conformité ?
+R : Le département IT mène des balayages de sécurité pour confirmer que les employés sécurisent leurs appareils, verrouillent leurs postes de travail et ne stockent pas de matériel illégal.
+
+Catégorie : IT
+Q : Que vérifient les balayages de sécurité menés par le département IT concernant le stockage et la transmission de données ?
+R : Les balayages de sécurité du département IT confirment que les employés ne stockent pas de matériel illégal et ne transmettent pas de matériel confidentiel par des moyens non sécurisés.
+
+Catégorie : IT
+Q : Qui surveille les sauvegardes et le stockage distant ou dans le cloud ?
+R : Le département IT surveille les sauvegardes ainsi que le stockage cloud et distant pour veiller à ce que l'information confidentielle demeure sécurisée.
+
+Catégorie : IT
+Q : Que fait le département IT concernant les appareils appartenant aux employés qui ont accédé aux ressources de l'entreprise ?
+R : Le département IT inspecte tous les appareils appartenant aux employés ayant accédé aux ressources de l'entreprise pour s'assurer qu'aucune donnée confidentielle n'y subsiste après le départ de l'employé ou la fin du besoin d'accès.
+
+Catégorie : IT
+Q : Comment le département IT gère-t-il l'évolution des menaces de sécurité ?
+R : Le département IT se tient informé des dernières menaces de sécurité, participe à une formation continue à la sécurité et développe des plans et des processus pour que l'organisation continue de fonctionner de manière sécurisée.
+
+Catégorie : IT
+Q : Que fournit le département IT pour aider les employés à remplir leurs responsabilités en matière de sécurité ?
+R : Le département IT fournit un soutien et des conseils appropriés afin d'aider les employés à remplir leurs responsabilités dans le cadre de cette directive de sécurité.
+
+Catégorie : IT
+Q : Quel type de formation le département IT dispense-t-il aux employés ?
+R : Le département IT conduit des formations destinées aux employés pour les maintenir informés des facteurs et des menaces de sécurité actuels et à venir.
+
+Catégorie : IT
+Q : À quelles réglementations commerciales le département IT doit-il se conformer ?
+R : Le département IT doit adhérer à toutes les réglementations susceptibles de s'appliquer à l'entreprise, telles que les normes PCI ou HIPAA.
+
+Catégorie : IT
+Q : Qui développe et maintient les normes et procédures écrites pour la conformité aux directives de politique ?
+R : Le département IT développe et maintient les normes et procédures écrites qui sont nécessaires pour assurer la mise en œuvre et le respect de ces directives politiques.
+
+Catégorie : IT
+Q : Comment la sécurité est-elle considérée conceptuellement au sein de l'organisation ?
+R : La sécurité est reconnue par l'organisation comme un parcours et non comme une destination finale.
+
+Catégorie : IT
+Q : La sécurité informatique peut-elle être considérée comme un concept achevé ou terminé ?
+R : La sécurité n'est jamais un concept qui est considéré comme terminé ou comme étant suffisamment bon.
+
+Catégorie : IT
+Q : Qui les managers et superviseurs doivent-ils prévenir rapidement lorsqu'un employé quitte l'entreprise ou change de département ?
+R : Les managers et superviseurs doivent prévenir rapidement les consultants IT lorsqu'un employé quitte l'entreprise ou change de département pour révoquer l'accès.
+
+Catégorie : IT
+Q : À quel moment précis les licenciements involontaires doivent-ils être signalés aux consultants IT ?
+R : Les licenciements involontaires doivent être signalés aux consultants IT en même temps que la fin du contrat de travail.
+
+Catégorie : IT
+Q : Quelle action les managers et superviseurs doivent-ils entreprendre concernant la connaissance de cette politique par le personnel ?
+R : Les managers et superviseurs doivent s'assurer que tout le personnel approprié connaît et respecte cette politique.
+
+Catégorie : IT
+Q : Quels types de mesures les managers et superviseurs doivent-ils créer pour s'assurer que les employés observent la politique ?
+R : Les managers et superviseurs doivent créer des normes de performance, des pratiques de contrôle et des procédures appropriées garantissant raisonnablement l'observation de la politique.
+
+Catégorie : IT
+Q : De quelle manière les managers et superviseurs doivent-ils aider les consultants IT pour assurer l'adhésion à la politique ?
+R : Les managers et superviseurs doivent aider les consultants IT par tous les moyens nécessaires et se conformer à toute analyse ou enquête requise.
+
+Catégorie : IT
+Q : À quelle fréquence les managers et superviseurs doivent-ils notifier les consultants IT des nouveaux collaborateurs, des transferts et des départs ?
+R : Les managers et superviseurs doivent notifier les consultants IT sur une base mensuelle concernant les nouveaux associés, les transferts d'associés et les départs d'employés.
+
+Catégorie : IT
+Q : Quel département est responsable de la mise en œuvre de cette politique et du respect de celle-ci ?
+R : Le département IT est responsable de la mise en œuvre de cette politique et du respect de celle-ci au sein de l'organisation.
+
+Catégorie : IT
+Q : Par qui les changements de politique doivent-ils être mis en œuvre et approuvés ?
+R : Tous les changements de politique doivent être mis en œuvre et approuvés par l'administration, et toute documentation associée doit être mise à jour en conséquence.
+
+Catégorie : IT
+Q : À qui appartient toutes les données créées, envoyées ou récupérées localement ou sur internet par les employés ?
+R : Toutes les données créées, envoyées ou récupérées, que ce soit localement ou sur internet, sont la propriété de l'entreprise et peuvent être considérées comme des informations publiques.
+
+Catégorie : IT
+Q : Quels types d'éléments sont inclus dans les données appartenant à l'entreprise ?
+R : Ces données incluent les messages électroniques, les documents Office, les entrées de base de données, les messages vocaux, les messages texte, les images, les messages instantanés et la documentation physique.
+
+Catégorie : IT
+Q : Dans quelles circonstances l'entreprise se réserve-t-elle le droit d'accéder au contenu des données des employés ?
+R : L'entreprise se réserve le droit d'accéder au contenu de ces données si elle estime, à sa seule discrétion, qu'elle a un besoin professionnel de le faire.
+
+Catégorie : Legal
+Q : Que peut-il advenir des données de l'entreprise en matière de divulgation externe ?
+R : Toutes les données de l'entreprise peuvent être divulguées aux forces de l'ordre si nécessaire.
+
+Catégorie : IT
+Q : À qui faut-il signaler immédiatement les violations de cette politique de sécurité ?
+R : Les violations de cette politique doivent être immédiatement signalées à tous les managers concernés ainsi qu'au département IT.
+
+Catégorie : Legal
+Q : Quelles conséquences peut entraîner la violation de la politique de sécurité de l'entreprise ?
+R : La violation de cette politique ou de ses principes peut entraîner des mesures disciplinaires de la part de l'entreprise, selon le type et la gravité de l'infraction, les pertes causées ou la répétition des infractions.
+
+Catégorie : Général
+Q : À quoi sert le formulaire d'accusé de réception de la politique de sécurité de l'information ?
+R : Ce formulaire est utilisé pour accuser réception de la politique de sécurité de l'information de l'entreprise et attester de la conformité à celle-ci.
+
+Catégorie : RH
+Q : Quelle est la première étape de la procédure relative à la politique de sécurité de l'information ?
+R : La première étape de la procédure de la politique de sécurité de l'information consiste à lire la politique de sécurité de l'information.
+
+Catégorie : RH
+Q : Quelle est la deuxième étape de la procédure de reconnaissance de la politique de sécurité de l'information ?
+R : La deuxième étape de la procédure consiste à signer et dater le document dans les espaces prévus à cet effet.
+
+Catégorie : RH
+Q : À quel département faut-il retourner la copie du document de politique de sécurité signé ?
+R : Une copie de ce document signé doit être retournée au département des ressources humaines.
+
+Catégorie : IT
+Q : Que confirme la signature d'un employé au bas de la politique de sécurité de l'information ?
+R : La signature atteste que l'employé accepte l'ensemble des termes de la politique de sécurité de l'information.
+
+Catégorie : IT
+Q : Qu'atteste le fait de signer le document relatif à la politique de sécurité de l'information ?
+R : Signer ce document atteste que l'employé a reçu, lu, compris et accepté la politique de sécurité de l'information.
+
+Catégorie : IT
+Q : Quelle reconnaissance l'employé formalise-t-il par sa signature concernant la politique de sécurité de l'information ?
+R : L'employé confirme par sa signature qu'il a bien reçu et pris connaissance d'une copie de la politique de sécurité de l'information, dont il comprend et accepte les termes.
+
+Catégorie : IT
+Q : Quel droit l'organisation se réserve-t-elle concernant l'application de la politique de sécurité de l'information ?
+R : L'organisation peut surveiller la mise en œuvre de la politique de sécurité de l'information ainsi que le respect de cette dernière afin d'en examiner les résultats.
+
+Catégorie : IT
+Q : Que peut surveiller l'organisation en lien avec la politique de sécurité de l'information ?
+R : L'organisation a le droit de surveiller la mise en œuvre de la politique de sécurité de l'information et l'adhésion à celle-ci afin d'en évaluer les résultats.
+
+Catégorie : IT
+Q : Quelles sont les conséquences encourues en cas de violation de la politique de sécurité de l'information ?
+R : Les violations de la politique de sécurité de l'information peuvent entraîner le licenciement de l'employé ainsi que des poursuites judiciaires à son encontre.
+
+Catégorie : IT
+Q : Quel risque encourt un employé s'il commet des infractions à la politique de sécurité de l'information ?
+R : Un manquement à la politique de sécurité de l'information expose l'employé à un licenciement de son emploi et à des actions en justice intentées contre lui.
+
+Catégorie : Legal
+Q : La politique de sécurité de l'information remplace-t-elle des conseils juridiques ?
+R : Non, la politique de sécurité de l'information ne constitue pas un substitut à un avis juridique ou à des conseils juridiques.
+
+Catégorie : Legal
+Q : Que doit faire un employé qui se pose des questions d'ordre juridique au sujet de la politique de sécurité de l'information ?
+R : Si un employé a des questions juridiques en lien avec la politique de sécurité de l'information, il doit consulter son propre praticien du droit.

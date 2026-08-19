@@ -1,0 +1,339 @@
+Catégorie : IT
+Q : Pourquoi The City of Pittsfield fournit-elle à ses employés un accès aux ressources d'information d'Internet ?
+R : The City of Pittsfield fournit aux employés un accès à Internet dans l'intention d'accroître leur productivité et de les aider à faire leur travail plus rapidement ou plus intelligemment.
+
+Catégorie : IT
+Q : Quel est le risque associé à l'utilisation d'Internet par les employés selon The City of Pittsfield ?
+R : The City of Pittsfield craint qu'Internet ne soit mal utilisé, ce qui peut faire perdre du temps et potentiellement violer des lois, des ordonnances ou d'autres politiques de la ville.
+
+Catégorie : IT
+Q : Quel est l'objectif de la politique d'utilisation d'Internet de The City of Pittsfield ?
+R : La politique d'utilisation d'Internet de The City of Pittsfield est conçue pour aider les employés à comprendre les attentes concernant l'utilisation de ces ressources.
+
+Catégorie : IT
+Q : Quel est le principe fondamental régissant l'accès à Internet depuis The City of Pittsfield ?
+R : Le principe fondamental est que l'accès à Internet depuis The City of Pittsfield est destiné à des fins professionnelles, notamment pour communiquer avec des collègues, rechercher des sujets pertinents et obtenir des informations utiles.
+
+Catégorie : Legal
+Q : Quelles politiques et lois existantes s'appliquent à la conduite sur Internet chez The City of Pittsfield ?
+R : Toutes les lois et politiques existantes de The City of Pittsfield s'appliquent à la conduite sur Internet, en particulier celles concernant la protection de la propriété intellectuelle, la vie privée, l'utilisation abusive des ressources de la ville, le harcèlement sexuel, la sécurité des données et la confidentialité.
+
+Catégorie : IT
+Q : Que contient la politique d'Internet concernant les utilisations interdites ?
+R : La politique d'Internet énonce des directives générales et des exemples d'utilisations interdites d'Internet à des fins d'illustration, sans chercher à lister toutes les activités requises ou interdites des employés.
+
+Catégorie : IT
+Q : Auprès de quel département les employés doivent-ils chercher des conseils s'ils se demandent si une activité sur Internet est acceptable ?
+R : Les employés qui se demandent si une activité ou une utilisation particulière est acceptable doivent demander des conseils supplémentaires au département des technologies de l'information (Information Technology Department).
+
+Catégorie : IT
+Q : Par quoi ces règles d'utilisation d'Internet peuvent-elles être complétées ?
+R : Les règles d'utilisation d'Internet de The City of Pittsfield peuvent être complétées par des procédures administratives plus spécifiques et des règles régissant la gestion et le fonctionnement quotidien du système informatique de la ville.
+
+Catégorie : IT
+Q : Quels départements surveillent et administrent collaborativement la politique d'Internet de The City of Pittsfield ?
+R : La politique d'Internet de The City of Pittsfield est surveillée et administrée conjointement par le département des technologies de l'information (Information Technology Department) et le département des ressources humaines (Human Resources Department).
+
+Catégorie : IT
+Q : Quelle est la politique de The City of Pittsfield concernant l'utilisation d'Internet pour les affaires officielles de la ville ?
+R : C'est la politique de The City of Pittsfield de limiter l'accès à Internet aux affaires officielles de la ville (official City business).
+
+Catégorie : IT
+Q : Comment un employé doit-il obtenir l'autorisation d'accéder à Internet à The City of Pittsfield ?
+R : L'autorisation d'accéder à Internet à The City of Pittsfield doit être obtenue auprès du département des technologies de l'information (Information Technology Department).
+
+Catégorie : IT
+Q : De quoi chaque employé est-il responsable une fois son autorisation d'accès Internet approuvée ?
+R : Une fois l'autorisation approuvée, chaque employé de The City of Pittsfield est responsable de la sécurité du mot de passe de son compte et sera tenu responsable de toute utilisation ou utilisation abusive de son compte.
+
+Catégorie : IT
+Q : Quelles sont les obligations de chaque employé concernant la gestion de son mot de passe de compte informatique ?
+R : Chaque employé de The City of Pittsfield doit maintenir des mots de passe sécurisés et ne jamais utiliser un compte attribué à un autre utilisateur, sauf autorisation spécifique pour le faire.
+
+Catégorie : Legal
+Q : Qu'est-il interdit d'un point de vue légal lors de l'utilisation des installations Internet et des ressources informatiques de The City of Pittsfield ?
+R : Les installations Internet et les ressources informatiques de The City of Pittsfield ne doivent pas être utilisées pour violer sciemment les lois et règlements des États-Unis, d'une autre nation, ou d'un État, d'une ville, d'une province ou d'une juridiction locale de manière substantielle.
+
+Catégorie : Legal
+Q : Que protègent les lois américaines sur le droit d'auteur et les brevets en lien avec les ressources informatiques ?
+R : Les lois américaines sur le droit d'auteur et les brevets protègent les intérêts des auteurs et des développeurs de logiciels dans leurs produits lors de l'utilisation d'Internet.
+
+Catégorie : Legal
+Q : Est-il permis de violer les droits d'auteur ou les brevets d'autrui sur ou via Internet chez The City of Pittsfield ?
+R : Il est contraire à la loi fédérale et à la politique de The City of Pittsfield de violer les droits d'auteur ou les brevets d'autrui sur ou via Internet.
+
+Catégorie : IT
+Q : Est-ce qu'un employé de la City de Pittsfield a le droit d'utiliser les installations Internet pour propager volontairement un virus, un ver, un cheval de Troie, un piège ou un code de porte dérobée ?
+R : Aucun employé de la City de Pittsfield n'a le droit d'utiliser les installations Internet pour propager délibérément un virus, un ver, un cheval de Troie, un piège ou un code de porte dérobée.
+
+Catégorie : IT
+Q : Que doit faire un employé de la City de Pittsfield concernant la désactivation ou la surcharge des systèmes informatiques et des réseaux ?
+R : Un employé de la City de Pittsfield ne doit pas désactiver ou surcharger sciemment un système informatique ou un réseau, ni contourner un système destiné à protéger la vie privée ou la sécurité d'un autre utilisateur.
+
+Catégorie : IT
+Q : Que doit-on faire avec les fichiers informatiques et les pièces jointes téléchargés ou ouverts depuis Internet avant leur installation ou leur exécution ?
+R : Les fichiers informatiques, y compris les pièces jointes téléchargées ou ouvertes depuis Internet, doivent être analysés avec un logiciel de détection des virus avant toute installation ou exécution.
+
+Catégorie : IT
+Q : Quelles précautions les employés de la City de Pittsfield doivent-ils prendre pour détecter les virus et prévenir l'infection d'autres ordinateurs ?
+R : Les employés de la City de Pittsfield doivent prendre toutes les précautions appropriées pour détecter les virus et empêcher l'infection d'autres ordinateurs.
+
+Catégorie : IT
+Q : À qui les employés de la City de Pittsfield doivent-ils adresser leurs questions concernant l'utilisation appropriée du logiciel de détection des virus ?
+R : Les employés de la City de Pittsfield doivent adresser leurs questions concernant l'utilisation appropriée du logiciel de détection des virus au département des technologies de l'information (Information Technology Department) avant de télécharger ou d'ouvrir des fichiers informatiques et des pièces jointes.
+
+Catégorie : IT
+Q : Comment chaque employé utilisant l'Internet de la City de Pittsfield doit-il s'identifier lors de correspondances ou d'activités interactives ?
+R : Chaque employé utilisant l'Internet de la City de Pittsfield doit s'identifier honnêtement, précisément et complètement lorsqu'il correspond ou participe à des activités interactives.
+
+Catégorie : IT
+Q : Quel est le niveau de contrôle ou de responsabilité de la City de Pittsfield sur le contenu d'un serveur externe qui n'est pas sous son contrôle ?
+R : La City de Pittsfield n'a aucun contrôle ni aucune responsabilité sur le contenu d'un serveur externe qui ne se trouve pas sous son contrôle.
+
+Catégorie : IT
+Q : Comment la véracité ou l'exactitude des informations trouvées sur Internet et dans les e-mails doit-elle être considérée par les employés ?
+R : La vérité ou l'exactitude des informations sur Internet et dans les e-mails doit être considérée comme suspecte jusqu'à ce qu'elle soit confirmée par une source distincte et fiable.
+
+Catégorie : IT
+Q : Est-ce que les employés de la City de Pittsfield peuvent avoir une attente de vie privée concernant leur ordinateur ou leur utilisation d'Internet ?
+R : Les employés de la City de Pittsfield ne doivent avoir aucune attente de vie privée en ce qui concerne leur ordinateur ou leur utilisation d'Internet, y compris l'envoi et la réception d'e-mails.
+
+Catégorie : IT
+Q : Est-il possible pour la City de Pittsfield de surveiller les schémas d'utilisation d'Internet des employés ?
+R : Il est possible pour la City de Pittsfield de surveiller les schémas d'utilisation d'Internet des employés.
+
+Catégorie : IT
+Q : Dans quelle mesure la City de Pittsfield peut-elle inspecter le système informatique utilisé par un employé ?
+R : La City de Pittsfield peut inspecter, sans limitation, tout système informatique utilisé par un employé, y compris les fichiers stockés sur le disque dur de l'ordinateur ou sur le serveur de la City, dans la mesure nécessaire pour garantir le respect de la politique informatique.
+
+Catégorie : IT
+Q : Les connexions de fournisseurs de services Internet alternatifs au réseau interne de la City de Pittsfield sont-elles permises ?
+R : Les connexions de fournisseurs de services Internet alternatifs au réseau interne de la City de Pittsfield ne sont pas permises, sauf si elles sont expressément autorisées et correctement protégées par un dispositif de sécurité approprié.
+
+Catégorie : IT
+Q : À qui appartient le matériel informatique utilisé dans l'organisation ?
+R : Tout le matériel informatique demeure en tout temps la propriété de la City de Pittsfield, jusqu'à ce qu'il en soit disposé autrement.
+
+Catégorie : IT
+Q : Le matériel informatique de la City de Pittsfield peut-il être retiré de ses sites respectifs sans autorisation ?
+R : Le matériel informatique de la City de Pittsfield ne peut pas être retiré de ses sites respectifs sans l'approbation écrite expresse du département des technologies de l'information (Information Technology Department).
+
+Catégorie : IT
+Q : Quelle est la règle concernant l'installation ou la mise à niveau de programmes logiciels sur le matériel informatique de la City de Pittsfield ?
+R : L'installation ou la mise à niveau de programmes logiciels sur le matériel informatique sans l'approbation écrite expresse du département des technologies de l'information (Information Technology Department) est strictement interdite.
+
+Catégorie : IT
+Q : La City de Pittsfield peut-elle émettre des procédures administratives et des règles plus spécifiques pour l'utilisation du matériel informatique ?
+R : La City de Pittsfield peut émettre des procédures administratives et des règles plus spécifiques régissant l'utilisation du matériel informatique par les employés.
+
+Catégorie : IT
+Q : Les employés de la City de Pittsfield ont-ils le droit d'utiliser sciemment les ordinateurs de la City pour télécharger ou distribuer des logiciels ou des données piratés ?
+R : Les employés de la City de Pittsfield ne doivent pas utiliser les ordinateurs de la City pour télécharger ou distribuer sciemment des logiciels ou des données piratés.
+
+Catégorie : IT
+Q : De quelle manière les logiciels ou les fichiers téléchargés via Internet peuvent-ils être utilisés par les employés ?
+R : Tous les logiciels ou fichiers téléchargés via Internet ne peuvent être utilisés que d'une manière qui est conforme à leurs licences ou à leurs droits d'auteur.
+
+Catégorie : IT
+Q : Est-il permis de télécharger des jeux ou d'autres programmes à des fins de divertissement sur les ordinateurs de la City de Pittsfield ?
+R : Le téléchargement de jeux ou d'autres programmes à des fins de divertissement est strictement interdit sur les ordinateurs de la City de Pittsfield.
+
+Catégorie : IT
+Q : Quel est le statut des tentatives non autorisées d'accéder à l'ordinateur d'un autre employé selon la politique de l'organisation ?
+R : Les employés ne doivent pas faire de tentative non autorisée pour entrer dans l'ordinateur d'un autre employé, ce qui est communément appelé le piratage.
+
+Catégorie : IT
+Q : En quoi une tentative non autorisée d'entrer dans l'ordinateur d'un autre employé constitue-t-elle une infraction légale ?
+R : Une tentative non autorisée d'entrer dans l'ordinateur d'un autre employé constitue une violation de la loi fédérale Federal Electronic Communications Privacy Act (ECPA) 18 U.S.C. § 2510.
+
+Catégorie : IT
+Q : Les employés ont-ils le droit de connecter des téléphones portables personnels à un ordinateur appartenant à la ville ?
+R : Les employés ne doivent pas connecter de téléphones portables personnels ou tout autre appareil électronique personnel à un ordinateur appartenant à la ville, et ce pour aucune raison.
+
+Catégorie : IT
+Q : Les employés peuvent-ils connecter des appareils électroniques personnels à un ordinateur appartenant à la ville ?
+R : Les employés ne doivent connecter aucun appareil électronique personnel à un ordinateur appartenant à la ville.
+
+Catégorie : IT
+Q : Est-il permis aux employés de divulguer des informations confidentielles en utilisant les ordinateurs de la ville ?
+R : Les employés ne doivent pas divulguer d'informations confidentielles en utilisant les ordinateurs de la ville.
+
+Catégorie : IT
+Q : Les ordinateurs de la ville peuvent-ils servir à promouvoir des convictions politiques personnelles ?
+R : Les ordinateurs de la ville ne doivent pas être utilisés par les employés pour promouvoir des convictions politiques personnelles, de la discrimination, du harcèlement sexuel ou toute activité illégale.
+
+Catégorie : IT
+Q : Est-il autorisé d'utiliser les ordinateurs de la ville pour promouvoir le harcèlement sexuel ou la discrimination ?
+R : Les employés ne doivent pas utiliser les ordinateurs de la ville pour promouvoir la discrimination, le harcèlement sexuel, des convictions politiques personnelles ou toute activité illégale.
+
+Catégorie : IT
+Q : Les ordinateurs de la ville peuvent-ils être utilisés pour un gain financier privé ou des fins commerciales ?
+R : Les ordinateurs de la ville ne doivent pas être utilisés par les employés pour un gain financier privé, ou à des fins commerciales, de publicité ou de sollicitation.
+
+Catégorie : IT
+Q : Quelles sont les interdictions concernant l'utilisation des ordinateurs de la ville pour des buts publicitaires ?
+R : Les ordinateurs de la ville ne doivent pas être utilisés par les employés à des fins commerciales, de publicité, de sollicitation ou pour un gain financier privé.
+
+Catégorie : IT
+Q : Les ordinateurs de la ville peuvent-ils servir à afficher des images obscènes ou pornographiques ?
+R : Les employés ne doivent pas utiliser les ordinateurs de la ville pour afficher quelque type d'image ou de document que ce soit qui soit obscène, pornographique, sexuellement explicite ou sexuellement suggestif.
+
+Catégorie : IT
+Q : Est-il permis d'archiver, de stocker ou de distribuer des documents obscènes ou sexuellement explicites en utilisant les ressources informatiques de la ville ?
+R : Les employés ne peuvent pas archiver, stocker, distribuer, éditer ou enregistrer de documents obscènes, pornographiques, sexuellement explicites ou suggestifs en utilisant le réseau, l'impression ou les ressources informatiques de la ville.
+
+Catégorie : IT
+Q : Quelle est la règle concernant la réception ou la transmission d'informations relatives aux activités syndicales sur les ordinateurs de la ville ?
+R : Les employés ne doivent pas utiliser les ordinateurs de la ville pour recevoir ou transmettre des informations relatives aux activités syndicales, ce qui inclut les communications sur les réunions, politiques, pratiques, négociations et litiges syndicaux ainsi que les sites Internet dédiés à ces sujets.
+
+Catégorie : IT
+Q : Quelles communications syndicales sont explicitement autorisées malgré les restrictions sur les ordinateurs de la ville ?
+R : La communication entre les responsables syndicaux et leur avocat est permise, mais elle n'est pas permise entre les membres du syndicat.
+
+Catégorie : IT
+Q : Les employés ont-ils le droit d'accéder à des sites Internet de partage de fichiers non sanctionnés par la ville ?
+R : Les employés ne doivent pas accéder à des sites Internet de partage de fichiers non sanctionnés par la ville ni à des services de diffusion de radio en continu sur Internet.
+
+Catégorie : IT
+Q : Quel est le règlement concernant l'utilisation des services de diffusion de radio en continu sur Internet par les employés ?
+R : Les employés ne doivent pas utiliser les services de diffusion de radio en continu sur Internet ni accéder à des sites Internet de partage de fichiers non sanctionnés par la ville.
+
+Catégorie : IT
+Q : Les employés peuvent-ils utiliser le courrier électronique pour envoyer des chaînes de lettres ?
+R : Les employés ne doivent pas utiliser le courrier électronique dans le but d'envoyer des chaînes de lettres et du courrier électronique de masse non sollicité, ou de provoquer la réception de courrier électronique de masse non sollicité.
+
+Catégorie : IT
+Q : Quelle est la règle concernant le courrier électronique de masse non sollicité au sein de l'organisation ?
+R : Les employés ne doivent pas utiliser le courrier électronique pour envoyer ou causer la réception de courrier électronique de masse non sollicité ainsi que de chaînes de lettres.
+
+Catégorie : IT
+Q : Les employés peuvent-ils utiliser leur adresse e-mail assignée par la City of Pittsfield pour s'inscrire à des info-lettres ?
+R : Les employés ne doivent pas utiliser leur adresse e-mail assignée par la City of Pittsfield pour s'inscrire à des info-lettres, listes de diffusion, groupes de discussion, etc., à moins que ceux-ci ne soient liés au travail.
+
+Catégorie : IT
+Q : Dans quel cas un employé est-il autorisé à utiliser son adresse e-mail de la City of Pittsfield pour des listes de diffusion ou des info-lettres ?
+R : Un employé est autorisé à utiliser son adresse e-mail assignée par la City of Pittsfield pour s'inscrire à des info-lettres, listes de diffusion ou groupes de discussion uniquement si ces derniers sont liés au travail.
+
+Catégorie : IT
+Q : Est-il permis d'utiliser l'adresse e-mail de la City of Pittsfield pour s'inscrire à des supports marketing sur des sites d'achat ?
+R : Les employés ne doivent pas utiliser leur adresse e-mail assignée par la City of Pittsfield pour s'inscrire à des supports marketing à travers des sites d'achat.
+
+Catégorie : IT
+Q : Quel est l'usage exclusif prévu pour l'adresse e-mail assignée par la City of Pittsfield ?
+R : L'adresse e-mail assignée par la City of Pittsfield doit être utilisée uniquement pour le travail et non pour un quelconque type de correspondance personnelle, d'achats, etc.
+
+Catégorie : IT
+Q : Qu'interdit-il aux employés concernant les ordinateurs, réseaux et services Internet de la ville ?
+R : Il est interdit aux employés d'utiliser ou perturber de manière malveillante les ordinateurs, réseaux et services Internet de la ville, ainsi que de violer la sécurité du système.
+
+Catégorie : IT
+Q : Que leur est-il interdit de faire concernant l'équipement informatique et les mots de passe de la ville ?
+R : Les employés ne doivent pas abîmer ou faire un usage abusif de l'équipement informatique de la ville, ni faire un usage abusif des mots de passe ou des comptes informatiques.
+
+Catégorie : IT
+Q : Quelles sont les interdictions relatives aux sites non autorisés et aux accès révoqués ?
+R : Les employés ne doivent pas tenter d'accéder à des sites non autorisés ni utiliser les ordinateurs, réseaux et services Internet de la ville après que l'accès a été refusé ou révoqué.
+
+Catégorie : IT
+Q : Que prévoit la politique concernant la dissimulation d'informations violant la politique informatique ?
+R : Les employés ne doivent pas tenter de supprimer, effacer ou dissimuler toute information stockée sur un ordinateur de la ville qui constitue une violation de cette politique.
+
+Catégorie : IT
+Q : Dans quelles conditions les sites de réseaux sociaux sont-ils accessibles depuis l'équipement appartenant à la ville ?
+R : Les sites de réseaux sociaux, y compris Facebook et Twitter, ne peuvent être consultés depuis l'équipement de la ville que pour les besoins officiels de la ville et avec l'approbation du chef de département ou de l'autorité de nomination pour un objectif public.
+
+Catégorie : RH
+Q : Quelles sont les conséquences pour un employé en cas de publications inappropriées sur les réseaux sociaux en temps personnel ou avec des appareils personnels ?
+R : Des publications inappropriées sur les réseaux sociaux pendant le temps personnel ou avec des appareils et comptes personnels peuvent exposer l'employé à des mesures disciplinaires, pouvant aller jusqu'au licenciement, si ces publications nuisent à la ville ou au lieu de travail.
+
+Catégorie : RH
+Q : Quels types de publications personnelles inappropriées peuvent exposer un employé à des mesures disciplinaires ?
+R : Les publications inappropriées incluent les menaces de violence, le harcèlement, les commentaires suggérant de l'animosité ou des préjugés envers une classe protégée ou un membre de celle-ci, ainsi que la divulgation d'informations personnelles ou confidentielles recueillies au travail.
+
+Catégorie : RH
+Q : Où les employés peuvent-ils trouver davantage d'informations sur les conduites inappropriées sur les réseaux sociaux ?
+R : Davantage d'informations peuvent être trouvées dans la politique de conduite au travail de la ville, et les protocoles complets sont disponibles dans la politique de création et de contenu des réseaux sociaux de la ville.
+
+Catégorie : IT
+Q : Le réseau Internet garantit-il la vie privée et la confidentialité des informations transmises ?
+R : L'Internet ne garantit pas la vie privée et la confidentialité des informations, et les données sensibles transférées peuvent être exposées au risque d'être détectées par un tiers, exigeant la prudence des employés.
+
+Catégorie : IT
+Q : Quel message obligatoire chaque communication électronique envoyée par un employé doit-elle inclure ?
+R : Chaque communication électronique envoyée par un employé doit inclure le message stipulant que le message est confidentiel, réservé au destinataire nommé, et que toute diffusion est illégale et interdite.
+
+Catégorie : IT
+Q : Que doit faire un destinataire ayant reçu par erreur un message électronique de la ville ?
+R : Si un destinataire a reçu le message par erreur, il doit contacter l'expéditeur par retour d'e-mail ou par téléphone au 413-(Numéro de téléphone du département) et supprimer la copie reçue.
+
+Catégorie : IT
+Q : Quel organisme d'État a déterminé que le courrier électronique qualifiait de documents publics selon la législation du Massachusetts ?
+R : Le bureau du secrétaire d'État du Commonwealth a déterminé que le courrier électronique qualifie de documents publics.
+
+Catégorie : IT
+Q : Selon quel chapitre et quelle section des lois générales du Massachusetts le courrier électronique est-il défini comme un document public ?
+R : Le courrier électronique est défini comme un document public selon le chapitre 4, section 7(26) des lois générales du Massachusetts.
+
+Catégorie : IT
+Q : Quel département de l'organisation archive l'ensemble du courrier électronique envoyé ou reçu par les employés via Internet ?
+R : Le département des technologies de l'information archive l'ensemble du courrier électronique envoyé ou reçu par les employés via Internet.
+
+Catégorie : IT
+Q : Quel type de conservation les employés doivent-ils assurer concernant le courrier électronique envoyé ou reçu sur Internet ?
+R : Les employés doivent conserver soit un enregistrement imprimé, soit un enregistrement numérique du courrier électronique envoyé ou reçu sur Internet.
+
+Catégorie : IT
+Q : Selon quelles modalités les employés doivent-ils conserver leurs enregistrements de courrier électronique Internet ?
+R : Les employés doivent conserver leurs enregistrements de courrier électronique Internet de la même manière que les autres dossiers sont tenus par leurs départements respectifs.
+
+Catégorie : IT
+Q : Qui peut à tout moment résilier ou limiter l'accès d'un utilisateur aux technologies et ressources de la ville avec ou sans préavis ni motif ?
+R : La ville peut à tout moment résilier ou limiter l'accès d'un utilisateur aux technologies et ressources de la ville avec ou sans préavis ni motif.
+
+Catégorie : IT
+Q : Quels types d'accès technologiques de la ville sont concernés par la résiliation ou la limitation potentielle de l'utilisation ?
+R : Les comptes d'utilisateurs individuels, les comptes cloud, les comptes de connexion à distance, les ordinateurs, les ordinateurs portables et les smartphones de la ville sont concernés par la résiliation ou la limitation potentielle.
+
+Catégorie : IT
+Q : Quelle est la conséquence d'une cessation de fonction ou d'une autre séparation d'emploi sur les comptes d'un employé ?
+R : Une cessation de fonction ou une autre séparation d'emploi entraîne la suspension immédiate de tous les comptes de l'employé.
+
+Catégorie : IT
+Q : Quelle est la conséquence sur les comptes d'un employé d'un congé administratif ou d'un autre congé dépassant une période de trente jours ?
+R : Un congé administratif ou un autre congé dépassant une période de trente jours entraîne une suspension temporaire de l'accès aux comptes de l'employé.
+
+Catégorie : IT
+Q : Quelles sont les seules personnes autorisées à désactiver les comptes des employés de la ville ?
+R : Le directeur du département des technologies de l'information et le directeur du département des ressources humaines sont les seules personnes autorisées à désactiver les comptes des employés.
+
+Catégorie : IT
+Q : Quelle sanction entraîne la violation de la politique Internet et informatique concernant le privilège d'utilisation ?
+R : La violation de la politique entraîne soit la suspension, soit la perte permanente du privilège d'utiliser Internet et les ordinateurs de la ville.
+
+Catégorie : RH
+Q : Quelles mesures disciplinaires peuvent être prises à l'encontre d'un employé en cas de violation de la politique informatique ?
+R : Des mesures disciplinaires allant jusqu'au licenciement de l'emploi peuvent être prises à l'encontre d'un employé en cas de violation de la politique informatique.
+
+Catégorie : Finance
+Q : À quoi s'expose financièrement un employé en cas de pertes, de coûts ou de dommages subis par la ville suite à des violations de la politique ?
+R : Les employés sont personnellement responsables de toutes les pertes, de tous les coûts ou de tous les dommages encourus par la ville et liés aux violations de cette politique.
+
+Catégorie : Legal
+Q : Quelle est la conséquence d'une utilisation illégale des ordinateurs de la ville par un employé ?
+R : L'utilisation illégale des ordinateurs de la ville entraîne le renvoi de l'affaire aux autorités chargées de l'application de la loi.
+
+Catégorie : RH
+Q : Auprès de qui les employés doivent-ils signaler les violations de la politique Internet et informatique ?
+R : Les employés doivent signaler les violations de cette politique à leur superviseur direct.
+
+Catégorie : RH
+Q : Auprès de qui les chefs de département doivent-ils signaler les violations de la politique Internet et informatique ?
+R : Les chefs de département doivent signaler les violations de cette politique directement au directeur des ressources humaines.
+
+Catégorie : RH
+Q : Quelle règle s'applique concernant les représailles contre un employé ayant signalé des violations de la politique informatique ?
+R : Les représailles contre un autre employé pour avoir signalé une violation ou des violations de cette politique, y compris l'utilisation d'e-mails ou d'Internet de manière retaliatoire, sont strictement interdites par la ville.
+
+Catégorie : RH
+Q : Quelle politique de la ville convient-il de consulter concernant spécifiquement le harcèlement et les représailles au travail ?
+R : Il convient de consulter la politique de conduite au travail de la ville concernant le harcèlement et les représailles.
