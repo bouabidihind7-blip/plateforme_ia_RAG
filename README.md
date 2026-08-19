@@ -37,9 +37,11 @@ BM25 · Playwright
 ```bash
 ./demarrer.sh   # démarre le backend (sert aussi le frontend)
 ./arreter.sh    # arrête le backend
+```
 
-L'application est ensuite accessible sur http://127.0.0.1:8000.
+L'application est ensuite accessible sur `http://127.0.0.1:8000`.
 
-Rapport de stage
+## Rapport de stage
+
 Le rapport complet décrivant la conception, les choix techniques et les résultats du projet se
-trouve dans rapport/rapport_stage.tex.
+trouve dans [`rapport/rapport_stage.tex`](rapport/rapport_stage.tex).
