@@ -22,6 +22,11 @@
 \usepackage{setspace}
 \onehalfspacing
 
+% Pas d'indentation de première ligne de paragraphe (retour en ligne par
+% défaut de LaTeX) : un espace vertical entre paragraphes à la place,
+% plus lisible.
+\usepackage{parskip}
+
 % ---------- Images, couleurs, liens ----------
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -125,7 +130,7 @@
     % Logo entreprise, petit et centré — même position que le logo "IHD" de
     % ton modèle (sous la filière, avant le titre du projet).
     \vspace{0.3cm}
-    \colorbox{bleufonce}{\includegraphics[width=3.2cm]{1st-logo.png}}
+    \colorbox{bleufonce}{\includegraphics[width=3.2cm]{logo_entreprise.png}}
 
     \vspace{0.5cm}
     {\color{bleufonce}\rule{\linewidth}{0.6mm}}\\[0.5mm]
@@ -174,7 +179,7 @@ comprendre en profondeur chaque choix technique plutôt que de me contenter
 de les appliquer, et d'aborder ce stage avec une véritable démarche
 d'apprentissage.
 
-Je tiens également à remercier chaleureusement M. Bertin, co-fondateur de
+Je tiens également à remercier chaleureusement M. Bertin, co-propriétaire de
 3D Smart Factory, pour son accueil bienveillant, sa disponibilité et la
 gentillesse dont il a fait preuve lors de nos échanges, qui ont
 grandement contribué à mon intégration au sein de l'entreprise.
@@ -211,8 +216,8 @@ voulu porter à ce travail en acceptant de l'évaluer.
 Ce rapport présente le travail réalisé dans le cadre d'un stage au sein de
 l'entreprise 3D Smart Factory, portant sur la conception d'une plateforme de
 traitement automatisé de formulaires en ligne. Le traitement manuel des
-formulaires (Google Forms et Microsoft Forms) extraction des questions,
-rédaction des réponses, vérification étant lent et répétitif, l'objectif
+formulaires (Google Forms et Microsoft Forms), lecture des questions,
+rédaction des réponses, vérification, étant lent et répétitif, l'objectif
 du stage a été de construire une plateforme capable d'automatiser ce
 processus tout en conservant un contrôle humain avant toute publication.
 
@@ -220,8 +225,9 @@ Le système développé repose sur trois étapes : un pipeline d'extraction qui
 récupère automatiquement la structure d'un formulaire depuis son URL, un
 agent d'intelligence artificielle (basé sur le modèle Gemini) qui génère des
 propositions de réponses adaptées à chaque question, et une interface web
-de validation humaine permettant de valider, rejeter ou commenter chaque
-réponse avant utilisation. Un historique complet conserve également toutes
+de validation humaine permettant de valider, rejeter (avec un commentaire
+optionnel) ou ajuster chaque réponse avant utilisation. Un
+historique complet conserve également toutes
 les tentatives de réponse, y compris celles rejetées.
 
 La plateforme a été développée avec Python (FastAPI) côté backend,
@@ -239,7 +245,7 @@ FastAPI, PostgreSQL, automatisation, validation humaine.
 This report presents the work carried out during an internship at 3D Smart
 Factory, focused on designing a platform for the automated processing of
 online forms. Manually processing forms (Google Forms and Microsoft
-Forms) extracting questions, drafting answers, reviewing them is slow
+Forms), reading questions, drafting answers, reviewing them, is slow
 and repetitive; the goal of this internship was to build a platform that
 automates this process while keeping a human in control before any
 publication.
@@ -248,7 +254,8 @@ The system relies on three steps: an extraction pipeline that automatically
 retrieves a form's structure from its URL, an artificial intelligence agent
 (based on the Gemini model) that generates proposed answers tailored to
 each question, and a human validation web interface allowing each answer to
-be approved, rejected, or commented on before use. A complete history also
+be approved, rejected (with an optional comment), or adjusted
+before use. A complete history also
 keeps every answer attempt, including rejected ones.
 
 The platform was built with Python (FastAPI) on the backend, PostgreSQL as
@@ -280,8 +287,8 @@ Dans un contexte où la digitalisation des processus internes devient un
 levier essentiel de compétitivité pour les entreprises, la collecte
 d'informations via des formulaires en ligne (Google Forms, Microsoft Forms)
 s'est imposée comme une pratique courante. Cependant, le traitement de ces
-formulaires  l'extraction des questions posées, la rédaction de réponses
-adaptées, puis leur vérification avant publication  reste, dans de
+formulaires (la lecture des questions posées, la rédaction de réponses
+adaptées, puis leur vérification avant publication) reste, dans de
 nombreux cas, une tâche manuelle, répétitive et chronophage, réalisée sans
 réel outillage.
 
@@ -291,7 +298,7 @@ création et le développement de startups dans différents domaines
 d'activité. L'entreprise a exprimé le besoin de disposer d'un outil capable
 d'automatiser une partie de ce processus de traitement de formulaires, tout
 en conservant un contrôle humain sur chaque réponse avant son utilisation
-finale  une automatisation complète, sans validation humaine, présentant
+finale, une automatisation complète sans validation humaine présentant
 un risque trop important d'erreurs ou de réponses inadaptées.
 
 L'objectif général de ce stage a donc été de concevoir et de développer une
@@ -374,9 +381,9 @@ Les objectifs fixés pour ce stage peuvent être résumés ainsi :
     générer des propositions de réponses pertinentes pour chaque question
     extraite ;
     \item mettre en place une interface de validation humaine permettant
-    de valider, rejeter ou commenter chaque réponse proposée avant son
-    utilisation, ainsi qu'un historique complet conservant toutes les
-    tentatives de réponse ;
+    de valider, rejeter (avec un commentaire optionnel) ou ajuster
+    chaque réponse proposée avant son utilisation, ainsi
+    qu'un historique complet conservant toutes les tentatives de réponse ;
     \item fournir une véritable application web fonctionnelle, utilisable
     au quotidien, plutôt qu'une simple suite de scripts exécutés
     manuellement en ligne de commande.
@@ -403,7 +410,7 @@ La plateforme doit permettre à son utilisateur de :
     \item rejeter une réponse proposée, avec un commentaire optionnel
     expliquant le rejet ;
     \item relancer le traitement sur un formulaire déjà traité, sans
-    régénérer les réponses déjà validées ou en attente  seules les
+    régénérer les réponses déjà validées ou en attente : seules les
     questions dont la dernière réponse a été rejetée sont régénérées ;
     \item corriger manuellement une réponse proposée avant de la valider,
     lorsque la régénération par l'IA ne suffit pas à corriger le problème ;
@@ -430,7 +437,7 @@ La plateforme doit permettre à son utilisateur de :
     développement d'une seule personne et un périmètre applicatif encore
     amené à évoluer, les choix techniques ont donc privilégié des
     solutions dont la complexité correspond exactement aux besoins
-    identifiés (Section 3.1) plutôt que d'anticiper des besoins futurs
+    identifiés (Section 2.1.1) plutôt que d'anticiper des besoins futurs
     incertains au prix d'une complexité immédiate non justifiée.
 \end{itemize}
 
@@ -448,8 +455,8 @@ La plateforme repose sur un pipeline en trois étapes successives :
     de recherche documentaire interne (RAG, détaillé au Chapitre 4),
     propose une réponse adaptée à chacune d'elles.
     \item \textbf{Validation humaine} : chaque réponse proposée est
-    soumise à un utilisateur, qui peut la valider, la rejeter, ou la
-    corriger manuellement avant utilisation finale.
+    soumise à un utilisateur, qui peut la valider, la rejeter, ou
+    l'ajuster avant utilisation finale.
 \end{enumerate}
 
 Techniquement, l'application est organisée en couches :
@@ -556,9 +563,9 @@ unique, choix multiple, notation...), les choix possibles forment une
 simple liste, stockée dans la table \texttt{options}.
 
 Une question de type grille est structurellement différente : elle
-combine plusieurs sous-questions (les \emph{lignes} de la grille  par
+combine plusieurs sous-questions (les \emph{lignes} de la grille, par
 exemple plusieurs critères à évaluer) avec les \emph{mêmes} choix de
-réponse pour chacune d'elles (les \emph{colonnes} par exemple une
+réponse pour chacune d'elles (les \emph{colonnes}, par exemple une
 échelle de satisfaction commune). Une seule liste d'options ne suffit pas
 à représenter ce croisement ligne $\times$ colonne : la grille utilise
 donc deux tables séparées, \texttt{grille\_lignes} et
@@ -659,7 +666,7 @@ de la plateforme : importer un formulaire, puis générer ses réponses.
     \draw[msg] (3.8,-6.0) -- (9.4,-6.0) node[midway, above] {charger questions};
     \draw[retour] (9.4,-6.6) -- (3.8,-6.6);
     \draw[msg] (3.8,-7.4) -- (12.2,-7.4) node[midway, above, align=center]
-        {question + contexte RAG};
+        {question (+ recherche\\RAG interne)};
     \draw[retour] (12.2,-8.0) -- (3.8,-8.0) node[midway, above] {réponse proposée};
     \draw[msg] (3.8,-8.6) -- (9.4,-8.6) node[midway, above, align=center]
         {\texttt{INSERT} réponse};
@@ -681,44 +688,51 @@ de la plateforme : importer un formulaire, puis générer ses réponses.
 \begin{itemize}
     \item \textbf{Scraping ciblé par fournisseur, sans API officielle} : ni Google ni
     Microsoft n'exposent d'API publique pour récupérer la structure d'un formulaire
-    arbitraire. Le besoin fonctionnel lire un formulaire à partir de son seul lien
-    public, sans compte ni configuration côté créateur a donc imposé une approche par
+    arbitraire. Le besoin fonctionnel (lire un formulaire à partir de son seul lien
+    public, sans compte ni configuration côté créateur) a donc imposé une approche par
     scraping, mais \emph{différente selon le fournisseur}, en fonction de la façon dont
     chacun sert réellement sa page : Google Forms intègre toutes les données du formulaire
     sous forme d'une variable JavaScript (\texttt{FB\_PUBLIC\_LOAD\_DATA\_}) déjà présente
-    dans le HTML brut renvoyé par le serveur  une simple requête HTTP
+    dans le HTML brut renvoyé par le serveur : une simple requête HTTP
     (\texttt{urllib.request}) suffit donc à la récupérer, sans navigateur. Microsoft Forms,
     à l'inverse, construit sa page côté client en JavaScript après le chargement initial :
     le contenu utile n'existe pas dans le HTML brut, et un navigateur automatisé réel
-    (Playwright, Chromium en mode \emph{headless}) est nécessaire pour obtenir le DOM une
+    (Playwright~\cite{playwright}, Chromium en mode \emph{headless}) est nécessaire pour obtenir le DOM une
     fois rendu. Le type de chaque question y est déterminé à partir d'un texte caché à
     l'écran mais présent dans le DOM à des fins d'accessibilité (lecteurs d'écran), par
-    exemple \og Single choice. \fg{} ou \og Date. \fg{}  plus fiable qu'une déduction à
+    exemple \og Single choice. \fg{} ou \og Date. \fg{}, ce qui est plus fiable qu'une déduction à
     partir de la seule structure HTML visible.
-    \item \textbf{EasyOCR avec prétraitement d'image (OpenCV)} : certaines questions ne
+    \item \textbf{EasyOCR~\cite{easyocr} avec prétraitement d'image (OpenCV~\cite{opencv})} : certaines questions ne
     sont accessibles que sous forme d'image (capture d'écran d'un tableau, logo, consigne
-    visuelle)  le besoin fonctionnel est d'en extraire un texte exploitable par l'agent
-    IA, sans intervention humaine systématique. EasyOCR a été retenu pour son support
-    multilingue prêt à l'emploi (français et anglais, les deux langues des formulaires
-    traités) sans modèle à entraîner. Un premier essai en conditions réelles a montré
+    visuelle), le besoin fonctionnel est d'en extraire un texte exploitable par l'agent
+    IA, sans intervention humaine systématique. Contrairement à un moteur plus classique
+    comme Tesseract, EasyOCR ne dépend d'aucun binaire système à installer séparément
+    (juste une bibliothèque Python, cohérente avec les autres modèles déjà utilisés dans
+    le projet, eux aussi basés sur PyTorch) et repose sur des réseaux de neurones pour la
+    détection et la reconnaissance, plus robustes que les approches classiques sur des
+    images de qualité inégale (captures d'écran, photos), typiquement ce que produisent
+    les questions à réponse visuelle des formulaires traités, plutôt que des scans propres
+    et bien cadrés. Son support multilingue prêt à l'emploi (français et anglais, les deux
+    langues des formulaires traités) a aussi pesé dans ce choix. Un premier essai en
+    conditions réelles a montré
     qu'une image brute donne souvent un score de confiance insuffisant (image inclinée,
     contraste faible, texte petit) : un pipeline de prétraitement a donc été construit
     (redressement automatique par détection d'angle, égalisation de contraste CLAHE,
     isolement du texte clair/sombre selon le fond, agrandissement x4 pour le texte fin),
     dont les variantes les plus coûteuses (agrandissement, tests multiples) ne sont
     calculées que si une première passe rapide n'atteint pas un score de confiance
-    suffisant  évite de payer ce coût de calcul sur les images déjà bien reconnues dès le
+    suffisant, ce qui évite de payer ce coût de calcul sur les images déjà bien reconnues dès le
     premier essai. Le score de confiance final conditionne aussi le
     \texttt{statut\_extraction} de la question (\texttt{ocr\_incertain} en dessous d'un
     seuil), pour qu'une extraction douteuse soit signalée à la validation humaine plutôt
     que silencieusement acceptée.
-    \item \textbf{Le framework backend, FastAPI} : les formulaires
+    \item \textbf{Le framework backend, FastAPI~\cite{fastapi}} : les formulaires
     proviennent de sources externes (Google Forms, Microsoft Forms
-    récupérés par scraping) le besoin fonctionnel est de garantir
+    récupérés par scraping), le besoin fonctionnel est de garantir
     qu'aucune donnée malformée n'entre en base sans vérification
     systématique, sans avoir à écrire ce contrôle manuellement pour
-    chaque route. FastAPI s'appuie nativement sur Pydantic pour la
-    validation des schémas de données  chaque formulaire reçu par l'API
+    chaque route. FastAPI s'appuie nativement sur Pydantic~\cite{pydantic} pour la
+    validation des schémas de données : chaque formulaire reçu par l'API
     est automatiquement vérifié (types, champs obligatoires, valeurs
     autorisées), contrairement à d'autres frameworks Python plus
     minimalistes, qui n'imposent aucune structure et demanderaient
@@ -726,48 +740,66 @@ de la plateforme : importer un formulaire, puis générer ses réponses.
     documentation interactive de l'API (Swagger) directement depuis les
     schémas, utile pour tester les routes pendant le développement sans
     outil externe.
-    \item \textbf{PostgreSQL avec SQL brut} (SQLAlchemy Core via
+    \item \textbf{PostgreSQL~\cite{postgresql} avec SQL brut} (SQLAlchemy~\cite{sqlalchemy} Core via
     \texttt{text()}, pas l'ORM) : les données entrent en base depuis
     plusieurs points du pipeline (import initial, régénération après un
-    rejet de validation humaine) le besoin fonctionnel est que les
+    rejet de validation humaine), le besoin fonctionnel est que les
     règles métier (types de questions valides, cohérence entre
     \texttt{type\_question} et \texttt{type\_reponse\_attendu}...)
     soient appliquées de façon centralisée en base, pas dupliquées dans
     chaque script Python qui y écrit. Le schéma repose donc sur de
     nombreuses contraintes \texttt{CHECK} directement définies en
-    base  un ORM masquerait ce niveau de contrôle ou obligerait à le
+    base : un ORM masquerait ce niveau de contrôle ou obligerait à le
     dupliquer côté Python. Le SQL brut permet aussi d'écrire directement
     des requêtes plus complexes (par exemple \texttt{DISTINCT ON} pour
     ne garder que la dernière réponse proposée par question) sans
     contourner les limites d'un
     ORM.
-    \item \textbf{JavaScript natif}  côté
+    \item \textbf{JavaScript natif} côté
     frontend : l'interface reste simple (import, traitement, validation
     de réponses) et ne justifie pas la complexité d'un framework moderne
-    ni d'une étape de compilation  cohérent avec le besoin non
+    ni d'une étape de compilation, ce qui reste cohérent avec le besoin non
     fonctionnel de simplicité de maintenance déjà énoncé (une seule
     personne développe et maintient l'application).
-    \item \textbf{Gemini} comme modèle de génération : deux capacités
-    techniques précises ont motivé ce choix, pas seulement sa qualité
-    générale. D'abord, la sortie structurée (\emph{structured output}) :
-    chaque réponse générée doit respecter un schéma Pydantic fixe
-    (une valeur, et une précision optionnelle si l'option "Autre" est
-    choisie)  Gemini expose nativement ce mécanisme via LangChain
-    (\texttt{create\_agent} avec un schéma de sortie typé), sans avoir à
-    analyser du texte libre pour en extraire la structure attendue.
-    Ensuite, le support multilingue natif : les formulaires traités
-    peuvent être rédigés en français ou en anglais, détecté
-    automatiquement (\texttt{langdetect}) puis attendu dans la réponse
-    générée  Gemini gère cette bascule sans dégradation notable de
-    qualité, contrairement à des modèles plus spécialisés sur une seule
-    langue. La variante \texttt{flash-lite}, plus légère, a été retenue
-    spécifiquement pour sa faible latence par appel : les questions d'un
-    même formulaire sont traitées en parallèle
-    (\texttt{ThreadPoolExecutor}, Chapitre 4), donc le temps de réponse
-    d'un seul appel a un impact direct sur le temps total de traitement
-    du formulaire entier. L'accessibilité de l'API dans les limites
-    d'usage du stage, sans coût, a également pesé, en complément de ces
-    critères techniques, sans en être le facteur décisif.
+    \item \textbf{Gemini~\cite{gemini}} comme modèle de génération : un formulaire
+    compte couramment plusieurs dizaines de questions, le besoin fonctionnel est donc
+    double, obtenir des réponses en un temps total raisonnable malgré ce volume, et
+    maintenir un coût d'exploitation nul ou négligeable pour la plateforme, condition
+    nécessaire pour qu'un usage réel, répété et à volume croissant reste viable dans
+    la durée. Plusieurs alternatives ont été essayées avant de retenir Gemini : OpenAI
+    (GPT) et Anthropic (Claude) ont été écartés car leur usage à ce volume aurait
+    représenté un coût d'exploitation trop élevé pour la plateforme, aucun des deux ne
+    proposant d'offre gratuite adaptée à un usage prolongé et répété ; d'autres
+    fournisseurs testés (dont Groq et Mistral) offraient une fenêtre de contexte trop
+    limitée pour ce cas d'usage précis, où le prompt doit accueillir à la fois la
+    question, le contexte documentaire récupéré par le RAG et les consignes de format,
+    ainsi qu'une latence par appel plus élevée. Le modèle exact retenu,
+    \texttt{gemini-3.1-flash-lite}, a aussi été choisi pour la flexibilité de sa
+    tarification officielle, adaptée aux deux cas d'usage réels de la plateforme : un
+    palier gratuit, utilisé pour le développement et les tests menés pendant le stage
+    sur des documents non confidentiels (où les données envoyées peuvent être
+    réutilisées par Google pour améliorer ses modèles, sans conséquence dans ce
+    cadre) ; et, pour des documents internes sensibles en conditions réelles, un
+    palier payant garantissant que les données ne sont pas réutilisées, à un coût par
+    million de tokens (0,25~\$ en entrée, 1,50~\$ en sortie) resté comparable aux
+    autres fournisseurs testés. La variante \texttt{flash-lite}, plus légère, a par
+    ailleurs été retenue spécifiquement pour sa faible latence par appel : les
+    questions d'un même formulaire sont traitées en parallèle
+    (\texttt{ThreadPoolExecutor}, Chapitre 4), donc le temps de réponse d'un seul
+    appel a un impact direct sur le temps total de traitement du formulaire entier.
+
+    Au-delà de ces critères fonctionnels, deux capacités techniques précises ont
+    motivé ce choix plutôt qu'un autre modèle, pas seulement sa qualité générale.
+    D'abord, la sortie structurée (\emph{structured output}) : chaque réponse
+    générée doit respecter un schéma Pydantic fixe (une valeur, et une précision
+    optionnelle si l'option "Autre" est choisie), et Gemini expose nativement ce
+    mécanisme via LangChain (\texttt{create\_agent} avec un schéma de sortie typé),
+    sans avoir à analyser du texte libre pour en extraire la structure attendue.
+    Ensuite, le support multilingue natif : les formulaires traités peuvent être
+    rédigés en français ou en anglais, détecté automatiquement (\texttt{langdetect})
+    puis attendu dans la réponse générée, et Gemini gère cette bascule sans
+    dégradation notable de qualité, contrairement à des modèles plus spécialisés sur
+    une seule langue.
 \end{itemize}
 
 \section{Choix techniques pour le système de recherche documentaire (RAG)}
@@ -776,28 +808,28 @@ La mise en place du système de recherche documentaire a nécessité des choix
 techniques spécifiques, distincts de ceux du reste de la plateforme :
 
 \begin{itemize}
-    \item \textbf{ChromaDB} comme base de données vectorielle : solution
+    \item \textbf{ChromaDB~\cite{chroma}} comme base de données vectorielle : solution
     locale, sans serveur dédié à installer ni à maintenir, dont
     l'intégration avec LangChain est directe. Sa capacité correspond bien
     à la taille du corpus documentaire interne de l'entreprise, sans
     nécessiter l'infrastructure d'une base vectorielle plus lourde
     (Pinecone, Weaviate...).
-    \item \textbf{LangChain} comme couche d'orchestration : déjà utilisé
+    \item \textbf{LangChain~\cite{langchain}} comme couche d'orchestration : déjà utilisé
     pour l'agent IA de génération de réponses (Chapitre 4), il a été
     naturellement réutilisé pour le chargement des documents, leur
     découpage en fragments et la recherche vectorielle, plutôt que
     d'introduire un nouvel outil pour une seule partie du projet.
     \item \textbf{Un modèle d'embedding local}
-    (\texttt{intfloat/multilingual-e5-small}), plutôt qu'un service
+    (\texttt{intfloat/multilingual-e5-small}~\cite{e5}), plutôt qu'un service
     cloud : ce choix repose sur trois caractéristiques techniques
     précises du modèle, pas sur une préférence générale pour le local.
     D'abord, son architecture (12 couches de transformeur, vecteurs de
     384 dimensions, environ 120 millions de paramètres) est nettement
     plus légère que les modèles d'embedding cloud typiques, ce qui rend
     son exécution sur CPU, sans GPU dédié, réaliste en pratique. Ensuite,
-    sa méthode d'entraînement  apprentissage contrastif avec des
-    préfixes distincts pour la question (\texttt{"query: "}) et le
-    document comparé (\texttt{"passage: "})  l'optimise spécifiquement
+    sa méthode d'entraînement (apprentissage contrastif avec des
+    préfixes distincts pour la question, \texttt{"query: "}, et le
+    document comparé, \texttt{"passage: "}) l'optimise spécifiquement
     pour la tâche de recherche question~$\rightarrow$~document, plutôt
     que pour une similarité de texte générique. Enfin, son tokenizer
     multilingue (\texttt{XLMRobertaTokenizer}, plus de 100 langues)
@@ -823,11 +855,15 @@ for Linux), permettant de travailler dans un environnement Linux natif
 outils habituels de Windows. L'éditeur utilisé est Visual Studio Code,
 avec son extension WSL pour éditer directement les fichiers du côté
 Linux. Le versionnement du code repose sur Git, avec un dépôt distant
-hébergé sur GitHub\footnote{\url{https://github.com/bouabidihind7-blip/plateforme_ia_RAG}}.
+hébergé sur GitHub~\cite{depot}.
 Les routes de l'API backend ont été testées au fil
 du développement directement en ligne de commande avec \texttt{curl},
 ainsi que via la documentation interactive générée automatiquement par
 FastAPI (Swagger), sans nécessiter d'outil graphique dédié supplémentaire.
+Pour les démonstrations à distance de l'application (auprès de
+l'encadrant académique notamment), le serveur local a été exposé
+temporairement via un tunnel ngrok~\cite{ngrok}, sans nécessiter de
+déploiement sur un serveur distant dédié.
 
 % ============================================================================
 % CHAPITRE 4 — RÉALISATION
@@ -838,7 +874,7 @@ FastAPI (Swagger), sans nécessiter d'outil graphique dédié supplémentaire.
 
 Google Forms et Microsoft Forms ne fournissent pas d'API publique
 permettant de récupérer la structure d'un formulaire arbitraire : les
-deux scripts d'extraction (\texttt{googleforms public.py},
+deux scripts d'extraction (\texttt{google\_forms\_public.py},
 \texttt{microsoft\_forms\_scraper.py})
 réalisent donc un scraping direct
 de la page du formulaire (lecture du DOM pour Microsoft Forms, analyse
@@ -849,7 +885,7 @@ ensuite vers un même format brut intermédiaire, normalisé par
 d'origine.
 
 Cette normalisation détermine, pour chaque question, sa \emph{modalité}
-(texte, image, ou les deux  selon les champs réellement présents dans
+(texte, image, ou les deux, selon les champs réellement présents dans
 la question brute), son \emph{type} standardisé (choix unique, choix
 multiple, notation, grille..., déduit du type brut propre à chaque
 fournisseur) et le \emph{type de réponse attendu} qui en découle. Une
@@ -861,7 +897,7 @@ texte exploitable par l'agent IA.
 Chaque question se voit enfin attribuer un \texttt{statut\_extraction}
 (\texttt{prete}, \texttt{texte\_manquant}, \texttt{ocr\_incertain},
 \texttt{type\_inconnu}...) qui reflète la fiabilité réelle de son
-extraction seules les questions au statut \texttt{prete} sont ensuite
+extraction : seules les questions au statut \texttt{prete} sont ensuite
 transmises à l'agent IA pour génération de réponse (Section 4.2), les
 autres restant visibles mais signalées comme nécessitant une
 intervention humaine directe.
@@ -899,7 +935,7 @@ séquentiellement, pour réduire le temps total de traitement d'un
 formulaire à plusieurs dizaines de questions. La langue dominante du
 formulaire est détectée une seule fois pour l'ensemble des questions
 (\texttt{detecter\_langue\_formulaire}, à partir du texte combiné de
-toutes les questions un texte isolé trop court donnant une détection
+toutes les questions, un texte isolé trop court donnant une détection
 peu fiable), puis chaque réponse générée est comparée à cette langue
 attendue comme filet de sécurité supplémentaire, indépendamment de la
 consigne de langue déjà donnée dans le prompt.
@@ -923,7 +959,7 @@ Ces formats se répartissent en deux familles structurellement
 différentes, traitées par deux pipelines distincts.
 
 Les formats à mise en page visuelle (PDF, Word, PowerPoint...) sont
-d'abord analysés par Docling, qui en extrait la structure réelle
+d'abord analysés par Docling~\cite{docling}, qui en extrait la structure réelle
 (titres, paragraphes, tableaux), une information invisible dans le
 texte brut d'un tel fichier, qu'un simple découpage par nombre de
 caractères ne peut pas deviner. Le contenu structuré est ensuite
@@ -977,7 +1013,7 @@ dans le document), afin de ne jamais mélanger deux paires distinctes
 dans un même fragment. Un mécanisme de secours
 (\texttt{RecursiveCharacterTextSplitter}) de LangChain ne s'active que
 si un bloc dépasse malgré tout la taille maximale fixée
-(350 caractères)  un cas rare mais réel, observé notamment sur des
+(350 caractères), un cas rare mais réel, observé notamment sur des
 procédures denses en plusieurs étapes.
 
 Ce mécanisme de secours a révélé un bug réel lors des tests : en
@@ -995,15 +1031,15 @@ réponse n'est jamais présentée à l'agent IA de façon partielle.
 \subsection{Classification par catégorie et recherche vectorielle}
 
 Plutôt que de rechercher dans l'ensemble du corpus documentaire pour
-chaque question  plus lent et plus susceptible de retrouver des
-extraits non pertinents le système devine d'abord la ou les
+chaque question (plus lent et plus susceptible de retrouver des
+extraits non pertinents), le système devine d'abord la ou les
 catégories les plus probables de la question, avant de limiter la
 recherche vectorielle à ces catégories uniquement.
 
 Cette classification est réalisée par embedding local, sans appel à un
 modèle de langage : chaque catégorie est représentée par plusieurs
 phrases de référence rédigées à la main (couvrant les différents angles
-d'un même sujet  par exemple, pour la catégorie RH, un angle
+d'un même sujet, par exemple, pour la catégorie RH, un angle
 "gestion administrative du personnel" et un angle distinct "accueil des
 nouveaux stagiaires"), converties en vecteurs numériques. La question
 posée est également convertie en vecteur, puis comparée par similarité
@@ -1017,7 +1053,7 @@ diversifié, cette marge fixe a cessé de filtrer quoi que ce soit : les
 7 catégories obtenaient des scores trop proches les uns des autres
 (moins de 0,03 d'écart entre la meilleure et la moins bonne, dans un cas
 mesuré), si bien que la quasi-totalité des 7 catégories étaient
-interrogées à chaque question noyant les candidats réellement
+interrogées à chaque question, noyant les candidats réellement
 pertinents sous des dizaines de candidats hors sujet avant même l'étape
 de tri. Un top~3 fixe (les 3 catégories les plus proches de la question,
 peu importe l'écart entre elles) a remplacé cette marge, avec un net
@@ -1035,13 +1071,13 @@ résultats de plusieurs collections différentes a révélé un biais
 structurel réel : une phrase tabulaire synthétique ("cette entrée a les
 caractéristiques suivantes...") obtient un score de similarité cosinus
 systématiquement plus bas qu'une vraie paire question/réponse en
-langage naturel, même quand son contenu est la bonne réponse  un
+langage naturel, même quand son contenu est la bonne réponse : un
 candidat correct issu des données tabulaires pouvait ainsi se faire
 évincer par des candidats d'une autre collection, hors sujet mais mieux
 notés dans l'absolu, uniquement à cause du style de la phrase. La
 correction a consisté à fusionner les résultats de toutes les
 collections par \emph{rang} plutôt que par valeur brute du score
-(\emph{Reciprocal Rank Fusion}) : seule la position d'un candidat au
+(\emph{Reciprocal Rank Fusion}~\cite{rrf}) : seule la position d'un candidat au
 sein de sa propre collection compte, ce qui neutralise cet écart
 structurel entre styles de texte.
 
@@ -1054,11 +1090,11 @@ modèle indique explicitement qu'omettre ces préfixes dégrade ses
 performances.
 
 Enfin, un reclassement final par \emph{reranker} (modèle
-\texttt{cross-encoder}, \texttt{BAAI/bge-reranker-base}) a été ajouté
+\texttt{cross-encoder}, \texttt{BAAI/bge-reranker-base}~\cite{bge}) a été ajouté
 après la fusion par rang. Contrairement à l'embedding, qui compare deux
 vecteurs calculés séparément pour la question et pour chaque document,
 un reranker lit la question et un candidat ensemble, dans un seul
-passage du modèle  ce qui lui permet de distinguer des candidats très
+passage du modèle, ce qui lui permet de distinguer des candidats très
 proches en surface (par exemple, dans un même tableau, deux lignes qui
 ne diffèrent que par une valeur numérique) que l'embedding seul confond
 parfois. Un filet de sécurité complémentaire a également été ajouté :
@@ -1157,22 +1193,22 @@ qu'aucune autre question déjà correcte n'en soit affectée.
 
 \section{Backend et base de données}
 
-Le backend expose une API REST regroupant quatre familles de routes,
-correspondant aux quatre étapes du pipeline (Section 2.2). L'\emph{import}
-d'un formulaire est possible par deux voies  un JSON déjà extrait
-(\texttt{POST /formulaires}) ou directement depuis une URL
-(\texttt{POST /formulaires/depuis-url}, qui appelle l'extraction avant
+Le backend expose une API REST regroupant quatre familles de routes :
+import, traitement, consultation et validation. L'\emph{import}
+d'un formulaire est possible par deux voies : un JSON déjà extrait
+(\path{POST /formulaires}) ou directement depuis une URL
+(\path{POST /formulaires/depuis-url}, qui appelle l'extraction avant
 d'enregistrer le résultat), toutes deux aboutissant au même
-enregistrement en base. Le \emph{traitement} (\texttt{POST
-/traitements/questions-textuelles}) déclenche la génération des réponses
-IA pour un formulaire donné. La \emph{consultation} regroupe la liste
-des formulaires importés, le détail des réponses d'un formulaire, et son
-historique complet (Section 4.5). La \emph{validation}
-(\texttt{PATCH /reponses/\{reponse\_id\}/statut}) permet de valider,
-rejeter ou corriger une réponse proposée. Une route supplémentaire
-(\texttt{POST /documents-rag}) permet d'ajouter de nouveaux documents à
-la base documentaire interne (Section 4.3) sans avoir à relancer les
-scripts d'ingestion manuellement.
+enregistrement en base. Le \emph{traitement}
+(\path{POST /traitements/questions-textuelles}) déclenche la génération
+des réponses IA pour un formulaire donné. La \emph{consultation} regroupe
+la liste des formulaires importés, le détail des réponses d'un
+formulaire, et son historique complet (Section 4.5). La
+\emph{validation} (\path{PATCH /reponses/{reponse_id}/statut}) permet de
+valider, rejeter ou corriger une réponse proposée. Une route
+supplémentaire (\path{POST /documents-rag}) permet d'ajouter de nouveaux
+documents à la base documentaire interne (Section 4.3) sans avoir à
+relancer les scripts d'ingestion manuellement.
 
 Le modèle de données (Section 2.4) sert de source unique de vérité entre
 ces routes : une réponse générée ou validée est toujours immédiatement
@@ -1197,13 +1233,13 @@ titre ; la liste des formulaires peut être filtrée en direct par mot-clé
 au fur et à mesure de la frappe, sans rechargement de page ni bouton de
 recherche séparé. Les erreurs remontées par le backend sont interceptées
 et reformulées en message clair pour l'utilisateur plutôt
-qu'affichées telles quelles  par exemple, un import en double
+qu'affichées telles quelles : par exemple, un import en double
 (erreur 409) déclenche une demande de confirmation explicite avant
 écrasement, plutôt qu'un simple code d'erreur technique.
 
 \begin{figure}[H]
 \centering
-\fbox{\includegraphics[width=0.98\textwidth]{screenshot_acceuil.png}}
+\fbox{\includegraphics[width=0.98\textwidth]{screenshot_accueil.png}}
 \caption{Page d'accueil : ajout de document à la base RAG et import de formulaire}
 \label{fig:screenshot-accueil}
 \end{figure}
@@ -1244,7 +1280,7 @@ reste.
 \end{figure}
 
 % ============================================================================
-% CHAPITRE 4 — TESTS, RÉSULTATS ET DIFFICULTÉS RENCONTRÉES
+% CHAPITRE 5 — TESTS, RÉSULTATS ET DIFFICULTÉS RENCONTRÉES
 % ============================================================================
 \chapter{Tests, résultats et difficultés rencontrées}
 
@@ -1258,7 +1294,7 @@ structures variées (grilles, questions à choix multiple, questions
 image, formulaires bilingues), ont été importés et traités au fil du
 stage. Chaque exécution était suivie dans les logs du backend, qui
 tracent chaque étape du traitement (classification RAG, appel au modèle,
-normalisation de la réponse)  un comportement inattendu était
+normalisation de la réponse) : un comportement inattendu était
 d'abord reproduit et localisé précisément dans ces logs avant d'être
 corrigé, plutôt que corrigé par supposition. Cette approche a permis de
 détecter des cas limites qu'un jeu de test artificiel n'aurait pas
@@ -1298,7 +1334,7 @@ Sur les formulaires réels testés au fil du stage (Section 5.1), les
 résultats restent qualitatifs plutôt que chiffrés : contrairement au
 système RAG (mesuré objectivement ci-dessous par un score sur un jeu de
 questions à réponse connue), il n'existe pas de "bonne réponse" unique
-et vérifiable automatiquement pour un formulaire réel  chaque réponse
+et vérifiable automatiquement pour un formulaire réel : chaque réponse
 générée a été relue manuellement. Ces tests ont surtout permis
 d'identifier et corriger des bugs réels non visibles sur un jeu de
 données synthétique restreint : gestion des grilles, cohérence des
@@ -1383,7 +1419,7 @@ correction :
     \item Un bug de fragmentation dans le système RAG : le mécanisme de
     découpage en chunks pouvait, dans de rares cas, séparer une question
     de sa réponse lorsque celle-ci dépassait la taille maximale d'un
-    fragment l'agent IA répondait alors que l'information n'était pas
+    fragment : l'agent IA répondait alors que l'information n'était pas
     disponible, alors qu'elle existait bien dans le document source.
     Corrigé en conservant le texte complet d'origine dans les métadonnées
     de chaque fragment concerné, substitué au fragment partiel au moment
@@ -1476,7 +1512,7 @@ l'injection contrôlée des réponses validées directement dans le
 formulaire en ligne d'origine, prévue dans l'objectif initial du stage
 mais non encore réalisée, constitue la suite la plus directe des
 travaux menés. La possibilité de choisir entre plusieurs modèles d'IA
-pour la génération de réponses, actuellement fixé à un seul modèle,
+pour la génération de réponses, actuellement fixée à un seul modèle,
 ainsi qu'une pagination de l'historique pour absorber un nombre
 croissant de formulaires, sont également identifiées. Une réflexion sur
 une architecture plus modulaire, faite de briques fonctionnelles
